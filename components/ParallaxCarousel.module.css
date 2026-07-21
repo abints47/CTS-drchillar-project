@@ -1,0 +1,73 @@
+.embla {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.embla__viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  height: 100%;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  will-change: opacity;
+  transition: opacity 0.3s ease-out;
+}
+
+.embla__img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Gradient Overlay for Text Readability */
+.slide__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Text Content Container */
+.slide__content {
+  position: absolute;
+  bottom: 10%;
+  left: 8%;
+  right: 8%;
+  color: #ffffff;
+  z-index: 10;
+  max-width: 42rem;
+}
+
+.slide__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.slide__description {
+  font-size: 1.125rem;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.5;
+}

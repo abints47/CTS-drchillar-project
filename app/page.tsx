@@ -9,7 +9,7 @@ import { FaRibbon, FaUsers, FaCogs, FaRegClock } from 'react-icons/fa'
 const IMAGES = [
   {
     id: '1',
-    src: '/images/asethetic-ac.jpg',
+    src: '/images/asethetic-ac.webp',
     alt: 'Mountains',
     title: 'Water Chillers, Coolers & Heat Pumps',
     description: 'High-efficiency and water chillers designed for reliable cooling of industrial and commercial appliances',

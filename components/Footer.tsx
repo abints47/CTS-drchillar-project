@@ -6,10 +6,13 @@ import { Bold } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t bg-gray-50-50 text-foreground">
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-5 lg:gap-12">
-          <div className="space-y-4 md:col-span-2">
+    <footer className="w-full border-t bg-[#e5e7eb]/60 text-foreground">
+      <div className="container mx-auto px-6 py-12 lg:px-12 lg:py-16">
+        {/* Main Columns Grid Layout */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr_1.3fr] lg:gap-10">
+          
+          {/* Brand & Description Column */}
+          <div className="space-y-4">
             <Link href="/" className="text-xl font-bold tracking-tight text-[#00b85c]">
               Chiller Technical Services L.L.C <section className="pl-30">خدمات التبريد التقنية ذ.م.م</section>
             </Link>
@@ -33,6 +36,7 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Products Column */}
           <div className="space-y-3">
             <h4 className="text-xl font-semibold text-[#00b85c]">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -81,6 +85,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Services Column */}
           <div className="space-y-3">
             <h4 className="text-xl font-semibold text-[#00b85c]">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -129,6 +134,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Contact Column */}
           <div className="space-y-3">
             <h4 className="text-xl font-semibold text-[#00b85c]">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -177,10 +183,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="my-8 border-t border-border" />
+        <div className="my-8 border-t border-gray-300/60" />
 
+        {/* Bottom Bar Section */}
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} Brand, Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"}> Website Developed By Maktal</Link>  </span></p>
+          <p>&copy; {new Date().getFullYear()} Brand, Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" className="hover:text-foreground transition-colors">
+            Website Developed By Maktal
+          </Link> </span></p>
 
           <div className="flex gap-6">
             <Link href="#privacy" className="hover:text-foreground transition-colors">

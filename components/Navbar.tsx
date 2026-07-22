@@ -5,41 +5,78 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Navbar.module.css'
 import logo from '@/public/logo.png'
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolledPastHero, setIsScrolledPastHero] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [hoveredPath, setHoveredPath] = useState<string | null>(null)
+  
+  // Autohide state
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
   const pathname = usePathname()
+  const isHomePage = pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+      const heroThreshold = window.innerHeight * 0.85
+
+      // 1. Determine whether we are past the Hero section
+      const pastHero = !isHomePage || currentScrollY > heroThreshold
+      setIsScrolledPastHero(pastHero)
+
+      // 2. Autohide Logic:
+      // If inside the Hero section -> keep navbar ALWAYS visible
+      if (isHomePage && currentScrollY <= heroThreshold) {
+        setIsVisible(true)
+      } else {
+        // After Hero section -> Autohide on scroll down, show on scroll up
+        if (currentScrollY > lastScrollY && currentScrollY > heroThreshold) {
+          setIsVisible(false) // Hide on scroll DOWN
+        } else {
+          setIsVisible(true)  // Show on scroll UP
+        }
+      }
+
+      setLastScrollY(currentScrollY)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollY, isHomePage])
 
-  // Automatically close mobile menu when navigating to a new route
   useEffect(() => {
     setMobileMenuOpen(false)
   }, [pathname])
 
-  const isSubPage = pathname !== '/'
-
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/About', label: 'About Us' },
-    { href: '/Products', label: 'Products'},
+    { href: '/Products', label: 'Products' },
     { href: '/Services', label: 'Services' },
     { href: '/Contact', label: 'Contact Us' },
   ]
 
+  const isTransparent = isHomePage && !isScrolledPastHero
+
   return (
-    <header className={`${styles.navbar} ${isScrolled || isSubPage ? styles.scrolled : ''}`}>
-      <div className={styles.navbar__container}>
+    <motion.header 
+      className={styles.navbarWrapper}
+      initial={{ y: 0 }}
+      animate={{ y: isVisible || mobileMenuOpen ? 0 : -100 }}
+      transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1.0] }}
+    >
+      <div 
+        className={`
+          ${styles.navbarContainer} 
+          ${isTransparent ? styles.transparent : styles.scrolled}
+        `}
+      >
         {/* Brand Logo */}
         <Link href="/" className={styles.logo}>
           <Image 
@@ -49,47 +86,86 @@ export default function Navbar() {
             height={32} 
             className="rounded-md object-contain"
           />
-          <span>CTS</span>
+          <span className={isTransparent ? styles.logoTransparent : ''}>CTS</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className={styles.navDesktop}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={pathname === link.href ? styles.active : ''}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav 
+          className={`${styles.navDesktop} ${isTransparent ? styles.navDesktopTransparent : ''}`} 
+          onMouseLeave={() => setHoveredPath(null)}
+        >
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href
+            const isHovered = hoveredPath === link.href
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onMouseEnter={() => setHoveredPath(link.href)}
+                className={`
+                  ${styles.navItem} 
+                  ${isActive ? styles.active : ''} 
+                  ${isTransparent && !isActive ? styles.navItemTransparent : ''}
+                `}
+              >
+                <span className={styles.navText}>{link.label}</span>
+
+                {/* Active Route Indicator Pill */}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className={styles.activePill}
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+
+                {/* Hover Indicator Pill */}
+                {isHovered && !isActive && (
+                  <motion.div
+                    layoutId="hoverTab"
+                    className={isTransparent ? styles.hoverPillTransparent : styles.hoverPill}
+                    transition={{ type: 'spring', stiffness: 400, damping: 35 }}
+                  />
+                )}
+              </Link>
+            )
+          })}
         </nav>
 
-        {/* Mobile Hamburger Toggle Button */}
+        {/* Mobile Toggle Button */}
         <button
           type="button"
           aria-label="Toggle navigation menu"
-          className={styles.mobileMenuBtn}
+          className={`${styles.mobileMenuBtn} ${isTransparent ? styles.btnTransparent : ''}`}
           onClick={() => setMobileMenuOpen((prev) => !prev)}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile Overlay Menu */}
-      {mobileMenuOpen && (
-        <nav className={styles.navMobile}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={pathname === link.href ? styles.active : ''}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-      )}
-    </header>
+      {/* Mobile Animated Dropdown Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.nav 
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className={styles.navMobile}
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${styles.mobileNavItem} ${pathname === link.href ? styles.activeMobile : ''}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.header>
   )
 }

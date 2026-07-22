@@ -1,44 +1,30 @@
+// components/Card.tsx
 import CardImage from "@/components/CardImage"
 
-// Updated array with direct, reliable photo URLs from Unsplash and Picsum
-const EVENTS = [
-  {
-    id: 1,
-    title: "Water Chillers, Coolers &\n Heat Pumps",
-    description: "High-performance chillers for all your cooling needs.",
-    badgeText: "",
-    imageSrc: "/images/products/water-chilers.jpg",
-  },
-  {
-    id: 2,
-    title: "Heat Exchange and Colling\n Towers",
-    description: "Reliable heat exchange to optimize energy transfer processes.",
-    badgeText: "",
-    imageSrc: "/images/products/heatExchange.webp",
-  },
-  {
-    id: 3,
-    title: "A/C Units & Air Curtains",
-    description: "Efficient air conditioning systems designed for comfort and reliability",
-    badgeText: "",
-    imageSrc: "/images/products/aircurtain.png",
-  },
-  
-]
+export interface CardItem {
+  id: string | number
+  title: string
+  description: string
+  imageSrc: string
+  buttonLink?: string
+}
 
-export default function EventsPage() {
+interface CardGridProps {
+  items: CardItem[]
+}
+
+export default function CardGrid({ items }: CardGridProps) {
   return (
     <section className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-        {EVENTS.map((event) => (
+        {items.map((item) => (
           <CardImage
-            key={event.id}
-            title={event.title}
-            description={event.description}
-            badgeText={event.badgeText}
-            imageSrc={event.imageSrc}
+            key={item.id}
+            title={item.title}
+            description={item.description}
+            imageSrc={item.imageSrc}
+            buttonLink={item.buttonLink ?? "/Products"}
           />
-          
         ))}
       </div>
     </section>

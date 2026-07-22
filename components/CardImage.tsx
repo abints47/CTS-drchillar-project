@@ -1,10 +1,8 @@
 import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import {
   Card,
-  CardAction,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -14,7 +12,6 @@ import {
 interface CardProps {
   title?: React.ReactNode
   description?: string
-  badgeText?: string
   imageSrc?: string
   buttonLink?: string
 }
@@ -22,7 +19,6 @@ interface CardProps {
 export default function CardImage({
   title = "Design systems meetup",
   description = "A practical talk on component APIs, accessibility, and shipping faster.",
-  badgeText = "Featured",
   imageSrc = "https://picsum.photos/id/1/200/300",
   buttonLink = "/Products",
 }: CardProps) {
@@ -44,11 +40,6 @@ export default function CardImage({
         </div>
 
         <CardHeader className="pt-4">
-          {badgeText && (
-            <CardAction>
-              <Badge variant="secondary">{badgeText}</Badge>
-            </CardAction>
-          )}
           <CardTitle className="font-sans text-[20px] font-bold leading-7 text-zinc-800 text-center tracking-tight whitespace-pre-line">
             {title}
           </CardTitle>

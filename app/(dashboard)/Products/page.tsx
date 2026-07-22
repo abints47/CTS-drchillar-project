@@ -1,3 +1,10 @@
 export default function(){
-    return <h1 className="font-bold pt-40 pl-70">Products PAge</h1>
+    return (
+        <main className="mx-auto max-w-7xl space-y-16 px-4 pb-16 pt-28 md:px-8">
+      <div>
+        <h1>Products Section Page....
+        </h1>
+      </div>
+    </main>
+    );
 }

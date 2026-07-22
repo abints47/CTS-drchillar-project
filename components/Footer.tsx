@@ -2,10 +2,11 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { Bold } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t bg-background text-foreground">
+    <footer className="w-full border-t bg-gray-50-50 text-foreground">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
         
         {/* Top Grid Section */}
@@ -13,11 +14,11 @@ export default function Footer() {
           
           {/* Brand & Newsletter Column */}
           <div className="space-y-4 md:col-span-2">
-            <Link href="/" className="text-xl font-bold tracking-tight">
-              SAMPLE_WEb
+            <Link href="/" className="text-xl font-bold tracking-tight text-[#00b85c]">
+            Chiller Technical Services L.L.C <section className='pl-30'> خدمات التبريد التقنية ذ.م.م</section>
             </Link>
-            <p className="text-sm text-muted-foreground max-w-sm">
-              Empowering developers and teams to build modern, scalable web applications with ease.
+            <p className="text-sm text-muted-foreground max-w-sm ">
+              High-quality cooling and refrigeration solutions for industrial and commercial needs — built for performance, reliability, and efficiency.
             </p>
             
             {/* Newsletter Input */}
@@ -39,26 +40,46 @@ export default function Footer() {
 
           {/* Column 1: Product Links */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Product</h4>
+            <h4 className="text-xl font-semibold text-[#00b85c]">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="#features" className="hover:text-foreground transition-colors">
-                  Features
+                  Water chillers, Coolers & Heat<br/> Pupms
                 </Link>
               </li>
               <li>
                 <Link href="#pricing" className="hover:text-foreground transition-colors">
-                  Pricing
+                  Cold Rooms & Ice Block Machines
                 </Link>
               </li>
               <li>
                 <Link href="#integrations" className="hover:text-foreground transition-colors">
-                  Integrations
+                Heat Exchange & Cooling Towers 
                 </Link>
               </li>
               <li>
                 <Link href="#changelog" className="hover:text-foreground transition-colors">
-                  Changelog
+                  A/C Units & Air Curtains
+                </Link>
+              </li>
+              <li>
+                <Link href="#changelog" className="hover:text-foreground transition-colors">
+                  Water Chillers
+                </Link>
+              </li>
+              <li>
+                <Link href="#changelog" className="hover:text-foreground transition-colors">
+                  Industiral Chillers
+                </Link>
+              </li>
+              <li>
+                <Link href="#changelog" className="hover:text-foreground transition-colors">
+                  Cold Rooms 
+                </Link>
+              </li>
+              <li>
+                <Link href="#changelog" className="hover:text-foreground transition-colors">
+                  Heat Exchanger
                 </Link>
               </li>
             </ul>
@@ -66,26 +87,46 @@ export default function Footer() {
 
           {/* Column 2: Resources Links */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Resources</h4>
+            <h4 className="text-xl font-semibold text-[#00b85c]">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="#documentation" className="hover:text-foreground transition-colors">
-                  Documentation
+                  A/C Chililer & Genset Rentals
                 </Link>
               </li>
               <li>
                 <Link href="#guides" className="hover:text-foreground transition-colors">
-                  Guides & Tutorials
+                  A/C Chiller & Coldroom <br/>Maintenance
                 </Link>
               </li>
               <li>
                 <Link href="#api" className="hover:text-foreground transition-colors">
-                  API Reference
+                  Coil Manufacturing & Replacements 
                 </Link>
               </li>
               <li>
                 <Link href="#community" className="hover:text-foreground transition-colors">
-                  Community
+                  Overhauling & Winding 
+                </Link>
+              </li>
+              <li>
+                <Link href="#changelog" className="hover:text-foreground transition-colors">
+                  AMC
+                </Link>
+              </li>
+              <li>
+                <Link href="#changelog" className="hover:text-foreground transition-colors">
+                  A/C Services Dubai 
+                </Link>
+              </li>
+              <li>
+                <Link href="#changelog" className="hover:text-foreground transition-colors">
+                  Chiller Repair Maintenance
+                </Link>
+              </li>
+              <li>
+                <Link href="#changelog" className="hover:text-foreground transition-colors">
+                  Industiral Chiller Maintenance
                 </Link>
               </li>
             </ul>
@@ -93,27 +134,40 @@ export default function Footer() {
 
           {/* Column 3: Company Links */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Company</h4>
+            <h4 className="text-xl font-semibold text-[#00b85c]">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#about" className="hover:text-foreground transition-colors">
-                  About Us
-                </Link>
+                  <span>
+                    <span className="font-bold text-balance">Email: </span>
+                      <Link href="#about" className="hover:text-foreground transition-colors">
+                        info@drchiller.com
+                      </Link>
+                  </span>
               </li>
               <li>
-                <Link href="#careers" className="hover:text-foreground transition-colors">
-                  Careers <span className="text-xs text-primary font-medium">(Hiring)</span>
-                </Link>
+                  <span>
+                    <span className="font-bold text-balance">Phone: </span>
+                      <Link href="#about" className="hover:text-foreground transition-colors">
+                        +971 67434537
+                      </Link>
+                  </span>
               </li>
               <li>
-                <Link href="#blog" className="hover:text-foreground transition-colors">
-                  Blog
-                </Link>
+                  <span>
+                    <span className="font-bold text-balance">Mobile: </span>
+                      <Link href="#about" className="hover:text-foreground transition-colors">
+                        +971 67434537
+                      </Link>
+                  </span>
               </li>
-              <li>
-                <Link href="#contact" className="hover:text-foreground transition-colors">
-                  Contact
-                </Link>
+               <li>
+                  <span>
+                    <span className="font-bold text-balance">Address: 
+                      <Link href="https://maps.app.goo.gl/bpqPc2NjBGFzEAqD8" target='_blank' className="hover:text-foreground transition-colors">
+                      <span className='font-medium'>  CTS - Chiller Technical Services L.L.C. Industrial Area # 02. Ajman, UAE.</span>
+                      </Link>
+                    </span>
+                  </span>
               </li>
             </ul>
           </div>

@@ -4,46 +4,26 @@ import CardImage from "@/components/CardImage"
 const EVENTS = [
   {
     id: 1,
-    title: "Design systems meetup",
-    description: "A practical talk on component APIs, accessibility, and shipping faster.",
-    badgeText: "Featured",
-    imageSrc: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop",
+    title: "Water Chillers, Coolers &\n Heat Pumps",
+    description: "High-performance chillers for all your cooling needs.",
+    badgeText: "",
+    imageSrc: "/images/products/water-chilers.jpg",
   },
   {
     id: 2,
-    title: "Next.js Conf 2026",
-    description: "Deep dive into App Router, Turbopack, and Server Actions performance.",
-    badgeText: "Popular",
-    imageSrc: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=800&auto=format&fit=crop",
+    title: "Heat Exchange and Colling\n Towers",
+    description: "Reliable heat exchange to optimize energy transfer processes.",
+    badgeText: "",
+    imageSrc: "/images/products/heatExchange.webp",
   },
   {
     id: 3,
-    title: "Tailwind CSS v4 Workshop",
-    description: "Master zero-config dynamic CSS variables and theme customization.",
-    badgeText: "New",
+    title: "A/C Units & Air Curtains",
+    description: "Efficient air conditioning systems designed for comfort and reliability",
+    badgeText: "",
     imageSrc: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop",
   },
-  {
-    id: 4,
-    title: "TypeScript Deep Dive",
-    description: "Advanced generic constraints, mapped types, and type safety patterns.",
-    badgeText: "Workshop",
-    imageSrc: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 5,
-    title: "Accessibility Summit",
-    description: "Building inclusive, screen-reader friendly web interfaces.",
-    badgeText: "Live",
-    imageSrc: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 6,
-    title: "AI & UI Interfaces",
-    description: "Generative component patterns and dynamic layout engines.",
-    badgeText: "Trending",
-    imageSrc: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
-  },
+  
 ]
 
 export default function EventsPage() {

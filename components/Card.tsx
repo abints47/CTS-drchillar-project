@@ -21,7 +21,7 @@ const EVENTS = [
     title: "A/C Units & Air Curtains",
     description: "Efficient air conditioning systems designed for comfort and reliability",
     badgeText: "",
-    imageSrc: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop",
+    imageSrc: "/images/products/aircurtain.png",
   },
   
 ]
@@ -38,6 +38,7 @@ export default function EventsPage() {
             badgeText={event.badgeText}
             imageSrc={event.imageSrc}
           />
+          
         ))}
       </div>
     </section>

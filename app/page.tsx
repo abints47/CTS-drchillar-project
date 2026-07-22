@@ -275,6 +275,20 @@ export default function HomePage() {
   </p>
 
   <Card />
+  <div className="text-center space-y-2">
+    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+      Our Services
+    </h3>
+    <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full" />
+  </div>
+
+  {/* Responsive Subtitle Paragraph */}
+  <p className="max-w-3xl mx-auto text-center text-base sm:text-lg md:text-xl font-normal text-gray-600 dark:text-gray-300 tracking-tight px-4 leading-relaxed">
+    From Chilled water systems to complete AC maintenance, we provide a full range of professional HVAC services.
+  </p>
+  
+
+  <Card />
   </div>
 </section>
     </>

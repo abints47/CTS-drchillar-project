@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer"
 import "./globals.css";
@@ -30,7 +31,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col">
         <NavBar />
-        <main className="flex-1 w-full">{children}</main>
+        <main className="flex-1 w-full"> <SmoothScroll>{children}</SmoothScroll> </main>
         {/* Global Footer */}
         <Footer />
       </body>

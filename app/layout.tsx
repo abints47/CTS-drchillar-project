@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import AosProvider from '@/components/AosProvider';
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer"
 import "./globals.css";
@@ -28,10 +29,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-hidden`}>
       <body className="bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col">
         <NavBar />
-        <main className="flex-1 w-full"> <SmoothScroll>{children}</SmoothScroll> </main>
+        <main className="flex-1 w-full"> <SmoothScroll> <AosProvider> {children} </AosProvider> </SmoothScroll> </main>
         {/* Global Footer */}
         <Footer />
       </body>

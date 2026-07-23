@@ -78,9 +78,13 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 opacity-100 translate-y-0 scale-100 transition-all duration-1000 ease-out lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* Left Image Cluster */}
-          <div className="relative flex flex-col items-center sm:mb-12 lg:block lg:ms-12">
+          <div 
+            className="relative flex flex-col items-center sm:mb-12 lg:block lg:ms-12"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
             {/* Back Image */}
             <div className="group/img1 relative hidden h-80 w-72 overflow-hidden rounded-xl border-2 border-white opacity-100 shadow-lg transition-all duration-500 ease-out sm:block sm:rotate-3 hover:z-20 hover:scale-105 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl dark:border-gray-900">
               <Image
@@ -106,7 +110,12 @@ export default function HomePage() {
           </div>
 
           {/* Right Content Side */}
-          <div className="relative opacity-100 translate-x-0 transition-all duration-1000 delay-400 ease-out">
+          <div 
+            className="relative"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
             <h1 className="mb-6 text-3xl font-bold text-emerald-600 sm:text-4xl dark:text-emerald-400">
               Chiller Maintenance Company in UAE
             </h1>
@@ -124,7 +133,11 @@ export default function HomePage() {
 
             {/* Feature Badges */}
             <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="group flex items-center space-x-3 transition-transform duration-300 hover:translate-x-1">
+              <div 
+                className="group flex items-center space-x-3 transition-transform duration-300 hover:translate-x-1"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div className="text-2xl text-emerald-600 transition-transform group-hover:scale-110">
                   <FaRibbon />
                 </div>
@@ -133,7 +146,11 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <div className="group flex items-center space-x-3 transition-transform duration-300 hover:translate-x-1">
+              <div 
+                className="group flex items-center space-x-3 transition-transform duration-300 hover:translate-x-1"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <div className="text-2xl text-emerald-600 transition-transform group-hover:scale-110">
                   <FaUsers />
                 </div>
@@ -142,7 +159,11 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <div className="group flex items-center space-x-3 transition-transform duration-300 hover:translate-x-1">
+              <div 
+                className="group flex items-center space-x-3 transition-transform duration-300 hover:translate-x-1"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 <div className="text-2xl text-emerald-600 transition-transform group-hover:scale-110">
                   <FaCogs />
                 </div>
@@ -151,7 +172,11 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <div className="group flex items-center space-x-3 transition-transform duration-300 hover:translate-x-1">
+              <div 
+                className="group flex items-center space-x-3 transition-transform duration-300 hover:translate-x-1"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
                 <div className="text-2xl text-emerald-600 transition-transform group-hover:scale-110">
                   <FaRegClock />
                 </div>
@@ -166,6 +191,8 @@ export default function HomePage() {
               href="/About"
               className="inline-block rounded-md bg-emerald-500 py-2 px-4 text-sm font-medium text-white transition hover:bg-emerald-600"
               aria-label="Learn more about us"
+              data-aos="zoom-in"
+              data-aos-delay="700"
             >
               Learn More<span className="sr-only"> about us</span>
             </Link>
@@ -176,7 +203,10 @@ export default function HomePage() {
       {/* Services and Offerings Section */}
       <section id="about" className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
         {/* What We Offer Header Card */}
-        <div className="relative group overflow-hidden bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-3xl p-8 sm:p-12 shadow-xl transition-all duration-500 hover:shadow-2xl hover:border-emerald-500/30">
+        <div 
+          className="relative group overflow-hidden bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-3xl p-8 sm:p-12 shadow-xl transition-all duration-500 hover:shadow-2xl hover:border-emerald-500/30"
+          data-aos="fade-up"
+        >
           <div className="absolute -top-24 -right-24 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-500 pointer-events-none" />
           
           <div className="relative z-10 space-y-4 text-center max-w-5xl mx-auto">
@@ -201,7 +231,11 @@ export default function HomePage() {
         {/* Services Grid (Trading, Maintenance, Rentals, Services) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Trading */}
-          <div className="group relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50">
+          <div 
+            className="group relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div className="w-12 h-12 mb-4 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
               📦
             </div>
@@ -214,7 +248,11 @@ export default function HomePage() {
           </div>
 
           {/* Maintenance */}
-          <div className="group relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50">
+          <div 
+            className="group relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div className="w-12 h-12 mb-4 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
               🛠️
             </div>
@@ -227,7 +265,11 @@ export default function HomePage() {
           </div>
 
           {/* Rentals */}
-          <div className="group relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50">
+          <div 
+            className="group relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div className="w-12 h-12 mb-4 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
               🔄
             </div>
@@ -240,7 +282,11 @@ export default function HomePage() {
           </div>
 
           {/* Services */}
-          <div className="group relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50">
+          <div 
+            className="group relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <div className="w-12 h-12 mb-4 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
               🤝
             </div>
@@ -256,7 +302,7 @@ export default function HomePage() {
         {/* Featured Products & Services Cards Section */}
         <div className="space-y-12">
           {/* Products Subsection */}
-          <div className="space-y-4">
+          <div className="space-y-4" data-aos="fade-up">
             <div className="text-center space-y-2">
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
                 Our Products
@@ -272,7 +318,7 @@ export default function HomePage() {
           </div>
 
           {/* Services Subsection */}
-          <div className="space-y-4">
+          <div className="space-y-4" data-aos="fade-up">
             <div className="text-center space-y-2">
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
                 Our Services
@@ -288,6 +334,80 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Rent A/C Units Section */}
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" data-aos="fade-up">
+  {/* Styled Card Container */}
+  <div className="relative overflow-hidden rounded-3xl bg-gray-50/80 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-800 p-6 sm:p-10 lg:p-12 shadow-sm transition-all duration-300 hover:shadow-md">
+    
+    {/* Optional Subtle Decorative Background Glow */}
+    <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl dark:bg-emerald-500/15" />
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      
+      {/* Left Side: Image */}
+      <div className="relative w-full h-[320px] sm:h-[400px] overflow-hidden rounded-2xl shadow-md border border-gray-100 dark:border-gray-800">
+        <Image 
+          src="/images/ac-curtains.jpg" 
+          alt="Rent A/C Units, Chillers & Gensets" 
+          fill 
+          sizes="(max-width: 1024px) 100vw, 50vw" 
+          className="object-cover transition-transform duration-500 hover:scale-105" 
+        />
+      </div>
+
+      {/* Right Side: Text & Button */}
+      <div className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+          Rent A/C Units, Chillers & Gensets
+        </h2>
+
+        <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+          Whether you need to cool down a large space, maintain process
+          temperatures, or provide power to a site, we offer reliable rental solutions
+          for A/C units, water chillers, and diesel generators. Perfect for events,
+          industrial applications, mock-up rooms, and emergency backup needs.
+        </p>
+
+        <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+          All rental units are quick to deploy, energy-efficient, and fully maintained
+          by our technical team  ensuring comfort, performance, and
+          uninterrupted operation whenever you need it.
+        </p>
+
+        <div className="pt-2">
+          <Link 
+            href="/rentals" 
+            className="inline-block rounded-lg bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 shadow-sm hover:shadow-md"
+          >
+            Know More
+          </Link>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    {/* Call to Action Section */}
+    <section className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
+      <div className="bg-emerald-500/10 dark:bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 rounded-3xl p-8 sm:p-12 text-center">
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          Ready to Get Started?
+        </h3>
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6">
+          Contact us today for a free consultation and quote.
+        </p>
+        <Link
+          href="/Contact"
+          className="inline-block rounded-md bg-emerald-500 py-2 px-4 text-sm font-medium text-white transition hover:bg-emerald-600"
+          aria-label="Contact us"
+        >
+          Contact Us
+        </Link>
+      </div>
+    </section>
     </>
   )
 }

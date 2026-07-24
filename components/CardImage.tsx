@@ -35,64 +35,64 @@ export default function CardImage({
         overflow-hidden
         p-0
         pt-0
-        rounded-xl
+        rounded-2xl
         border
         border-slate-200/80
         dark:border-slate-800
         bg-white
         dark:bg-slate-900/60
-        shadow-sm
+        shadow-md
         transition-all
         duration-300
-        hover:-translate-y-1
-        hover:shadow-lg
+        hover:-translate-y-1.5
+        hover:shadow-xl
         hover:border-emerald-500/40
       "
     >
       {/* Top Section Wrapper */}
       <div>
-        {/* Full-width Image spanning flush to top/sides */}
-        <div className="relative h-36 sm:h-40 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+        {/* Larger Image Banner Container */}
+        <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
           <Image
             src={imageSrc}
             alt={typeof title === "string" ? title : "Card Image"}
             fill
             priority
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-transparent" />
         </div>
 
         {/* Content Section */}
-        <CardHeader className="space-y-1.5 px-4 pt-4 pb-2">
-          <CardTitle className="text-center text-sm sm:text-base font-bold leading-snug text-gray-800 dark:text-white line-clamp-2 tracking-tight">
+        <CardHeader className="space-y-2 px-6 pt-5 pb-3">
+          <CardTitle className="text-center text-lg sm:text-xl font-bold leading-snug text-slate-800 dark:text-white line-clamp-2 tracking-tight">
             {title}
           </CardTitle>
 
-          <CardDescription className="text-center text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2 font-light">
+          <CardDescription className="text-center text-sm leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-3 font-light">
             {description}
           </CardDescription>
         </CardHeader>
       </div>
 
       {/* Button Section */}
-      <CardFooter className="px-4 pb-4 pt-2">
+      <CardFooter className="px-6 pb-5 pt-2">
         <Link href={buttonLink} className="w-full">
           <Button
             className="
-              h-9
+              h-11
               w-full
-              rounded-lg
+              rounded-xl
               bg-emerald-600
-              text-xs
+              text-sm
               font-semibold
               text-white
               hover:bg-emerald-700
               dark:bg-emerald-500
               dark:hover:bg-emerald-600
               transition-colors
-              shadow-xs
+              shadow-sm
             "
           >
             View More

@@ -3,6 +3,7 @@ import CardGrid from "@/components/Card"
 import { PRODUCTS, SERVICES } from "@/data/content"
 import Image from 'next/image'
 import Link from 'next/link'
+import { CheckCircle2, ArrowRight, Phone, Zap } from "lucide-react"
 import { Snowflake } from 'lucide-react'
 import { FaRibbon, FaUsers, FaCogs, FaRegClock } from 'react-icons/fa'
 import {
@@ -122,9 +123,9 @@ export default function HomePage() {
             data-aos-duration="1000"
             data-aos-delay="200"
           >
-            <h1 className="mb-6 text-3xl font-bold text-emerald-600 sm:text-4xl dark:text-emerald-400">
+            <h2 className="mb-6 text-3xl font-bold text-emerald-600 sm:text-4xl dark:text-emerald-400">
               Chiller Maintenance Company in UAE
-            </h1>
+            </h2>
 
             <p className="mb-6 text-gray-600 leading-relaxed dark:text-gray-300">
               At{' '}
@@ -357,78 +358,195 @@ export default function HomePage() {
       </section>
 
       {/* Rent A/C Units Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" data-aos="fade-up">
-  {/* Styled Card Container */}
-  <div className="relative overflow-hidden rounded-3xl bg-gray-50/80 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-800 p-6 sm:p-10 lg:p-12 shadow-sm transition-all duration-300 hover:shadow-md">
-    
-    {/* Optional Subtle Decorative Background Glow */}
-    <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl dark:bg-emerald-500/15" />
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-      
-      {/* Left Side: Image */}
-      <div className="relative w-full h-80 sm:h-100 overflow-hidden rounded-2xl shadow-md border border-gray-100 dark:border-gray-800">
-        <Image 
-          src="/images/ac-curtains.jpg" 
-          alt="Rent A/C Units, Chillers & Gensets" 
-          fill 
-          sizes="(max-width: 1024px) 100vw, 50vw" 
-          className="object-cover transition-transform duration-500 hover:scale-105" 
-        />
-      </div>
 
-      {/* Right Side: Text & Button */}
-      <div className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-          Rent A/C Units, Chillers & Gensets
-        </h2>
 
-        <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-          Whether you need to cool down a large space, maintain process
-          temperatures, or provide power to a site, we offer reliable rental solutions
-          for A/C units, water chillers, and diesel generators. Perfect for events,
-          industrial applications, mock-up rooms, and emergency backup needs.
-        </p>
 
-        <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-          All rental units are quick to deploy, energy-efficient, and fully maintained
-          by our technical team  ensuring comfort, performance, and
-          uninterrupted operation whenever you need it.
-        </p>
 
-        <div className="pt-2">
-          <Link 
-            href="/rentals" 
-            className="inline-block rounded-lg bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 shadow-sm hover:shadow-md"
-          >
-            Know More
-          </Link>
+    <section 
+      className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden" 
+      data-aos="fade-up"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        {/* Left Side: Image with Visual Overlay Accent (7 Cols on Desktop) */}
+        <div className="lg:col-span-7 relative">
+          {/* Main Image Frame */}
+          <div className="relative w-full h-90 sm:h-115 lg:h-125 overflow-hidden rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 group">
+            <Image 
+              src="/images/ac-curtains.jpg" 
+              alt="Rent A/C Units, Chillers & Gensets" 
+              fill 
+              priority
+              sizes="(max-width: 1024px) 100vw, 58vw" 
+              className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
+            />
+            {/* Subtle Gradient Vignette */}
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent opacity-80" />
+          </div>
+          
         </div>
-      </div>
 
-    </div>
-  </div>
-</section>
+        {/* Right Side: Editorial Content Layout (5 Cols on Desktop) */}
+        <div className="lg:col-span-5 space-y-6 pt-4 lg:pt-0">
+
+          {/* Heading */}
+          <h2 className="text-3xl sm:text-4xl font-bold text-emerald-700 dark:text-white tracking-tight leading-tight sm:leading-snug">
+            Rent A/C Units, Chillers &amp; Gensets
+          </h2>
+
+          {/* Paragraph 1 */}
+          <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            Whether you need to cool down a large space, maintain process temperatures, or provide uninterrupted power to a site, we offer reliable rental solutions for A/C units, water chillers, and diesel generators.
+          {/* </p> */}
+
+          {/* Key Value Points (Breaks up text wall) */}
+          {/* <ul className="space-y-1.5 py-1">
+            <li className="flex items-start gap-4 text-sm text-slate-700 dark:text-slate-200">
+              <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+              <span className='text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal'>Perfect for events, industrial sites, mock-up rooms &amp; emergency backup.</span>
+            </li>
+            <li className="flex items-start gap-4 text-sm text-slate-700 dark:text-slate-200">
+              <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+              <span className='text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal'>Quick to deploy, highly energy-efficient, and fully load-tested.</span>
+            </li>
+          </ul> */}
+
+          {/* Paragraph 2 */}
+          {/* <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal"> */}
+            <br/><span >All rental units are fully maintained by our dedicated technical team ensuring continuous comfort, peak performance, and zero downtime whenever you need it.</span> 
+          </p>
+
+          {/* Action Button */}
+          <div className="pt-2">
+            <Link 
+              href="/rentals" 
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
+            >
+              <span>Know More</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <div className="text-center space-y-2">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                Latest Blogs
+          </h3>
+        <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full" />
+         <p className="max-w-3xl mx-auto text-center text-base sm:text-lg font-normal text-gray-600 dark:text-gray-300 tracking-wide px-4 ">
+              Stay updated with our latest tutorials, tips, and insights.
+            </p>
+        <section className='w-200 h-200'>
+
+        </section>
+      </div>
 
 
     {/* Call to Action Section */}
-    <section className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
-      <div className="bg-emerald-500/10 dark:bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 rounded-3xl p-8 sm:p-12 text-center">
-        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-          Ready to Get Started?
-        </h3>
-        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6">
-          Contact us today for a free consultation and quote.
-        </p>
-        <Link
-          href="/Contact"
-          className="inline-block rounded-md bg-emerald-500 py-2 px-4 text-sm font-medium text-white transition hover:bg-emerald-600"
-          aria-label="Contact us"
+    <section 
+      className="w-full border-t border-b   border-slate-200 dark:border-slate-800/80 bg-slate-50/60 dark:bg-slate-900/40 py-16 px-4 sm:px-6 lg:px-8 transition-colors"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-8">
+        
+        {/* Left Side: Direct Header & Subtext */}
+        <div 
+          className="max-w-2xl space-y-2.5"
+          data-aos="fade-right"
+          data-aos-delay="150"
+          data-aos-duration="800"
         >
-          Contact Us
-        </Link>
+          <p className="text-xs font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-500">
+            Get In Touch
+          </p>
+          
+          <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">
+            Ready to discuss your project?
+          </h2>
+          
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
+            Contact us today for a direct technical consultation and project quote.
+          </p>
+        </div>
+
+        {/* Right Side: Clean Inline Action Links */}
+        <div 
+          className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 shrink-0"
+          data-aos="fade-left"
+          data-aos-delay="200"
+          data-aos-duration="800"
+        >
+          {/* Primary Action Button */}
+          <Link
+            href="/Contact"
+            className="
+              inline-flex
+              items-center
+              justify-center
+              gap-2
+              rounded-md
+              bg-emerald-700
+              px-6
+              py-3
+              text-sm
+              font-semibold
+              text-white
+              shadow-xs
+              transition-all
+              duration-200
+              hover:bg-emerald-800
+              hover:shadow-md
+              active:scale-95
+              group "
+          >
+            <span>Contact Us</span>
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+          </Link>
+
+          {/* Secondary Call Action */}
+          <Link
+            href=""
+            className="
+              inline-flex
+              items-center
+              justify-center
+              gap-2
+              rounded-md
+              border
+              border-slate-300
+              dark:border-slate-700
+              bg-white/80
+              dark:bg-slate-800/80
+              px-5
+              py-3
+              text-sm
+              font-semibold
+              text-slate-700
+              dark:text-slate-200
+              transition-all
+              duration-200
+              hover:border-emerald-700
+              hover:text-emerald-700
+              dark:hover:border-emerald-500
+              dark:hover:text-emerald-400
+              active:scale-95
+            "
+          >
+            <Phone className="h-4 w-4 text-emerald-700 dark:text-emerald-500 transition-colors" />
+            <span>Call Sales </span>
+          </Link>
+        </div>
+
       </div>
     </section>
+    
     </>
   )
 }

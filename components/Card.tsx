@@ -16,7 +16,8 @@ interface CardGridProps {
 export default function CardGrid({ items }: CardGridProps) {
   return (
     <section className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      {/* 4 Cards in 1 Row on Desktop Screens (lg:grid-cols-4) */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
         {items.map((item) => (
           <CardImage
             key={item.id}

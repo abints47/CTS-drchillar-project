@@ -22,6 +22,13 @@ export const PRODUCTS: CardItem[] = [
     imageSrc: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop",
     buttonLink: "/products/ac-units",
   },
+    {
+    id: 4,
+    title: "A/C Units & Air Curtains",
+    description: "Efficient air conditioning systems designed for comfort and reliability.",
+    imageSrc: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop",
+    buttonLink: "/products/ac-units",
+  },
 ]
 
 export const SERVICES: CardItem[] = [
@@ -41,6 +48,20 @@ export const SERVICES: CardItem[] = [
   },
   {
     id: 103,
+    title: "Coil Manufacturing &\n Replacement",
+    description: "High-grade custom cooling coil manufacturing tailored to your specs.",
+    imageSrc: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
+    buttonLink: "/services/coil-manufacturing",
+  },
+  {
+    id: 104,
+    title: "Coil Manufacturing &\n Replacement",
+    description: "High-grade custom cooling coil manufacturing tailored to your specs.",
+    imageSrc: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
+    buttonLink: "/services/coil-manufacturing",
+  },
+  {
+    id: 105,
     title: "Coil Manufacturing &\n Replacement",
     description: "High-grade custom cooling coil manufacturing tailored to your specs.",
     imageSrc: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",

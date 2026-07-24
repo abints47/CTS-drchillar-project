@@ -34,30 +34,73 @@
   object-position: center;
 }
 
-/* Gradient Overlay for Text Readability */
 .slide__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.3) 60%,
     transparent 100%
   );
   pointer-events: none;
 }
 
-/* Text Content Container */
+/* =========================================
+   DYNAMIC SLIDE CONTENT CONTAINER
+   ========================================= */
 .slide__content {
   position: absolute;
-  bottom: 10%;
+  bottom: 12%;
   left: 8%;
   right: 8%;
   color: #ffffff;
   z-index: 10;
-  max-width: 42rem;
+  max-width: 48rem;
 }
 
+/* 1. HERO BRAND HEADER ANIMATION */
+.hero__header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 280px;
+  /* transform: scale(1.2);
+  transform-origin: left center; */
+  animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.hero__logo {
+  object-fit: contain;
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.hero__brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__brandName {
+  font-size: 1.7  rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.2rem 0;
+  line-height: 1.2;
+}
+
+.hero__tagline {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #00b85c;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* 2. SLIDE TITLE ANIMATION (STAGGERED 0.1s) */
 .slide__title {
   font-size: 2.8rem;
   font-weight: 700;
@@ -66,11 +109,57 @@
   margin: 0 0 0.5rem 0;
   line-height: 1.2;
   color: #00b85c;
+  animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
+  opacity: 0;
 }
 
+/* 3. SLIDE DESCRIPTION ANIMATION (STAGGERED 0.2s) */
 .slide__description {
   font-size: 1.125rem;
   margin: 0;
-  opacity: 0.9;
+  opacity: 0;
   line-height: 1.5;
+  animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+
+/* SHARED HORIZONTAL KEYFRAME */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .hero__header {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero__logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero__brandName {
+    font-size: 1.1rem;
+  }
+
+  .hero__tagline {
+    font-size: 0.8rem;
+  }
+
+  .slide__title {
+    font-size: 1.75rem;
+    white-space: normal;
+  }
+
+  .slide__description {
+    font-size: 0.95rem;
+  }
 }

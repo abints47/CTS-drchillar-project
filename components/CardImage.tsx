@@ -1,6 +1,7 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardDescription,
@@ -19,41 +20,82 @@ interface CardProps {
 export default function CardImage({
   title = "Design systems meetup",
   description = "A practical talk on component APIs, accessibility, and shipping faster.",
-  imageSrc = "https://picsum.photos/id/1/200/300",
+  imageSrc = "https://picsum.photos/id/1/600/400",
   buttonLink = "/Products",
 }: CardProps) {
   return (
-    <Card className="group relative mx-auto flex flex-col justify-between h-full w-full max-w-sm overflow-hidden pt-0 shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl">
+    <Card
+      className="
+        group
+        flex
+        h-full
+        w-full
+        flex-col
+        justify-between
+        overflow-hidden
+        p-0
+        pt-0
+        rounded-xl
+        border
+        border-slate-200/80
+        dark:border-slate-800
+        bg-white
+        dark:bg-slate-900/60
+        shadow-sm
+        transition-all
+        duration-300
+        hover:-translate-y-1
+        hover:shadow-lg
+        hover:border-emerald-500/40
+      "
+    >
       {/* Top Section Wrapper */}
       <div>
-        {/* Container for the image */}
-        <div className="relative aspect-video w-full overflow-hidden bg-muted transform-gpu">
+        {/* Full-width Image spanning flush to top/sides */}
+        <div className="relative h-36 sm:h-40 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
           <Image
             src={imageSrc}
             alt={typeof title === "string" ? title : "Card Image"}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 will-change-transform group-hover:scale-105"
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
-          {/* Scoped dark overlay */}
-          <div className="absolute inset-0 bg-black/20 pointer-events-none transition-opacity duration-300 group-hover:bg-black/10" />
+          <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-transparent" />
         </div>
 
-        <CardHeader className="pt-4">
-          <CardTitle className="font-sans text-[20px] font-bold leading-7 text-zinc-800 text-center tracking-tight whitespace-pre-line">
+        {/* Content Section */}
+        <CardHeader className="space-y-1.5 px-4 pt-4 pb-2">
+          <CardTitle className="text-center text-sm sm:text-base font-bold leading-snug text-gray-800 dark:text-white line-clamp-2 tracking-tight">
             {title}
           </CardTitle>
-          <CardDescription className="mt-3 font-sans text-[15px] leading-5 text-[#5F6B7A] text-center">
+
+          <CardDescription className="text-center text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2 font-light">
             {description}
           </CardDescription>
         </CardHeader>
       </div>
 
-      {/* Pinned Bottom Section */}
-      <CardFooter className="pt-4">
+      {/* Button Section */}
+      <CardFooter className="px-4 pb-4 pt-2">
         <Link href={buttonLink} className="w-full">
-          <Button className="h-9 w-full rounded-md bg-[#10B981] text-white text-base font-semibold hover:bg-[#0EA271] transition-colors">
-            View Details
+          <Button
+            className="
+              h-9
+              w-full
+              rounded-lg
+              bg-emerald-600
+              text-xs
+              font-semibold
+              text-white
+              hover:bg-emerald-700
+              dark:bg-emerald-500
+              dark:hover:bg-emerald-600
+              transition-colors
+              shadow-xs
+            "
+          >
+            View More
           </Button>
         </Link>
       </CardFooter>

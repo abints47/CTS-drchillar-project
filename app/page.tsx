@@ -3,7 +3,7 @@ import CardGrid from "@/components/Card"
 import { PRODUCTS, SERVICES } from "@/data/content"
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle2, ArrowRight, Phone, Zap } from "lucide-react"
+import {  ArrowRight, Phone,  } from "lucide-react"
 import { Snowflake } from 'lucide-react'
 import { FaRibbon, FaUsers, FaCogs, FaRegClock } from 'react-icons/fa'
 import {
@@ -467,7 +467,7 @@ export default function HomePage() {
             Get In Touch
           </p>
           
-          <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-[#1A1F2B] dark:text-white tracking-tight">
             Ready to discuss your project?
           </h2>
           
@@ -540,7 +540,7 @@ export default function HomePage() {
             "
           >
             <Phone className="h-4 w-4 text-emerald-700 dark:text-emerald-500 transition-colors" />
-            <span>Call Sales </span>
+            <span>Call  </span>
           </Link>
         </div>
 

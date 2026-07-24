@@ -64,8 +64,10 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  
   margin-bottom: 1.5rem;
-  padding-bottom: 280px;
+  padding-bottom: 40px;
+  padding-left: 50px;
   /* transform: scale(1.2);
   transform-origin: left center; */
   animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -84,7 +86,7 @@
 }
 
 .hero__brandName {
-  font-size: 1.7  rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 0.2rem 0;
@@ -92,7 +94,7 @@
 }
 
 .hero__tagline {
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #00b85c;
   margin: 0;
@@ -106,6 +108,8 @@
   font-weight: 700;
   white-space: nowrap;
   text-overflow: ellipsis;
+  padding-bottom: 10px;
+  padding-left: 80px;
   margin: 0 0 0.5rem 0;
   line-height: 1.2;
   color: #00b85c;
@@ -116,6 +120,8 @@
 /* 3. SLIDE DESCRIPTION ANIMATION (STAGGERED 0.2s) */
 .slide__description {
   font-size: 1.125rem;
+  padding-bottom: 180px;
+  padding-left: 80px;
   margin: 0;
   opacity: 0;
   line-height: 1.5;

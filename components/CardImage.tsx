@@ -77,7 +77,7 @@ export default function CardImage({
       </div>
 
       {/* Button Section */}
-      <CardFooter className="px-6 pb-5 pt-2">
+      <CardFooter className="px-28 pb-2 pt-2">
         <Link href={buttonLink} className="w-full">
           <Button
             className="

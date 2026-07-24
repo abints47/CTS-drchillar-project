@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, X ,Phone} from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Navbar.module.css'
 import logo from '@/public/logo.png'
@@ -13,10 +13,6 @@ export default function Navbar() {
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [hoveredPath, setHoveredPath] = useState<string | null>(null)
-  
-  // Autohide state
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
 
   const pathname = usePathname()
   const isHomePage = pathname === '/'
@@ -26,30 +22,19 @@ export default function Navbar() {
       const currentScrollY = window.scrollY
       const heroThreshold = window.innerHeight * 0.85
 
-      // 1. Determine whether we are past the Hero section
+      // Determine whether we are past the Hero section for background styling
       const pastHero = !isHomePage || currentScrollY > heroThreshold
       setIsScrolledPastHero(pastHero)
-
-      // 2. Autohide Logic:
-      // If inside the Hero section -> keep navbar ALWAYS visible
-      if (isHomePage && currentScrollY <= heroThreshold) {
-        setIsVisible(true)
-      } else {
-        // After Hero section -> Autohide on scroll down, show on scroll up
-        if (currentScrollY > lastScrollY && currentScrollY > heroThreshold) {
-          setIsVisible(false) // Hide on scroll DOWN
-        } else {
-          setIsVisible(true)  // Show on scroll UP
-        }
-      }
-
-      setLastScrollY(currentScrollY)
     }
+
+    // Run once on load to set initial state
+    handleScroll()
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY, isHomePage])
+  }, [isHomePage])
 
+  // Close mobile menu on page navigation
   useEffect(() => {
     setMobileMenuOpen(false)
   }, [pathname])
@@ -60,6 +45,7 @@ export default function Navbar() {
     { href: '/Products', label: 'Products' },
     { href: '/Services', label: 'Services' },
     { href: '/Contact', label: 'Contact Us' },
+    { href: '/Phone', label: <Phone/>}
   ]
 
   const isTransparent = isHomePage && !isScrolledPastHero
@@ -68,8 +54,7 @@ export default function Navbar() {
     <motion.header 
       className={styles.navbarWrapper}
       initial={{ y: 0 }}
-      animate={{ y: isVisible || mobileMenuOpen ? 0 : -100 }}
-      transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1.0] }}
+      animate={{ y: 0 }} // Remains fixed at the top at all times
     >
       <div 
         className={`
@@ -168,4 +153,4 @@ export default function Navbar() {
       </AnimatePresence>
     </motion.header>
   )
-}
+} 

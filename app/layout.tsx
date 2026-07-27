@@ -5,11 +5,18 @@ import AosProvider from '@/components/AosProvider';
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer"
 import "./globals.css";
+// import { Poppins } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+// const poppins = Poppins({
+//   subsets: ['latin'],
+//   weight: ['400', '500', '600', '700'],
+//   variable: '--font-poppins', // Defines the CSS variable name
+// });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-hidden`}>
+      className={` ${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-hidden`}>
       <body className="bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col">
         <NavBar />
         <main className="flex-1 w-full"> <SmoothScroll> <AosProvider> {children} </AosProvider> </SmoothScroll> </main>

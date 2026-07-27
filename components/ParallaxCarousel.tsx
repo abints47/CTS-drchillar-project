@@ -102,8 +102,18 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
                     key={`animated-content-${selectedIndex}`}
                     className={styles.slide__content}
                   >
-                    {/* HERO BRAND HEADER (Animates with the slide text) */}
-                    <div className={styles.hero__header}>
+                  
+                   
+
+                    {/* DYNAMIC SLIDE TITLE & DESCRIPTION */}
+                    <p className={styles.slide__title}>{slide.title}</p>
+                    <p className={styles.slide__description}>
+                      {slide.description}
+                    </p>
+
+                        {/* HERO BRAND HEADER (Animates with the slide text) */}
+
+                       <div className={styles.hero__header}>
                       <Image
                         src="/logo.png"
                         alt="CTS Logo"
@@ -120,12 +130,8 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
                       </div>
                     </div>
 
-                    {/* DYNAMIC SLIDE TITLE & DESCRIPTION */}
-                    <p className={styles.slide__title}>{slide.title}</p>
-                    <p className={styles.slide__description}>
-                      {slide.description}
-                    </p>
                   </div>
+                  
                 )}
               </div>
             )

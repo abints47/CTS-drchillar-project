@@ -10,10 +10,10 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-interface CardProps {
+interface CardProps{
   title?: React.ReactNode
   description?: string
-  imageSrc?: string
+  imageSrc?:    string
   buttonLink?: string
 }
 
@@ -77,14 +77,14 @@ export default function CardImage({
       </div>
 
       {/* Button Section */}
-      <CardFooter className="px-28 pb-2 pt-2">  
-        <Link href={buttonLink} className="w-full">
+      <CardFooter className="px-6 pb-6 pt-2 bg-white dark:bg-slate-900/60 border-t-0 flex justify-center">  
+        <Link href={buttonLink} className="w-auto">
           <Button
             className="
               h-11
-              w-full
+              px-10
               rounded-xl
-              bg-emerald-600
+              bg-emerald-500
               text-sm
               font-semibold
               text-white

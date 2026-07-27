@@ -45,7 +45,7 @@ export default function Navbar() {
     { href: '/Products', label: 'Products' },
     { href: '/Services', label: 'Services' },
     { href: '/Contact', label: 'Contact Us' },
-    { href: '/Phone', label: <Phone/>}
+    { href: '/phone', label: <Phone/>}
   ]
 
   const isTransparent = isHomePage && !isScrolledPastHero

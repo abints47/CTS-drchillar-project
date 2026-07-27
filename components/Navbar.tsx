@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Menu, X ,Phone} from 'lucide-react'
+import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Navbar.module.css'
 import logo from '@/public/logo.png'
@@ -13,6 +13,7 @@ export default function Navbar() {
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [hoveredPath, setHoveredPath] = useState<string | null>(null)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   const pathname = usePathname()
   const isHomePage = pathname === '/'
@@ -22,30 +23,48 @@ export default function Navbar() {
       const currentScrollY = window.scrollY
       const heroThreshold = window.innerHeight * 0.85
 
-      // Determine whether we are past the Hero section for background styling
       const pastHero = !isHomePage || currentScrollY > heroThreshold
       setIsScrolledPastHero(pastHero)
     }
 
-    // Run once on load to set initial state
     handleScroll()
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isHomePage])
 
-  // Close mobile menu on page navigation
   useEffect(() => {
     setMobileMenuOpen(false)
+    setActiveDropdown(null)
   }, [pathname])
 
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/About', label: 'About Us' },
-    { href: '/Products', label: 'Products' },
-    { href: '/Services', label: 'Services' },
+    { 
+      href: '/Products', 
+      label: 'Products',
+      submenu: [
+        { href: '/Products#chillers', label: 'Water Chillers, Coolers and Heat Pumps' },
+        { href: '/Products#air-handlers', label: 'Cold Rooms & Ice Block Machines' },
+        { href: '/Products#cold-rooms', label: 'Heat Exchangers & Cooling Towers' },
+        { href: '/Products/sadas', label: 'AC Units & Air Curtains' },
+      ]
+    },
+    { 
+      href: '/Services', 
+      label: 'Services',
+      submenu: [
+        { href: '/Services#maintenance', label: 'AC, Chillers & Genset Rentals ' },
+        { href: '/Services#installation', label: 'Chilled Water Pipeline & Flushing' },
+        { href: '/Services#chillers', label: 'AC Chillers & Cold Rooms Maintenance' },
+        { href: '/Services#Coil', label: 'Coil Manufacturing & Replacement' },
+        { href: '/Services#winding', label: 'Overhauling & Winding' },
+        { href: '/Services#amc', label: 'AMC' },
+      ]
+    },
     { href: '/Contact', label: 'Contact Us' },
-    { href: '/phone', label: <Phone/>}
+    { href: '/phone', label: <Phone size={18} /> }
   ]
 
   const isTransparent = isHomePage && !isScrolledPastHero
@@ -54,7 +73,7 @@ export default function Navbar() {
     <motion.header 
       className={styles.navbarWrapper}
       initial={{ y: 0 }}
-      animate={{ y: 0 }} // Remains fixed at the top at all times
+      animate={{ y: 0 }}
     >
       <div 
         className={`
@@ -77,43 +96,77 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav 
           className={`${styles.navDesktop} ${isTransparent ? styles.navDesktopTransparent : ''}`} 
-          onMouseLeave={() => setHoveredPath(null)}
+          onMouseLeave={() => {
+            setHoveredPath(null)
+            setActiveDropdown(null)
+          }}
         >
           {navLinks.map((link) => {
             const isActive = pathname === link.href
             const isHovered = hoveredPath === link.href
+            const hasSubmenu = Boolean(link.submenu)
 
             return (
-              <Link
+              <div 
                 key={link.href}
-                href={link.href}
-                onMouseEnter={() => setHoveredPath(link.href)}
-                className={`
-                  ${styles.navItem} 
-                  ${isActive ? styles.active : ''} 
-                  ${isTransparent && !isActive ? styles.navItemTransparent : ''}
-                `}
+                className={styles.navItemWrapper}
+                onMouseEnter={() => {
+                  setHoveredPath(link.href)
+                  if (hasSubmenu) setActiveDropdown(link.href)
+                  else setActiveDropdown(null)
+                }}
               >
-                <span className={styles.navText}>{link.label}</span>
+                <Link
+                  href={link.href}
+                  className={`
+                    ${styles.navItem} 
+                    ${isActive ? styles.active : ''} 
+                    ${isTransparent && !isActive ? styles.navItemTransparent : ''}
+                  `}
+                >
+                  <span className={`${styles.navText} flex items-center gap-1`}>
+                    {link.label}
+                    {hasSubmenu && <ChevronDown size={13} className="opacity-80" />}
+                  </span>
 
-                {/* Active Route Indicator Pill */}
-                {isActive && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className={styles.activePill}
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className={styles.activePill}
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
 
-                {/* Hover Indicator Pill */}
-                {isHovered && !isActive && (
-                  <motion.div
-                    layoutId="hoverTab"
-                    className={isTransparent ? styles.hoverPillTransparent : styles.hoverPill}
-                    transition={{ type: 'spring', stiffness: 400, damping: 35 }}
-                  />
+                  {isHovered && !isActive && (
+                    <motion.div
+                      layoutId="hoverTab"
+                      className={isTransparent ? styles.hoverPillTransparent : styles.hoverPill}
+                      transition={{ type: 'spring', stiffness: 400, damping: 35 }}
+                    />
+                  )}
+                </Link>
+
+                {/* Desktop Dropdown Submenu */}
+                {hasSubmenu && activeDropdown === link.href && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
+                    className={styles.dropdownMenu}
+                  >
+                    {link.submenu?.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className={styles.dropdownItem}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </motion.div>
                 )}
-              </Link>
+              </div>
             )
           })}
         </nav>
@@ -140,17 +193,31 @@ export default function Navbar() {
             className={styles.navMobile}
           >
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${styles.mobileNavItem} ${pathname === link.href ? styles.activeMobile : ''}`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href} className="flex flex-col w-full">
+                <Link
+                  href={link.href}
+                  className={`${styles.mobileNavItem} ${pathname === link.href ? styles.activeMobile : ''}`}
+                >
+                  {link.label}
+                </Link>
+                {link.submenu && (
+                  <div className={styles.mobileSubmenuContainer}>
+                    {link.submenu.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className={styles.mobileSubItem}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </motion.nav>
         )}
       </AnimatePresence>
     </motion.header>
   )
-} 
+}

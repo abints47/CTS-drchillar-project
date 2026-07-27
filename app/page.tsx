@@ -450,102 +450,93 @@ export default function HomePage() {
 
     {/* Call to Action Section */}
     <section 
-      className="w-full border-t border-b   border-slate-200 dark:border-slate-800/80 bg-slate-50/60 dark:bg-slate-900/40 py-16 px-4 sm:px-6 lg:px-8 transition-colors"
-      data-aos="fade-up"
-      data-aos-duration="800"
-    >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-8">
-        
-        {/* Left Side: Direct Header & Subtext */}
-        <div 
-          className="max-w-2xl space-y-2.5"
-          data-aos="fade"
-          data-aos-delay="105"
-          data-aos-duration="800"
-        >
-          <p className="text-xs font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-500">
-            Get In Touch
-          </p>
-          
-          <h2 className="text-2xl sm:text-3xl font-semibold text-[#1A1F2B] dark:text-white tracking-tight">
-            Ready to discuss your project?
-          </h2>
-          
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
-            Contact us today for a direct technical consultation and project quote.
-          </p>
-        </div>
+  className="w-full border-t border-b border-slate-200 dark:border-slate-800/80 bg-slate-50/60 dark:bg-slate-900/40 py-16 px-4 sm:px-6 lg:px-8 transition-colors"
+  data-aos="fade"
+  data-aos-duration="500"
+>
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-8">
+    
+    {/* Left Side: Direct Header & Subtext */}
+    <div className="max-w-2xl space-y-2.5">
+      <p className="text-xs font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-500">
+        Get In Touch
+      </p>
+      
+      <h2 className="text-2xl sm:text-3xl font-semibold text-[#1A1F2B] dark:text-white tracking-tight">
+        Ready to discuss your project?
+      </h2>
+      
+      <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
+        Contact us today for a direct technical consultation and project quote.
+      </p>
+    </div>
 
-        {/* Right Side: Clean Inline Action Links */}
-        <div 
-          className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 shrink-0"
-          data-aos="fade-left"
-          data-aos-delay="200"
-          data-aos-duration="800"
-        >
-          {/* Primary Action Button */}
-          <Link
-            href="/Contact"
-            className="
-              inline-flex
-              items-center
-              justify-center
-              gap-2
-              rounded-md
-              bg-emerald-700
-              px-6
-              py-3
-              text-sm
-              font-semibold
-              text-white
-              shadow-xs
-              transition-all
-              duration-200
-              hover:bg-emerald-800
-              hover:shadow-md
-              active:scale-95
-              group "
-          >
-            <span>Contact Us</span>
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </Link>
+    {/* Right Side: Clean Inline Action Links */}
+    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 shrink-0">
+      {/* Primary Action Button */}
+      <Link
+        href="/Contact"
+        className="
+          inline-flex
+          items-center
+          justify-center
+          gap-2
+          rounded-md
+          bg-emerald-700
+          px-6
+          py-3
+          text-sm
+          font-semibold
+          text-white
+          shadow-xs
+          transition-all
+          duration-200
+          hover:bg-emerald-800
+          hover:shadow-md
+          active:scale-95
+          group
+        "
+      >
+        <span>Contact Us</span>
+        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+      </Link>
 
-          {/* Secondary Call Action */}
-          <Link
-            href=""
-            className="
-              inline-flex
-              items-center
-              justify-center
-              gap-2
-              rounded-md
-              border
-              border-slate-300
-              dark:border-slate-700
-              bg-white/80
-              dark:bg-slate-800/80
-              px-5
-              py-3
-              text-sm
-              font-semibold
-              text-slate-700
-              dark:text-slate-200
-              transition-all
-              duration-200
-              hover:border-emerald-700
-              hover:text-emerald-700
-              dark:hover:border-emerald-500
-              dark:hover:text-emerald-400
-              active:scale-95
-            "
-          >
-            <Phone className="h-4 w-4 text-emerald-700 dark:text-emerald-500 transition-colors" />
-            <span>Call  </span>
-          </Link>
-        </div>
+      {/* Secondary Call Action */}
+      <Link
+        href=""
+        className="
+          inline-flex
+          items-center
+          justify-center
+          gap-2
+          rounded-md
+          border
+          border-slate-300
+          dark:border-slate-700
+          bg-white/80
+          dark:bg-slate-800/80
+          px-5
+          py-3
+          text-sm
+          font-semibold
+          text-slate-700
+          dark:text-slate-200
+          transition-all
+          duration-200
+          hover:border-emerald-700
+          hover:text-emerald-700
+          dark:hover:border-emerald-500
+          dark:hover:text-emerald-400
+          active:scale-95
+        "
+      >
+        <Phone className="h-4 w-4 text-emerald-700 dark:text-emerald-500 transition-colors" />
+        <span>Call</span>
+      </Link>
+    </div>
 
-      </div>
-    </section>
+  </div>
+</section>
     
     </>
   )

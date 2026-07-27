@@ -79,8 +79,14 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+.navItemWrapper {
+  position: relative;
+}
+
 .navItem {
   position: relative;
+  display: flex;
+  align-items: center;
   padding: 0.45rem 1.1rem;
   font-size: 0.95rem;
   font-weight: 500;
@@ -107,6 +113,43 @@
 
 .navItemTransparent:hover {
   color: #ffffff;
+}
+
+/* Desktop Dropdown Submenu Container */
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% - 0.2rem);
+  left: 0;
+  min-width: 320px; /* Increased from 210px to give more room for longer text */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 184, 148, 0.2);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+}
+
+/* Individual Submenu Items */
+.dropdownItem {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #2d3436;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.6rem;
+  transition: all 0.2s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dropdownItem:hover {
+  background: rgba(0, 184, 148, 0.08);
+  color: #279c1d;
+  padding-left: 1.05rem;
 }
 
 /* Framer Motion Active & Hover Pills */
@@ -178,6 +221,7 @@
   border-radius: 0.75rem;
   transition: all 0.2s ease;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: block;
 }
 
 .mobileNavItem:hover {
@@ -189,6 +233,30 @@
   background: #279c1d;
   color: #ffffff !important;
   font-weight: 600;
+}
+
+.mobileSubmenuContainer {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0.15rem 0 0.5rem 0.5rem;
+  border-left: 2px solid rgba(0, 184, 148, 0.2);
+}
+
+.mobileSubItem {
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #555555;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mobileSubItem:hover {
+  background: rgba(0, 184, 148, 0.08);
+  color: #279c1d;
 }
 
 @media (max-width: 768px) {

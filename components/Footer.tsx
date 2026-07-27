@@ -13,10 +13,10 @@ export default function Footer() {
           
           {/* Brand & Description Column */}
           <div className="space-y-4">
-            <Link href="/" className="text-xl font-bold tracking-tight text-[#1FAA6D]">
+            <Link href="/" className="text-xl  font-bold tracking-tight text-[#1FAA6D]">
               Chiller Technical Services L.L.C <section className="pl-30">خدمات التبريد التقنية ذ.م.م</section>
             </Link>
-            <p className="text-sm text-[#FFFFFF] max-w-sm ">
+            <p className="text-sm pr-20 pt-3 leading-6 text-[#FFFFFF] max-w-sm ">
               High-quality cooling and refrigeration solutions for industrial and commercial needs built for performance, reliability, and efficiency.
             </p>
 
@@ -173,8 +173,8 @@ export default function Footer() {
 
         {/* Bottom Bar Section */}
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-[#7B8794] sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} CTS , Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" className="hover:text-gray-400 transition-colors">
-            Website Developed By Maktal
+          <p>&copy; {new Date().getFullYear()} CTS , Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" >
+           <span className="hover:text-gray-200 transition-colors">  Website Developed By Maktal</span>
           </Link> </span></p>
 
           <div className="flex gap-6">

@@ -8,7 +8,6 @@ import {
   Award, 
   ArrowRight, 
   Phone, 
-  CheckCircle2, 
   Settings, 
   Snowflake, 
   FileText 
@@ -37,7 +36,7 @@ export default function AboutPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
-                Engineering Excellence in <span className="text-emerald-600 dark:text-emerald-500">HVAC & Cooling</span>
+                Engineering Excellence in <span className="text-emerald-600 ">HVAC & Cooling</span>
               </h1>
 
               <p className="text-lg text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-2xl">

@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Menu, X, Phone, ChevronDown } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, Phone, ChevronDown, Target } from 'lucide-react'
+import { motion, AnimatePresence, setTarget } from 'framer-motion'
 import styles from './Navbar.module.css'
 import logo from '@/public/logo.png'
 
@@ -64,7 +64,7 @@ export default function Navbar() {
       ]
     },
     { href: '/Contact', label: 'Contact Us' },
-    { href: '/phone', label: <Phone size={18} /> }
+    { href: 'https://wa.me/97167434537',  label: <Phone size={18} />,isExternal: true }
   ]
 
   const isTransparent = isHomePage && !isScrolledPastHero

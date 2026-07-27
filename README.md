@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CTS Chiller Maintenance Website
 
-## Getting Started
+A modern, high-performance web application built for **CTS (Central Temperature Systems / Chiller Technical Services)** to showcase industrial chiller maintenance services, manage client inquiries, schedule service requests, and provide resources for HVAC/chiller upkeep. 
 
-First, run the development server:
+Built with the modern web stack, featuring server-side rendering (SSR) for optimal SEO and lightning-fast page loads.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Service Showcase:** Detailed breakdowns of preventive maintenance, emergency repairs, retrofitting, and diagnostics for industrial chillers.
+- **Service Request & Booking Portal:** Interactive forms for clients to request urgent repairs or schedule routine maintenance.
+- **Client Dashboard / Portal (Optional):** Allow registered clients to track ongoing maintenance tickets, view service histories, and download reports.
+- **Dynamic Blog / Resource Hub:** Articles, troubleshooting guides, and best practices for extending chiller lifespan.
+- **Responsive & Mobile-First Design:** Fully optimized for desktop, tablet, and mobile devices used by field technicians and facility managers.
+- **SEO Optimized:** Server-side rendering via Next.js to rank high on search engines for local HVAC and chiller services.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** [Next.js](https://nextjs.org/) (React Framework with App Router / Pages Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) / [CSS Modules]
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/) / [Radix UI] *(Update as applicable)*
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Form Handling & Validation:** [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+- **Database / Backend:** [Prisma / PostgreSQL / Firebase / Supabase] *(Update based on your setup)*
+- **Deployment:** [Vercel](https://vercel.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+├── public/                 # Static assets (images, logos, fonts)
+├── src/
+│   ├── app/                # Next.js App Router (or `pages/`)
+│   │   ├── api/            # Backend API routes
+│   │   ├── dashboard/      # Client/Admin dashboard pages
+│   │   ├── services/       # Chiller maintenance service pages
+│   │   ├── contact/        # Service request & contact page
+│   │   ├── layout.tsx      # Root layout
+│   │   └── page.tsx        # Homepage
+│   ├── components/         # Reusable UI components (Navbar, Footer, Forms)
+│   ├── lib/                # Utility functions and database connectors
+│   └── styles/             # Global stylesheets
+├── .env.example            # Environment variables template
+├── package.json
+└── README.md

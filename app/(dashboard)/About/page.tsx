@@ -5,75 +5,162 @@ import Image from 'next/image'
 import Link from 'next/link'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { 
-  ShieldCheck, 
-  Wrench, 
-  Clock, 
-  Award, 
-  ArrowRight, 
-  Phone, 
-  Settings, 
-  Snowflake, 
-  FileText
+import {
+  ShieldCheck,
+  Wrench,
+  Clock,
+  Award,
+  ArrowRight,
+  Phone,
+  Settings,
+  Snowflake,
+  FileText,
+  CheckCircle2,
+  Handshake,
+  Gauge,
+  BadgeCheck,
 } from 'lucide-react'
+
+// Structured data helps search engines understand this page belongs to a
+// real HVAC service business (LocalBusiness / HVACBusiness rich snippet).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HVACBusiness',
+  name: 'CTS',
+  description:
+    'CTS provides end-to-end HVAC engineering, industrial chiller installation, cold storage solutions, and 24/7 maintenance services for commercial and industrial facilities across the UAE.',
+  telephone: '+971-6-743-4537',
+  areaServed: 'United Arab Emirates',
+  foundingDate: '2009',
+  slogan: 'Your Trusted HVAC & Chillers Partner in the UAE',
+}
+
+// Update this list with your actual accreditations/approvals before launch —
+// these are placeholders showing where certification badges go.
+const certifications = [
+  'Licensed & Insured Contractor',
+  'Manufacturer-Approved Technicians',
+  'Health & Safety Compliant',
+  'Certified Refrigerant Handling',
+]
+
+const coreValues = [
+  {
+    title: 'Safety First',
+    desc: 'Every engagement follows strict site-safety protocols, from confined-space work to pressurized chilled-water systems.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Engineering Precision',
+    desc: 'Load calculations, commissioning, and installation are executed to documented technical standards, not estimates.',
+    icon: Gauge,
+  },
+  {
+    title: 'Long-Term Partnership',
+    desc: 'We plan around your facility\u2019s lifecycle, not a single service call, so maintenance contracts scale with your operation.',
+    icon: Handshake,
+  },
+  {
+    title: 'Accountability',
+    desc: 'Documented reporting, transparent quoting, and a single point of contact from survey through sign-off.',
+    icon: BadgeCheck,
+  },
+]
+
+const capabilities = [
+  {
+    title: 'Chiller Maintenance',
+    desc: 'Complete preventive maintenance, overhauling, and troubleshooting for air and water-cooled systems.',
+    icon: Wrench,
+  },
+  {
+    title: 'AC Installation',
+    desc: 'Precise installation management for package units, split systems, and commercial ducting grids.',
+    icon: Settings,
+  },
+  {
+    title: 'HVAC Rentals',
+    desc: 'Reliable temporary rental fleets for water chillers, generators, and backup environmental control.',
+    icon: Snowflake,
+  },
+  {
+    title: 'Cold Room Solutions',
+    desc: 'Turnkey design, fabrication, and thermal maintenance for industrial cold rooms and freezer spaces.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Chilled Water Piping',
+    desc: 'Expert insulation, pressure testing, alignment, and network optimization for chilled water systems.',
+    icon: Clock,
+  },
+  {
+    title: 'Annual Contracts (AMC)',
+    desc: 'Structured proactive inspection routines ensuring constant peak operating efficiency year-round.',
+    icon: FileText,
+  },
+]
 
 export default function AboutPage() {
   useEffect(() => {
     AOS.init({
       once: true,
       easing: 'ease-out',
+      duration: 800,
     })
   }, [])
 
   return (
-    <main className="min-h-screen pt-25 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-[#00b96b] selection:text-white transition-colors duration-300">
-      
-      {/* =====================================================================
-          1. MINIMALIST HERO SECTION
-          ==================================================================== */}
-      <section className="relative overflow-hidden py-16 lg:py-24 border-b border-gray-100 dark:border-slate-800/80">
+    <main className="min-h-screen pt-25 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-emerald-600 selection:text-white transition-colors duration-300">
+      {/* JSON-LD structured data for search engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <section
+        aria-labelledby="about-hero-heading"
+        className="relative overflow-hidden py-16 lg:py-24 border-b border-slate-200 dark:border-slate-800"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            {/* Left Content (Minimal Width & Spacing) */}
-            <div className="lg:col-span-6 space-y-6" data-aos="fade-right" data-aos-duration="800">
+
+            <div className="lg:col-span-6 space-y-6" data-aos="fade-right">
 
               <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-800 dark:text-emerald-400 leading-[1.15]">
-                  Your Trusted <span className="text-emerald-600 dark:text-white">HVAC & Chillers</span> Partner in the UAE
+                <h1
+                  id="about-hero-heading"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.15]"
+                >
+                  Your Trusted <span className="text-emerald-600 dark:text-emerald-400">HVAC &amp; Chillers</span> Partner in the UAE
                 </h1>
 
-                <p className="text-base sm:text-lg text-[#6b7280] dark:text-slate-400 font-light leading-relaxed max-w-xl">
-                  Providing end-to-end HVAC engineering, industrial chiller installation, cold storage solutions, and 24/7 maintenance services for commercial and industrial facilities.
+                <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 font-light leading-relaxed max-w-xl">
+                  We provide end-to-end HVAC engineering, industrial chiller installation, cold storage solutions, and 24/7 maintenance services for commercial and industrial facilities across the region.
                 </p>
               </div>
 
-              {/* Minimal Action CTAs */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <Link
                   href="/Contact"
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-emerald-700 hover:bg-[#00a35e] rounded-xl transition-all shadow-sm"
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
                 >
                   Request Consultation
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a
                   href="tel:+97167434537"
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#183153] dark:text-slate-300 bg-[#fafafa] hover:bg-gray-100 dark:bg-slate-900 dark:hover:bg-slate-800 rounded-xl transition-all border border-gray-200 dark:border-slate-800"
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-300 bg-slate-50 hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800 rounded-xl transition-colors border border-slate-200 dark:border-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
                 >
-                  <Phone className="mr-2 w-4 h-4 text-[#00b96b] dark:text-emerald-400" />
+                  <Phone className="mr-2 w-4 h-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
                   +971 6 743 4537
                 </a>
               </div>
-
             </div>
 
-            {/* Right Visual Composition */}
-            <div className="lg:col-span-6" data-aos="fade-left" data-aos-duration="800">
-              <div className="relative w-full h-95 sm:h-105 rounded-2xl overflow-hidden shadow-xl border border-gray-200/80 dark:border-slate-800/80">
+            <div className="lg:col-span-6" data-aos="fade-left">
+              <div className="relative w-full h-95 sm:h-105 rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
                 <Image
                   src="/images/asethetic-ac.webp"
-                  alt="CTS Professional HVAC Systems"
+                  alt="CTS engineer servicing a commercial HVAC chiller unit in the UAE"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   loading="eager"
@@ -81,24 +168,22 @@ export default function AboutPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
-                
-                {/* Floating trust badge */}
+
                 <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-slate-800 flex items-center justify-between text-white">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-[#00b96b] rounded-lg text-white">
-                      <Award className="w-5 h-5" />
+                    <div className="p-2 bg-emerald-600 rounded-lg text-white">
+                      <Award className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold">15+ Years</p>
+                      <p className="text-sm font-bold">15+ Years</p>
                       <p className="text-xs text-slate-400 font-light">Industry Leadership</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-semibold text-emerald-400">500+</p>
+                    <p className="text-sm font-bold text-emerald-400">500+</p>
                     <p className="text-xs text-slate-400 font-light">Projects Executed</p>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -106,94 +191,107 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-[#fafafa] dark:bg-slate-900/50 border-y border-gray-100 dark:border-slate-800/80">
+      <section aria-labelledby="who-we-are-heading" className="py-20 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-gray-100 dark:border-slate-800 shadow-sm space-y-4" data-aos="fade-up">
-              <div className="w-10 h-10 rounded-xl bg-[#00b96b]/10 dark:bg-emerald-500/10 text-[#00b96b] dark:text-emerald-400 flex items-center justify-center font-bold font-mono text-sm border border-[#00b96b]/20 dark:border-emerald-500/20">
-                01
-              </div>
-              <h3 className="text-xl font-bold text-[#183153] dark:text-white">Our Mission</h3>
-              <p className="text-[#6b7280] dark:text-slate-400 font-light leading-relaxed text-sm sm:text-base">
-                To deliver reliable, energy-efficient, and engineered cooling solutions that preserve infrastructural integrity while prioritizing long-term customer partnerships throughout the UAE.
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+            <div className="lg:col-span-7 space-y-6" data-aos="fade-up">
+              <h2 id="who-we-are-heading" className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+                Engineering-led HVAC service, built for critical facilities
+              </h2>
+              <p className="text-slate-700 dark:text-slate-400 font-normal text-justify leading-relaxed">
+                CTS was founded to close a gap in the UAE market: facilities that need chiller-grade
+                expertise, not just general AC repair. Our mission is to deliver reliable,
+                energy-efficient, and engineered cooling solutions that protect infrastructure
+                integrity while building long-term customer partnerships throughout the UAE.
               </p>
+              <p className="text-slate-700 dark:text-slate-400 font-normal text-justify ">
+                Our vision is to be the benchmark for HVAC technical proficiency and water chiller
+                system optimization in the region, recognized for uncompromising quality on every
+                project, from a single split-unit install to a full industrial cold storage build.
+              </p>
+
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                {[
+                  'Engineer-supervised installations',
+                  'Documented preventive maintenance',
+                  '24/7 emergency dispatch',
+                  'Transparent, itemized quoting',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300 font-bold">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-gray-100 dark:border-slate-800 shadow-sm space-y-4" data-aos="fade-up" data-aos-delay="150">
-              <div className="w-10 h-10 rounded-xl bg-[#00b96b]/10 dark:bg-emerald-500/10 text-[#00b96b] dark:text-emerald-400 flex items-center justify-center font-bold font-mono text-sm border border-[#00b96b]/20 dark:border-emerald-500/20">
-                02
-              </div>
-              <h3 className="text-xl font-bold text-[#183153] dark:text-white">Our Vision</h3>
-              <p className="text-[#6b7280] dark:text-slate-400 font-light leading-relaxed text-sm sm:text-base">
-                To stand as the absolute benchmark for HVAC technical proficiency and water chiller system optimization, recognized industry-wide for uncompromising quality standards.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-white dark:bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#00b96b]/10 dark:bg-emerald-500/10 text-[#196646] dark:text-emerald-400 font-mono text-xs uppercase tracking-widest border border-[#00b96b]/20 dark:border-emerald-500/20">
-              Technical Scope
-            </span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-green-800 dark:text-white">
-              Comprehensive Core Capabilities
-            </h2>
-            <p className="text-[#6b7280] dark:text-slate-400 font-light">
-              Engineered service packages built specifically for modern corporate and heavy infrastructure constraints.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Chiller Maintenance",
-                desc: "Complete preventive maintenance, overhauling, and troubleshooting for air and water-cooled systems.",
-                icon: Wrench
-              },
-              {
-                title: "AC Installation",
-                desc: "Precise installation management for package units, split systems, and commercial ducting grids.",
-                icon: Settings
-              },
-              {
-                title: "HVAC Rentals",
-                desc: "Reliable temporary rental fleets for water chillers, generators, and backup environmental control.",
-                icon: Snowflake
-              },
-              {
-                title: "Cold Room Solutions",
-                desc: "Turnkey design, fabrication, and thermal maintenance for industrial cold rooms and freezer spaces.",
-                icon: ShieldCheck
-              },
-              {
-                title: "Chilled Water Piping",
-                desc: "Expert insulation, pressure testing, alignment, and network optimization for chilled water systems.",
-                icon: Clock
-              },
-              {
-                title: "Annual Contracts (AMC)",
-                desc: "Structured proactive inspection routines ensuring constant peak operating efficiency year-round.",
-                icon: FileText
-              },
-            ].map((service, idx) => {
-              const IconComponent = service.icon
-              return (
-                <div 
-                  key={idx}
-                  className="p-6 rounded-2xl bg-[#fafafa] dark:bg-slate-900 border border-gray-100 dark:border-slate-800 hover:border-[#00b96b]/50 dark:hover:border-emerald-500/50 transition duration-300 space-y-3"
-                  data-aos="fade-up"
-                  data-aos-delay={idx * 50}
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700 text-[#00b96b] dark:text-emerald-400 flex items-center justify-center">
-                    <IconComponent className="w-5 h-5" />
+            <div className="lg:col-span-5" data-aos="fade-up" data-aos-delay="150">
+              <div className="h-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-8 space-y-6">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                  Our Experience
+                </h3>
+                <dl className="grid grid-cols-2 gap-6">
+                  <div>
+                    <dt className="text-xs text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wide">Founded</dt>
+                    <dd className="text-2xl font-bold text-slate-900 dark:text-white">2009</dd>
                   </div>
-                  <h3 className="text-lg font-bold text-[#183153] dark:text-white">{service.title}</h3>
-                  <p className="text-sm text-[#6b7280] dark:text-slate-400 font-light leading-relaxed">{service.desc}</p>
+                  <div>
+                    <dt className="text-xs text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wide">Experience</dt>
+                    <dd className="text-2xl font-bold text-slate-900 dark:text-white">15+ yrs</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wide">Projects</dt>
+                    <dd className="text-2xl font-bold text-slate-900 dark:text-white">500+</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wide">Dispatch</dt>
+                    <dd className="text-2xl font-bold text-slate-900 dark:text-white">24/7</dd>
+                  </div>
+                </dl>
+                <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wide mb-3 font-bold">
+                    Certifications &amp; Compliance
+                  </p>
+                  <ul className="space-y-2">
+                    {certifications.map((cert) => (
+                      <li key={cert} className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300 font-bold">
+                        <BadgeCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden="true" />
+                        {cert}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="values-heading" className="py-20 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3" data-aos="fade-up">
+            <h2 id="values-heading" className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+              The Standards Behind Every Job
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {coreValues.map((value, idx) => {
+              const IconComponent = value.icon
+              return (
+                <div
+                  key={value.title}
+                  className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3"
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 75}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-emerald-600/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-emerald-600/20">
+                    <IconComponent className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">{value.title}</h3>
+                  <p className="text-s text-slate-500 dark:text-slate-400 font-light leading-relaxed">{value.desc}</p>
                 </div>
               )
             })}
@@ -202,46 +300,110 @@ export default function AboutPage() {
       </section>
 
       {/* =====================================================================
-          5. MINIMAL METRICS BAR
-          ==================================================================== */}
-      <section className="py-12 bg-[#1B2A3D] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-1">
-              <p className="text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-400">15+</p>
-              <p className="text-xs text-slate-300 uppercase tracking-widest font-mono">Years Experience</p>
-            </div>
-            <div className="space-y-1">
-              <p className="text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-400">500+</p>
-              <p className="text-xs text-slate-300 uppercase tracking-widest font-mono">Completed Jobs</p>
-            </div>
-            <div className="space-y-1">
-              <p className="text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-400">24/7</p>
-              <p className="text-xs text-slate-300 uppercase tracking-widest font-mono">Emergency Dispatch</p>
-            </div>
-            <div className="space-y-1">
-              <p className="text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-400">100%</p>
-              <p className="text-xs text-slate-300 uppercase tracking-widest font-mono">Compliance Standard</p>
-            </div>
+      4+5. CAPABILITIES + METRICS — merged, full-bleed backdrop
+      ==================================================================== */}
+      <section aria-label="CTS core capabilities and track record" className="relative py-24 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/asethetic-ac.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+            aria-hidden="true"
+          />
+          {/* Light overlay for text contrast + brand tint */}
+          <div className="absolute inset-0 bg-white/90" />
+          <div className="absolute inset-0 bg-linear-to-t from-white via-white/85 to-emerald-50/60" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* --- Core Capabilities --- */}
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+            <h2 id="capabilities-heading" className="text-4xl font-bold tracking-tight text-slate-900">
+              Comprehensive Core Capabilities
+            </h2>
+            <p className="text-slate-500 font-light">
+              Engineered service packages built specifically for modern corporate and heavy infrastructure constraints.
+            </p>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+            {capabilities.map((service, idx) => {
+              const IconComponent = service.icon
+              return (
+                <article
+                  key={service.title}
+                  className="p-6 rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200 shadow-sm hover:border-emerald-600/40 hover:shadow-md transition-all duration-300 space-y-3"
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 50}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-emerald-600/15 border border-emerald-600/20 text-emerald-600 flex items-center justify-center">
+                    <IconComponent className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">{service.title}</h3>
+                  <p className="text-s text-slate-500 font-light leading-relaxed">{service.desc}</p>
+                </article>
+              )
+            })}
+          </div>
+
+          {/* --- Track Record / Stats --- */}
+          <div className="text-center max-w-xl mx-auto mb-14 space-y-3" data-aos="fade-up">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+              Number of the Works Done
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { value: '15+', label: 'Years Experience', icon: Award },
+              { value: '500+', label: 'Completed Jobs', icon: Wrench },
+              { value: '24/7', label: 'Emergency Dispatch', icon: Clock },
+              { value: '100%', label: 'Compliance Standard', icon: ShieldCheck },
+            ].map((stat, idx) => {
+              const IconComponent = stat.icon
+              return (
+                <div
+                  key={stat.label}
+                  data-aos="zoom-in"
+                  data-aos-delay={idx * 100}
+                  className="group relative p-6 sm:p-8 rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200 shadow-sm hover:border-emerald-600/40 hover:shadow-md transition-all duration-300"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-emerald-600/15 border border-emerald-600/20 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <p className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-xs text-slate-500 uppercase tracking-widest font-mono font-bold">
+                    {stat.label}
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-slate-800/80">
+      <section aria-labelledby="cta-heading" className="py-20 bg-gray-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-green-800 dark:text-white">
+          <h2 id="cta-heading" className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
             Ready to optimize your facility performance?
           </h2>
-          <p className="text-[#6b7280] dark:text-slate-400 max-w-xl mx-auto text-base font-light leading-relaxed">
+          <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-base font-light leading-relaxed">
             Speak directly with our technical engineering department to discuss your chiller requirements or immediate emergency dispatch.
           </p>
           <div className="pt-2">
             <Link
               href="/Contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-emerald-700 hover:bg-[#00a35e] rounded-xl transition shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00b96b]"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
             >
               Get in Touch with CTS
-              <ArrowRight className="ml-2 w-4 h-4" />
+              <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
         </div>

@@ -141,7 +141,7 @@ export default function ProductsPage() {
                 Our Products
               </h2>
               <p className="text-[#6b7280] dark:text-slate-400 text-base sm:text-lg leading-relaxed">
-                Explore our full range of high-quality cooling and HVAC solutions — engineered for performance, reliability, and long-term efficiency.
+                Explore our full range of high-quality cooling and HVAC solutions  engineered for performance, reliability, and long-term efficiency.
               </p>
             </header>
 

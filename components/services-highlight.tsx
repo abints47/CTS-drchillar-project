@@ -13,7 +13,7 @@ export default function ServicesHighlight({
   title = "Your Trusted Partner in HVAC & Cooling Solutions",
   description = "Whether it's routine maintenance, emergency repairs, or complete cooling system installations, CTS delivers reliable engineering services that keep your operations running smoothly.",
   ctaText = "Explore Our Services",
-  ctaLink = "/services",
+  ctaLink = "/Services",
   bgImageSrc = "/images/AMC.jpg",
 }: ServicesHighlightProps) {
   return (

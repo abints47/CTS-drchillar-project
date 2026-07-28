@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Bold } from 'lucide-react'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 export default function Footer() {
   return (
@@ -13,13 +13,12 @@ export default function Footer() {
           
           {/* Brand & Description Column */}
           <div className="space-y-4">
-            <Link href="/" className="text-xl  font-bold tracking-tight text-[#1FAA6D]">
+            <Link href="/" className="text-xl font-bold tracking-tight text-[#1FAA6D]">
               Chiller Technical Services L.L.C <section className="pl-30">خدمات التبريد التقنية ذ.م.م</section>
             </Link>
             <p className="text-sm pr-20 pt-3 leading-6 text-[#FFFFFF] max-w-sm ">
               High-quality cooling and refrigeration solutions for industrial and commercial needs built for performance, reliability, and efficiency.
             </p>
-
           </div>
 
           {/* Products Column */}
@@ -177,7 +176,7 @@ export default function Footer() {
            <span className="hover:text-gray-200 transition-colors">  Website Developed By Maktal</span>
           </Link> </span></p>
 
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <Link href="#privacy" className="hover:text-gray-400 transition-colors">
               Privacy Policy
             </Link>
@@ -187,6 +186,9 @@ export default function Footer() {
             <Link href="#cookies" className="hover:text-gray-400 transition-colors">
               Cookie Settings
             </Link>
+            
+            {/* Native theme toggle */}
+            <ThemeToggle />
           </div>
         </div>
       </div>

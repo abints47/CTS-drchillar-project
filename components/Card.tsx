@@ -35,7 +35,7 @@ export default function CardGrid({ items }: CardGridProps) {
       <button
         onClick={() => scroll("left")}
         aria-label="Scroll left"
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
@@ -49,7 +49,7 @@ export default function CardGrid({ items }: CardGridProps) {
         {items.map((item) => (
           <div
             key={item.id}
-            className="shrink-0 w-80 sm:w-85 snap-start bg-gray-100"
+            className="shrink-0 w-80 sm:w-85 snap-start bg-transparent"
           >
             <CardImage
               title={item.title}
@@ -65,7 +65,7 @@ export default function CardGrid({ items }: CardGridProps) {
       <button
         onClick={() => scroll("right")}
         aria-label="Scroll right"
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer"
       >
         <ChevronRight className="h-6 w-6" />
       </button>

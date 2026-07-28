@@ -13,7 +13,7 @@ import {
 interface CardProps{
   title?: React.ReactNode
   description?: string
-  imageSrc?:    string
+  imageSrc?: string
   buttonLink?: string
 }
 
@@ -40,19 +40,21 @@ export default function CardImage({
         border-slate-200/80
         dark:border-slate-800
         bg-white
-        dark:bg-slate-900/60
+        dark:bg-slate-900/80
         shadow-md
+        dark:shadow-black/40
         transition-all
         duration-300
         hover:-translate-y-1.5
         hover:shadow-xl
         hover:border-emerald-500/40
+        dark:hover:border-emerald-500/50
       "
     >
       {/* Top Section Wrapper */}
       <div>
         {/* Larger Image Banner Container */}
-        <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+        <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800/60">
           <Image
             src={imageSrc}
             alt={typeof title === "string" ? title : "Card Image"}
@@ -61,12 +63,12 @@ export default function CardImage({
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-transparent" />
+          <div className="absolute inset-0 bg-black/10 dark:bg-black/20 transition-opacity duration-300 group-hover:bg-transparent" />
         </div>
 
         {/* Content Section */}
         <CardHeader className="space-y-2 px-6 pt-5 pb-3">
-          <CardTitle className="text-center text-lg sm:text-xl font-bold leading-snug text-slate-800 dark:text-white line-clamp-2 tracking-tight">
+          <CardTitle className="text-center text-lg sm:text-xl font-bold leading-snug text-slate-800 dark:text-slate-100 line-clamp-2 tracking-tight">
             {title}
           </CardTitle>
 
@@ -77,7 +79,7 @@ export default function CardImage({
       </div>
 
       {/* Button Section */}
-      <CardFooter className="px-6 pb-6 pt-2 bg-white dark:bg-slate-900/60 border-t-0 flex justify-center">  
+      <CardFooter className="px-6 pb-6 pt-2 bg-white dark:bg-slate-900/80 border-t-0 flex justify-center">  
         <Link href={buttonLink} className="w-auto">
           <Button
             className="
@@ -88,11 +90,12 @@ export default function CardImage({
               text-sm
               font-semibold
               text-white
-              hover:bg-emerald-700
-              dark:bg-emerald-500
-              dark:hover:bg-emerald-600
+              hover:bg-emerald-600
+              dark:bg-emerald-600
+              dark:hover:bg-emerald-500
               transition-colors
               shadow-sm
+              cursor-pointer
             "
           >
             View More

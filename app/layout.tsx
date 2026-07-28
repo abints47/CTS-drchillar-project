@@ -4,6 +4,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import AosProvider from '@/components/AosProvider';
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer"
+import ChatBotWidget from "@/components/ChatBotWidget";
 import "./globals.css";
 // import { Poppins } from "next/font/google";
 
@@ -37,9 +38,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={` ${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-hidden`}>
-      <body className="bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col">
+      <body className="bg-white text-slate-900 dark:bg-gray-950 dark:text-slate-100 transition-colors duration-300">
         <NavBar />
-        <main className="flex-1 w-full"> <SmoothScroll> <AosProvider> {children} </AosProvider> </SmoothScroll> </main>
+        <main className="flex-1 w-full"> <SmoothScroll> <AosProvider> {children} <ChatBotWidget/> </AosProvider> </SmoothScroll> </main>
         {/* Global Footer */}
         <Footer />
       </body>

@@ -125,7 +125,7 @@ export default function HomePage() {
             data-aos-duration="1000"
             data-aos-delay="200"
           >
-            <h2 className="mb-6 text-3xl font-bold text-emerald-600 sm:text-4xl dark:text-emerald-400">
+            <h2 className="mb-6 text-3xl font-bold text-emerald-600 sm:text-4xl dark:text-white">
               Chiller Maintenance Company in UAE
             </h2>
 
@@ -214,48 +214,44 @@ export default function HomePage() {
         {/* What We Offer Header Card */}
         {/* Core Capabilities Section */}
         {/* Core Capabilities Section */}
-        <div className="space-y-16 py-10 bg-gray-50 overflow-hidden">
-  
-        {/* Centered Section Heading & Intro */}
-        <div 
-          className="max-w-4xl mx-auto text-center space-y-4 border-b border-slate-200/80 dark:border-slate-800 pb-12 transition-colors duration-300"
-          data-aos="fade-up"
-          data-aos-duration="800"
-          >
-    
-          <h3 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-emerald-600 dark:text-emerald-400 tracking-tight leading-[1.15]">
-            What We Offer
-          </h3>
+        <div>
+  {/* Header Section */}
+  <div 
+    className="max-w-4xl mx-auto text-center space-y-4 border-b border-slate-200/80 dark:border-slate-800 pb-12 transition-colors duration-300"
+    data-aos="fade-up"
+    data-aos-duration="800"
+  >
+    <h3 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-emerald-600 dark:text-white tracking-tight leading-[1.15]">
+      What We Offer
+    </h3>
 
-          <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed font-light max-w-3xl mx-auto pt-2">
-            At <strong className="text-emerald-600 dark:text-white font-semibold">CTS - Chiller Technical Services L.L.C</strong>, we provide top-notch solutions for all your cooling needs. From premium trading options to expert maintenance, flexible rentals, and dedicated after-sales services  our mission is to keep you cool, comfortable, and satisfied year round.
-          </p>
-        </div>
+    <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed font-light max-w-3xl mx-auto pt-2">
+      At <strong className="text-emerald-600 dark:text-emerald-500 font-semibold">CTS - Chiller Technical Services L.L.C</strong>, we provide top-notch solutions for all your cooling needs. From premium trading options to expert maintenance, flexible rentals, and dedicated after-sales services our mission is to keep you cool, comfortable, and satisfied year round.
+    </p>
+  </div>
 
-        {/* Clean 4-Column Modern Tech Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  {/* Clean 4-Column Modern Tech Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-10">
     
-          {/* 01. Equipment & Logistics */}
-        <div 
-          className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
-          data-aos="fade-up"
-          data-aos-delay="100"
-          data-aos-duration="800"
-          >
+    {/* 01. Trading */}
+    <div 
+      className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
+      data-aos="fade-up"
+      data-aos-delay="100"
+      data-aos-duration="800"
+    >
       <div className="text-emerald-600 dark:text-emerald-400">
-      <ArrowLeftRight
-        size={42}
-        strokeWidth={2.2} />
-    </div>
-      <h4 className="text-xl font-semibold text text-slate-800 dark:text-emerald-400 tracking-normal group-hover:text-emerald-600 dark:group-hover:text-emerald-400 ">
+        <ArrowLeftRight size={42} strokeWidth={2.2} />
+      </div>
+      <h4 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
         Trading
       </h4>
-      <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal justify-center">
+      <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
         High-quality cooling systems and equipment from trusted brands, ensuring performance and durability you can rely on.
       </p>
     </div>
 
-    {/* 02. Predictive Maintenance */}
+    {/* 02. Maintenance */}
     <div 
       className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
       data-aos="fade-up"
@@ -263,12 +259,9 @@ export default function HomePage() {
       data-aos-duration="800"
     >
       <div className="text-emerald-600 dark:text-emerald-400">
-        <Wrench
-        size={42}
-        strokeWidth={2.2}
-        />
+        <Wrench size={42} strokeWidth={2.2} />
       </div>
-      <h4 className=" text-xl font-semibold text   text-slate-800 dark:text-emerald-400 tracking-normal group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
+      <h4 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
         Maintenance
       </h4>
       <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
@@ -276,7 +269,7 @@ export default function HomePage() {
       </p>
     </div>
 
-    {/* 03. Tactical Deployments */}
+    {/* 03. Rentals */}
     <div 
       className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
       data-aos="fade-up"
@@ -284,10 +277,7 @@ export default function HomePage() {
       data-aos-duration="800"
     >
       <div className="text-emerald-600 dark:text-emerald-400">
-        <Warehouse
-          size={42}
-          strokeWidth={2.2}
-        />
+        <Warehouse size={42} strokeWidth={2.2} />
       </div>
       <h4 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
         Rentals
@@ -297,7 +287,7 @@ export default function HomePage() {
       </p>
     </div>
 
-    {/* 04. Engineering & Systems Integration */}
+    {/* 04. Services */}
     <div 
       className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
       data-aos="fade-up"
@@ -305,21 +295,17 @@ export default function HomePage() {
       data-aos-duration="800"
     >
       <div className="text-emerald-600 dark:text-emerald-400">
-        <Headphones
-          size={42}
-          strokeWidth={2.2}
-        />
+        <Headphones size={42} strokeWidth={2.2} />
       </div>
       <h4 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
         Services
       </h4>
       <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-        From consultaion to installation and after-sales support, out team ensures you get complete peace of mind.
+        From consultation to installation and after-sales support, our team ensures you get complete peace of mind.
       </p>
     </div>
 
   </div>
-
 </div>
     
 
@@ -432,7 +418,7 @@ export default function HomePage() {
             {/* Action Button */}
             <div className="pt-2">
               <Link 
-                href="/rentals" 
+                href="/About" 
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
               >
                 <span>Know More</span>
@@ -536,6 +522,7 @@ export default function HomePage() {
     </div>
 
   </div>
+  
 </section>
     
     </>

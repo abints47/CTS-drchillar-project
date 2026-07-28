@@ -20,6 +20,7 @@ interface ProductCardProps {
   description: string;
   href: string;
   index: number;
+  isCentered?: boolean;
 }
 
 const products: ProductItem[] = [
@@ -49,29 +50,31 @@ const products: ProductItem[] = [
   },
 ];
 
-const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, href, index }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, href, index, isCentered }) => {
   return (
     <Link
       href={href}
       data-aos="fade-up"
       data-aos-delay={index * 80}
       data-aos-duration="500"
-      className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg flex flex-col group cursor-pointer"
+      className={`bg-white dark:bg-slate-900/80 rounded-2xl shadow-sm dark:shadow-black/40 border border-gray-100 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:hover:border-emerald-500/50 flex flex-col group cursor-pointer ${
+        isCentered ? "lg:col-start-2" : ""
+      }`}
     >
-      <div className="relative w-full h-55 overflow-hidden bg-gray-50">
+      <div className="relative w-full h-64 overflow-hidden bg-gray-50 dark:bg-slate-800/60">
         <Image
           src={image}
           alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="p-6 flex flex-col grow justify-between text-center space-y-2.5">
-        <h3 className="font-semibold text-xl text-[#183153] leading-snug group-hover:text-[#00b96b] transition-colors duration-200">
+      <div className="p-7 flex flex-col grow justify-between text-center space-y-2.5 bg-white dark:bg-slate-900/80">
+        <h3 className="font-bold text-xl text-[#183153] dark:text-white leading-snug group-hover:text-[#00b96b] dark:group-hover:text-emerald-400 transition-colors duration-200">
           {title}
         </h3>
-        <p className="text-[#6b7280] text-sm leading-relaxed">
+        <p className="text-[#6b7280] dark:text-slate-400 text-sm leading-relaxed font-light">
           {description}
         </p>
       </div>
@@ -88,7 +91,7 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white pt-25 flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-slate-950 pt-25 flex flex-col">
       <main className="grow relative">
 
         {/* Expanded Sticky Hero Banner with Parallax Scroll Effect */}
@@ -101,7 +104,7 @@ export default function ProductsPage() {
               priority
               className="object-cover object-center scale-105"
             />
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
           </div>
 
           <div 
@@ -109,11 +112,10 @@ export default function ProductsPage() {
             data-aos-duration="600"
             className="relative z-10 max-w-300 w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3"
           >
-            {/* Simple SEO-friendly semantic heading tags */}
             <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
               Products
             </h1>
-            <p className="text-gray-200 text-sm sm:text-base max-w-lg font-normal">
+            <p className="text-gray-200 dark:text-gray-300 text-sm sm:text-base max-w-lg font-normal">
               Explore our comprehensive catalog of commercial and industrial climate control infrastructure solutions.
             </p>
 
@@ -130,21 +132,21 @@ export default function ProductsPage() {
         </section>
 
         {/* Clean Content Section sliding smoothly over the sticky hero background */}
-        <section className="relative z-10 w-full bg-[#fafafa] py-16 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)]">
-          <div className="max-w-300 mx-auto space-y-14">
+        <section className="relative z-10 w-full bg-[#fafafa] dark:bg-slate-950 py-20 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] transition-colors duration-300">
+          <div className="max-w-7xl mx-auto space-y-16">
             
             {/* Intro Header Section */}
-            <header data-aos="fade-up" data-aos-duration="500" className="max-w-175 mx-auto text-center space-y-3">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#183153] tracking-tight">
+            <header data-aos="fade-up" data-aos-duration="500" className="max-w-2xl mx-auto text-center space-y-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#183153] dark:text-white tracking-tight">
                 Our Products
               </h2>
-              <p className="text-[#6b7280] text-base sm:text-lg leading-relaxed">
+              <p className="text-[#6b7280] dark:text-slate-400 text-base sm:text-lg leading-relaxed">
                 Explore our full range of high-quality cooling and HVAC solutions — engineered for performance, reliability, and long-term efficiency.
               </p>
             </header>
 
-            {/* Simple, Clean Products Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+            {/* Products Grid with the 4th item centered on large screens */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
               {products.map((product, index) => (
                 <ProductCard
                   key={index}
@@ -153,6 +155,7 @@ export default function ProductsPage() {
                   description={product.description}
                   href={product.href}
                   index={index}
+                  isCentered={index === 3}
                 />
               ))}
             </div>

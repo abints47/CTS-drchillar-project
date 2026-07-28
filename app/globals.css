@@ -122,7 +122,8 @@
     @apply border-border outline-ring/50;
   }
   body {
-    font-family: sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
     @apply bg-background text-foreground;
   }
   html {

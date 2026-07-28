@@ -10,7 +10,8 @@ import {
   Phone, 
   Settings, 
   Snowflake, 
-  FileText 
+  FileText,
+  Building2
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -24,58 +25,60 @@ export default function AboutPage() {
     <main className="min-h-screen pt-24 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 selection:bg-emerald-500 selection:text-white">
       
       {/* =====================================================================
-          1. HERO SECTION
-          ===================================================================== */}
-      <section className="relative py-16 md:py-24 border-b border-zinc-100 dark:border-zinc-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          1. MINIMALIST HERO SECTION
+          ==================================================================== */}
+      <section className="relative overflow-hidden py-16 lg:py-24 border-b border-zinc-100 dark:border-zinc-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6" data-aos="fade-right" data-aos-duration="800">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200/50 dark:border-emerald-800/50">
+            {/* Left Content (Minimal Width & Spacing) */}
+            <div className="lg:col-span-6 space-y-6" data-aos="fade-right" data-aos-duration="800">
+
+              <div className="space-y-4">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.15]">
+                  Your Trusted <span className="text-emerald-600 dark:text-emerald-500">HVAC & Chillers</span> Partner in the UAE
+                </h1>
+
+                <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-xl">
+                  Providing end-to-end HVAC engineering, industrial chiller installation, cold storage solutions, and 24/7 maintenance services for commercial and industrial facilities.
+                </p>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
-                Engineering Excellence in <span className="text-emerald-600 ">HVAC & Cooling</span>
-              </h1>
-
-              <p className="text-lg text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-2xl">
-                For over 15 years, CTS has delivered industrial-grade manufacturing, maintenance, and rental solutions for water chillers, A/C infrastructure, and cold storage systems across the UAE.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              {/* Minimal Action CTAs */}
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <Link
                   href="/Contact"
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-all shadow-xs"
                 >
-                  Request a Consultation
+                  Request Consultation
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
                 <a
-                  href="tel:++971 67434537"
+                  href="tel:+97167434537"
                   className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 rounded-lg transition-all border border-zinc-200 dark:border-zinc-800"
                 >
                   <Phone className="mr-2 w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                  Direct Line
+                  +971 6 743 4537
                 </a>
               </div>
+
             </div>
 
-            {/* Right Single Clean Image */}
-            <div className="lg:col-span-5" data-aos="fade-left" data-aos-duration="800">
-              <div className="relative w-full h-100 sm:h-112.5 rounded-2xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-800">
+            {/* Right Visual Composition */}
+            <div className="lg:col-span-6" data-aos="fade-left" data-aos-duration="800">
+              <div className="relative w-full h-95 sm:h-105 rounded-2xl overflow-hidden shadow-xl border border-zinc-200/80 dark:border-zinc-800/80">
                 <Image
                   src="/images/asethetic-ac.webp"
                   alt="CTS Professional HVAC Systems"
                   fill
-                  sizes='1020'
-                  loading='eager'
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="eager"
                   priority
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
                 
-                {/* Floating trust badge badge */}
+                {/* Floating trust badge */}
                 <div className="absolute bottom-4 left-4 right-4 bg-zinc-900/90 backdrop-blur-md p-4 rounded-xl border border-zinc-800 flex items-center justify-between text-white">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-emerald-600 rounded-lg text-white">
@@ -87,10 +90,11 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-semibold">500+</p>
+                    <p className="text-sm font-semibold text-emerald-400">500+</p>
                     <p className="text-xs text-zinc-400">Projects Executed</p>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -100,12 +104,12 @@ export default function AboutPage() {
 
       {/* =====================================================================
           3. MISSION & VISION
-          ===================================================================== */}
+          ==================================================================== */}
       <section className="py-16 bg-zinc-50 dark:bg-zinc-900/50 border-y border-zinc-200/60 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            <div className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm space-y-4" data-aos="fade-up">
+            <div className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xs space-y-4" data-aos="fade-up">
               <div className="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
                 01
               </div>
@@ -115,7 +119,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm space-y-4" data-aos="fade-up" data-aos-delay="150">
+            <div className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xs space-y-4" data-aos="fade-up" data-aos-delay="150">
               <div className="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
                 02
               </div>
@@ -131,7 +135,7 @@ export default function AboutPage() {
 
       {/* =====================================================================
           4. CORE CAPABILITIES / SERVICES OVERVIEW
-          ===================================================================== */}
+          ==================================================================== */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
@@ -187,7 +191,7 @@ export default function AboutPage() {
                   data-aos="fade-up"
                   data-aos-delay={idx * 50}
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200/60 dark:border-zinc-700/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-white dark:bg-zinc-800 shadow-xs border border-zinc-200/60 dark:border-zinc-700/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
                     <IconComponent className="w-5 h-5" />
                   </div>
                   <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">{service.title}</h3>
@@ -201,7 +205,7 @@ export default function AboutPage() {
 
       {/* =====================================================================
           5. MINIMAL METRICS BAR
-          ===================================================================== */}
+          ==================================================================== */}
       <section className="py-12 bg-[#33445a] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -227,7 +231,7 @@ export default function AboutPage() {
 
       {/* =====================================================================
           6. PROFESSIONAL FOOTER CTA
-          ===================================================================== */}
+          ==================================================================== */}
       <section className="py-20 border-t border-zinc-200 dark:border-zinc-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-white">
@@ -239,7 +243,7 @@ export default function AboutPage() {
           <div className="pt-2">
             <Link
               href="/Contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition shadow-xs focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               Get in Touch with CTS
               <ArrowRight className="ml-2 w-4 h-4" />

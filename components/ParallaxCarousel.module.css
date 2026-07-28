@@ -30,6 +30,8 @@
 }
 
 .embla__img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -51,9 +53,9 @@
    ========================================= */
 .slide__content {
   position: absolute;
-  bottom: 12%;
-  left: 8%;
-  right: 8%;
+  bottom: clamp(2rem, 8vh, 6rem);
+  left: clamp(1.5rem, 5vw, 5rem);
+  right: clamp(1.5rem, 5vw, 5rem);
   color: #ffffff;
   z-index: 10;
   max-width: 48rem;
@@ -63,19 +65,16 @@
 .hero__header {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  
-  margin-bottom: 0.5rem;
-  padding-bottom: 150px;
-  padding-left: 30px;
-  /* transform: scale(1.2);
-  transform-origin: left center; */
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  margin-bottom: clamp(0.5rem, 1.5vh, 1.5rem);
+  padding-bottom: clamp(1rem, 4vh, 4rem);
+  padding-left: clamp(0.5rem, 2vw, 1.875rem);
   animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .hero__logo {
   object-fit: contain;
-  width: 70;
+  width: clamp(40px, 5vw, 70px);
   height: auto;
   flex-shrink: 0;
 }
@@ -86,7 +85,7 @@
 }
 
 .hero__brandName {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 0.2rem 0;
@@ -94,7 +93,7 @@
 }
 
 .hero__tagline {
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
   font-weight: 700;
   color: #00b85c;
   margin: 0;
@@ -104,12 +103,16 @@
 
 /* 2. SLIDE TITLE ANIMATION (STAGGERED 0.1s) */
 .slide__title {
-  font-size: 2.8rem;
+  font-size: clamp(1.75rem, 4.5vw, 2.8rem);
   font-weight: 700;
-  white-space: nowrap;
+  white-space: normal; /* Changed from nowrap to prevent text clipping on varied viewports */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   text-overflow: ellipsis;
   padding-bottom: 0px;
-  padding-left: 60px;
+  padding-left: clamp(1rem, 3vw, 3.75rem);
   margin: 0 0 0.5rem 0;
   line-height: 1.2;
   color: #00b85c;
@@ -119,12 +122,16 @@
 
 /* 3. SLIDE DESCRIPTION ANIMATION (STAGGERED 0.2s) */
 .slide__description {
-  font-size: 1.125rem;
-  padding-bottom: 70px;
-  padding-left: 60px;
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  padding-bottom: clamp(1.5rem, 4vh, 4.375rem);
+  padding-left: clamp(1rem, 3vw, 3.75rem);
   margin: 0;
   opacity: 0;
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
 }
 
@@ -137,35 +144,5 @@
   100% {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-  .hero__header {
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero__logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .hero__brandName {
-    font-size: 1.1rem;
-  }
-
-  .hero__tagline {
-    font-size: 0.8rem;
-  }
-
-  .slide__title {
-    font-size: 1.75rem;
-    white-space: normal;
-  }
-
-  .slide__description {
-    font-size: 0.95rem;
   }
 }

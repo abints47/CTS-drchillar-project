@@ -27,25 +27,25 @@ const products: ProductItem[] = [
     title: "Water Chillers, Coolers & Heat Pumps",
     description: "High-performance chillers for all industrial and commercial cooling needs.",
     image: "/images/products/water-chilers.jpg",
-    href: "/products/water-chillers",
+    href: "/Products/water-chillers",
   },
   {
     title: "Cold Rooms & Ice Block Machines",
     description: "Energy-efficient cold storage rooms for fresh and frozen products.",
     image: "/images/asethetic-ac.webp",
-    href: "/products/cold-rooms",
+    href: "/Products/cold-rooms",
   },
   {
     title: "Heat Exchangers & Cooling Towers",
     description: "Reliable heat exchangers for efficient thermal energy transfer.",
     image: "/images/pipe.jpg",
-    href: "/products/heat-exchangers",
+    href: "/Products/heat-exchangers",
   },
   {
     title: "A/C Units & Air Curtains",
     description: "Efficient air conditioning systems for residential and industrial applications.",
     image: "/images/air-conditioner.jpg",
-    href: "/products/ac-units",
+    href: "/Products/ac-units",
   },
 ];
 

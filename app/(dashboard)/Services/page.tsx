@@ -24,28 +24,40 @@ interface ProductCardProps {
 
 const products: ProductItem[] = [
   {
-    title: "Water Chillers, Coolers & Heat Pumps",
+    title: "AC, Chillers & Genset Rentals",
     description: "High-performance chillers for all industrial and commercial cooling needs.",
     image: "/images/products/water-chilers.jpg",
-    href: "/products/water-chillers",
+    href: "/Services/AC-chillers",
   },
   {
-    title: "Cold Rooms & Ice Block Machines",
+    title: "Chilled Water Pipeline & Flushing",
     description: "Energy-efficient cold storage rooms for fresh and frozen products.",
     image: "/images/asethetic-ac.webp",
-    href: "/products/cold-rooms",
+    href: "/Services/Water-chillers",
   },
   {
-    title: "Heat Exchangers & Cooling Towers",
+    title: "A/C, Chillers & Coldroom Maintenance",
     description: "Reliable heat exchangers for efficient thermal energy transfer.",
     image: "/images/pipe.jpg",
-    href: "/products/heat-exchangers",
+    href: "/Services/AC-chillers",
   },
   {
-    title: "A/C Units & Air Curtains",
+    title: "Coil Manufacturing & Replacements",
     description: "Efficient air conditioning systems for residential and industrial applications.",
     image: "/images/air-conditioner.jpg",
-    href: "/products/ac-units",
+    href: "/Services/coil-Manufacture",
+  },
+  {
+    title: "Overhauling & Winding ",
+    description: "Efficient air conditioning systems for residential and industrial applications.",
+    image: "/images/air-conditioner.jpg",
+    href: "/Services/overhauling",
+  },
+  {
+    title: "AMC",
+    description: "Efficient air conditioning systems for residential and industrial applications.",
+    image: "/images/AMC.jpg",
+    href: "/Services/amc",
   },
 ];
 
@@ -56,22 +68,24 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, hr
       data-aos="fade-up"
       data-aos-delay={index * 80}
       data-aos-duration="500"
-      className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg flex flex-col group cursor-pointer"
+      className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col group cursor-pointer"
     >
-      <div className="relative w-full h-55 overflow-hidden bg-gray-50">
+      {/* Enlarged image container height (h-64 to h-72) */}
+      <div className="relative w-full h-68 sm:h-72 overflow-hidden bg-gray-50">
         <Image
           src={image}
           alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="p-6 flex flex-col grow justify-between text-center space-y-2.5">
-        <h3 className="font-semibold text-xl text-[#183153] leading-snug group-hover:text-[#00b96b] transition-colors duration-200">
+      {/* Enlarged padding and text sizes */}
+      <div className="p-8 flex flex-col grow justify-between text-center space-y-3.5">
+        <h3 className="font-bold text-2xl text-[#183153] leading-snug group-hover:text-[#00b96b] transition-colors duration-200">
           {title}
         </h3>
-        <p className="text-[#6b7280] text-sm leading-relaxed">
+        <p className="text-[#6b7280] text-base leading-relaxed">
           {description}
         </p>
       </div>
@@ -91,7 +105,7 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-white pt-25 flex flex-col">
       <main className="grow relative">
 
-        {/* Expanded Sticky Hero Banner with Parallax Scroll Effect */}
+        {/* Sticky Hero Banner */}
         <section className="sticky top-25 z-0 w-full h-95 sm:h-110 flex items-center justify-center overflow-hidden bg-gray-900">
           <div className="absolute inset-0">
             <Image
@@ -109,7 +123,6 @@ export default function ProductsPage() {
             data-aos-duration="600"
             className="relative z-10 max-w-300 w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3"
           >
-            {/* Simple SEO-friendly semantic heading tags */}
             <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
               Services
             </h1>
@@ -117,11 +130,11 @@ export default function ProductsPage() {
               Explore our comprehensive catalog of commercial and industrial climate control infrastructure solutions.
             </p>
 
-            <div className="absolute right-4  sm:right-6 lg:right-8 top-1/2 -translate-y-1/2">
+            <div className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2">
               <Link
                 href="/"
                 aria-label="Back to home page"
-                className="px-4 py-2 rounded-lg bg-white/10  hover:bg-white/20 text-white font-medium text-sm backdrop-blur-sm border border-white/20 transition-all shadow-sm"
+                className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-sm backdrop-blur-sm border border-white/20 transition-all shadow-sm"
               >
                 Back
               </Link>
@@ -129,11 +142,11 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        {/* Clean Content Section sliding smoothly over the sticky hero background */}
+        {/* Content Section */}
         <section className="relative z-10 w-full bg-[#fafafa] py-16 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)]">
-          <div className="max-w-300 mx-auto space-y-14">
+          {/* Expanded max-width wrapper slightly to accommodate larger 3-column grid comfortably */}
+          <div className="max-w-350 mx-auto space-y-14">
             
-            {/* Intro Header Section */}
             <header data-aos="fade-up" data-aos-duration="500" className="max-w-175 mx-auto text-center space-y-3">
               <h2 className="text-3xl sm:text-4xl font-bold text-[#183153] tracking-tight">
                 Provided Services
@@ -143,8 +156,8 @@ export default function ProductsPage() {
               </p>
             </header>
 
-            {/* Simple, Clean Products Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+            {/* Changed grid layout: lg:grid-cols-3 instead of lg:grid-cols-4 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
               {products.map((product, index) => (
                 <ProductCard
                   key={index}

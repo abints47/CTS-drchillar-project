@@ -102,15 +102,11 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
                     key={`animated-content-${selectedIndex}`}
                     className={styles.slide__content}
                   >
-                  
-                   
-
                     {/* DYNAMIC SLIDE TITLE & DESCRIPTION */}
                     <p className={styles.slide__title}>{slide.title}</p>
                     <p className={styles.slide__description}>
                       {slide.description}
                     </p>
-
                         {/* HERO BRAND HEADER (Animates with the slide text) */}
 
                        <div className={styles.hero__header}>

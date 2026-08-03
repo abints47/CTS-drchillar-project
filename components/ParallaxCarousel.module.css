@@ -49,32 +49,47 @@
 }
 
 /* =========================================
-   DYNAMIC SLIDE CONTENT CONTAINER
+   DYNAMIC SLIDE CONTENT CONTAINER (STRETCHED & MODERN)
    ========================================= */
 .slide__content {
   position: absolute;
-  bottom: clamp(2rem, 8vh, 6rem);
-  left: clamp(1.5rem, 5vw, 5rem);
-  right: clamp(1.5rem, 5vw, 5rem);
+  bottom: clamp(15rem, 10vh, 7rem);
+  left: 3rem;
+  right: 3rem;
+  width: auto;
+  max-width: none;
+  margin-inline: auto;
   color: #ffffff;
   z-index: 10;
-  max-width: 48rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: clamp(2rem, 5vh, 4rem);
+  
+  /* Modern Professional Font Family Stack */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* 1. HERO BRAND HEADER ANIMATION */
 .hero__header {
   display: flex;
   align-items: center;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
-  margin-bottom: clamp(0.5rem, 1.5vh, 1.5rem);
-  padding-bottom: clamp(1rem, 4vh, 4rem);
-  padding-left: clamp(0.5rem, 2vw, 1.875rem);
-  animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  justify-content: center;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: clamp(0.75rem, 2vh, 2rem);
+  padding-bottom: clamp(1.5rem, 3vh, 3rem);
+  padding-left: 0; 
+  width: 100%;
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero__logo {
   object-fit: contain;
-  width: clamp(40px, 5vw, 70px);
+  width: clamp(50px, 6vw, 85px);
   height: auto;
   flex-shrink: 0;
 }
@@ -82,67 +97,78 @@
 .hero__brandText {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .hero__brandName {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
   font-weight: 700;
+  letter-spacing: -0.01em;
   color: #ffffff;
-  margin: 0 0 0.2rem 0;
+  margin: 0 0 0.25rem 0;
   line-height: 1.2;
 }
 
 .hero__tagline {
-  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
-  font-weight: 700;
-  color: #00b85c;
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  font-weight: 600;
+  color: #00b85c; /* Emerald green */
   margin: 0;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 /* 2. SLIDE TITLE ANIMATION (STAGGERED 0.1s) */
 .slide__title {
-  font-size: clamp(1.75rem, 4.5vw, 2.8rem);
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
   font-weight: 700;
-  white-space: normal; /* Changed from nowrap to prevent text clipping on varied viewports */
+  letter-spacing: -0.02em;
+  white-space: normal;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-bottom: 0px;
-  padding-left: clamp(1rem, 3vw, 3.75rem);
-  margin: 0 0 0.5rem 0;
-  line-height: 1.2;
-  color: #00b85c;
-  animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
+  padding-left: 0; 
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  color: #00b85c; /* Reverted back to the signature emerald green color */
+  width: 100%;
+  text-align: center;
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   opacity: 0;
 }
 
 /* 3. SLIDE DESCRIPTION ANIMATION (STAGGERED 0.2s) */
 .slide__description {
-  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
-  padding-bottom: clamp(1.5rem, 4vh, 4.375rem);
-  padding-left: clamp(1rem, 3vw, 3.75rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  padding-bottom: clamp(2rem, 5vh, 5rem);
+  padding-left: 0; 
   margin: 0;
-  opacity: 0;
-  line-height: 1.5;
+  opacity: 0.9;
+  line-height: 1.65;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  animation: slideInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+  width: 100%;
+  max-width: 75rem;
+  color: #e2e8f0; /* Soft readable light text for high contrast against dark overlays */
+  text-align: center;
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
-/* SHARED HORIZONTAL KEYFRAME */
-@keyframes slideInLeft {
+/* SHARED VERTICAL KEYFRAME WITH REFINED EASING */
+@keyframes slideInUp {
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateY(25px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }

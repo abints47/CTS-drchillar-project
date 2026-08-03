@@ -54,11 +54,11 @@ export default function ChatBotWidget() {
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.94 }}
           aria-label="Toggle contact details"
-          className="relative flex items-center justify-center w-16 h-16 bg-[#10B981] text-white rounded-full shadow-2xl focus:outline-none focus:ring-4 focus:ring-emerald-500/30 transition-colors"
+          className="relative flex items-center justify-center w-16 h-16 bg-[#00b85c] text-white rounded-full shadow-2xl focus:outline-none focus:ring-4 focus:ring-emerald-500/30 transition-colors"
         >
           {/* Subtle pulse animation */}
           {!isOpen && (
-            <span className="absolute inset-0 rounded-full bg-[#10B981] animate-ping opacity-25 pointer-events-none" />
+            <span className="absolute inset-0 rounded-full bg-[#00b85c] animate-ping opacity-25 pointer-events-none" />
           )}
 
           <AnimatePresence mode="wait">
@@ -110,7 +110,7 @@ export default function ChatBotWidget() {
                 className="flex items-center justify-between p-2.5 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-950/30 text-gray-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all group"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100/80 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform">
+                  <div className="w-8 h-8 rounded-lg  dark:bg-emerald-900/50 flex items-center justify-center  dark:text-emerald-400 group-hover:scale-105 transition-transform">
                     <MessageCircle className="w-4 h-4" />
                   </div>
                   <div>
@@ -124,7 +124,7 @@ export default function ChatBotWidget() {
               {/* Phone */}
               <a
                 href="tel:+97167434537"
-                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800/60 text-gray-700 dark:text-slate-200 transition-all group"
+                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-950/30 text-gray-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all group"
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 rounded-lg bg-gray-100 dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-slate-400 group-hover:scale-105 transition-transform">
@@ -135,13 +135,13 @@ export default function ChatBotWidget() {
                     <p className="text-[10px] text-gray-400 dark:text-slate-500">+971 67434537</p>
                   </div>
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-gray-300 dark:text-slate-600 group-hover:text-gray-500 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-gray-300 dark:text-slate-600 group-hover:text-emerald-500 transition-colors" />
               </a>
 
               {/* Email */}
               <a
                 href="mailto:support@ctsengineering.com"
-                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800/60 text-gray-700 dark:text-slate-200 transition-all group"
+                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-950/30 text-gray-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all group"
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 rounded-lg bg-gray-100 dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-slate-400 group-hover:scale-105 transition-transform">
@@ -159,10 +159,10 @@ export default function ChatBotWidget() {
             {/* Subtle Status Footer */}
             <div className="px-4 py-2.5 bg-gray-50 dark:bg-slate-950/50 border-t border-gray-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-gray-400 dark:text-slate-500">
               <div className="flex items-center space-x-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Online Support</span>
+
+                <span>Feel free to Message </span>
               </div>
-              <span>Mon-Fri</span>
+              <span>Mon-Fri | 9:00am-6:00pm</span>
             </div>
 
           </motion.div>

@@ -185,7 +185,7 @@ export default function Footer() {
 
         {/* Bottom Bar Section */}
         <div className="flex flex-col items-center justify-between gap-4 text-sm text-[#e2e6eb] sm:flex-row">
-          <p> <span className='text-blue-500'> &copy; </span> {new Date().getFullYear()} CTS, Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" >
+          <p> <span className='text-emerald-500'> &copy; </span> {new Date().getFullYear()} CTS, Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" >
            <span className="hover:text-emerald-500 transition-colors">  Website Developed By Maktal</span>
           </Link> </span></p>
 

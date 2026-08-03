@@ -70,7 +70,7 @@
   text-align: left;
   gap: 1.25rem;
 
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -105,7 +105,7 @@
   font-weight: 550;
   letter-spacing: 0.05em; /* Reduced letter-spacing slightly for natural text casing */
   text-transform: none;  /* Kept in natural casing */
-  color: #ffffff;
+  color: azure;
   margin: 0 0 0.25rem 0;
   line-height: 1.2;
 }
@@ -126,7 +126,7 @@
   font-weight: 500; /* Reduced from 800 to semi-bold/medium for a cleaner look */
   letter-spacing: -0.02em;
   line-height: 1.15;
-  color: #ffffff;
+  color: white;
   margin: 0;
   width: 100%;
   text-align: left;
@@ -149,7 +149,7 @@
   line-height: 1.65;
   width: 100%;
   max-width: 46rem; /* Increased max-width (around 730px) to match wider heading */
-  color: #e2e8f0;
+  color: white;
   text-align: left;
   animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
   opacity: 0;

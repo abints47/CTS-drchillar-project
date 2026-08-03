@@ -11,6 +11,7 @@ interface SlideItem {
   src: string
   alt: string
   title: string
+  highlightWord?: string // Optional explicit word to highlight
   description: string
 }
 
@@ -77,6 +78,34 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
     emblaApi.on('select', onSelect)
   }, [emblaApi, setSlidesNodes, applyOpacity, onSelect])
 
+  /**
+   * Helper to highlight specific key words within the title text.
+   * Highlights `highlightWord` if provided, otherwise highlights the final word.
+   */
+  const renderTitle = (title: string, highlightWord?: string) => {
+    if (highlightWord && title.includes(highlightWord)) {
+      const parts = title.split(highlightWord)
+      return (
+        <>
+          {parts[0]}
+          <span className={styles.title__accent}>{highlightWord}</span>
+          {parts[1]}
+        </>
+      )
+    }
+
+    const words = title.trim().split(' ')
+    if (words.length <= 1) return title
+
+    const lastWord = words.pop()
+    return (
+      <>
+        {words.join(' ')}{' '}
+        <span className={styles.title__accent}>{lastWord}</span>
+      </>
+    )
+  }
+
   return (
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
@@ -102,33 +131,34 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
                     key={`animated-content-${selectedIndex}`}
                     className={styles.slide__content}
                   >
-                    {/* DYNAMIC SLIDE TITLE & DESCRIPTION */}
-                    <p className={styles.slide__title}>{slide.title}</p>
-                    <p className={styles.slide__description}>
-                      {slide.description}
-                    </p>
-
-                        {/* HERO BRAND HEADER (Animates with the slide text) */}
-
-                       <div className={styles.hero__header}>
+                    {/* 1. EYEBROW / HERO BRAND HEADER */}
+                    <div className={styles.hero__header}>
                       <Image
                         src="/logo.png"
                         alt="CTS Logo"
-                        width={70}
-                        height={70}
+                        width={60}
+                        height={60}
                         className={styles.hero__logo}
                         priority
                       />
                       <div className={styles.hero__brandText}>
-                        <h1 className={styles.hero__brandName}>
+                        <h2 className={styles.hero__brandName}>
                           CTS - Chiller Technical Services L.L.C
-                        </h1>
+                        </h2>
                         <p className={styles.hero__tagline}>SKILL TO CHILL</p>
                       </div>
                     </div>
 
+                    {/* 2. MAIN HEADING WITH ACCENT HIGHLIGHT */}
+                    <h1 className={styles.slide__title}>
+                      {renderTitle(slide.title, slide.highlightWord)}
+                    </h1>
+
+                    {/* 3. SUPPORTING PARAGRAPH */}
+                    <p className={styles.slide__description}>
+                      {slide.description}
+                    </p>
                   </div>
-                  
                 )}
               </div>
             )

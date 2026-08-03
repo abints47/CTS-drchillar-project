@@ -107,6 +107,7 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
                     <p className={styles.slide__description}>
                       {slide.description}
                     </p>
+
                         {/* HERO BRAND HEADER (Animates with the slide text) */}
 
                        <div className={styles.hero__header}>

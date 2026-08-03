@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -13,15 +13,28 @@ export default function Footer() {
           
           {/* Brand & Description Column */}
           <div className="space-y-4">
-            <Link href="/" className="text-xl font-bold tracking-tight text-[#1FAA6D]">
-              Chiller Technical Services L.L.C <section className="pl-30">خدمات التبريد التقنية ذ.م.م</section>
+            <Link 
+              href="/" 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="inline-block text-[#1FAA6D]">
+              <div className="flex items-center gap-2 text-xl font-bold tracking-tight">
+                <Image
+                  src="/logo.png"
+                  alt="CTS Logo"
+                  width={30}
+                  height={30}
+                />
+                <span>Chiller Technical Services L.L.C</span>
+              </div>
+              <section className="pl-37 text-xl font-semibold">
+                خدمات التبريد التقنية ذ.م.م
+              </section>
             </Link>
-            <p className="text-sm pr-20 pt-3 leading-6 text-[#FFFFFF] max-w-sm ">
+            <p className="text-s pr-10 justify-center pt-3 leading-6 text-[#FFFFFF] max-w-sm ">
               High-quality cooling and refrigeration solutions for industrial and commercial needs built for performance, reliability, and efficiency.
             </p>
           </div>
 
-          {/* Products Column */}
           <div className="space-y-3">
             <h4 className="text-xl font-semibold text-[#1FAA6D]">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -171,21 +184,12 @@ export default function Footer() {
         <div className="my-8 border-t border-gray-300/60" />
 
         {/* Bottom Bar Section */}
-        <div className="flex flex-col items-center justify-between gap-4 text-xs text-[#7B8794] sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} CTS , Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" >
-           <span className="hover:text-gray-200 transition-colors">  Website Developed By Maktal</span>
+        <div className="flex flex-col items-center justify-between gap-4 text-sm text-[#e2e6eb] sm:flex-row">
+          <p> <span className='text-blue-500'> &copy; </span> {new Date().getFullYear()} CTS, Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" >
+           <span className="hover:text-emerald-500 transition-colors">  Website Developed By Maktal</span>
           </Link> </span></p>
 
-          <div className="flex items-center gap-6">
-            <Link href="#privacy" className="hover:text-gray-400 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#terms" className="hover:text-gray-400 transition-colors">
-              Terms of Service
-            </Link>
-            <Link href="#cookies" className="hover:text-gray-400 transition-colors">
-              Cookie Settings
-            </Link>
+          <div className="flex items-center ">
             
             {/* Native theme toggle */}
             <ThemeToggle />

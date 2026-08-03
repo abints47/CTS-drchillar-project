@@ -53,9 +53,11 @@
    ========================================= */
 .slide__content {
   position: absolute;
-  bottom: clamp(15rem, 10vh, 7rem);
-  left: 3rem;
-  right: 3rem;
+  /* Fixed clamp syntax (min, ideal, max) so it actually scales properly */
+  bottom: clamp(7rem, 10vh, 15rem);
+  /* Changed fixed 3rem to clamp so it doesn't overflow on small mobile screens */
+  left: clamp(1rem, 5vw, 3rem);
+  right: clamp(1rem, 5vw, 3rem);
   width: auto;
   max-width: none;
   margin-inline: auto;
@@ -97,7 +99,7 @@
 .hero__brandText {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: left; /* Retained your original left alignment */
 }
 
 .hero__brandName {
@@ -134,7 +136,7 @@
   line-height: 1.1;
   color: #00b85c; /* Reverted back to the signature emerald green color */
   width: 100%;
-  text-align: center;
+  text-align: center; /* Retained your original center alignment */
   animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   opacity: 0;
 }
@@ -155,7 +157,7 @@
   width: 100%;
   max-width: 75rem;
   color: #e2e8f0; /* Soft readable light text for high contrast against dark overlays */
-  text-align: center;
+  text-align: center; /* Retained your original center alignment */
   animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 

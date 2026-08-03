@@ -148,7 +148,7 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent" />
 
-                  <div className="absolute bottom-4 left-4 right-4 bg-slate-900/10 backdrop-blur-md p-4 rounded-xl border border-slate-800 flex items-center justify-between text-white">
+                  {/* <div className="absolute bottom-4 left-4 right-4 bg-slate-900/10 backdrop-blur-md p-4 rounded-xl border border-slate-800 flex items-center justify-between text-white">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-emerald-600 rounded-lg text-white">
                         <Award className="w-5 h-5" aria-hidden="true" />
@@ -162,7 +162,7 @@ export default function AboutPage() {
                       <p className="text-sm font-bold text-emerald-400">500+</p>
                       <p className="text-xs text-slate-400 font-light">Projects Executed</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -199,10 +199,10 @@ export default function AboutPage() {
 
               <div className="space-y-5 text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-150">
                 <p className="text-justify">
-                  <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">CTS - Chiller Technical Services L.L.C</strong> is a trusted name in the UAE, engaged in the manufacturing and trading of <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Water Chillers</strong>, <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Cold Rooms</strong>, <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Heat Exchangers</strong>, and <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">A/C Units</strong>. We also provide a wide range of refrigeration equipment, spare parts, and accessories—delivering reliable cooling solutions tailored to every need.
+                  <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">CTS - Chiller Technical Services L.L.C</strong> is a trusted name in the UAE, engaged in the manufacturing and trading of <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Water Chillers</strong>, <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Cold Rooms</strong>, <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Heat Exchangers</strong>, and <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">A/C Units</strong>. We also provide a wide range of refrigeration equipment, spare parts, and accessories delivering reliable cooling solutions tailored to every need.
                 </p>
                 <p className="text-justify">
-                  With a strong global sourcing network and years of technical expertise, we ensure our products are <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">cost-effective</strong>, <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">energy-efficient</strong>, and <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">built to last</strong>. From chillers to cold rooms and air conditioning units, we take pride in serving industries with unmatched quality.
+                  With a strong global sourcing network and years of technical expertise, we ensure our products are cost-effective, energy-efficient, and built to last. From chillers to cold rooms and air conditioning units, we take pride in serving industries with unmatched quality.
                 </p>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function AboutPage() {
         </div>
 
         {/* OUR MISSION & GOALS */}
-        <div className="w-full bg-[#F7F8FA] dark:bg-slate-900 py-20 sm:py-24 border-y border-slate-200/60 dark:border-slate-800">
+        <div className="w-full bg-white dark:bg-slate-900 py-20 sm:py-24 ">
           <div className="max-w-300 mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="text-center max-w-xl mx-auto mb-12 space-y-3">
@@ -254,7 +254,7 @@ export default function AboutPage() {
 
       </section>
 
-      <section aria-labelledby="cta-heading" className="py-20 bg-gray-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+      <section aria-labelledby="cta-heading" className="py-30 bg-gray-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 id="cta-heading" className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
             Ready to optimize your facility performance?

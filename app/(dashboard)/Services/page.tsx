@@ -1,4 +1,4 @@
-// app/products/page.tsx
+// app/services/page.tsx
 "use client";
 
 import React, { useEffect } from "react";
@@ -7,14 +7,14 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-interface ProductItem {
+interface ServiceItem {
   title: string;
   description: string;
   image: string;
   href: string;
 }
 
-interface ProductCardProps {
+interface ServiceCardProps {
   image: string;
   title: string;
   description: string;
@@ -22,7 +22,7 @@ interface ProductCardProps {
   index: number;
 }
 
-const products: ProductItem[] = [
+const services: ServiceItem[] = [
   {
     title: "AC, Chillers & Genset Rentals",
     description: "High-performance chillers for all industrial and commercial cooling needs.",
@@ -61,32 +61,29 @@ const products: ProductItem[] = [
   },
 ];
 
-const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, href, index }) => {
-  // Cap the delay multiplier so cards in the second row don't wait too long to animate in
-  const aosDelay = (index % 3) * 100;
-
+const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description, href, index }) => {
   return (
     <Link
-      href={href || "#"}
+      href={href}
       data-aos="fade-up"
-      data-aos-delay={aosDelay}
-      data-aos-duration="600"
-      className="bg-white dark:bg-slate-900/80 rounded-2xl shadow-md dark:shadow-black/40 border border-gray-100 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:hover:border-emerald-500/50 flex flex-col group cursor-pointer"
+      data-aos-delay={index * 80}
+      data-aos-duration="500"
+      className="bg-white dark:bg-slate-900/80 rounded-2xl shadow-sm dark:shadow-black/40 border border-gray-100 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:hover:border-emerald-500/50 flex flex-col group cursor-pointer"
     >
-      <div className="relative w-full h-68 sm:h-72 overflow-hidden bg-gray-50 dark:bg-slate-800/60">
+      <div className="relative w-full h-64 overflow-hidden bg-gray-50 dark:bg-slate-800/60">
         <Image
-          src={image || "/images/placeholder.jpg"}
-          alt={title || "Service item"}
+          src={image}
+          alt={title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="p-8 flex flex-col grow justify-between text-center space-y-3.5 bg-white dark:bg-slate-900/80">
-        <h3 className="font-bold text-2xl text-[#183153] dark:text-white leading-snug group-hover:text-[#00b96b] dark:group-hover:text-emerald-400 transition-colors duration-200">
+      <div className="p-7 flex flex-col grow justify-between text-center space-y-2.5 bg-white dark:bg-slate-900/80">
+        <h3 className="font-bold text-xl text-[#183153] dark:text-white leading-snug group-hover:text-[#00b96b] dark:group-hover:text-emerald-400 transition-colors duration-200">
           {title}
         </h3>
-        <p className="text-[#6b7280] dark:text-slate-400 text-base leading-relaxed">
+        <p className="text-[#6b7280] dark:text-slate-400 text-sm leading-relaxed font-light">
           {description}
         </p>
       </div>
@@ -94,12 +91,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, hr
   );
 };
 
-export default function ProductsPage() {
+export default function ServicesPage() {
   useEffect(() => {
     AOS.init({
       once: true,
       easing: "ease-out",
-      duration: 600, // Enforce uniform global default duration
     });
   }, []);
 
@@ -107,12 +103,12 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-white dark:bg-slate-950 pt-25 flex flex-col">
       <main className="grow relative">
 
-        {/* Sticky Hero Banner */}
+        {/* Expanded Sticky Hero Banner with Parallax Scroll Effect */}
         <section className="sticky top-25 z-0 w-full h-95 sm:h-110 flex items-center justify-center overflow-hidden bg-gray-900">
           <div className="absolute inset-0">
             <Image
               src="/images/pipe.jpg"
-              alt="HVAC outdoor AC condenser unit background"
+              alt="HVAC service background"
               fill
               priority
               className="object-cover object-center scale-105"
@@ -144,11 +140,12 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        {/* Content Section */}
-        <section className="relative z-10 w-full bg-[#fafafa] dark:bg-slate-950 py-16 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] transition-colors duration-300">
-          <div className="max-w-350 mx-auto space-y-14">
+        {/* Clean Content Section sliding smoothly over the sticky hero background */}
+        <section className="relative z-10 w-full bg-[#fafafa] dark:bg-slate-950 py-20 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] transition-colors duration-300">
+          <div className="max-w-7xl mx-auto space-y-16">
             
-            <header data-aos="fade-up" data-aos-duration="600" className="max-w-175 mx-auto text-center space-y-3">
+            {/* Intro Header Section */}
+            <header data-aos="fade-up" data-aos-duration="500" className="max-w-2xl mx-auto text-center space-y-3">
               <h2 className="text-3xl sm:text-4xl font-bold text-[#183153] dark:text-white tracking-tight">
                 Provided Services
               </h2>
@@ -157,15 +154,15 @@ export default function ProductsPage() {
               </p>
             </header>
 
-            {/* Grid Container */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-              {products.length > 0 && products.map((product, index) => (
-                <ProductCard
-                  key={product.href || index}
-                  image={product.image}
-                  title={product.title}
-                  description={product.description}
-                  href={product.href}
+            {/* Services Grid with identical card sizing and styling */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+              {services.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  image={service.image}
+                  title={service.title}
+                  description={service.description}
+                  href={service.href}
                   index={index}
                 />
               ))}

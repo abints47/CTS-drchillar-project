@@ -62,4 +62,4 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       {children}
     </ReactLenis>
   );
-}
+} 

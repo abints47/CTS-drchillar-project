@@ -27,14 +27,14 @@
 
 /* Fully Transparent State (Over Hero Image) */
 .navbarContainer.transparent {
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border: 1px solid rgba(247, 247, 247, 0.25);
-  box-shadow: none;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: none !important;
 }
 
-/* Scrolled / Standard Glassmorphism State (After Hero Image) */
+/* Scrolled / Standard Glassmorphism State */
 .navbarContainer.scrolled {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
@@ -67,8 +67,8 @@
 }
 
 .logoTransparent {
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Desktop Navigation Container */
@@ -88,10 +88,12 @@
   border-color: rgba(0, 184, 148, 0.25);
 }
 
+/* Transparent inner links container over hero */
 .navDesktopTransparent {
-  background: rgba(117, 128, 122, 0.25);
+  background: rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(8px);
-  border-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .navItemWrapper {
@@ -117,7 +119,8 @@
 }
 
 .navItemTransparent {
-  color: #ffffff;
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .navText {
@@ -126,18 +129,18 @@
 }
 
 .navItem.active {
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
 }
 
 .navItemTransparent:hover {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 /* Desktop Dropdown Submenu Container */
 .dropdownMenu {
   position: absolute;
-  top: calc(100% - 0.2rem);
+  top: calc(100% + 0.5rem);
   left: 0;
   min-width: 320px;
   background: rgba(255, 255, 255, 0.95);
@@ -186,7 +189,7 @@
   color: #2ecc71;
 }
 
-/* Framer Motion Active & Hover Pills */
+/* Active & Hover Pills */
 .activePill {
   position: absolute;
   inset: 0;
@@ -236,14 +239,14 @@
 }
 
 .btnTransparent {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 /* Mobile Dropdown Menu */
 .navMobile {
   pointer-events: auto;
   position: absolute;
-  top: 4.5rem;
+  top: 5rem;
   width: calc(100% - 2rem);
   max-width: 400px;
   display: flex;

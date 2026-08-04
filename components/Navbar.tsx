@@ -16,7 +16,10 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   const pathname = usePathname()
-  const isHomePage = pathname === '/'
+
+  // Define which routes feature a top hero banner where transparency is desired
+  const pagesWithHero = ['/', '/Products', '/Services' ,'/Products/water-chillers','/Products/heat-exchangers','/Products/cold-rooms','/Products/ac-units' ]
+  const hasHero = pagesWithHero.includes(pathname)
 
   // 1. Force window scroll to top on route change
   useEffect(() => {
@@ -25,20 +28,25 @@ export default function Navbar() {
     setActiveDropdown(null)
   }, [pathname])
 
+  // 2. Dynamic Scroll Listener
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      const heroThreshold = window.innerHeight * 0.85
+      if (!hasHero) {
+        setIsScrolledPastHero(true) // Always solid for pages without a hero
+        return
+      }
 
-      const pastHero = !isHomePage || currentScrollY > heroThreshold
-      setIsScrolledPastHero(pastHero)
+      // Threshold depending on the page
+      const threshold = pathname === '/' ? window.innerHeight * 0.85 : 200
+      setIsScrolledPastHero(currentScrollY > threshold)
     }
 
     handleScroll()
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isHomePage])
+  }, [pathname, hasHero])
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -47,10 +55,10 @@ export default function Navbar() {
       href: '/Products', 
       label: 'Products',
       submenu: [
-        { href: '/Products#chillers', label: 'Water Chillers, Coolers and Heat Pumps' },
-        { href: '/Products#air-handlers', label: 'Cold Rooms & Ice Block Machines' },
-        { href: '/Products#cold-rooms', label: 'Heat Exchangers & Cooling Towers' },
-        { href: '/Products/sadas', label: 'AC Units & Air Curtains' },
+        { href: '/Products/water-chillers', label: 'Water Chillers, Coolers and Heat Pumps' },
+        { href: '/Products/cold-rooms', label: 'Cold Rooms & Ice Block Machines' },
+        { href: '/Products/heat-exchangers', label: 'Heat Exchangers & Cooling Towers' },
+        { href: '/Products/ac-units', label: 'AC Units & Air Curtains' },
       ]
     },
     { 
@@ -69,7 +77,8 @@ export default function Navbar() {
     { href: 'https://wa.me/97167434537', label: <Phone size={18} />, isExternal: true }
   ]
 
-  const isTransparent = isHomePage && !isScrolledPastHero
+  // Only transparent if the current page has a hero and we haven't scrolled past it
+  const isTransparent = hasHero && !isScrolledPastHero
 
   return (
     <motion.header 

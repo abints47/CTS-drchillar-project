@@ -1,4 +1,3 @@
-// app/services/page.tsx
 "use client";
 
 import React, { useEffect } from "react";
@@ -100,11 +99,11 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 pt-25 flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-slate-950 flex flex-col">
       <main className="grow relative">
 
-        {/* Expanded Sticky Hero Banner with Parallax Scroll Effect */}
-        <section className="sticky top-25 z-0 w-full h-95 sm:h-110 flex items-center justify-center overflow-hidden bg-gray-900">
+        {/* Top sticky banner section extending behind the navbar with identical height and alignment */}
+        <section className="sticky top-0 z-0 w-full h-95 sm:h-110 flex items-center justify-center overflow-hidden bg-gray-900">
           <div className="absolute inset-0">
             <Image
               src="/images/pipe.jpg"
@@ -119,7 +118,7 @@ export default function ServicesPage() {
           <div 
             data-aos="zoom-in" 
             data-aos-duration="600"
-            className="relative z-10 max-w-300 w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3"
+            className="relative z-10 max-w-300 w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 pt-16"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
               Services
@@ -154,7 +153,7 @@ export default function ServicesPage() {
               </p>
             </header>
 
-            {/* Services Grid with identical card sizing and styling */}
+            {/* Services Grid with identical styling */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
               {services.map((service, index) => (
                 <ServiceCard

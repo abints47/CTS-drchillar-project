@@ -91,11 +91,11 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 pt-25 flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-slate-950 flex flex-col">
       <main className="grow relative">
 
-        {/* Expanded Sticky Hero Banner with Parallax Scroll Effect */}
-        <section className="sticky top-25 z-0 w-full h-95 sm:h-110 flex items-center justify-center overflow-hidden bg-gray-900">
+        {/* Top sticky banner section extending behind the navbar with a fixed banner height */}
+        <section className="sticky top-0 z-0 w-full h-95 sm:h-110 flex items-center justify-center overflow-hidden bg-gray-900">
           <div className="absolute inset-0">
             <Image
               src="/images/air-conditioner.jpg"
@@ -110,7 +110,7 @@ export default function ProductsPage() {
           <div 
             data-aos="zoom-in" 
             data-aos-duration="600"
-            className="relative z-10 max-w-300 w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3"
+            className="relative z-10 max-w-300 w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center space-y-3 pt-16"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
               Products
@@ -141,7 +141,7 @@ export default function ProductsPage() {
                 Our Products
               </h2>
               <p className="text-[#6b7280] dark:text-slate-400 text-base sm:text-lg leading-relaxed">
-                Explore our full range of high-quality cooling and HVAC solutions  engineered for performance, reliability, and long-term efficiency.
+                Explore our full range of high-quality cooling and HVAC solutions engineered for performance, reliability, and long-term efficiency.
               </p>
             </header>
 

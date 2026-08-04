@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Menu, X, Phone, ChevronDown, Target } from 'lucide-react'
-import { motion, AnimatePresence, setTarget } from 'framer-motion'
+import { Menu, X, Phone, ChevronDown } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Navbar.module.css'
 import logo from '@/public/logo.png'
 
@@ -17,6 +17,13 @@ export default function Navbar() {
 
   const pathname = usePathname()
   const isHomePage = pathname === '/'
+
+  // 1. Force window scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    setMobileMenuOpen(false)
+    setActiveDropdown(null)
+  }, [pathname])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,11 +39,6 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isHomePage])
-
-  useEffect(() => {
-    setMobileMenuOpen(false)
-    setActiveDropdown(null)
-  }, [pathname])
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -64,7 +66,7 @@ export default function Navbar() {
       ]
     },
     { href: '/Contact', label: 'Contact Us' },
-    { href: 'https://wa.me/97167434537',  label: <Phone size={18} />,isExternal: true }
+    { href: 'https://wa.me/97167434537', label: <Phone size={18} />, isExternal: true }
   ]
 
   const isTransparent = isHomePage && !isScrolledPastHero
@@ -82,7 +84,7 @@ export default function Navbar() {
         `}
       >
         {/* Brand Logo */}
-        <Link href="/" className={styles.logo}>
+        <Link href="/" scroll={true} className={styles.logo}>
           <Image 
             src={logo}
             alt="Brand Logo" 
@@ -118,6 +120,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
+                  scroll={true}
                   className={`
                     ${styles.navItem} 
                     ${isActive ? styles.active : ''} 
@@ -159,6 +162,7 @@ export default function Navbar() {
                       <Link
                         key={sub.href}
                         href={sub.href}
+                        scroll={true}
                         className={styles.dropdownItem}
                       >
                         {sub.label}
@@ -196,6 +200,7 @@ export default function Navbar() {
               <div key={link.href} className="flex flex-col w-full">
                 <Link
                   href={link.href}
+                  scroll={true}
                   className={`${styles.mobileNavItem} ${pathname === link.href ? styles.activeMobile : ''}`}
                 >
                   {link.label}
@@ -206,6 +211,7 @@ export default function Navbar() {
                       <Link
                         key={sub.href}
                         href={sub.href}
+                        scroll={true}
                         className={styles.mobileSubItem}
                       >
                         {sub.label}

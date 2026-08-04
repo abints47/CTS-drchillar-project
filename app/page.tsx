@@ -240,7 +240,7 @@ export default function HomePage() {
               <div className="text-emerald-600 dark:text-emerald-400">
                 <ArrowLeftRight size={42} strokeWidth={2.2} />
               </div>
-              <h4 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 Trading
               </h4>
               <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
@@ -258,7 +258,7 @@ export default function HomePage() {
               <div className="text-emerald-600 dark:text-emerald-400">
                 <Wrench size={42} strokeWidth={2.2} />
               </div>
-              <h4 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 Maintenance
               </h4>
               <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
@@ -276,7 +276,7 @@ export default function HomePage() {
               <div className="text-emerald-600 dark:text-emerald-400">
                 <Warehouse size={42} strokeWidth={2.2} />
               </div>
-              <h4 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 Rentals
               </h4>
               <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
@@ -294,7 +294,7 @@ export default function HomePage() {
               <div className="text-emerald-600 dark:text-emerald-400">
                 <Headphones size={42} strokeWidth={2.2} />
               </div>
-              <h4 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 Services
               </h4>
               <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
@@ -311,13 +311,13 @@ export default function HomePage() {
           {/* Products Subsection */}
           <div className="space-y-4 " data-aos="fade-up">
             <div className="text-center space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white tracking-tight">
                 Our Products
               </h3>
               <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full" />
             </div>
 
-            <p className="max-w-3xl mx-auto text-center text-base sm:text-lg font-normal text-gray-600 dark:text-gray-300 tracking-wide px-4 ">
+            <p className="max-w-3xl mx-auto text-center text-base sm:text-lg font-normal text-gray-600 dark:text-gray-300 tracking-tight px-4 leading-relaxed">
               We provide a wide range of cooling and refrigeration solutions built for performance, reliability, and efficiency.
             </p>
 
@@ -348,15 +348,6 @@ export default function HomePage() {
       <ServicesHighlight/>
 
 
-
-
-
-
-
-
-
-
-
       {/* Rent A/C Units Section */}
       <section 
         className="relative pt-30 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden" 
@@ -383,10 +374,10 @@ export default function HomePage() {
           <div className="lg:col-span-5 space-y-6 pt-4 lg:pt-0">
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl font-bold text-emerald-700 dark:text-white tracking-tight leading-tight sm:leading-snug">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1FAA6D] dark:text-white tracking-tight leading-tight sm:leading-snug">
               Rent A/C Units, Chillers &amp; Gensets
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="text-base text-gray-600 dark:text-slate-300 leading-relaxed font-normal">
               Whether you need to cool down a large space, maintain process temperatures, or provide uninterrupted power to a site, we offer reliable rental solutions for A/C units, water chillers, and diesel generators.
             {/* </p> */}
 
@@ -406,11 +397,11 @@ export default function HomePage() {
               <br/><span >All rental units are fully maintained by our dedicated technical team ensuring continuous comfort, peak performance, and zero downtime whenever you need it.</span> 
             </p>
 
-            {/* Action Button */}
+     
             <div className="pt-2">
               <Link 
                 href="/About" 
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1FAA6D] hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
               >
                 <span>Know More</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

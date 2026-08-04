@@ -68,11 +68,11 @@ export default function CardImage({
 
         {/* Content Section */}
         <CardHeader className="space-y-2 px-6 pt-5 pb-3">
-          <CardTitle className="text-center text-lg sm:text-xl font-bold leading-snug text-slate-800 dark:text-slate-100 line-clamp-2 tracking-tight">
+          <CardTitle className="text-center text-lg sm:text-xl font-bold leading-snug text-gray-800 dark:text-slate-100 line-clamp-2 tracking-tight">
             {title}
           </CardTitle>
 
-          <CardDescription className="text-center text-sm leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-3 font-light">
+          <CardDescription className="text-center text-sm leading-relaxed text-gray-800 dark:text-slate-400 line-clamp-3 font-light">
             {description}
           </CardDescription>
         </CardHeader>

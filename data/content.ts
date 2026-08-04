@@ -68,7 +68,7 @@ export const SERVICES: CardItem[] = [
     buttonLink: "/Services/overhauling",
   },
    {
-    id: 10,
+    id: 106,
     title: "AMC",
     description: "High-grade custom cooling coil manufacturing tailored to your specs.",
     imageSrc: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",

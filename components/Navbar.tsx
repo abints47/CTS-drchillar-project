@@ -66,12 +66,12 @@ export default function Navbar() {
       href: '/Services', 
       label: 'Services',
       submenu: [
-        { href: '/Services#maintenance', label: 'AC, Chillers & Genset Rentals ' },
-        { href: '/Services#installation', label: 'Chilled Water Pipeline & Flushing' },
-        { href: '/Services#chillers', label: 'AC Chillers & Cold Rooms Maintenance' },
-        { href: '/Services#Coil', label: 'Coil Manufacturing & Replacement' },
-        { href: '/Services#winding', label: 'Overhauling & Winding' },
-        { href: '/Services#amc', label: 'AMC' },
+        { href: '/Services/AC-chillers', label: 'AC, Chillers & Genset Rentals ' },
+        { href: '/Services/Water-chillers', label: 'Chilled Water Pipeline & Flushing' },
+        { href: '/Services/Coldroom-Maintenance', label: 'AC Chillers & Cold Rooms Maintenance' },
+        { href: '/Services/coil-Manufacture', label: 'Coil Manufacturing & Replacement' },
+        { href: '/Services/overhauling', label: 'Overhauling & Winding' },
+        { href: '/Services/amc', label: 'AMC' },
       ]
     },
     { href: '/Contact', label: 'Contact Us' },

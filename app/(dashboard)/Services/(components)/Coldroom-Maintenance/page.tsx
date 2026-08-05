@@ -7,9 +7,12 @@ import Image from "next/image";
 import {
   ArrowLeft,
   ArrowRight,
-  Snowflake,
+  RefreshCw,
   AirVent,
   Fuel,
+  Zap,
+  Wrench,
+  Droplets, 
   Asterisk,
 } from "lucide-react";
 
@@ -18,55 +21,84 @@ import {
 // ==========================================
 
 const serviceData = {
-  title: "Rentals ( A/C, Chiller, Genset )",
-  subtitle: "Short & Long-Term Rental Solutions",
-  heading: "A/C  Chiller  Genset Rentals",
+  title: "A/C, Chiller & Cold Room Maintenance",
+  subtitle: "AC, Chiller & Cold Room Maintenance",
+  heading: "Preventive • Corrective • Annual Contracts",
   description:
-    "We offer a wide range of temporary cooling and power solutions for industrial, commercial and event-based applications. Our rental fleet includes air conditioners, chillers and diesel generators backed by quick delivery and 24/7 support.",
+    "We provide complete servicing, troubleshooting and refurbishment for all types of AC, chiller and cold room systems. From mechanical repairs to regular cleaning and flushing, our qualified technicians keep your equipment running efficiently and avoid costly breakdowns.",
   heroImage:
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1600",
+    "https://www.drchiller.com/maintenance-header.webp",
   services: [
     {
-      title: "AC Rental",
+      title: "Installation of New / Used Units",
       image:
-        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
-      icon: <AirVent className="w-5 h-5 text-emerald-600" />,
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-installation.be1c6291.webp&w=1920&q=75",
+      icon: <Wrench className="w-5 h-5 text-emerald-600" />,
       description:
-        "Temporary cooling solutions with free standing, package and air handling units to suit any application.",
+        "Professional installation and commissioning of AC, chillers and cold room units.",
       features: [
-        "3TR / 5TR / 8TR Free Standing AC",
-        "5TR / 10TR / 20TR / 25TR Package AC",
-        "10TR / 20TR Air Handling Units (AHU)",
-        "10TR Fresh Air Handling Units (FAHU)",
+        "Cold room AC systems",
+        "Industrial chillers (new & refurbished)",
       ],
     },
     {
-      title: "Chiller Rental",
+      title: "Spare Parts Replacement",
       image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-      icon: <Snowflake className="w-5 h-5 text-emerald-600" />,
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-replacement.5871e9ba.webp&w=1920&q=75",
+      icon: <RefreshCw  className="w-5 h-5 text-emerald-600" />,
       description:
-        "High-efficiency chillers for short and long-term rental, with full on-site support.",
+        "Original spare parts for reliable, long lasting performance.",
       features: [
-        "1.5TR to 100TR available",
-        "Cooling tower support during peak summer",
-        "Low temperature chillers for AHU / FCU",
-        "Mock-up room cooling support",
-        "Temporary backup for existing chillers",
+        "Control valves & sensors",
+        "Compressors, fans, motors",
       ],
     },
     {
-      title: "Genset Rental",
+      title: "Condenser Coil Replacement",
       image:
-        "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?auto=format&fit=crop&q=80&w=800",
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-condenser-coil.bb19a2f5.webp&w=1920&q=75",
       icon: <Fuel className="w-5 h-5 text-emerald-600" />,
       description:
-        "Reliable diesel generator rental packages including cabling and accessories.",
+        "Faulty condenser coils replaced with high-efficiency models.",
       features: [
-        "Diesel tank included",
-        "Electrical cables",
-        "Distribution boards / industrial plugs",
-        "Oil-spill prevention tray",
+        "High-efficiency coils",
+        "Quick on-site retrofit",
+      ],
+    },
+     {
+      title: "Duct Cleaning",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-duct-cleaning.5878bcf3.webp&w=1920&q=75",
+      icon: <AirVent className="w-5 h-5 text-emerald-600" />,
+      description:
+        "Thorough duct cleaning to improve air quality and airflow.",
+      features: [
+        "Removal of dust & microbial growth",
+        "Improves airflow performance",
+      ],
+    },
+    {
+      title: "Electric Panel Rewiring",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-electric-panel.1afb70e0.webp&w=1920&q=75",
+      icon: <Zap  className="w-5 h-5 text-emerald-600" />,
+      description:
+        "Repair and rewiring of electrical control panels for safe operation.",
+      features: [
+        "Control panel overhauling",
+        "Wiring upgrades & safety checks",
+      ],
+    },
+     {
+      title: "Gas Leak Arresting & Water Servicing",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-water-service.885ecf9f.webp&w=1920&q=75",
+      icon: <Droplets   className="w-5 h-5 text-emerald-600" />,
+      description:
+        "Complete refrigerant leak detection and water servicing of systems.",
+      features: [
+        "Leak detection & refrigerant recharge",
+        "Full water service of condensing units",
       ],
     },
   ],
@@ -99,12 +131,12 @@ const serviceData = {
       href: "/Services/Water-chillers",
     },
     {
-      title: "AC Chillers & Cold Rooms Maintenance",
+      title: "Overhauling & Winding",
       description:
-        "High-grade custom cooling coil manufacturing tailored to your specs.",
+        "Professional overhauling and winding services to extend equipment lifespan.",
       image:
-        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-replacement.5871e9ba.webp&w=1920&q=75",
-      href: "/Services/Coldroom-Maintenance",
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Foverhauling-motor-winding.62ab296e.webp&w=1920&q=75",
+      href: "/Services/overhauling",
     },
     {
       title: "Coil Manufacturing & Replacement",
@@ -133,15 +165,16 @@ function HeroSection() {
         <div className="absolute inset-0 bg-black/45" />
       </div>
 
-      <div className="absolute pt-20 sm:top-12 sm:right-5 z-20">
-        <Link
-          href="/Services"
-          className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all shadow-lg"
-          aria-label="Back"
-        >
-          <ArrowLeft className="w-5 h-9" />
+      <div className="absolute pt-35 sm:top-12 sm:right-5 z-20">
+       <Link
+         href="/Services"
+         className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg"
+         aria-label="Back"
+         >
+         <ArrowLeft className="w-5 h-5" />
+          <span className="text-sm font-medium">Back</span>
         </Link>
-      </div>
+       </div>
 
       <motion.div
         className="relative z-10 text-center px-4 max-w-4xl mx-auto"
@@ -172,7 +205,7 @@ function IntroductionSection() {
           <span className="text-emerald-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">
             {serviceData.subtitle}
           </span>
-          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
+          <h2 className="text-2xl pt-5 sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
             {serviceData.heading}
           </h2>
           <p className="text-gray-600 text-sm sm:text-lg leading-relaxed font-light">
@@ -262,31 +295,28 @@ function OverlappingImageCollage() {
 
 function RentalServicesSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 my-10 border-y border-gray-100">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 my-10 border-y border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
-            Rental Services
+            Our AC, Chiller & Cold Room Maintenance Services
           </h2>
-          <p className="text-gray-700 text-sm sm:text-lg">
-            Comprehensive temporary cooling and power packages tailored for your exact operational requirements.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {serviceData.services.map((service, idx) => (
             <motion.div
               key={idx}
               whileHover={{
-                y: -8,
+                y: -6,
                 boxShadow:
-                  "0 25px 30px -5px rgb(0 0 0 / 0.15), 0 10px 12px -5px rgb(0 0 0 / 0.1)",
+                  "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
               }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-3xl border border-gray-100 shadow-md overflow-hidden flex flex-col transition-all w-full"
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col transition-all w-full"
             >
               {/* Image */}
-              <div className="h-48 sm:h-60 w-full overflow-hidden bg-gray-100">
+              <div className="h-36 sm:h-44 w-full overflow-hidden bg-gray-100">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -295,25 +325,25 @@ function RentalServicesSection() {
               </div>
 
               {/* Content */}
-              <div className="p-6 sm:p-8 flex flex-col gap-4">
-                <div className="flex items-center gap-3">
+              <div className="p-5 sm:p-6 flex flex-col gap-3">
+                <div className="flex items-center gap-2.5">
                   {service.icon}
-                  <h3 className="font-semibold text-emerald-700 text-xl sm:text-2xl">
+                  <h3 className="font-semibold text-emerald-700 text-lg sm:text-xl">
                     {service.title}
                   </h3>
                 </div>
 
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   {service.description}
                 </p>
 
-                <ul className="space-y-2.5 mt-2">
+                <ul className="space-y-1.5 pt-1">
                   {service.features.map((feature, fIdx) => (
                     <li
                       key={fIdx}
-                      className="flex items-start gap-2.5 text-sm sm:text-base text-gray-700"
+                      className="flex items-start gap-2 text-xs sm:text-sm text-gray-700"
                     >
-                      <Asterisk className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
+                      <Asterisk className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -484,8 +514,8 @@ export default function IndustrialRentalServicePage() {
         <HeroSection />
         <IntroductionSection />
         <RentalServicesSection />
-        <WhyChooseSection />
-        <GallerySection />
+       {/* <WhyChooseSection /> */}
+        {/* <GallerySection /> */}
         <RelatedServicesSection />
       </main>
     </div>

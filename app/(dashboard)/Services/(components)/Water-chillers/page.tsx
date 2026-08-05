@@ -171,15 +171,16 @@ function HeroSection() {
         <div className="absolute inset-0 bg-black/45" />
       </div>
 
-      <div className="absolute pt-20 sm:top-12 sm:right-5 z-20">
-        <Link
-          href="/Services"
-          className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all shadow-lg"
-          aria-label="Back"
-        >
-          <ArrowLeft className="w-5 h-9" />
+      <div className="absolute pt-35 sm:top-12 sm:right-5 z-20">
+       <Link
+         href="/Services"
+         className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg"
+         aria-label="Back"
+         >
+         <ArrowLeft className="w-5 h-5" />
+          <span className="text-sm font-medium">Back</span>
         </Link>
-      </div>
+       </div>
 
       <motion.div
         className="relative z-10 text-center px-4 max-w-4xl mx-auto"
@@ -300,28 +301,28 @@ function OverlappingImageCollage() {
 
 function RentalServicesSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 my-10 border-y border-gray-100">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 my-10 border-y border-gray-100">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
             Our Pipeline & Flushing Services
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {serviceData.services.map((service, idx) => (
             <motion.div
               key={idx}
               whileHover={{
-                y: -8,
+                y: -6,
                 boxShadow:
-                  "0 25px 30px -5px rgb(0 0 0 / 0.15), 0 10px 12px -5px rgb(0 0 0 / 0.1)",
+                  "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
               }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-3xl border border-gray-100 shadow-md overflow-hidden flex flex-col transition-all w-full"
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col transition-all w-full"
             >
               {/* Image */}
-              <div className="h-48 sm:h-60 w-full overflow-hidden bg-gray-100">
+              <div className="h-36 sm:h-44 w-full overflow-hidden bg-gray-100">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -330,25 +331,25 @@ function RentalServicesSection() {
               </div>
 
               {/* Content */}
-              <div className="p-6 sm:p-8 flex flex-col gap-4">
-                <div className="flex items-center gap-3">
+              <div className="p-5 sm:p-6 flex flex-col gap-3">
+                <div className="flex items-center gap-2.5">
                   {service.icon}
-                  <h3 className="font-semibold text-emerald-700 text-xl sm:text-2xl">
+                  <h3 className="font-semibold text-emerald-700 text-lg sm:text-xl">
                     {service.title}
                   </h3>
                 </div>
 
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   {service.description}
                 </p>
 
-                <ul className="space-y-2.5 mt-2">
+                <ul className="space-y-1.5 pt-1">
                   {service.features.map((feature, fIdx) => (
                     <li
                       key={fIdx}
-                      className="flex items-start gap-2.5 text-sm sm:text-base text-gray-700"
+                      className="flex items-start gap-2 text-xs sm:text-sm text-gray-700"
                     >
-                      <Asterisk className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
+                      <Asterisk className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}

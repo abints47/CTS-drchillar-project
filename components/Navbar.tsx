@@ -18,7 +18,8 @@ export default function Navbar() {
   const pathname = usePathname()
 
   // Define which routes feature a top hero banner where transparency is desired
-  const pagesWithHero = ['/', '/Products', '/Services' ,'/Products/water-chillers','/Products/heat-exchangers','/Products/cold-rooms','/Products/ac-units' ]
+  const pagesWithHero = ['/', '/Products', '/Services' ,'/Products/water-chillers','/Products/heat-exchangers','/Products/cold-rooms','/Products/ac-units','/Services/AC-chillers' ,
+                          '/Services/amc' ,'/Services/coil-Manufacture' ,'/Services/Coldroom-Maintenance' ,'/Services/overhauling' ,'/Services/Water-chillers']
   const hasHero = pagesWithHero.includes(pathname)
 
   // 1. Force window scroll to top on route change

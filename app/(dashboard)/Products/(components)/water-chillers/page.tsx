@@ -176,38 +176,121 @@ function ProductHero() {
   );
 }
 
-function ProductOverview() {
+function ProductFeatureGrid() {
   return (
-    <div className="grid grid-cols-1 pt-10 lg:grid-cols-12 gap-12 items-start">
-      <div className="lg:col-span-5">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-4">
-          Advanced Cooling Technology for Modern Industry
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <motion.div 
+        className="lg:col-span-6 flex flex-col items-start space-y-4"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <span className="text-emerald-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">
+          Cooling That Works!
+        </span>
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
+          Precision. Performance. Reliability.
         </h2>
-        <p className="text-gray-600 text-base leading-relaxed mb-6">
-          {productData.description}
-        </p>
-      </div>
-      <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {productData.features.map((feature, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.2 }}
-            className="p-5 bg-[#F8FAFC] rounded-2xl border border-gray-100 shadow-sm"
-          >
-            <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center mb-3 border border-gray-100">
-              {feature.icon}
-            </div>
-            <h3 className="font-semibold text-gray-900 text-base mb-1.5">
-              {feature.title}
-            </h3>
-            <p className="text-gray-600 text-xs leading-relaxed">
-              {feature.desc}
-            </p>
-          </motion.div>
-        ))}
+        <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-light">
+            Our water chillers, water coolers, and heat pumps are engineered for industrial and commercial needs — combining energy efficiency with dependable performance. From manufacturing plants to office spaces, we help you stay cool under pressure.        </p>
+      </motion.div>
+
+      {/* Image Container */}
+      <div className="lg:col-span-6 relative w-full h-90 sm:h-105 flex items-center justify-center">
+        
+        {/* Larger Background Image with Independent Hover Animation */}
+        <motion.div 
+          className="absolute right-0 top-0 w-[78%] h-[82%] rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-gray-100 z-10 cursor-pointer"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          whileHover={{ scale: 1.03, y: -6, transition: { duration: 0.3 } }}
+        >
+          <img
+            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwater-cooled-industrial-water-chiller.e40b6229.webp&w=640&q=75"
+            alt="Primary cooling equipment component view"
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </motion.div>
+
+        {/* Smaller Floating Image with Independent Hover Animation */}
+        <motion.div 
+          className="absolute left-0 bottom-0 w-[55%] h-[60%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white z-20 cursor-pointer"
+          initial={{ opacity: 0, y: 30, x: -20 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          whileHover={{ scale: 1.05, y: -8, x: 4, transition: { duration: 0.3 } }}
+        >
+          <img
+            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwater-chiller-1.f86ee9f8.webp&w=384&q=75"
+            alt="Secondary structural detail view"
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </motion.div>
+
       </div>
     </div>
+  );
+}
+
+function ProductOverview() {
+  return (
+    <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 max-w-350 mx-auto overflow-hidden">
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-50/50 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <motion.div 
+          className="lg:col-span-5 flex flex-col items-start space-y-5"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        > 
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+            Advanced Cooling Technology for Modern Industry
+          </h2>
+          
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+            {productData.description}
+          </p>
+          
+          <div className="pt-2">
+            <div className="h-1.5 w-16 bg-emerald-500 rounded-full" />
+          </div>
+        </motion.div>
+
+        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {productData.features.map((feature, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="group relative p-6 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_-5px_rgba(16,185,129,0.1)] hover:border-emerald-200 transition-all duration-300"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 shadow-inner flex items-center justify-center mb-4 group-hover:bg-emerald-50 group-hover:text-white transition-colors duration-300">
+                {feature.icon}
+              </div>
+
+              <h3 className="font-bold text-slate-900 text-lg mb-2 group-hover:text-emerald-700 transition-colors">
+                {feature.title}
+              </h3>
+
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                {feature.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+    </section>
   );
 }
 
@@ -373,6 +456,7 @@ export default function ProductShowcaseSection() {
         {/* Clean Content Section sliding smoothly over the sticky hero background */}
         <section className="relative z-10 w-full bg-white py-20 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] transition-colors duration-300">
           <div className="max-w-6xl mx-auto space-y-24">
+            <ProductFeatureGrid />
             <ProductOverview />
             <TechnicalSpecifications />
             <GallerySection />

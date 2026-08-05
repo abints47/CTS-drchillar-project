@@ -10,6 +10,7 @@ import {
   Leaf,
   ArrowRight,
   Building2,
+  Snowflake,
   Factory,
   FlaskConical,
   Store,
@@ -389,13 +390,8 @@ function ProductFeatureCardSection({
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
               >
-                <span className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-emerald-100">
-                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M2 12h20" />
-                    <path d="M12 2v20" />
-                    <path d="m4.93 4.93 14.14 14.14" />
-                    <path d="m19.07 4.93-14.14 14.14" />
-                  </svg>
+                <span className="w-8 h-8 rounded-full text-emerald-600 flex items-center justify-center  mt-0.9 border border-emerald-100">
+                  <Snowflake className="w-3 h-3" />
                 </span>
                 <span>{feature}</span>
               </motion.li>

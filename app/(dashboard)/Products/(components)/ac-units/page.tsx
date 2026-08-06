@@ -11,13 +11,15 @@ import {
   ArrowRight,
   Building2,
   Factory,
+  Wrench,
+  Dot,
+  Settings2,
   FlaskConical,
   Store,
+  Layers,
+  LoaderPinwheel,
 } from "lucide-react";
 
-// ==========================================
-// DATA STRUCTURES & MOCK DATA
-// ==========================================
 
 const productData = {
   name: ["A/C Units & ", "Air Curtains"],
@@ -99,11 +101,67 @@ const productData = {
       image: "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
     },
   ],
-  similarProducts: [
+  services: [
+    {
+      title: "Air Conditioning Units",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fac-units.ea85447e.webp&w=640&q=75",
+      icon: <Settings2   className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Full range of air-conditioning systems for residential, commercial and industrial applications.",
+      features: [
+        "Split AC / Free-standing type",
+        "Ductable split AC / Package AC",
+        "FCU, AHU & FAHU units",
+        "Electric panel AC",
+      ],
+    },
+    {
+      title: "Cooling Capacity Range",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fac-temperature-range.65f8f41e.webp&w=640&q=75",
+      icon: <LoaderPinwheel   className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Units available from 1.5 TR up to 25 TR to match every possible cooling requirement.",
+      features: [
+        "1.5 TR – 5 TR (residential / light commercial)",
+        "10 TR – 25 TR (heavy commercial / industrial)",
+        "High-efficiency, reliable performance in high ambient conditions",
+      ],
+    },
+    {
+      title: "Cleaning & Service",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fac-cleaning-service.76a0d5e4.webp&w=640&q=75",
+      icon: <Wrench  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Complete field service for A/C systems to maintain performance and energy efficiency.",
+      features: [
+        "Water service & on-site cleaning",
+        "AC duct cleaning",
+        "Unit shifting & reinstallation",
+      ],
+    },
+    {
+      title: "Refurbishment & Component Replacement",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fplate-heat-exchangers.a0ae5361.webp&w=640&q=75",
+      icon: <Layers className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Restoration and upgrade services for aging systems to extend life and improve reliability.",
+      features: [
+        "Compressor, coil and fan replacements",
+        "Blower motor & compressor rewinding",
+        "Retrofit options for improved efficiency",
+      ],
+    },
+
+  ],
+   similarProducts: [
     {
       title: "Water Chillers, Coolers and Heat Pumps",
       desc: "High-performance chillers for all your cooling needs.",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600",
+      image: "/images/products/water-chilers.jpg",
       href: "/Products/water-chillers",
     },
     {
@@ -114,9 +172,9 @@ const productData = {
     },
     {
       title: "Heat Exchangers & Cooling Towers",
-      desc: "Reliable heat exchange to optimize energy transfer processes.",
-      image: "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
-      href: "/Products/ac-units",
+      desc: "Reliable heat exchangers for efficient thermal energy transfer.",
+      image: "/images/pipe.jpg",
+      href: "/Products/heat-exchangers",
     },
   ],
 };
@@ -127,7 +185,7 @@ const productData = {
 
 function ProductHero() {
   return (
-    <section className="sticky top-0 z-0 w-full h-[65vh] sm:h-[75vh] flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="sticky top-0 z-0 w-full h-[55vh] sm:h-[55vh] flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0">
         <motion.div
           className="w-full h-full"
@@ -162,12 +220,8 @@ function ProductHero() {
             {productData.tagline}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium px-7 py-3.5 rounded-full shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 group">
-              Request Technical Quote
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
             <button className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-7 py-3.5 rounded-full backdrop-blur-md border border-white/15 transition-all">
-              Contact US 
+              <Link href={"/Contact"}>Contact US</Link> 
             </button>
           </div>
         </motion.div>
@@ -239,110 +293,6 @@ function ProductFeatureGrid() {
 }
 
 
-
-function ProductOverview() {
-  return (
-    <div className="grid grid-cols-1 pt-10 lg:grid-cols-12 gap-12 items-start">
-      <div className="lg:col-span-5">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-4">
-          Advanced Cooling Technology for Modern Industry
-        </h2>
-        <p className="text-gray-600 text-base leading-relaxed mb-6">
-          {productData.description}
-        </p>
-      </div>
-      <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {productData.features.map((feature, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.2 }}
-            className="p-5 bg-[#F8FAFC] rounded-2xl border border-gray-100 shadow-sm"
-          >
-            <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center mb-3 border border-gray-100">
-              {feature.icon}
-            </div>
-            <h3 className="font-semibold text-gray-900 text-base mb-1.5">
-              {feature.title}
-            </h3>
-            <p className="text-gray-600 text-xs leading-relaxed">
-              {feature.desc}
-            </p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function TechnicalSpecifications() {
-  return (
-    <div>
-      <div className="text-center max-w-xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          Technical Specifications
-        </h2>
-        <p className="text-gray-600 text-sm">
-          Core operating baselines for the standard 150 TR configuration.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {productData.specs.map((spec, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ y: -3 }}
-            className="p-6 bg-[#F8FAFC] rounded-2xl border border-gray-100 shadow-sm text-center"
-          >
-            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-2">
-              {spec.label}
-            </span>
-            <span className="text-2xl font-bold text-gray-900">
-              {spec.value}
-            </span>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function GallerySection() {
-  const [activeImage, setActiveImage] = React.useState(productData.gallery[0]);
-
-  return (
-    <div>
-      <div className="text-center max-w-xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          System Architecture Gallery
-        </h2>
-        <p className="text-gray-600 text-sm">Detailed views of assembly components and housing layout.</p>
-      </div>
-      <div className="max-w-3xl mx-auto">
-        <div className="rounded-2xl overflow-hidden shadow-md mb-4 bg-gray-100 border border-gray-100 h-95">
-          <img
-            src={activeImage}
-            alt="Chiller Unit Component View"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="flex justify-center gap-3">
-          {productData.gallery.map((img, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(img)}
-              className={`w-20 h-16 rounded-xl overflow-hidden border-2 transition-all ${
-                activeImage === img ? "border-emerald-600 scale-105 shadow-sm" : "border-transparent opacity-60 hover:opacity-100"
-              }`}
-            >
-              <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function ProductFeatureCardSection() {
   const keyBenefits = [
     "Precision temperature regulation under continuous heavy loads",
@@ -399,39 +349,67 @@ function ProductFeatureCardSection() {
 }
 
 
-function WhyChooseSection() {
+function RentalServicesSection() {
   return (
-    <div className="space-y-16">
-      <div className="text-center max-w-xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          Why Choose Our Solutions
-        </h2>
-        <p className="text-gray-600 text-s">Discover the innovative features and engineering excellence that deliver reliable performance, energy efficiency, and long-term value.</p>
-      </div>
-      {productData.whyChoose.map((item, idx) => (
-        <div
-          key={idx}
-          className={`flex flex-col lg:flex-row items-center gap-10 ${
-            idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-          }`}
-        >
-          <motion.div 
-            className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-md border border-gray-100 h-70 cursor-pointer"
-            whileHover={{ scale: 1.02, y: -4, transition: { duration: 0.3 } }}
-          >
-            <img 
-              src={item.image} 
-              alt={item.title} 
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-            />
-          </motion.div>
-          <div className="w-full lg:w-1/2">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-            <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
-          </div>
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 dark:bg-gray-900 my-10 border-y border-gray-100 dark:border-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
+            Heat Exchangers
+          </h2>
         </div>
-      ))}
-    </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {productData.services.map((service, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{
+                y: -6,
+                boxShadow:
+                  "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden flex flex-col transition-all w-full"
+            >
+              {/* Image */}
+              <div className="h-36 sm:h-44 w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-5 sm:p-6 flex flex-col gap-3">
+                <div className="flex items-center gap-2.5">
+                  {service.icon}
+                  <h3 className="font-semibold text-emerald-700 dark:text-emerald-400 text-lg sm:text-xl">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-1.5 pt-1">
+                  {service.features.map((feature, fIdx) => (
+                    <li
+                      key={fIdx}
+                      className="flex items-start gap-2 text-xs sm:text-sm text-gray-700 dark:text-gray-200"
+                    >
+                      <Dot className="w-4 h-4 text-black dark:text-white mt-0.5 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -482,24 +460,32 @@ function SimilarProducts() {
 // MAIN COMPONENT CONTAINER
 // ==========================================
 
+
+
 export default function ProductShowcaseSection() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800 antialiased selection:bg-emerald-500 selection:text-white flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 font-sans text-gray-800 dark:text-gray-100 antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
       <main className="grow relative">
         <ProductHero />
 
         {/* Clean Content Section sliding smoothly over the sticky hero background */}
-        <section className="relative z-10 w-full bg-white py-20 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] transition-colors duration-300">
-          <div className="max-w-6xl mx-auto space-y-24">
-            {/* <ProductOverview /> */}
+        <div className="relative z-10 w-full bg-white dark:bg-zinc-950 py-20 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_-15px_30px_rgba(0,0,0,0.4)] transition-colors duration-300 space-y-24">
+          
+          {/* Contained section */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ProductFeatureGrid />
-            {/* <TechnicalSpecifications /> */}
+          </div>
+
+          {/* Full-width section stretching edge-to-edge */}
+          <RentalServicesSection />
+
+          {/* Contained sections */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
             <ProductFeatureCardSection />
-            <GallerySection />
-            <WhyChooseSection />
             <SimilarProducts />
           </div>
-        </section>
+
+        </div>
       </main>
     </div>
   );

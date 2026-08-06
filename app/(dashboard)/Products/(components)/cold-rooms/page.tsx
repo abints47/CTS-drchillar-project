@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -8,17 +7,19 @@ import {
   VolumeX,
   ShieldCheck,
   Leaf,
-  ArrowRight,
+  Wrench,
   Building2,
   Snowflake,
+  Dot,
+  Package, 
   Factory,
   FlaskConical,
   Store,
+  Thermometer,
+  Settings,
+  Gauge, 
 } from "lucide-react";
 
-// ==========================================
-// DATA STRUCTURES & MOCK DATA
-// ==========================================
 
 const productData = {
   name: ["Cold Room & Ice ", "Block Machines"],
@@ -30,6 +31,86 @@ const productData = {
     { label: "Power Input", value: "22 kW" },
     { label: "Water Flow Rate", value: "250 LPM" },
     { label: "Operating Temp", value: "5°C–45°C" },
+  ],
+  services: [
+    {
+      title: "Chiller Rooms",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fchiller-rooms.2e07ad83.webp&w=1920&q=75",
+      icon: <Snowflake className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Ideal for fruits, vegetables, flowers, chocolates, and medicines with precise temperature control.",
+      features: [
+        "Maintain freshness and quality",
+        "Custom sizes for different storage needs",
+        "-40°C to +20°C range",
+      ],
+    },
+    {
+      title: "Freezer Rooms",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffreezer-rooms.e8bfd906.webp&w=640&q=75",
+      icon: <Package  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Designed for fish, meat, and ice cream — perfect for long-term frozen storage.",
+      features: [
+        "Deep freezing capacity",
+        "Energy-efficient insulation",
+        "Food safety compliant",
+      ],
+    },
+    {
+      title: "Blast Chillers & Blast Freezers",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblast-freezers.45dd5bc1.webp&w=640&q=75",
+      icon: <Thermometer  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Rapid cooling and freezing solutions to preserve texture, flavor, and safety.",
+      features: [
+        "Fast pull-down temperatures",
+        "Ideal for bakeries, seafood, and meat processing",
+        "Preserves product integrity",
+      ],
+    },
+    {
+      title: "Condensing Units & Evaporators",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcondensers.0b2a8722.webp&w=640&q=75",
+      icon: <Wrench className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Reliable supply and installation for cold room systems of any scale.",
+      features: [
+        "Tailored to your cold storage needs",
+        "Professional installation",
+        "Long service life",
+      ],
+    },
+    {
+      title: "Different Range of Machines",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcold-rooms-range.33764b31.webp&w=640&q=75",
+      icon: <Settings className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Choose from a wide range of cold room and ice block machine models to match your capacity and budget.",
+      features: [
+        "From compact units to large-scale plants",
+        "Suitable for multiple industries",
+        "Configurable features available",
+      ],
+    },
+    {
+      title: "Wide Temperature Range",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcold-rooms-temperature.d998bc64.webp&w=640&q=75",
+      icon: <Gauge  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Our systems can reliably maintain temperatures from -40°C to +20°C for all types of storage needs.",
+      features: [
+        "Covers both deep freezing and chilling",
+        "Precise digital controls",
+        "All-season performance",
+      ],
+    },
   ],
   features: [
      {
@@ -76,13 +157,6 @@ const productData = {
       desc: "Delivers balanced climate conditioning across massive facilities.",
     },
   ],
-  gallery: [
-      "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1708449287110-2f2418fb5a62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGh2YWN8ZW58MHx8MHx8fDA%3D",
-    "/images/products/heatExchange.webp",
-  ],
   whyChoose: [
     {
       title: "High-Efficiency Performance",
@@ -104,31 +178,28 @@ const productData = {
     {
       title: "Water Chillers, Coolers and Heat Pumps",
       desc: "High-performance chillers for all your cooling needs.",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600",
+      image: "/images/products/water-chilers.jpg",
       href: "/Products/water-chillers",
     },
     {
       title: "Heat Exchange and Cooling Towers",
       desc: "Reliable heat exchange to optimize energy transfer processes.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600",
+      image: "/images/pipe.jpg",
       href: "/Products/heat-exchangers",
     },
     {
       title: "A/C Units & Air Curtains",
       desc: "Efficient air conditioning systems designed for comfort and reliability.",
-      image: "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
+      image: "/images/products/aircurtain.png",
       href: "/Products/ac-units",
     },
   ],
 };
 
-// ==========================================
-// SUBCOMPONENTS
-// ==========================================
 
 function ProductHero() {
   return (
-    <section className="sticky top-0 z-0 w-full h-[65vh] sm:h-[75vh] flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="sticky top-0 z-0 w-full h-[55vh] sm:h-[55vh] flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0">
         <motion.div
           className="w-full h-full"
@@ -163,15 +234,75 @@ function ProductHero() {
             {productData.tagline}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium px-7 py-3.5 rounded-full shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 group">
-              Request Technical Quote
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
             <button className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-7 py-3.5 rounded-full backdrop-blur-md border border-white/15 transition-all">
-              Contact US 
+              <Link href={'/Contact'}>Contact US</Link>
             </button>
           </div>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function RentalServicesSection() {
+  return (
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 dark:bg-gray-900 my-10 border-y border-gray-100 dark:border-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
+            Cold Rooms 
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {productData.services.map((service, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{
+                y: -6,
+                boxShadow:
+                  "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden flex flex-col transition-all w-full"
+            >
+              {/* Image */}
+              <div className="h-36 sm:h-44 w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-5 sm:p-6 flex flex-col gap-3">
+                <div className="flex items-center gap-2.5">
+                  {service.icon}
+                  <h3 className="font-semibold text-emerald-700 dark:text-emerald-400 text-lg sm:text-xl">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-1.5 pt-1">
+                  {service.features.map((feature, fIdx) => (
+                    <li
+                      key={fIdx}
+                      className="flex items-start gap-2 text-xs sm:text-sm text-gray-700 dark:text-gray-200"
+                    >
+                      <Dot className="w-4 h-4 text-black dark:text-white mt-0.5 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -211,7 +342,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.03, y: -6, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800"
+            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcold-rooms-1.efa4e0e3.webp&w=384&q=75"
             alt="Primary cooling equipment component view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -227,7 +358,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.05, y: -8, x: 4, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcold-rooms-2.a63eade5.webp&w=256&q=75"
             alt="Secondary structural detail view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -238,108 +369,6 @@ function ProductFeatureGrid() {
   );
 }
 
-function ProductOverview() {
-  return (
-    <div className="grid grid-cols-1 pt-10 lg:grid-cols-12 gap-12 items-start">
-      <div className="lg:col-span-5">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-4">
-          Advanced Cooling Technology for Modern Industry
-        </h2>
-        <p className="text-gray-600 text-base leading-relaxed mb-6">
-          {productData.description}
-        </p>
-      </div>
-      <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {productData.features.map((feature, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.2 }}
-            className="p-5 bg-[#F8FAFC] rounded-2xl border border-gray-100 shadow-sm"
-          >
-            <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center mb-3 border border-gray-100">
-              {feature.icon}
-            </div>
-            <h3 className="font-semibold text-gray-900 text-base mb-1.5">
-              {feature.title}
-            </h3>
-            <p className="text-gray-600 text-xs leading-relaxed">
-              {feature.desc}
-            </p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function TechnicalSpecifications() {
-  return (
-    <div>
-      <div className="text-center max-w-xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          Technical Specifications
-        </h2>
-        <p className="text-gray-600 text-sm">
-          Core operating baselines for the standard 150 TR configuration.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {productData.specs.map((spec, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ y: -3 }}
-            className="p-6 bg-[#F8FAFC] rounded-2xl border border-gray-100 shadow-sm text-center"
-          >
-            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-2">
-              {spec.label}
-            </span>
-            <span className="text-2xl font-bold text-gray-900">
-              {spec.value}
-            </span>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function GallerySection() {
-  const [activeImage, setActiveImage] = React.useState(productData.gallery[0]);
-
-  return (
-    <div>
-      <div className="text-center max-w-xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          System Architecture Gallery
-        </h2>
-        <p className="text-gray-600 text-sm">Detailed views of assembly components and housing layout.</p>
-      </div>
-      <div className="max-w-3xl mx-auto">
-        <div className="rounded-2xl overflow-hidden shadow-md mb-4 bg-gray-100 border border-gray-100 h-95">
-          <img
-            src={activeImage}
-            alt="Chiller Unit Component View"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="flex justify-center gap-3">
-          {productData.gallery.map((img, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(img)}
-              className={`w-20 h-16 rounded-xl overflow-hidden border-2 transition-all ${
-                activeImage === img ? "border-emerald-600 scale-105 shadow-sm" : "border-transparent opacity-60 hover:opacity-100"
-              }`}
-            >
-              <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function ProductFeatureCardSection({
   title = "Cooling Towers",
@@ -362,7 +391,7 @@ function ProductFeatureCardSection({
             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
           >
             <img
-              src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fice-block-machine.e2511a5b.webp&w=1920&q=75"
+              src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fac-units-2.b599cc17.webp&w=1920&q=75"
               alt={title}
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             />
@@ -406,42 +435,6 @@ function ProductFeatureCardSection({
 }
 
 
-
-function WhyChooseSection() {
-  return (
-    <div className="space-y-16">
-      <div className="text-center max-w-xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          Why Choose Our Solutions
-        </h2>
-        <p className="text-gray-600 text-s">Discover the innovative features and engineering excellence that deliver reliable performance, energy efficiency, and long-term value.</p>
-      </div>
-      {productData.whyChoose.map((item, idx) => (
-        <div
-          key={idx}
-          className={`flex flex-col lg:flex-row items-center gap-10 ${
-            idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-          }`}
-        >
-          <motion.div 
-            className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-md border border-gray-100 h-70 cursor-pointer"
-            whileHover={{ scale: 1.02, y: -4, transition: { duration: 0.3 } }}
-          >
-            <img 
-              src={item.image} 
-              alt={item.title} 
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-            />
-          </motion.div>
-          <div className="w-full lg:w-1/2">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-            <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 function SimilarProducts() {
   return (
@@ -492,22 +485,28 @@ function SimilarProducts() {
 
 export default function ProductShowcaseSection() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800 antialiased selection:bg-emerald-500 selection:text-white flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 font-sans text-gray-800 dark:text-gray-100 antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
       <main className="grow relative">
         <ProductHero />
 
         {/* Clean Content Section sliding smoothly over the sticky hero background */}
-        <section className="relative z-10 w-full bg-white py-20 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] transition-colors duration-300">
-          <div className="max-w-7xl mx-auto space-y-24">
-            {/* <ProductOverview /> */}
+        <div className="relative z-10 w-full bg-white dark:bg-zinc-950 py-20 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_-15px_30px_rgba(0,0,0,0.4)] transition-colors duration-300 space-y-24">
+          
+          {/* Contained section */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ProductFeatureGrid />
-            {/* <TechnicalSpecifications /> */}
-            <GallerySection />
+          </div>
+
+          {/* Full-width section stretching edge-to-edge */}
+          <RentalServicesSection />
+
+          {/* Contained sections */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
             <ProductFeatureCardSection />
-            <WhyChooseSection />
             <SimilarProducts />
           </div>
-        </section>
+
+        </div>
       </main>
     </div>
   );

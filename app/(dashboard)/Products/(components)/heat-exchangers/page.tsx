@@ -8,10 +8,16 @@ import {
   VolumeX,
   ShieldCheck,
   Leaf,
-  ArrowRight,
+  Thermometer,
+  Gauge,
+  Layers,
+  Package,
+  Wrench,
   Building2,
+  Settings,
   Factory,
   FlaskConical,
+  Dot,
   Store,
 } from "lucide-react";
 
@@ -75,12 +81,85 @@ const productData = {
       desc: "Delivers balanced climate conditioning across massive facilities.",
     },
   ],
-  gallery: [
-      "/images/products/heatExchange.webp",
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
-    "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
-    "https://images.unsplash.com/photo-1708449287110-2f2418fb5a62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGh2YWN8ZW58MHx8MHx8fDA%3D",
+  services: [
+    {
+      title: "Shell & Tube Heat Exchanger",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fshell-and-tube-heat-exchangers.c0844b86.webp&w=640&q=75",
+      icon: <Layers  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Heavy-duty exchangers for oil cooling, process fluids and chilled-water duties.",
+      features: [
+        "Straight or U-tube configuration",
+        "Single & double pass (S/T type)",
+        "Material options: SS / Copper / Titanium",
+      ],
+    },
+    {
+      title: "PP & Titanium Constructions",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftitanium-heat-exchangers.b1eef8f3.webp&w=640&q=75",
+      icon: <Thermometer  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Polypropylene and Titanium builds for aggressive or corrosive chemical media.",
+      features: [
+        "Excellent corrosion resistance",
+        "Suitable for chemical and seawater duty",
+        "Long service life",
+      ],
+    },
+    {
+      title: "Retubing & Refurbishment",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblast-freezers.45dd5bc1.webp&w=640&q=75",
+      icon: <Factory  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Re-tubing and repair services to restore exchanger performance and extend service life.",
+      features: [
+        "Tube bundle replacements",
+        "On-site leak testing",
+        "Upgrades to corrosion-resistant tubes",
+      ],
+    },
+    {
+      title: "Plate Heat Exchanger (PHE)",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fplate-heat-exchangers.a0ae5361.webp&w=640&q=75",
+      icon: <Layers className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Compact, high-efficiency plate type exchangers for clean fluids and hygienic duties.",
+      features: [
+        "Gasketed / brazed / semi-welded types",
+        "Quick plate access",
+        "Ideal for food & HVAC systems",
+      ],
+    },
+    {
+      title: "PHE Service & Spare Parts",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcold-rooms-range.33764b31.webp&w=640&q=75",
+      icon: <Wrench className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Complete support for plate exchangers including plate, gasket & seal replacement.",
+      features: [
+        "Plate inspection & cleaning",
+        "Gasket replacement",
+        "Leak testing and re-assembly",
+      ],
+    },
+    {
+      title: "Custom Material Options",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fheat-exchangers-custom-made.1c94a57f.webp&w=640&q=75",
+      icon: <Settings  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Heat exchangers available in SS-316L, Copper or Titanium to match your process requirements.",
+      features: [
+        "SS-316L for hygienic applications",
+        "Copper for general chilled-water",
+        "Titanium for seawater & corrosive media",
+      ],
+    },
   ],
   whyChoose: [
     {
@@ -103,7 +182,7 @@ const productData = {
     {
       title: "Water Chillers, Coolers and Heat Pumps",
       desc: "High-performance chillers for all your cooling needs.",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600",
+      image: "/images/products/water-chilers.jpg",
       href: "/Products/water-chillers",
     },
     {
@@ -115,19 +194,16 @@ const productData = {
     {
       title: "A/C Units & Air Curtains",
       desc: "Efficient air conditioning systems designed for comfort and reliability.",
-      image: "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
+      image: "/images/products/aircurtain.png",
       href: "/Products/ac-units",
     },
   ],
 };
 
-// ==========================================
-// SUBCOMPONENTS
-// ==========================================
 
 function ProductHero() {
   return (
-    <section className="sticky top-0 z-0 w-full h-[65vh] sm:h-[75vh] flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="sticky top-0 z-0 w-full h-[55vh] sm:h-[55vh] flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0">
         <motion.div
           className="w-full h-full"
@@ -162,12 +238,8 @@ function ProductHero() {
             {productData.tagline}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium px-7 py-3.5 rounded-full shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 group">
-              Request Technical Quote
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
             <button className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-7 py-3.5 rounded-full backdrop-blur-md border border-white/15 transition-all">
-              Contact US 
+              <Link href={'/Contact'}>Contact US</Link> 
             </button>
           </div>
         </motion.div>
@@ -190,11 +262,11 @@ function ProductFeatureGrid() {
         <span className="text-emerald-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">
           Efficient Thermal Transfer
         </span>
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-normal leading-tight">
           Heat Exchangers & Cooling Towers
         </h2>
         <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-light">
-          We provide high-performance shell & tube and plate heat exchangers designed for demanding industrial use, along with cooling towers engineered for <span className="text-gray-800 font-bold">precision heat management and optimized energy performance.</span> Whether you require copper, stainless steel, titanium or PP constructions, our systems deliver reliable heat transfer for every application.
+          We provide high-performance shell & tube and plate heat exchangers designed for demanding industrial use, along with cooling towers engineered for precision heat management and optimized energy performance. Whether you require copper, stainless steel, titanium or PP constructions, our systems deliver reliable heat transfer for every application.
         </p>
       </motion.div>
 
@@ -372,43 +444,6 @@ function ProductFeatureCardSection({
 
 
 
-function GallerySection() {
-  const [activeImage, setActiveImage] = React.useState(productData.gallery[0]);
-
-  return (
-    <div>
-      <div className="text-center max-w-xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          System Architecture Gallery
-        </h2>
-        <p className="text-gray-600 text-sm">Detailed views of assembly components and housing layout.</p>
-      </div>
-      <div className="max-w-3xl mx-auto">
-        <div className="rounded-2xl overflow-hidden shadow-md mb-4 bg-gray-100 border border-gray-100 h-95">
-          <img
-            src={activeImage}
-            alt="Chiller Unit Component View"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="flex justify-center gap-3">
-          {productData.gallery.map((img, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(img)}
-              className={`w-20 h-16 rounded-xl overflow-hidden border-2 transition-all ${
-                activeImage === img ? "border-emerald-600 scale-105 shadow-sm" : "border-transparent opacity-60 hover:opacity-100"
-              }`}
-            >
-              <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 
 
 function WhyChooseSection() {
@@ -444,6 +479,69 @@ function WhyChooseSection() {
         </div>
       ))}
     </div>
+  );
+}
+function RentalServicesSection() {
+  return (
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 dark:bg-gray-900 my-10 border-y border-gray-100 dark:border-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
+            Heat Exchangers
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {productData.services.map((service, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{
+                y: -6,
+                boxShadow:
+                  "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden flex flex-col transition-all w-full"
+            >
+              {/* Image */}
+              <div className="h-36 sm:h-44 w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-5 sm:p-6 flex flex-col gap-3">
+                <div className="flex items-center gap-2.5">
+                  {service.icon}
+                  <h3 className="font-semibold text-emerald-700 dark:text-emerald-400 text-lg sm:text-xl">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-1.5 pt-1">
+                  {service.features.map((feature, fIdx) => (
+                    <li
+                      key={fIdx}
+                      className="flex items-start gap-2 text-xs sm:text-sm text-gray-700 dark:text-gray-200"
+                    >
+                      <Dot className="w-4 h-4 text-black dark:text-white mt-0.5 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -497,20 +595,28 @@ function SimilarProducts() {
 
 export default function ProductShowcaseSection() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800 antialiased selection:bg-emerald-500 selection:text-white flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 font-sans text-gray-800 dark:text-gray-100 antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
       <main className="grow relative">
         <ProductHero />
 
         {/* Clean Content Section sliding smoothly over the sticky hero background */}
-        <section className="relative z-10 w-full bg-white py-20 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] transition-colors duration-300">
-          <div className="max-w-6xl mx-auto space-y-24">
-             <ProductFeatureGrid /> 
+        <div className="relative z-10 w-full bg-white dark:bg-zinc-950 py-20 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_-15px_30px_rgba(0,0,0,0.4)] transition-colors duration-300 space-y-24">
+          
+          {/* Contained section */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ProductFeatureGrid />
+          </div>
+
+          {/* Full-width section stretching edge-to-edge */}
+          <RentalServicesSection />
+
+          {/* Contained sections */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
             <ProductFeatureCardSection />
-            <GallerySection />
-            <WhyChooseSection />
             <SimilarProducts />
           </div>
-        </section>
+
+        </div>
       </main>
     </div>
   );

@@ -75,28 +75,21 @@ const productData = {
       desc: "Delivers balanced climate conditioning across massive facilities.",
     },
   ],
-  gallery: [
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
-    "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
-    "https://images.unsplash.com/photo-1708449287110-2f2418fb5a62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGh2YWN8ZW58MHx8MHx8fDA%3D",
-    "/images/products/heatExchange.webp",
-  ],
   whyChoose: [
     {
-      title: "High-Efficiency Performance",
-      desc: "Engineered for maximum productivity while maintaining low energy consumption. Optimized components ensure consistent performance and long-term operational savings.",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
+      title: "Industry Standards & Quality Assurance",
+      desc: "Quality and safety are integral to everything we manufacture. Each product is produced under strict quality control procedures and complies with recognized industry standards, ensuring reliable, safe, and efficient operation throughout its service life.",
+      image: "https://images.unsplash.com/photo-1716191300020-b52dec5b70a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fEluZHVzdHJ5JTIwU3RhbmRhcmRzfGVufDB8fDB8fHww",
     },
     {
-      title: "Fast Installation & Easy Maintenance",
-      desc: "Modular construction simplifies installation and reduces service time. Easily accessible components allow technicians to perform routine maintenance efficiently.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+      title: "Expert Technical Support",
+      desc: "Our experienced team provides comprehensive support throughout every stage of your project, from product selection and technical consultation to installation guidance and after-sales service. We are committed to helping you achieve maximum value and long-term performance from every solution we deliver.",
+      image: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fFRlY2huaWNhbCUyMHN1cHBvcnR8ZW58MHx8MHx8fDA%3D",
     },
      {
-      title: "Predictive Monitoring & Diagnostics",
-      desc: "Integrated sensors continuously monitor key operating parameters such as temperature, pressure, and performance. Real-time alerts enable proactive maintenance before issues become costly failures.",
-      image: "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
+      title: "High-Quality Engineering",
+      desc: "Every product is designed and manufactured using premium-grade materials and advanced engineering practices to ensure exceptional durability, consistent performance, and reliable operation. Our commitment to quality allows businesses to operate with confidence while minimizing maintenance and downtime.",
+      image: "https://images.unsplash.com/photo-1694521787193-9293daeddbaa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fGVuZ2luZWVyaW5nfGVufDB8fDB8fHww",
     },
   ],
   similarProducts: [
@@ -127,7 +120,7 @@ const productData = {
 
 function ProductHero() {
   return (
-    <section className="sticky top-0 z-0 w-full h-[65vh] sm:h-[75vh] flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="sticky top-0 z-0 w-full h-[45vh] sm:h-[55vh] flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0">
         <motion.div
           className="w-full h-full"
@@ -162,12 +155,8 @@ function ProductHero() {
             {productData.tagline}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium px-7 py-3.5 rounded-full shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 group">
-              Request Technical Quote
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
             <button className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-7 py-3.5 rounded-full backdrop-blur-md border border-white/15 transition-all">
-              Contact US 
+              <Link href={'/Contact'}>Contact US</Link> 
             </button>
           </div>
         </motion.div>
@@ -189,11 +178,11 @@ function ProductFeatureGrid() {
         <span className="text-emerald-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">
           Cooling That Works!
         </span>
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
-          Precision. Performance. Reliability.
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-normal leading-tight">
+          Precision Performance Reliability.
         </h2>
         <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-light">
-            Our water chillers, water coolers, and heat pumps are engineered for industrial and commercial needs — combining energy efficiency with dependable performance. From manufacturing plants to office spaces, we help you stay cool under pressure.        </p>
+            Our water chillers, water coolers, and heat pumps are engineered for industrial and commercial needs  combining energy efficiency with dependable performance. From manufacturing plants to office spaces, we help you stay cool under pressure.        </p>
       </motion.div>
 
       {/* Image Container */}
@@ -209,7 +198,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.03, y: -6, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwater-cooled-industrial-water-chiller.e40b6229.webp&w=640&q=75"
+            src="https://images.unsplash.com/photo-1563456020159-b74d67e78c26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0ZXIlMjBjaGlsbGVyfGVufDB8fDB8fHww"
             alt="Primary cooling equipment component view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -225,7 +214,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.05, y: -8, x: 4, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwater-chiller-1.f86ee9f8.webp&w=384&q=75"
+            src="https://images.unsplash.com/photo-1639616938330-d77579c1bef9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2F0ZXIlMjBjaGlsbGVyfGVufDB8fDB8fHww"
             alt="Secondary structural detail view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -259,7 +248,7 @@ function ProductOverview() {
           </p>
           
           <div className="pt-2">
-            <div className="h-1.5 w-16 bg-emerald-500 rounded-full" />
+            <div className="h-1.5 w-16 bg-emerald-600 rounded-full" />
           </div>
         </motion.div>
 
@@ -272,7 +261,7 @@ function ProductOverview() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="group relative p-6 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_-5px_rgba(16,185,129,0.1)] hover:border-emerald-200 transition-all duration-300"
+              className="group relative p-6 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_1px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_-5px_rgba(16,185,129,0.1)] hover:border-emerald-200 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 shadow-inner flex items-center justify-center mb-4 group-hover:bg-emerald-50 group-hover:text-white transition-colors duration-300">
                 {feature.icon}
@@ -294,89 +283,21 @@ function ProductOverview() {
   );
 }
 
-function TechnicalSpecifications() {
-  return (
-    <div>
-      <div className="text-center max-w-xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          Technical Specifications
-        </h2>
-        <p className="text-gray-600 text-sm">
-          Core operating baselines for the standard 150 TR configuration.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {productData.specs.map((spec, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ y: -3 }}
-            className="p-6 bg-[#F8FAFC] rounded-2xl border border-gray-100 shadow-sm text-center"
-          >
-            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-2">
-              {spec.label}
-            </span>
-            <span className="text-2xl font-bold text-gray-900">
-              {spec.value}
-            </span>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function GallerySection() {
-  const [activeImage, setActiveImage] = React.useState(productData.gallery[0]);
-
-  return (
-    <div>
-      <div className="text-center max-w-xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          System Architecture Gallery
-        </h2>
-        <p className="text-gray-600 text-sm">Detailed views of assembly components and housing layout.</p>
-      </div>
-      <div className="max-w-3xl mx-auto">
-        <div className="rounded-2xl overflow-hidden shadow-md mb-4 bg-gray-100 border border-gray-100 h-95">
-          <img
-            src={activeImage}
-            alt="Chiller Unit Component View"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="flex justify-center gap-3">
-          {productData.gallery.map((img, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(img)}
-              className={`w-20 h-16 rounded-xl overflow-hidden border-2 transition-all ${
-                activeImage === img ? "border-emerald-600 scale-105 shadow-sm" : "border-transparent opacity-60 hover:opacity-100"
-              }`}
-            >
-              <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 
 
 function WhyChooseSection() {
   return (
     <div className="space-y-16">
       <div className="text-center max-w-xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          Why Choose Our Solutions
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 tracking-normal mb-2">
+          Why Choose <span className="text-emerald-600"> Our Products</span>
         </h2>
-        <p className="text-gray-600 text-s">Discover the innovative features and engineering excellence that deliver reliable performance, energy efficiency, and long-term value.</p>
+        <p className="text-gray-600 text-s">Engineered for superior performance, energy efficiency, and long-term reliability, our products are designed to meet the evolving needs of commercial and industrial applications.</p>
       </div>
       {productData.whyChoose.map((item, idx) => (
         <div
           key={idx}
-          className={`flex flex-col lg:flex-row items-center gap-10 ${
+          className={`flex flex-col lg:flex-row items-center gap-10 pt- ${
             idx % 2 === 1 ? "lg:flex-row-reverse" : ""
           }`}
         >
@@ -390,9 +311,9 @@ function WhyChooseSection() {
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
             />
           </motion.div>
-          <div className="w-full lg:w-1/2">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-            <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
+          <div className="w-full lg:w-1/2 pl-10">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+            <p className="text-gray-600 text-justify pr-10 leading-relaxed ">{item.desc}</p>
           </div>
         </div>
       ))}
@@ -443,9 +364,6 @@ function SimilarProducts() {
   );
 }
 
-// ==========================================
-// MAIN COMPONENT CONTAINER
-// ==========================================
 
 export default function ProductShowcaseSection() {
   return (
@@ -458,8 +376,6 @@ export default function ProductShowcaseSection() {
           <div className="max-w-6xl mx-auto space-y-24">
             <ProductFeatureGrid />
             <ProductOverview />
-            <TechnicalSpecifications />
-            <GallerySection />
             <WhyChooseSection />
             <SimilarProducts />
           </div>

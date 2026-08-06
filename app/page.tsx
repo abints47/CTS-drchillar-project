@@ -341,8 +341,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Here is the New Components that added on the Section page */}
-
 
 
       <ServicesHighlight/>

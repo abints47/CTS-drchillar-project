@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t bg-[#1B2A3D] text-foreground">
+    <footer className="w-full border-t border-gray-200 dark:border-zinc-800 bg-[#1B2A3D] dark:bg-black text-foreground transition-colors duration-300">
       <div className="container mx-auto px-6 py-12 lg:px-12 lg:py-16">
         {/* Main Columns Grid Layout */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr_1.3fr] lg:gap-10">
@@ -24,13 +24,13 @@ export default function Footer() {
                   width={30}
                   height={30}
                 />
-                <span>Chiller Technical Services L.L.C</span>
+                <span className="text-white dark:text-gray-100">Chiller Technical Services L.L.C</span>
               </div>
-              <section className="pl-37 text-xl font-semibold">
+              <section className="pl-37 text-xl font-semibold text-white dark:text-gray-200 pt-1">
                 خدمات التبريد التقنية ذ.م.م
               </section>
             </Link>
-            <p className="text-s pr-10 justify-center pt-3 leading-6 text-[#FFFFFF] max-w-sm ">
+            <p className="text-s pr-10 justify-center pt-3 leading-6 text-white dark:text-gray-400 max-w-sm">
               High-quality cooling and refrigeration solutions for industrial and commercial needs built for performance, reliability, and efficiency.
             </p>
           </div>
@@ -39,44 +39,44 @@ export default function Footer() {
             <h4 className="text-xl font-semibold text-[#1FAA6D]">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#features" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#features" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Water chillers, Coolers & Heat
                   <br />
                   Pupms
                 </Link>
               </li>
               <li>
-                <Link href="#pricing" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#pricing" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Cold Rooms & Ice Block Machines
                 </Link>
               </li>
               <li>
-                <Link href="#integrations" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#integrations" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Heat Exchange & Cooling Towers
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   A/C Units & Air Curtains
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Water Chillers
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Industiral Chillers
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Cold Rooms
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Heat Exchanger
                 </Link>
               </li>
@@ -88,44 +88,44 @@ export default function Footer() {
             <h4 className="text-xl font-semibold text-[#1FAA6D]">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#documentation" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#documentation" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   A/C Chililer & Genset Rentals
                 </Link>
               </li>
               <li>
-                <Link href="#guides" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#guides" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   A/C Chiller & Coldroom
                   <br />
                   Maintenance
                 </Link>
               </li>
               <li>
-                <Link href="#api" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#api" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Coil Manufacturing & Replacements
                 </Link>
               </li>
               <li>
-                <Link href="#community" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#community" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Overhauling & Winding
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   AMC
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   A/C Services Dubai
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Chiller Repair Maintenance
                 </Link>
               </li>
               <li>
-                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                   Industiral Chiller Maintenance
                 </Link>
               </li>
@@ -138,36 +138,36 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <span>
-                  <span className="font-bold text-balance text-[#FFFF]">Email: </span>
-                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                  <span className="font-bold text-balance text-white dark:text-gray-200">Email: </span>
+                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                     info@drchiller.com
                   </Link>
                 </span>
               </li>
               <li>
                 <span>
-                  <span className="font-bold text-balance text-[#FFFF]">Phone: </span>
-                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                  <span className="font-bold text-balance text-white dark:text-gray-200">Phone: </span>
+                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                     +971 67434537
                   </Link>
                 </span>
               </li>
               <li>
                 <span>
-                  <span className="font-bold text-balance text-[#FFFF]">Mobile: </span>
-                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-[#FFFFFF]">
+                  <span className="font-bold text-balance text-white dark:text-gray-200">Mobile: </span>
+                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                     +971 67434537
                   </Link>
                 </span>
               </li>
               <li>
                 <span>
-                  <span className="font-bold text-balance text-[#FFFFFF]">
+                  <span className="font-bold text-balance text-white dark:text-gray-200">
                     Address:
                     <Link
                       href="https://maps.app.goo.gl/bpqPc2NjBGFzEAqD8"
                       target="_blank"
-                      className="hover:text-emerald-400 transition-colors"
+                      className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400"
                     >
                       <span className="font-medium">
                         {' '}
@@ -181,17 +181,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="my-8 border-t border-gray-300/60" />
+        <div className="my-8 border-t border-gray-300/60 dark:border-zinc-800" />
 
         {/* Bottom Bar Section */}
-        <div className="flex flex-col items-center justify-between gap-4 text-sm text-[#e2e6eb] sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 text-sm text-[#e2e6eb] dark:text-gray-400 sm:flex-row">
           <p> <span className='text-emerald-500'> &copy; </span> {new Date().getFullYear()} CTS, Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" >
            <span className="hover:text-emerald-500 transition-colors">  Website Developed By Maktal</span>
           </Link> </span></p>
 
-          <div className="flex items-center ">
-            
-            {/* Native theme toggle */}
+          {/* Theme Toggle shifted slightly toward the left side using negative margin/spacing adjustment */}
+          <div className="flex items-center bg-[#09243d] dark:bg-zinc-900 px-3 py-0.5 rounded-3xl border border-[#1B2A3D]/40 dark:border-zinc-800 sm:-mr-12 lg:-mr-0.5">
             <ThemeToggle />
           </div>
         </div>

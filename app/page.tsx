@@ -348,68 +348,54 @@ export default function HomePage() {
       <ServicesHighlight/>
 
 
-      {/* Rent A/C Units Section */}
-      <section 
-        className="relative pt-30 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden" 
-        data-aos="fade-up"
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
-          <div className="lg:col-span-7 relative">
-            <div className="relative w-full h-90 sm:h-115 lg:h-125 overflow-hidden rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 group">
-              <Image 
-                src="/images/ac-curtains.jpg" 
-                alt="Rent A/C Units, Chillers & Gensets" 
-                fill 
-                priority
-                sizes="(max-width: 1024px) 100vw, 58vw" 
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
-              />
-              {/* Subtle Gradient Vignette */}
-              <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent opacity-80" />
-            </div>
-            
-          </div>
+     <section className="py-12  sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto transition-colors duration-300">
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center pt-20">
+    
+    {/* Left Column: Text Part */}
+    <div className="lg:col-span-6 space-y-4 sm:space-y-6 text-center lg:text-left">
 
-          <div className="lg:col-span-5 space-y-6 pt-4 lg:pt-0">
+      <h2 className="text-3xl sm:text-4xl font-bold text-gray-700 dark:text-white tracking-normal leading-tight">
+        Rent A/C Units, <span className='text-emerald-600'>Chillers <br/>&amp; Gensets</span> 
+      </h2>
 
-            {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1FAA6D] dark:text-white tracking-tight leading-tight sm:leading-snug">
-              Rent A/C Units, Chillers &amp; Gensets
-            </h2>
-            <p className="text-base text-gray-600 dark:text-slate-300 leading-relaxed font-normal">
-              Whether you need to cool down a large space, maintain process temperatures, or provide uninterrupted power to a site, we offer reliable rental solutions for A/C units, water chillers, and diesel generators.
-            {/* </p> */}
+      <div className="space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed text-justify lg:text-left font-normal">
+        <p className='text-xl '>
+          Whether you need to cool down a large space, maintain process temperatures, or provide uninterrupted power to a site, we offer reliable rental solutions for A/C units, water chillers, and diesel generators.
+        </p>
+        <p className='text-xl '>
+          All rental units are fully maintained by our dedicated technical team ensuring continuous comfort, peak performance, and zero downtime whenever you need it.
+        </p>
+      </div>
 
-            {/* Key Value Points (Breaks up text wall) */}
-            {/* <ul className="space-y-1.5 py-1">
-              <li className="flex items-start gap-4 text-sm text-slate-700 dark:text-slate-200">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span className='text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal'>Perfect for events, industrial sites, mock-up rooms &amp; emergency backup.</span>
-              </li>
-              <li className="flex items-start gap-4 text-sm text-slate-700 dark:text-slate-200">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span className='text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal'>Quick to deploy, highly energy-efficient, and fully load-tested.</span>
-              </li>
-            </ul> */}
-            {/* Paragraph 2 */}
-            {/* <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal"> */}
-              <br/><span >All rental units are fully maintained by our dedicated technical team ensuring continuous comfort, peak performance, and zero downtime whenever you need it.</span> 
-            </p>
+      <div className="pt-2 flex justify-center lg:justify-start">
+        <Link 
+          href="/About" 
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1FAA6D] hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
+        >
+          <span>Know More</span>
+          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </Link>
+      </div>
+    </div>
 
-     
-            <div className="pt-2">
-              <Link 
-                href="/About" 
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1FAA6D] hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95 group"
-              >
-                <span>Know More</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Right Column: Image Part */}
+    <div className="lg:col-span-6 flex justify-center w-full">
+      <div className="relative w-full h-80 sm:h-96 lg:h-112.5 overflow-hidden rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 group">
+        <Image 
+          src="/images/ac-curtains.jpg" 
+          alt="Rent A/C Units, Chillers & Gensets" 
+          fill 
+          priority
+          sizes="(max-width: 1024px) 100vw, 50vw" 
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
+        />
+        {/* Subtle Gradient Vignette */}
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent opacity-80" />
+      </div>
+    </div>
+
+  </div>
+</section>
 
       <Blog/>
 

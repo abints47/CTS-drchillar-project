@@ -8,7 +8,10 @@ import {
   VolumeX,
   ShieldCheck,
   Leaf,
-  ArrowRight,
+  Dot,Gauge,Wrench,
+  Snowflake,
+  Package,
+  Thermometer,Settings,
   Building2,
   Factory,
   FlaskConical,
@@ -52,6 +55,86 @@ const productData = {
       desc: "Epoxy-coated coils and stainless steel framing ensure longevity in harsh plants.",
     },
    
+  ],
+  services: [
+    {
+      title: "Air Cooled Industrial Water Chiller",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fair-cooled-industrial-water-chiller.788daa7d.webp&w=1920&q=75",
+      icon: <Snowflake className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Rugged, Energy-efficient chillers engineered for 24/7 industrial duty.",
+      features: [
+        "Processes: plastic injection, water-jet cutting, printing, bakery",
+        "Facilities: hospitals, laundries, ice-making plants",
+        "Fast pull-down with stable outlet temp control",
+      ],
+    },
+    {
+      title: "Air Cooled Domestic Water Chiller",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fair-cooled-domestic-water-chiller.7bdcd52c.webp&w=640&q=75",
+      icon: <Package  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Quiet, compact solutions for comfort and light-commercial cooling.",
+      features: [
+        "Applications: villas, schools, labour camps, gyms, auditoriums",
+        "Hotels & construction site cabins",
+        "Low noise with quick install & easy service",
+      ],
+    },
+    {
+      title: "Water Cooled Industrial Water Chiller",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwater-cooled-industrial-water-chiller.e40b6229.webp&w=640&q=75",
+      icon: <Thermometer  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "High efficiency where condenser water is available or seawater duty applies.",
+      features: [
+        "Marine duty: boats, ships, coastal plants",
+        "Ideal for sites with cooling towers or seawater loops",
+        "Lower kW/TR vs air-cooled; compact footprint",
+      ],
+    },
+    {
+      title: "Custom-Made Systems",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwater-chiller-custom-made.c2168000.webp&w=640&q=75",
+      icon: <Wrench className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Built-to-fit units tailored to your space, load profile, and controls.",
+      features: [
+        "Footprint-optimized frames & coil geometry",
+        "PLC/BMS integration, VFD pumps, twin circuits",
+        "Food/Pharma compliant options available",
+      ],
+    },
+    {
+      title: "Economic → Premium Range",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwater-chiller-price-range.219a0561.webp&w=640&q=75",
+      icon: <Leaf  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "From value builds to premium components for maximum lifecycle ROI.",
+      features: [
+        "Choice of compressors: scroll, screw, semi-hermetic",
+        "Options: EC fans, microchannel coils, smart controls",
+        "Pick by budget, efficiency target, or noise class",
+      ],
+    },
+    {
+      title: "Wide Capacity & Temperature Range",
+      image:
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwater-chiller-capacity-range.f4d18c01.webp&w=640&q=75",
+      icon: <Gauge  className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Match any load with precise temperature control across seasons.",
+      features: [
+        "Cold brine, process glycol, or domestic chilled water",
+        "Stable outlet temps with advanced PID logic",
+        "Scalable with primary/secondary pumping",
+      ],
+    },
   ],
   applications: [
     {
@@ -165,6 +248,71 @@ function ProductHero() {
   );
 }
 
+
+function RentalServicesSection() {
+  return (
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 dark:bg-gray-900 my-10 border-y border-gray-100 dark:border-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
+            Cold Rooms 
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {productData.services.map((service, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{
+                y: -6,
+                boxShadow:
+                  "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden flex flex-col transition-all w-full"
+            >
+              {/* Image */}
+              <div className="h-36 sm:h-44 w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-5 sm:p-6 flex flex-col gap-3">
+                <div className="flex items-center gap-2.5">
+                  {service.icon}
+                  <h3 className="font-semibold text-emerald-700 dark:text-emerald-400 text-lg sm:text-xl">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-1.5 pt-1">
+                  {service.features.map((feature, fIdx) => (
+                    <li
+                      key={fIdx}
+                      className="flex items-start gap-2 text-xs sm:text-sm text-gray-700 dark:text-gray-200"
+                    >
+                      <Dot className="w-4 h-4 text-black dark:text-white mt-0.5 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ProductFeatureGrid() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -225,101 +373,7 @@ function ProductFeatureGrid() {
   );
 }
 
-function ProductOverview() {
-  return (
-    <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 max-w-350 mx-auto overflow-hidden">
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-50/50 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        <motion.div 
-          className="lg:col-span-5 flex flex-col items-start space-y-5"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        > 
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
-            Advanced Cooling Technology for Modern Industry
-          </h2>
-          
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
-            {productData.description}
-          </p>
-          
-          <div className="pt-2">
-            <div className="h-1.5 w-16 bg-emerald-600 rounded-full" />
-          </div>
-        </motion.div>
-
-        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {productData.features.map((feature, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="group relative p-6 bg-white rounded-3xl border border-slate-100 shadow-[0_4px_1px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_-5px_rgba(16,185,129,0.1)] hover:border-emerald-200 transition-all duration-300"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 shadow-inner flex items-center justify-center mb-4 group-hover:bg-emerald-50 group-hover:text-white transition-colors duration-300">
-                {feature.icon}
-              </div>
-
-              <h3 className="font-bold text-slate-900 text-lg mb-2 group-hover:text-emerald-700 transition-colors">
-                {feature.title}
-              </h3>
-
-              <p className="text-slate-600 text-sm leading-relaxed font-normal">
-                {feature.desc}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
-
-
-function WhyChooseSection() {
-  return (
-    <div className="space-y-16">
-      <div className="text-center max-w-xl mx-auto">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 tracking-normal mb-2">
-          Why Choose <span className="text-emerald-600"> Our Products</span>
-        </h2>
-        <p className="text-gray-600 text-s">Engineered for superior performance, energy efficiency, and long-term reliability, our products are designed to meet the evolving needs of commercial and industrial applications.</p>
-      </div>
-      {productData.whyChoose.map((item, idx) => (
-        <div
-          key={idx}
-          className={`flex flex-col lg:flex-row items-center gap-10 pt- ${
-            idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-          }`}
-        >
-          <motion.div 
-            className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-md border border-gray-100 h-70 cursor-pointer"
-            whileHover={{ scale: 1.02, y: -4, transition: { duration: 0.3 } }}
-          >
-            <img 
-              src={item.image} 
-              alt={item.title} 
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-            />
-          </motion.div>
-          <div className="w-full lg:w-1/2 pl-10">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-            <p className="text-gray-600 text-justify pr-10 leading-relaxed ">{item.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 function SimilarProducts() {
   return (
@@ -365,21 +419,31 @@ function SimilarProducts() {
 }
 
 
+
+
 export default function ProductShowcaseSection() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800 antialiased selection:bg-emerald-500 selection:text-white flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 font-sans text-gray-800 dark:text-gray-100 antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
       <main className="grow relative">
         <ProductHero />
 
         {/* Clean Content Section sliding smoothly over the sticky hero background */}
-        <section className="relative z-10 w-full bg-white py-20 px-4 sm:px-6 lg:px-8 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] transition-colors duration-300">
-          <div className="max-w-6xl mx-auto space-y-24">
+        <div className="relative z-10 w-full bg-white dark:bg-zinc-950 py-20 rounded-t-3xl shadow-[0_-15px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_-15px_30px_rgba(0,0,0,0.4)] transition-colors duration-300 space-y-24">
+          
+          {/* Contained section */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ProductFeatureGrid />
-            <ProductOverview />
-            <WhyChooseSection />
+          </div>
+
+          {/* Full-width section stretching edge-to-edge */}
+          <RentalServicesSection />
+
+          {/* Contained sections */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
             <SimilarProducts />
           </div>
-        </section>
+
+        </div>
       </main>
     </div>
   );

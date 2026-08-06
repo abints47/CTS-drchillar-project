@@ -43,19 +43,19 @@ const services: ServiceItem[] = [
   {
     title: "Coil Manufacturing & Replacements",
     description: "Efficient air conditioning systems for residential and industrial applications.",
-    image: "/images/air-conditioner.jpg",
+    image: "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoil-scrap.b104cf22.webp&w=1920&q=75",
     href: "/Services/coil-Manufacture",
   },
   {
     title: "Overhauling & Winding",
     description: "Efficient air conditioning systems for residential and industrial applications.",
-    image: "/images/air-conditioner.jpg",
+    image: "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Foverhauling-motor-winding.62ab296e.webp&w=1920&q=75",
     href: "/Services/overhauling",
   },
   {
     title: "AMC",
     description: "Comprehensive annual maintenance contracts for continuous, trouble-free operations.",
-    image: "/images/AMC.jpg",
+    image: "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Famc-contract.daca051b.webp&w=1920&q=75",
     href: "/Services/amc",
   },
 ];

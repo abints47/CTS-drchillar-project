@@ -190,9 +190,9 @@ export default function Footer() {
           </Link> </span></p>
 
           {/* Theme Toggle shifted slightly toward the left side using negative margin/spacing adjustment */}
-          <div className="flex items-center bg-[#09243d] dark:bg-zinc-900 px-3 py-0.5 rounded-3xl border border-[#1B2A3D]/40 dark:border-zinc-800 sm:-mr-12 lg:-mr-0.5">
+          {/*  <div className="flex items-center bg-[#09243d] dark:bg-zinc-900 px-3 py-0.5 rounded-3xl border border-[#1B2A3D]/40 dark:border-zinc-800 sm:-mr-12 lg:-mr-0.5">
             <ThemeToggle />
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -26,12 +26,12 @@ const serviceData = {
   description:
     "We offer a wide range of temporary cooling and power solutions for industrial, commercial and event-based applications. Our rental fleet includes air conditioners, chillers and diesel generators backed by quick delivery and 24/7 support.",
   heroImage:
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1600",
+    "https://images.unsplash.com/photo-1647022528152-52ed9338611d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVudCUyMGFjfGVufDB8fDB8fHww",
   services: [
     {
       title: "AC Rental",
       image:
-        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1759772238012-9d5ad59ae637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QUN8ZW58MHx8MHx8fDA%3D",
       icon: <AirVent className="w-5 h-5 text-emerald-600 dark:text-emerald-500" />,
       description:
         "Temporary cooling solutions with free standing, package and air handling units to suit any application.",
@@ -45,7 +45,7 @@ const serviceData = {
     {
       title: "Chiller Rental",
       image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1753826477307-82c71f3d9537?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fENoaWxsZXJ8ZW58MHx8MHx8fDA%3D",
       icon: <Snowflake className="w-5 h-5 text-emerald-600 dark:text-emerald-500" />,
       description:
         "High-efficiency chillers for short and long-term rental, with full on-site support.",
@@ -60,7 +60,7 @@ const serviceData = {
     {
       title: "Genset Rental",
       image:
-        "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1644253967489-41b8b45a29f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QUMlMjByZW1vdGV8ZW58MHx8MHx8fDA%3D",
       icon: <Fuel className="w-5 h-5 text-emerald-600 dark:text-emerald-500" />,
       description:
         "Reliable diesel generator rental packages including cabling and accessories.",
@@ -74,25 +74,28 @@ const serviceData = {
   ],
   whyChoose: [
     {
-      title: "Complete Turnkey Rental Solutions",
+      title: "Reliable Delivery & Rapid Response",
       description:
-        "We handle everything from initial load calculations and site surveys to transport, installation, routine fueling, and final decommissioning.",
+        "We understand that unexpected equipment failures and urgent project requirements demand immediate action. Our streamlined logistics network enables us to deliver rental equipment quickly and efficiently, ensuring minimal delays to your operations. With prompt response times, dependable transportation, and expert installation services, we help businesses restore productivity as quickly as possible.",
       image:
-        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGRlbGl2ZXJ5fGVufDB8fDB8fHww",
     },
     {
-      title: "Immaculately Maintained Modern Fleet",
+      title: "Safety, Quality & Compliance",
       description:
-        "Our rental inventory consists of late-model, fuel-efficient chillers and heavy-duty sound-attenuated generators serviced after every contract.",
+        "Safety and quality are at the core of everything we do. All rental equipment is maintained in accordance with strict industry standards and undergoes rigorous inspections before every deployment. Our team follows established safety procedures throughout transportation, installation, operation, and removal, ensuring every project is completed efficiently, responsibly, and in full compliance with applicable regulations.",
       image:
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
     },
+    {
+      title: "Experienced Technical Support",
+      description:
+        "Our certified engineers and technicians bring extensive industry experience to every project. From equipment selection and system sizing to on-site installation, preventive maintenance, and technical troubleshooting, we provide professional support throughout the rental period. Our responsive service team is committed to resolving issues quickly, helping you maintain uninterrupted operations and complete confidence in your rental solution.",
+      image:
+        "https://images.unsplash.com/photo-1560264418-c4445382edbc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRlY2huaWNhbCUyMHN1cHBvcnR8ZW58MHx8MHx8fDA%3D",
+    },
   ],
-  gallery: [
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
-    "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?auto=format&fit=crop&q=80&w=1200",
-  ],
+
   relatedProducts: [
     {
       title: "Chilled Water Pipelines & Flushing",
@@ -101,12 +104,12 @@ const serviceData = {
       href: "/Services/Water-chillers",
     },
     {
-      title: "AC Chillers & Cold Rooms Maintenance",
+      title: "AMC",
       description:
-        "High-grade custom cooling coil manufacturing tailored to your specs.",
+        "Annual Maintenance Contracts providing long-term coverage and priority service support.",
       image:
-        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-replacement.5871e9ba.webp&w=1920&q=75",
-      href: "/Services/Coldroom-Maintenance",
+        "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Famc-contract.daca051b.webp&w=640&q=75",
+      href: "/Services/amc",
     },
     {
       title: "Coil Manufacturing & Replacement",
@@ -231,7 +234,7 @@ function IntroductionSection() {
           <span className="text-emerald-600 dark:text-emerald-500 font-semibold text-xs sm:text-sm uppercase tracking-wider">
             {serviceData.subtitle}
           </span>
-          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 tracking-normal leading-tight">
             {serviceData.heading}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-lg leading-relaxed font-light">
@@ -241,83 +244,13 @@ function IntroductionSection() {
 
         {/* Right Column: Overlapping Image Collage Part */}
         <div className="lg:col-span-6 flex justify-center w-full">
-          <OverlappingImageCollage />
+          <Image src={'https://images.unsplash.com/photo-1702443418982-9aeb9e04b322?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHJlbnQlMjBhY3xlbnwwfHwwfHx8MA%3D%3D'} alt="Ac chiller" width={600} height={500} className="rounded-2xl"></Image>
         </div>
       </div>
     </section>
   );
 }
 
-function OverlappingImageCollage() {
-  const collageImages = [
-    {
-      src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
-      alt: "Industrial Rental Equipment Front View",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-      alt: "Industrial Rental Equipment Detail View",
-    },
-  ];
-
-  return (
-    <div className="w-full flex items-center justify-center p-2">
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:-space-x-16 lg:block lg:relative lg:w-105 lg:h-87.5">
-        {/* Image 1 */}
-        <motion.div
-          className="w-60 sm:w-50 lg:w-47.5 h-70 lg:h-65 rounded-3xl overflow-hidden shadow-2xl border-2 border-white dark:border-gray-800 bg-gray-100 dark:bg-gray-900 lg:absolute lg:top-0 lg:left-0 z-10 rotate-3 lg:rotate-0"
-          initial={{ opacity: 0, x: -20, scale: 0.95 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          whileHover={{
-            scale: 1.05,
-            rotate: 0,
-            y: -6,
-            zIndex: 30,
-            transition: { duration: 0.3, ease: "easeOut" },
-          }}
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src={collageImages[0].src}
-              alt={collageImages[0].alt}
-              fill
-              sizes="(max-width: 1024px) 200px, 190px"
-              className="object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-        </motion.div>
-
-        {/* Image 2 */}
-        <motion.div
-          className="w-60 sm:w-50 lg:w-47.5 h-70 lg:h-65 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 bg-white dark:bg-gray-900 lg:absolute lg:bottom-0 lg:right-6 z-20 rotate-3 lg:rotate-0 mt-10 sm:mt-0"
-          initial={{ opacity: 0, x: 20, scale: 0.95 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          whileHover={{
-            scale: 1.05,
-            rotate: 0,
-            y: -6,
-            zIndex: 30,
-            transition: { duration: 0.3, ease: "easeOut" },
-          }}
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src={collageImages[1].src}
-              alt={collageImages[1].alt}
-              fill
-              sizes="(max-width: 1024px) 200px, 190px"
-              className="object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  );
-}
 
 function RentalServicesSection() {
   return (
@@ -391,10 +324,10 @@ function WhyChooseSection() {
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12 sm:space-y-20">
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-3">
-          Why Choose Our Rentals
+          Why Choose Our <span className="text-emerald-600"> Rental Solutions</span>
         </h2>
         <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
-          Unmatched reliability, rapid deployment logistics, and fully certified equipment fleet.
+          Delivering dependable equipment, technical expertise, and end-to-end support to help your business operate efficiently with minimal downtime.
         </p>
       </div>
 
@@ -416,69 +349,16 @@ function WhyChooseSection() {
               className="w-full h-full object-cover"
             />
           </motion.div>
-          <div className="w-full lg:w-1/2 space-y-4 text-center lg:text-left">
+          <div className="w-full lg:w-1/2 pl-10 space-y-4 text-center lg:text-left">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
               {item.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed font-light">
+            <p className="text-gray-600 text-justify pt-5 pr-10 dark:text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed font-light">
               {item.description}
             </p>
           </div>
         </div>
       ))}
-    </section>
-  );
-}
-
-function GallerySection() {
-  const [activeImage, setActiveImage] = useState(serviceData.gallery[0]);
-
-  return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-3">
-          Equipment Gallery
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
-          Explore our heavy-duty chillers, sound-attenuated generators, and rapid-deployment units.
-        </p>
-      </div>
-
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          key={activeImage}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          className="rounded-3xl overflow-hidden shadow-xl mb-6 bg-gray-100 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 h-70 sm:h-95 lg:h-112.5"
-        >
-          <img
-            src={activeImage}
-            alt="Active Fleet View"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-
-        <div className="flex justify-center gap-3 sm:gap-4 overflow-x-auto pb-2">
-          {serviceData.gallery.map((img, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(img)}
-              className={`w-20 h-16 sm:w-24 sm:h-20 rounded-2xl overflow-hidden border-2 transition-all shadow-sm shrink-0 cursor-pointer ${
-                activeImage === img
-                  ? "border-emerald-600 dark:border-emerald-500 scale-105"
-                  : "border-transparent opacity-60 hover:opacity-100"
-              }`}
-            >
-              <img
-                src={img}
-                alt={`Thumbnail ${idx}`}
-                className="w-full h-full object-cover"
-              />
-            </button>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
@@ -544,7 +424,6 @@ export default function IndustrialRentalServicePage() {
         <IntroductionSection />
         <RentalServicesSection />
         <WhyChooseSection />
-        <GallerySection />
         <RelatedServicesSection />
       </main>
     </div>

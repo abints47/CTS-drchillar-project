@@ -22,9 +22,9 @@ import {
 const serviceData = {
   title: "Overhauling & Winding",
   subtitle: "Compressor Overhauling & Rewinding",
-  heading: "Precision Repair • Reconditioning • Long Life",
+  heading: "Precision Repair Reconditioning Long Life",
   description:
-    "We offer complete overhauling and rewinding services for compressors, fan motors and blower motors. Our technicians dismantle, clean, inspect and rebuild each unit back to factory standards — ensuring high efficiency, longer life and reduced downtime.",
+    "We offer complete overhauling and rewinding services for compressors, fan motors and blower motors. Our technicians dismantle, clean, inspect and rebuild each unit back to factory standards ensuring high efficiency, longer life and reduced downtime.",
   heroImage:
     "https://www.drchiller.com/overhauling-header.webp",
   services: [
@@ -219,7 +219,7 @@ function IntroductionSection() {
           <span className="text-emerald-700 dark:text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">
             {serviceData.subtitle}
           </span>
-          <h2 className="text-2xl pt-5 sm:text-4xl font-bold text-black dark:text-white tracking-tight leading-tight">
+          <h2 className="text-2xl pt-5 sm:text-4xl font-bold text-black dark:text-white tracking-normal leading-tight">
             {serviceData.heading}
           </h2>
           <p className="text-black dark:text-gray-300 text-sm sm:text-lg leading-relaxed font-normal">
@@ -229,83 +229,14 @@ function IntroductionSection() {
 
         {/* Right Column: Overlapping Image Collage Part */}
         <div className="lg:col-span-6 flex justify-center w-full">
-          <OverlappingImageCollage />
+          <Image src={'https://images.unsplash.com/photo-1665826254141-bfa10685e002?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8T3ZlcmhhdWxpbmclMjBBQ3xlbnwwfHwwfHx8MA%3D%3D'} alt="hauling image" height={500} width={600} className="rounded-2xl"></Image>
         </div>
       </div>
     </section>
   );
 }
 
-function OverlappingImageCollage() {
-  const collageImages = [
-    {
-      src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
-      alt: "Industrial Rental Equipment Front View",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-      alt: "Industrial Rental Equipment Detail View",
-    },
-  ];
 
-  return (
-    <div className="w-full flex items-center justify-center p-2">
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:-space-x-16 lg:block lg:relative lg:w-105 lg:h-87.5">
-        {/* Image 1 */}
-        <motion.div
-          className="w-60 sm:w-50 lg:w-47.5 h-70 lg:h-65 rounded-3xl overflow-hidden shadow-2xl border-2 border-white dark:border-zinc-800 bg-gray-100 dark:bg-zinc-900 lg:absolute lg:top-0 lg:left-0 z-10 rotate-3 lg:rotate-0"
-          initial={{ opacity: 0, x: -20, scale: 0.95 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          whileHover={{
-            scale: 1.05,
-            rotate: 0,
-            y: -6,
-            zIndex: 30,
-            transition: { duration: 0.3, ease: "easeOut" },
-          }}
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src={collageImages[0].src}
-              alt={collageImages[0].alt}
-              fill
-              sizes="(max-width: 1024px) 200px, 190px"
-              className="object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-        </motion.div>
-
-        {/* Image 2 */}
-        <motion.div
-          className="w-60 sm:w-50 lg:w-47.5 h-70 lg:h-65 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-zinc-800 bg-white dark:bg-zinc-900 lg:absolute lg:bottom-0 lg:right-6 z-20 rotate-3 lg:rotate-0 mt-10 sm:mt-0"
-          initial={{ opacity: 0, x: 20, scale: 0.95 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          whileHover={{
-            scale: 1.05,
-            rotate: 0,
-            y: -6,
-            zIndex: 30,
-            transition: { duration: 0.3, ease: "easeOut" },
-          }}
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src={collageImages[1].src}
-              alt={collageImages[1].alt}
-              fill
-              sizes="(max-width: 1024px) 200px, 190px"
-              className="object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  );
-}
 
 function RentalServicesSection() {
   return (

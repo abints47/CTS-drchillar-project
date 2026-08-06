@@ -5,8 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
-        pathname: '/**',
+        hostname: 'www.drchiller.com',
       },
       {
         protocol: 'https',
@@ -15,6 +14,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  
 }
 
 export default nextConfig
+
+

@@ -19,7 +19,7 @@ import {
 const serviceData = {
   title: "Annual Maintenance Contracts",
   subtitle: "Annual Maintenance Contracts (AMC)",
-  heading: "Hassle-Free Servicing • 24/7 Support • Guaranteed Uptime",
+  heading: "Hassle-Free Servicing  24/7 Support  Guaranteed Uptime",
   description:
     "Our comprehensive AMC programs cover preventive and corrective maintenance for all types of AC units, chillers and cold room systems. Stay focused on your business while we handle servicing, safety checks, and emergency response - ensuring your systems run efficiently all year round.",
   heroImage:
@@ -146,7 +146,7 @@ const serviceData = {
         "Annual Manufacturing Contract",
       image:
         "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Foverhauling-motor-winding.62ab296e.webp&w=1920&q=75",
-      href: "/Services/amc",
+      href: "/Services/overhauling",
     },
   ],
 };
@@ -207,7 +207,7 @@ function IntroductionSection() {
           <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">
             {serviceData.subtitle}
           </span>
-          <h2 className="text-2xl pt-5 sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
+          <h2 className="text-2xl pt-5 sm:text-4xl font-bold text-gray-900 dark:text-white tracking-normal leading-tight">
             {serviceData.heading}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-lg leading-relaxed font-light">
@@ -217,83 +217,14 @@ function IntroductionSection() {
 
         {/* Right Column: Overlapping Image Collage Part */}
         <div className="lg:col-span-6 flex justify-center w-full">
-          <OverlappingImageCollage />
+          <Image src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Famc-contract.daca051b.webp&w=1920&q=75" alt="imaged" width={700} height={500} className="rounded-2xl"></Image>
         </div>
       </div>
     </section>
   );
 }
 
-function OverlappingImageCollage() {
-  const collageImages = [
-    {
-      src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
-      alt: "Industrial Rental Equipment Front View",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-      alt: "Industrial Rental Equipment Detail View",
-    },
-  ];
 
-  return (
-    <div className="w-full flex items-center justify-center p-2">
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:-space-x-16 lg:block lg:relative lg:w-105 lg:h-87.5">
-        {/* Image 1 */}
-        <motion.div
-          className="w-60 sm:w-50 lg:w-47.5 h-70 lg:h-65 rounded-3xl overflow-hidden shadow-2xl border-2 border-white dark:border-gray-800 bg-gray-100 dark:bg-gray-800 lg:absolute lg:top-0 lg:left-0 z-10 rotate-3 lg:rotate-0"
-          initial={{ opacity: 0, x: -20, scale: 0.95 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          whileHover={{
-            scale: 1.05,
-            rotate: 0,
-            y: -6,
-            zIndex: 30,
-            transition: { duration: 0.3, ease: "easeOut" },
-          }}
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src={collageImages[0].src}
-              alt={collageImages[0].alt}
-              fill
-              sizes="(max-width: 1024px) 200px, 190px"
-              className="object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-        </motion.div>
-
-        {/* Image 2 */}
-        <motion.div
-          className="w-60 sm:w-50 lg:w-47.5 h-70 lg:h-65 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 bg-white dark:bg-gray-900 lg:absolute lg:bottom-0 lg:right-6 z-20 rotate-3 lg:rotate-0 mt-10 sm:mt-0"
-          initial={{ opacity: 0, x: 20, scale: 0.95 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          whileHover={{
-            scale: 1.05,
-            rotate: 0,
-            y: -6,
-            zIndex: 30,
-            transition: { duration: 0.3, ease: "easeOut" },
-          }}
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src={collageImages[1].src}
-              alt={collageImages[1].alt}
-              fill
-              sizes="(max-width: 1024px) 200px, 190px"
-              className="object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  );
-}
 
 function RentalServicesSection() {
   return (
@@ -360,102 +291,6 @@ function RentalServicesSection() {
 }
 
 
-function WhyChooseSection() {
-  return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-12 sm:space-y-20 bg-white dark:bg-gray-950">
-      <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight mb-3">
-          Why Choose Our Rentals
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
-          Unmatched reliability, rapid deployment logistics, and fully certified equipment fleet.
-        </p>
-      </div>
-
-      {serviceData.whyChoose.map((item, idx) => (
-        <div
-          key={idx}
-          className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${
-            idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-          }`}
-        >
-          <motion.div
-            className="w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800 h-64 sm:h-80 lg:h-96"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-          <div className="w-full lg:w-1/2 space-y-4 text-center lg:text-left">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
-              {item.title}
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed font-light">
-              {item.description}
-            </p>
-          </div>
-        </div>
-      ))}
-    </section>
-  );
-}
-
-function GallerySection() {
-  const [activeImage, setActiveImage] = useState(serviceData.gallery[0]);
-
-  return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white dark:bg-gray-950">
-      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight mb-3">
-          Equipment Gallery
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
-          Explore our heavy-duty chillers, sound-attenuated generators, and rapid-deployment units.
-        </p>
-      </div>
-
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          key={activeImage}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          className="rounded-3xl overflow-hidden shadow-xl mb-6 bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 h-70 sm:h-95 lg:h-112.5"
-        >
-          <img
-            src={activeImage}
-            alt="Active Fleet View"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-
-        <div className="flex justify-center gap-3 sm:gap-4 overflow-x-auto pb-2">
-          {serviceData.gallery.map((img, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(img)}
-              className={`w-20 h-16 sm:w-24 sm:h-20 rounded-2xl overflow-hidden border-2 transition-all shadow-sm shrink-0 ${
-                activeImage === img
-                  ? "border-emerald-600 dark:border-emerald-400 scale-105"
-                  : "border-transparent opacity-60 hover:opacity-100"
-              }`}
-            >
-              <img
-                src={img}
-                alt={`Thumbnail ${idx}`}
-                className="w-full h-full object-cover"
-              />
-            </button>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function RelatedServicesSection() {
   return (
@@ -517,8 +352,6 @@ export default function IndustrialRentalServicePage() {
         <HeroSection />
         <IntroductionSection />
         <RentalServicesSection />
-       {/*  <WhyChooseSection />  */}
-        {/* <GallerySection /> */}
         <RelatedServicesSection />
       </main>
     </div>

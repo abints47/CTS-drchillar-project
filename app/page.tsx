@@ -78,13 +78,13 @@ export default function HomePage() {
         {/* Background Decorative Snowflakes */}
         <Snowflake
           size={140}
-          className="pointer-events-none absolute -top-2 -left-2 select-none text-emerald-500/20 animate-spin md:top-8 md:left-2"
+          className="pointer-events-none absolute -top-2 -left-2 select-none text-emerald-500/15 animate-spin md:top-8 md:left-2"
           style={{ animationDuration: '20s' }}
           aria-hidden="true"
         />
         <Snowflake
           size={140}
-          className="pointer-events-none absolute bottom-0 right-0 select-none text-emerald-500/20 animate-spin md:bottom-10 md:right-16"
+          className="pointer-events-none absolute bottom-0 right-0 select-none text-emerald-500/15 animate-spin md:bottom-10 md:right-16"
           style={{ animationDuration: '25s' }}
           aria-hidden="true"
         />  
@@ -216,24 +216,44 @@ export default function HomePage() {
       
      <section id="about" className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 max-w-8xl mx-auto space-y-16">
   {/* Side Decorative Animated Snowflakes (Spans up to max-w-8xl) */}
+  {/* Snowflake 1 */}
+<div 
+  className="pointer-events-none absolute top-1/3 -right-14 z-0 md:-right-1 animate-bounce"
+  style={{ animationDuration: '3.5s' }}
+  aria-hidden="true"
+>
   <Snowflake
-    size={180}
-    className="pointer-events-none absolute top-1/3 -right-14 select-none text-emerald-500/15 dark:text-emerald-400/10 animate-spin z-0 md:-right-1"
-    style={{ animationDuration: '28s', animationDirection: 'reverse' }}
-    aria-hidden="true"
+    size={150}
+    className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin"
+    style={{ animationDuration: '8s' }} // Spin speed
   />
+</div>
+
+{/* Snowflake 2 */}
+<div 
+  className="pointer-events-none absolute top-2/4 -right-14 z-0 md:-left-1 animate-bounce"
+  style={{ animationDuration: '4s' }}
+  aria-hidden="true"
+>
   <Snowflake
-    size={180}
-    className="pointer-events-none absolute top-2/4 -right-14 select-none text-emerald-500/15 dark:text-emerald-400/10 animate-spin z-0 md:-left-1"
-    style={{ animationDuration: '28s', animationDirection: 'reverse' }}
-    aria-hidden="true"
+    size={150}
+    className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin"
+    style={{ animationDuration: '10s' }} // Spin speed
   />
+</div>
+
+{/* Snowflake 3 */}
+<div 
+  className="pointer-events-none absolute bottom-1/4 -right-12 z-0 md:-right-1 animate-bounce"
+  style={{ animationDuration: '3s' }}
+  aria-hidden="true"
+>
   <Snowflake
-    size={180}
-    className="pointer-events-none absolute bottom-1/6 -right-12 select-none text-emerald-500/15 dark:text-emerald-400/10 animate-spin z-0 md:-right-1"
-    style={{ animationDuration: '25s', animationDirection: 'reverse' }}
-    aria-hidden="true"
+    size={150}
+    className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin"
+    style={{ animationDuration: '9s', animationDirection: 'reverse' }} // Spin speed & direction
   />
+</div>
 
   {/* Main Content Area (Constrained strictly to max-w-7xl) */}
   <div className="max-w-7xl mx-auto space-y-16 relative z-10">

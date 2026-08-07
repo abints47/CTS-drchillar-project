@@ -20,12 +20,26 @@ export default function CardGrid({ items }: CardGridProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 440 // Distance to scroll matches larger card width
-      scrollContainerRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      })
+    const container = scrollContainerRef.current
+    if (!container) return
+
+    const scrollAmount = 360 // Single card width + gap offset
+    const maxScrollLeft = container.scrollWidth - container.clientWidth
+
+    if (direction === "right") {
+      // Near or at the right boundary: loop back to the beginning
+      if (container.scrollLeft >= maxScrollLeft - 10) {
+        container.scrollTo({ left: 0, behavior: "smooth" })
+      } else {
+        container.scrollBy({ left: scrollAmount, behavior: "smooth" })
+      }
+    } else {
+      // At or near the start: loop to the far right end
+      if (container.scrollLeft <= 10) {
+        container.scrollTo({ left: maxScrollLeft, behavior: "smooth" })
+      } else {
+        container.scrollBy({ left: -scrollAmount, behavior: "smooth" })
+      }
     }
   }
 
@@ -35,7 +49,7 @@ export default function CardGrid({ items }: CardGridProps) {
       <button
         onClick={() => scroll("left")}
         aria-label="Scroll left"
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer opacity-80 sm:opacity-0 sm:group-hover/carousel:opacity-100"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
@@ -65,7 +79,7 @@ export default function CardGrid({ items }: CardGridProps) {
       <button
         onClick={() => scroll("right")}
         aria-label="Scroll right"
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer opacity-80 sm:opacity-0 sm:group-hover/carousel:opacity-100"
       >
         <ChevronRight className="h-6 w-6" />
       </button>

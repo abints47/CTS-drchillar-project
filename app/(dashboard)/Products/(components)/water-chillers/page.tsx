@@ -180,19 +180,19 @@ const productData = {
     {
       title: "Cold Rooms & Ice Block Machines",
       desc: "Efficient air conditioning systems designed for comfort and reliability.",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600",
+      image: "https://t3.ftcdn.net/jpg/21/15/16/00/240_F_2115160008_SlrcawoK0i8w6fJ0HOkn6fPnGHsO9fuC.jpg",
       href: "/Products/cold-rooms",
     },
     {
       title: "Heat Exchange and Cooling Towers",
       desc: "Reliable heat exchange to optimize energy transfer processes.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600",
+      image: "/images/pipe.jpg",
       href: "/Products/heat-exchangers",
     },
     {
       title: "A/C Units & Air Curtains",
       desc: "Efficient air conditioning systems designed for comfort and reliability.",
-      image: "https://media.istockphoto.com/id/492892828/photo/air-conditioning-engineer.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgvNuEV3Pue8ioVhMOWwJDaJWSmQHJk9Ufd3H7s3otA=",
+      image: "/images/air-conditioner1.jpg",
       href: "/Products/ac-units",
     },
   ],

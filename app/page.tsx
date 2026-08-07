@@ -78,14 +78,16 @@ export default function HomePage() {
         {/* Background Decorative Snowflakes */}
         <Snowflake
           size={140}
-          className="pointer-events-none absolute -top-2 -left-2 select-none text-emerald-500/10 animate-spin-slow md:top-0 md:left-2"
+          className="pointer-events-none absolute -top-2 -left-2 select-none text-emerald-500/20 animate-spin md:top-8 md:left-2"
+          style={{ animationDuration: '20s' }}
           aria-hidden="true"
         />
         <Snowflake
           size={140}
-          className="pointer-events-none absolute bottom-0 right-0 select-none text-emerald-500/10 animate-spin-slow md:bottom-10 md:right-16"
+          className="pointer-events-none absolute bottom-0 right-0 select-none text-emerald-500/20 animate-spin md:bottom-10 md:right-16"
+          style={{ animationDuration: '25s' }}
           aria-hidden="true"
-        />
+        />  
 
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* Left Image Cluster */}
@@ -210,136 +212,160 @@ export default function HomePage() {
       </section>
 
       {/* Services and Offerings Section */}
-      <section id="about" className="relative  py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto   space-y-16 ">
-        <div>
-          {/* Header Section */}
-          <div 
-            className="max-w-4xl mx-auto text-center space-y-4 border-b  border-slate-200/80 dark:border-slate-800 pb-12 transition-colors duration-300"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
-            <h3 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-emerald-600 dark:text-white tracking-tight leading-[1.15]">
-              What We Offer
-            </h3>
+      
+      
+     <section id="about" className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 max-w-8xl mx-auto space-y-16">
+  {/* Side Decorative Animated Snowflakes (Spans up to max-w-8xl) */}
+  <Snowflake
+    size={180}
+    className="pointer-events-none absolute top-1/3 -right-14 select-none text-emerald-500/15 dark:text-emerald-400/10 animate-spin z-0 md:-right-1"
+    style={{ animationDuration: '28s', animationDirection: 'reverse' }}
+    aria-hidden="true"
+  />
+  <Snowflake
+    size={180}
+    className="pointer-events-none absolute top-2/4 -right-14 select-none text-emerald-500/15 dark:text-emerald-400/10 animate-spin z-0 md:-left-1"
+    style={{ animationDuration: '28s', animationDirection: 'reverse' }}
+    aria-hidden="true"
+  />
+  <Snowflake
+    size={180}
+    className="pointer-events-none absolute bottom-1/6 -right-12 select-none text-emerald-500/15 dark:text-emerald-400/10 animate-spin z-0 md:-right-1"
+    style={{ animationDuration: '25s', animationDirection: 'reverse' }}
+    aria-hidden="true"
+  />
 
-            <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed font-light max-w-3xl mx-auto pt-2">
-              At <strong className="text-emerald-600 dark:text-emerald-500 font-semibold">CTS - Chiller Technical Services L.L.C</strong>, we provide top-notch solutions for all your cooling needs. From premium trading options to expert maintenance, flexible rentals, and dedicated after-sales services our mission is to keep you cool, comfortable, and satisfied year round.
-            </p>
+  {/* Main Content Area (Constrained strictly to max-w-7xl) */}
+  <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+    <div>
+      {/* Header Section */}
+      <div 
+        className="max-w-4xl mx-auto text-center space-y-4 border-b border-slate-200/80 dark:border-slate-800 pb-12 transition-colors duration-300"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <h3 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-emerald-600 dark:text-white tracking-tight leading-[1.15]">
+          What We Offer
+        </h3>
+
+        <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed font-light max-w-3xl mx-auto pt-2">
+          At <strong className="text-emerald-600 dark:text-emerald-500 font-semibold">CTS - Chiller Technical Services L.L.C</strong>, we provide top-notch solutions for all your cooling needs. From premium trading options to expert maintenance, flexible rentals, and dedicated after-sales services our mission is to keep you cool, comfortable, and satisfied year round.
+        </p>
+      </div>
+
+      {/* Clean 4-Column Modern Tech Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-10">
+        
+        {/* 01. Trading */}
+        <div 
+          className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/10"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="800"
+        >
+          <div className="text-emerald-600 dark:text-emerald-400 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+            <ArrowLeftRight size={42} strokeWidth={2.2} />
           </div>
-
-          {/* Clean 4-Column Modern Tech Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-10">
-            
-            {/* 01. Trading */}
-            <div 
-              className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-duration="800"
-            >
-              <div className="text-emerald-600 dark:text-emerald-400">
-                <ArrowLeftRight size={42} strokeWidth={2.2} />
-              </div>
-              <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                Trading
-              </h4>
-              <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-                High-quality cooling systems and equipment from trusted brands, ensuring performance and durability you can rely on.
-              </p>
-            </div>
-
-            {/* 02. Maintenance */}
-            <div 
-              className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
-              <div className="text-emerald-600 dark:text-emerald-400">
-                <Wrench size={42} strokeWidth={2.2} />
-              </div>
-              <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                Maintenance
-              </h4>
-              <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-                Real-time telemetry monitoring, automated health checks, and rapid dispatch protocols to mitigate critical systemic risk.
-              </p>
-            </div>
-
-            {/* 03. Rentals */}
-            <div 
-              className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
-              data-aos="fade-up"
-              data-aos-delay="300"
-              data-aos-duration="800"
-            >
-              <div className="text-emerald-600 dark:text-emerald-400">
-                <Warehouse size={42} strokeWidth={2.2} />
-              </div>
-              <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                Rentals
-              </h4>
-              <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-                Flexible rental options for all types of cooling systems, perfect for temporary needs or seasonal projects.
-              </p>
-            </div>
-
-            {/* 04. Services */}
-            <div 
-              className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5"
-              data-aos="fade-up"
-              data-aos-delay="400"
-              data-aos-duration="800"
-            >
-              <div className="text-emerald-600 dark:text-emerald-400">
-                <Headphones size={42} strokeWidth={2.2} />
-              </div>
-              <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                Services
-              </h4>
-              <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-                From consultation to installation and after-sales support, our team ensures you get complete peace of mind.
-              </p>
-            </div>
-
-          </div>
+          <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+            Trading
+          </h4>
+          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+            High-quality cooling systems and equipment from trusted brands, ensuring performance and durability you can rely on.
+          </p>
         </div>
-    
 
-        {/* Featured Products & Services Cards Section */}
-        <div className="space-y-12 ">
-          {/* Products Subsection */}
-          <div className="space-y-4 " data-aos="fade-up">
-            <div className="text-center space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white tracking-tight">
-                Our Products
-              </h3>
-              <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full" />
-            </div>
-
-            <p className="max-w-3xl mx-auto text-center text-base sm:text-lg font-normal text-gray-600 dark:text-gray-300 tracking-tight px-4 leading-relaxed">
-              We provide a wide range of cooling and refrigeration solutions built for performance, reliability, and efficiency.
-            </p>
-
-            <CardGrid items={PRODUCTS} />
+        {/* 02. Maintenance */}
+        <div 
+          className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/10"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-duration="800"
+        >
+          <div className="text-emerald-600 dark:text-emerald-400 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+            <Wrench size={42} strokeWidth={2.2} />
           </div>
-
-          {/* Services Subsection */}
-          <div className="space-y-4" data-aos="fade-up">
-            <div className="text-center space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
-                Our Services
-              </h3>
-              <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full" />
-            </div>
-
-            <p className="max-w-3xl mx-auto text-center text-base sm:text-lg font-normal text-gray-600 dark:text-gray-300 tracking-tight px-4 leading-relaxed">
-              From Chilled water systems to complete AC maintenance, we provide a full range of professional HVAC services.
-            </p>
-            <CardGrid items={SERVICES} />
-          </div>
+          <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+            Maintenance
+          </h4>
+          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+            Real-time telemetry monitoring, automated health checks, and rapid dispatch protocols to mitigate critical systemic risk.
+          </p>
         </div>
-      </section>
+
+        {/* 03. Rentals */}
+        <div 
+          className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/10"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="800"
+        >
+          <div className="text-emerald-600 dark:text-emerald-400 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+            <Warehouse size={42} strokeWidth={2.2} />
+          </div>
+          <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+            Rentals
+          </h4>
+          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+            Flexible rental options for all types of cooling systems, perfect for temporary needs or seasonal projects.
+          </p>
+        </div>
+
+        {/* 04. Services */}
+        <div 
+          className="group relative space-y-4 p-6 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50 dark:hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/10"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-duration="800"
+        >
+          <div className="text-emerald-600 dark:text-emerald-400 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+            <Headphones size={42} strokeWidth={2.2} />
+          </div>
+          <h4 className="text-xl font-bold text-gray-800 dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+            Services
+          </h4>
+          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+            From consultation to installation and after-sales support, our team ensures you get complete peace of mind.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    {/* Featured Products & Services Cards Section */}
+    <div className="space-y-12">
+      {/* Products Subsection */}
+      <div className="space-y-4" data-aos="fade-up" data-aos-duration="800">
+        <div className="text-center space-y-2">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white tracking-tight">
+            Our Products
+          </h3>
+          <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full transition-all duration-300 hover:w-24" />
+        </div>
+
+        <p className="max-w-3xl mx-auto text-center text-base sm:text-lg font-normal text-gray-600 dark:text-gray-300 tracking-tight px-4 leading-relaxed">
+          We provide a wide range of cooling and refrigeration solutions built for performance, reliability, and efficiency.
+        </p>
+
+        <CardGrid items={PRODUCTS} />
+      </div>
+
+      {/* Services Subsection */}
+      <div className="space-y-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <div className="text-center space-y-2">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+            Our Services
+          </h3>
+          <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full transition-all duration-300 hover:w-24" />
+        </div>
+
+        <p className="max-w-3xl mx-auto text-center text-base sm:text-lg font-normal text-gray-600 dark:text-gray-300 tracking-tight px-4 leading-relaxed">
+          From Chilled water systems to complete AC maintenance, we provide a full range of professional HVAC services.
+        </p>
+        <CardGrid items={SERVICES} />
+      </div>
+    </div>
+  </div>
+</section>
 
 
 

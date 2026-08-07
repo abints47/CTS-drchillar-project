@@ -195,7 +195,7 @@ const productData = {
     {
       title: "Cold Rooms & Ice Block Machines",
       desc: "Energy efficient cold storage rooms for fresh and frozen products.",
-      image: "/images/products/heatExchange.jpg",
+      image: "https://t3.ftcdn.net/jpg/21/15/16/00/240_F_2115160008_SlrcawoK0i8w6fJ0HOkn6fPnGHsO9fuC.jpg",
       href: "/Products/cold-rooms",
     },
     {

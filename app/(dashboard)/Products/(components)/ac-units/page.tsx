@@ -156,6 +156,33 @@ const productData = {
         "Retrofit options for improved efficiency",
       ],
     },
+    {
+      title: "Spare Parts & Accessories",
+      image:
+        "https://t3.ftcdn.net/jpg/08/21/84/60/240_F_821846035_Z6q8cMoiZ3TioNoHBWpJ6yRzpcSUbZ8J.jpg",
+      icon: <Layers className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Supply and replacement of genuine HVAC components to ensure reliable system performance and extended equipment life.",
+      features: [
+        "Genuine spare parts supply",
+        "Compressor & motor replacement",
+        "Filters, coils & electrical components",
+      ],
+    },
+    {
+      title: "Ventilation & Air Quality",
+      image:
+        "https://t3.ftcdn.net/jpg/08/68/37/82/240_F_868378237_zV29nAXU9cr5OYBzDXjcJO7r71P7BLil.jpg",
+      icon: <Layers className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
+      description:
+        "Enhance indoor air quality with advanced ventilation systems designed for healthier and more comfortable environments.",
+      features: [
+        "Fresh air ventilation systems",
+        "Air purification solutions",
+        "Exhaust & ventilation installation",
+        "Indoor air quality assessment",
+      ],
+    },
 
   ],
    similarProducts: [

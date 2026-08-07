@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -122,7 +122,7 @@ const serviceData = {
     },
     {
       title: "AMC",
-      description: "Annual Manufacturing Contract",
+      description: "Annual Maintenance Contract",
       image: "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Famc-contract.daca051b.webp&w=1920&q=75",
       href: "/Services/amc",
     },
@@ -202,14 +202,18 @@ function IntroductionSection() {
         </motion.div>
 
         <div className="lg:col-span-6 flex justify-center w-full">
-          <Image src={'https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoil-scrap.b104cf22.webp&w=1920&q=75'} alt="Coil manufacturing" width={500} height={500} className="rounded-2xl"></Image>
+          <Image
+            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoil-scrap.b104cf22.webp&w=1920&q=75"
+            alt="Coil manufacturing"
+            width={500}
+            height={500}
+            className="rounded-2xl"
+          />
         </div>
       </div>
     </section>
   );
 }
-
-
 
 function RentalServicesSection() {
   return (
@@ -281,7 +285,7 @@ function RelatedServicesSection() {
           Related Services
         </h2>
         <p className="text-black dark:text-gray-300 text-sm sm:text-base font-normal">
-          Discover other Services that we providing 
+          Discover other Services that we providing
         </p>
       </div>
 
@@ -329,16 +333,23 @@ function RelatedServicesSection() {
 export default function IndustrialRentalServicePage() {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Sync state with global document root so global components (Navbar/Footer) update
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <div className="min-h-screen bg-white dark:bg-black font-sans text-black dark:text-white antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
-        <main className="grow">
-          <HeroSection darkMode={darkMode} setDarkMode={setDarkMode} />
-          <IntroductionSection />
-          <RentalServicesSection />
-          <RelatedServicesSection />
-        </main>
-      </div>
+    <div className="min-h-screen bg-white dark:bg-black font-sans text-black dark:text-white antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
+      <main className="grow">
+        <HeroSection darkMode={darkMode} setDarkMode={setDarkMode} />
+        <IntroductionSection />
+        <RentalServicesSection />
+        <RelatedServicesSection />
+      </main>
     </div>
   );
 }

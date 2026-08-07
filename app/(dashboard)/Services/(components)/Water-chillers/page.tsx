@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -141,7 +141,7 @@ const serviceData = {
     {
       title: "AC Chillers & Genset Rentals",
       description:
-        "Flexiable rental solutions for emergency and temporary cooling needs.",
+        "Flexible rental solutions for emergency and temporary cooling needs.",
       image:
         "https://plus.unsplash.com/premium_photo-1664298652486-1dbc1b5d59b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHdhdGVyJTIwY2hpbGxlckFDfGVufDB8fDB8fHww",
       href: "/Services/Coldroom-Maintenance",
@@ -232,7 +232,13 @@ function IntroductionSection() {
 
         {/* Right Column: Overlapping Image Collage Part */}
         <div className="lg:col-span-6 flex justify-center w-full">
-          <Image src={'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0ZXIlMjBjaGlsbGVyfGVufDB8fDB8fHww'} alt="Water Chiller" width={600} height={500} className="rounded-2xl"></Image>
+          <Image
+            src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0ZXIlMjBjaGlsbGVyfGVufDB8fDB8fHww"
+            alt="Water Chiller"
+            width={600}
+            height={500}
+            className="rounded-2xl"
+          />
         </div>
       </div>
     </section>
@@ -311,7 +317,7 @@ function RelatedServicesSection() {
           Related Services
         </h2>
         <p className="text-black dark:text-gray-300 text-sm sm:text-base font-normal">
-          Discover other Services that we providing 
+          Discover other Services that we providing
         </p>
       </div>
 
@@ -359,16 +365,23 @@ function RelatedServicesSection() {
 export default function IndustrialRentalServicePage() {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Sync state with global document root so global components (Navbar/Footer) update
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <div className="min-h-screen bg-white dark:bg-black font-sans text-black dark:text-white antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
-        <main className="grow">
-          <HeroSection darkMode={darkMode} setDarkMode={setDarkMode} />
-          <IntroductionSection />
-          <RentalServicesSection />
-          <RelatedServicesSection />
-        </main>
-      </div>
+    <div className="min-h-screen bg-white dark:bg-black font-sans text-black dark:text-white antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
+      <main className="grow">
+        <HeroSection darkMode={darkMode} setDarkMode={setDarkMode} />
+        <IntroductionSection />
+        <RentalServicesSection />
+        <RelatedServicesSection />
+      </main>
     </div>
   );
 }

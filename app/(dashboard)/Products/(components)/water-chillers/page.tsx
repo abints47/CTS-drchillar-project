@@ -13,6 +13,7 @@ import {
   Package,
   Thermometer,Settings,
   Building2,
+  ArrowLeft,
   Factory,
   FlaskConical,
   Store,
@@ -197,13 +198,9 @@ const productData = {
   ],
 };
 
-// ==========================================
-// SUBCOMPONENTS
-// ==========================================
-
 function ProductHero() {
   return (
-    <section className="sticky top-0 z-0 w-full h-[45vh] sm:h-[55vh] flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="sticky top-0 z-0 w-full h-[45vh] sm:h-[45vh] flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0">
         <motion.div
           className="w-full h-full"
@@ -218,6 +215,18 @@ function ProductHero() {
           />
         </motion.div>
         <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
+      </div>
+
+      {/* Top-Right Back Button */}
+      <div className="absolute top-55 right-5 z-20 flex items-center gap-3">
+        <Link
+          href="/Services"
+          className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg"
+          aria-label="Back"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span className="text-sm font-medium">Back</span>
+        </Link>
       </div>
 
       <div 
@@ -346,7 +355,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.03, y: -6, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://images.unsplash.com/photo-1563456020159-b74d67e78c26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0ZXIlMjBjaGlsbGVyfGVufDB8fDB8fHww"
+            src="https://t4.ftcdn.net/jpg/01/05/45/05/240_F_105450561_k9Mo2MHlvIAHOPcG6GBALXGuOVKkoFwP.jpg"
             alt="Primary cooling equipment component view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -362,7 +371,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.05, y: -8, x: 4, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://images.unsplash.com/photo-1639616938330-d77579c1bef9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2F0ZXIlMjBjaGlsbGVyfGVufDB8fDB8fHww"
+            src="https://t4.ftcdn.net/jpg/20/17/21/35/240_F_2017213566_F6aOp65JGktvpyQFy3cWo4eaiXOXmiGs.jpg"
             alt="Secondary structural detail view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />

@@ -9,9 +9,8 @@ import {
   ShieldCheck,
   Leaf,
   Thermometer,
-  Gauge,
+  ArrowLeft,
   Layers,
-  Package,
   Wrench,
   Building2,
   Settings,
@@ -200,10 +199,9 @@ const productData = {
   ],
 };
 
-
 function ProductHero() {
   return (
-    <section className="sticky top-0 z-0 w-full h-[55vh] sm:h-[55vh] flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="sticky top-0 z-0 w-full h-[55vh] sm:h-[45vh] flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0">
         <motion.div
           className="w-full h-full"
@@ -218,6 +216,18 @@ function ProductHero() {
           />
         </motion.div>
         <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
+      </div>
+
+      {/* Top-Right Back Button */}
+      <div className="absolute top-55 right-5 z-20 flex items-center gap-3">
+        <Link
+          href="/Services"
+          className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg"
+          aria-label="Back"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span className="text-sm font-medium">Back</span>
+        </Link>
       </div>
 
       <div 
@@ -283,7 +293,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.03, y: -6, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fheat-exchangers-1.60db96ba.webp&w=384&q=75"
+            src="https://t3.ftcdn.net/jpg/13/63/38/24/240_F_1363382413_Vz2qgUiwtX6j2S9UQ1oEEQWUhuWM6gJk.jpg"
             alt="Primary cooling equipment component view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -299,7 +309,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.05, y: -8, x: 4, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fheat-exchangers-2.62e36130.webp&w=256&q=75"
+            src="https://t3.ftcdn.net/jpg/04/95/03/94/240_F_495039403_dcU74ecQqd8o8CyEBayhh2j2XuMyJLNB.jpg"
             alt="Secondary structural detail view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -315,7 +325,7 @@ function ProductFeatureGrid() {
 function ProductFeatureCardSection({
   title = "Cooling Towers",
   description = "Our cooling towers are designed for maximum heat rejection with low noise and minimal energy consumption — making them ideal for industrial and HVAC applications. Using corrosion-resistant materials and efficient fill media, they deliver reliable performance in even the most demanding climates.",
-  image = "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcooling-tower.46eb3775.webp&w=1920&q=75",
+  image = "https://t3.ftcdn.net/jpg/16/73/22/86/240_F_1673228699_VCNQD4fc7pJAxXA6tmVFwKdrDXfXzxbj.jpg",
   features = [
     "Fiberglass or stainless steel construction",
     "Low-noise fan systems for minimal acoustic impact",

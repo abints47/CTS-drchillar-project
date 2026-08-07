@@ -60,7 +60,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <section className="relative w-full py-28 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 overflow-hidden transition-colors duration-300">
+    <section className="relative w-full py-28 px-4 sm:px-6 lg:px-8 bg-white dark:bg-mauve-950 overflow-hidden transition-colors duration-300">
       {/* Subtle Ambient Background Gradients */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-600/5 rounded-full blur-3xl pointer-events-none" />

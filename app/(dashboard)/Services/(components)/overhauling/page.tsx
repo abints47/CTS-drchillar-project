@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -236,8 +236,6 @@ function IntroductionSection() {
   );
 }
 
-
-
 function RentalServicesSection() {
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 dark:bg-zinc-950 my-10 border-y border-gray-100 dark:border-zinc-800 transition-colors duration-300">
@@ -358,16 +356,23 @@ function RelatedServicesSection() {
 export default function IndustrialRentalServicePage() {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Sync state with global html root so Navbar and other components inherit dark mode
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <div className="min-h-screen bg-white dark:bg-black font-sans text-black dark:text-white antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
-        <main className="grow">
-          <HeroSection darkMode={darkMode} setDarkMode={setDarkMode} />
-          <IntroductionSection />
-          <RentalServicesSection />
-          <RelatedServicesSection />
-        </main>
-      </div>
+    <div className="min-h-screen bg-white dark:bg-black font-sans text-black dark:text-white antialiased selection:bg-emerald-500 selection:text-white flex flex-col transition-colors duration-300">
+      <main className="grow">
+        <HeroSection darkMode={darkMode} setDarkMode={setDarkMode} />
+        <IntroductionSection />
+        <RentalServicesSection />
+        <RelatedServicesSection />
+      </main>
     </div>
   );
 }

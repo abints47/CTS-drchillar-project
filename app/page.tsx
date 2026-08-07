@@ -74,7 +74,7 @@ export default function HomePage() {
       <ParallaxCarousel slides={IMAGES} />
 
       {/* Hero Content Section */}
-      <section className="relative overflow-hidden bg-gray-100 py-16 pb-28 px-4 transition-colors duration-300 sm:px-6 lg:px-8 dark:bg-gray-950">
+      <section className="relative overflow-hidden bg-gray-100 py-16 pb-28 px-4 transition-colors duration-300 sm:px-6 lg:px-8 dark:bg-mauve-950">
         {/* Background Decorative Snowflakes */}
         <Snowflake
           size={140}
@@ -210,11 +210,11 @@ export default function HomePage() {
       </section>
 
       {/* Services and Offerings Section */}
-      <section id="about" className="relative  py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16 ">
+      <section id="about" className="relative  py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto   space-y-16 ">
         <div>
           {/* Header Section */}
           <div 
-            className="max-w-4xl mx-auto text-center space-y-4 border-b border-slate-200/80 dark:border-slate-800 pb-12 transition-colors duration-300"
+            className="max-w-4xl mx-auto text-center space-y-4 border-b  border-slate-200/80 dark:border-slate-800 pb-12 transition-colors duration-300"
             data-aos="fade-up"
             data-aos-duration="800"
           >
@@ -400,7 +400,7 @@ export default function HomePage() {
 
     {/* Call to Action Section */}
     <section 
-  className="w-full border-t border-b border-slate-200 dark:border-slate-800/80 bg-slate-50/60 dark:bg-slate-900/40 py-16 px-4 sm:px-6 lg:px-8 transition-colors"
+  className="w-full border-t border-b border-slate-200 dark:border-slate-800/80 bg-slate-50/60 dark:bg-mauve-950 py-16 px-4 sm:px-6 lg:px-8 transition-colors"
   data-aos="fade"
   data-aos-duration="500"
 >

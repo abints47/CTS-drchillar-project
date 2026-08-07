@@ -13,6 +13,7 @@ import {
   Dot,
   Package, 
   Factory,
+  ArrowLeft,
   FlaskConical,
   Store,
   Thermometer,
@@ -196,10 +197,9 @@ const productData = {
   ],
 };
 
-
 function ProductHero() {
   return (
-    <section className="sticky top-0 z-0 w-full h-[55vh] sm:h-[55vh] flex items-center justify-center overflow-hidden bg-gray-900">
+    <section className="sticky top-0 z-0 w-full h-[55vh] sm:h-[45vh] flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0">
         <motion.div
           className="w-full h-full"
@@ -208,12 +208,24 @@ function ProductHero() {
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           <img
-            src="/images/products/heatExchange.jpg"
+            src="https://t3.ftcdn.net/jpg/20/25/85/14/240_F_2025851482_wErkxx4TU7efpeWQ4TcZPYNzrOR3buis.jpg"
             alt="Industrial Water Chiller"
             className="w-full h-full object-cover opacity-95"
           />
         </motion.div>
         <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
+      </div>
+
+      {/* Top Right Back Button */}
+      <div className="absolute top-55 right-5 z-20 flex items-center gap-3">
+        <Link
+          href="/Services"
+          className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg"
+          aria-label="Back"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span className="text-sm font-medium">Back</span>
+        </Link>
       </div>
 
       <div 
@@ -233,6 +245,7 @@ function ProductHero() {
           <p className="text-sm sm:text-base text-gray-200 max-w-lg mx-auto mb-8 font-normal leading-relaxed">
             {productData.tagline}
           </p>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <button className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-7 py-3.5 rounded-full backdrop-blur-md border border-white/15 transition-all">
               <Link href={'/Contact'}>Contact US</Link>
@@ -342,7 +355,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.03, y: -6, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcold-rooms-1.efa4e0e3.webp&w=384&q=75"
+            src="https://www.epack.in/wp-content/uploads/2025/08/EPACK-PREFAB-YOUR-TRUSTED-COLD-STORAGE-MANUFACTURER.webp"
             alt="Primary cooling equipment component view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -358,7 +371,7 @@ function ProductFeatureGrid() {
           whileHover={{ scale: 1.05, y: -8, x: 4, transition: { duration: 0.3 } }}
         >
           <img
-            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcold-rooms-2.a63eade5.webp&w=256&q=75"
+            src="https://t4.ftcdn.net/jpg/21/15/15/63/240_F_2115156306_dDL545uXrtgPNztew31JIBFGrj0J1Esn.jpg"
             alt="Secondary structural detail view"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -391,7 +404,7 @@ function ProductFeatureCardSection({
             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
           >
             <img
-              src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fac-units-2.b599cc17.webp&w=1920&q=75"
+              src="https://t3.ftcdn.net/jpg/07/45/85/48/240_F_745854811_HmJehGZIUXboz4rM3zd8mIpUHP3XCY8j.jpg"
               alt={title}
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             />

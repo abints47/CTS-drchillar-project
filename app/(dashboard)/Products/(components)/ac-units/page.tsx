@@ -231,11 +231,6 @@ function ProductHero() {
           <p className="text-sm sm:text-base text-gray-200 max-w-lg mx-auto mb-8 font-normal leading-relaxed">
             {productData.tagline}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-7 py-3.5 rounded-full backdrop-blur-md border border-white/15 transition-all">
-              <Link href={"/Contact"}>Contact US</Link> 
-            </button>
-          </div>
         </motion.div>
       </div>
     </section>

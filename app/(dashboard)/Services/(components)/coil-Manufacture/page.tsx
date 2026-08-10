@@ -179,10 +179,12 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
   );
 }
 
+
 function IntroductionSection() {
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto transition-colors duration-300">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+        {/* Text Section (Left to Right Animation) */}
         <motion.div
           className="lg:col-span-6 space-y-4 sm:space-y-6 text-center lg:text-left"
           initial={{ opacity: 0, x: -20 }}
@@ -201,7 +203,14 @@ function IntroductionSection() {
           </p>
         </motion.div>
 
-        <div className="lg:col-span-6 flex justify-center w-full">
+        {/* Image Section (Right to Left Animation) */}
+        <motion.div 
+          className="lg:col-span-6 flex justify-center w-full"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <Image
             src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcoil-scrap.b104cf22.webp&w=1920&q=75"
             alt="Coil manufacturing"
@@ -209,7 +218,7 @@ function IntroductionSection() {
             height={500}
             className="rounded-2xl"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -207,6 +207,7 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
   );
 }
 
+
 function IntroductionSection() {
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto transition-colors duration-300">
@@ -231,7 +232,13 @@ function IntroductionSection() {
         </motion.div>
 
         {/* Right Column: Overlapping Image Collage Part */}
-        <div className="lg:col-span-6 flex justify-center w-full">
+        <motion.div 
+          className="lg:col-span-6 flex justify-center w-full"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <Image
             src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0ZXIlMjBjaGlsbGVyfGVufDB8fDB8fHww"
             alt="Water Chiller"
@@ -239,7 +246,7 @@ function IntroductionSection() {
             height={500}
             className="rounded-2xl"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

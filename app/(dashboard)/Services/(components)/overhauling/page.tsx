@@ -228,9 +228,21 @@ function IntroductionSection() {
         </motion.div>
 
         {/* Right Column: Overlapping Image Collage Part */}
-        <div className="lg:col-span-6 flex justify-center w-full">
-          <Image src={'https://images.unsplash.com/photo-1665826254141-bfa10685e002?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8T3ZlcmhhdWxpbmclMjBBQ3xlbnwwfHwwfHx8MA%3D%3D'} alt="hauling image" height={500} width={600} className="rounded-2xl"></Image>
-        </div>
+        <motion.div 
+          className="lg:col-span-6 flex justify-center w-full"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Image 
+            src={'https://images.unsplash.com/photo-1665826254141-bfa10685e002?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8T3ZlcmhhdWxpbmclMjBBQ3xlbnwwfHwwfHx8MA%3D%3D'} 
+            alt="hauling image" 
+            height={500} 
+            width={600} 
+            className="rounded-2xl"
+          />
+        </motion.div>
       </div>
     </section>
   );

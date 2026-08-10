@@ -326,7 +326,6 @@ function ProductFeatureGrid() {
   );
 }
 
-
 function ProductFeatureCardSection() {
   const keyBenefits = [
     "Precision temperature regulation under continuous heavy loads",
@@ -336,52 +335,69 @@ function ProductFeatureCardSection() {
   ];
 
   return (
-    <div className="grid grid-cols-1 pt-10 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      
-
-      {/* Right Side: Content */}
-      <div className="lg:col-span-6  flex flex-col items-start space-y-6">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto transition-colors duration-300">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
         
-        <h2 className="text-2xl pb-5 sm:text-3xl justify-center lg:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
-          {productData?.name ? `${productData.name[0]} ${productData.name[1]}` : "Industrial Modular Cooling System"}
-        </h2>
-         <motion.div 
-        className="lg:col-span-6 w-full h-80 sm:h-100 lg:h-110 rounded-2xl overflow-hidden shadow-md bg-gray-100 cursor-pointer"
-        whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-      >
-        <img
-          src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fair-curtain.ba162836.webp&w=1920&q=75"
-          alt="Industrial Product Overview"
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-        />
+        {/* Left Column: Text & Content */}
+        <motion.div
+          className="lg:col-span-6 space-y-4 sm:space-y-6 text-center lg:text-left"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-emerald-700 dark:text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">
+            Industrial Feature
+          </span>
+
+          <h2 className="text-2xl pt-2 sm:text-4xl font-bold text-black dark:text-white tracking-normal leading-tight">
+            {productData?.name ? `${productData.name[0]} ${productData.name[1]}` : "Industrial Modular Cooling System"}
+          </h2>
+
+          <p className="text-black dark:text-gray-300 text-sm sm:text-lg leading-relaxed font-normal text-left">
+            {productData?.description || "Engineered to maintain exact temperature parameters under extreme operating conditions. Designed specifically for mission-critical industrial workloads seeking maximum durability and minimum servicing overhead."}
+          </p>
+
+          <ul className="space-y-3.5 w-full pt-2 list-disc list-inside text-left">
+            {keyBenefits.map((benefit, idx) => (
+              <motion.li 
+                key={idx} 
+                className="text-gray-900 dark:text-gray-300 text-sm sm:text-base font-medium leading-relaxed"
+                initial={{ opacity: 0, x: -15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+              >
+                <span className="inline">{benefit}</span>
+              </motion.li>
+            ))}
+          </ul>
         </motion.div>
 
-        <p className="text-slate-600 text-base pt-10 sm:text-lg leading-relaxed font-normal">
-          {productData?.description || "Engineered to maintain exact temperature parameters under extreme operating conditions. Designed specifically for mission-critical industrial workloads seeking maximum durability and minimum servicing overhead."}
-        </p>
-
-        <ul className="space-y-3.5 w-full pt-2">
-          {keyBenefits.map((benefit, idx) => (
-            <motion.li 
-              key={idx} 
-              className="flex items-start gap-3 text-slate-700 text-sm sm:text-base font-medium"
-              initial={{ opacity: 0, x: 15 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-            >
-              <span className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-emerald-100">&#x2713;</span>
-              <span>{benefit}</span>
-            </motion.li>
-          ))}
-        </ul>
+        {/* Right Column: Image with Right-to-Left Animation */}
+        <motion.div 
+          className="lg:col-span-6 flex justify-center w-full"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.div 
+            className="w-full h-80 sm:h-100 lg:h-110 rounded-2xl overflow-hidden shadow-xl bg-gray-100 dark:bg-gray-900 cursor-pointer border border-gray-100 dark:border-gray-800"
+            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+          >
+            <img
+              src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fair-curtain.ba162836.webp&w=1920&q=75"
+              alt="Industrial Product Overview"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </motion.div>
+        </motion.div>
 
       </div>
-
-    </div>
+    </section>
   );
 }
-
 
 function RentalServicesSection() {
   return (

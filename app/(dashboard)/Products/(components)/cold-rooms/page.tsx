@@ -391,10 +391,14 @@ function ProductFeatureCardSection({
     <div className="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-[1900px] mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        {/* Left Side: Full-Width Image stretching across the left column */}
+        {/* Left Side: Image coming from Left to Right */}
         <div className="lg:col-span-6 w-full">
           <motion.div 
             className="w-full h-80 sm:h-105 lg:h-120 rounded-[20px] overflow-hidden shadow-md bg-gray-100 cursor-pointer"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
           >
             <img
@@ -405,9 +409,14 @@ function ProductFeatureCardSection({
           </motion.div>
         </div>
 
-        {/* Right Side: Content */}
-        <div className="lg:col-span-6 flex flex-col items-start space-y-6 px-4 sm:px-6 lg:px-0 lg:pr-8">
-          
+        {/* Right Side: Content (Heading & Description coming from Right to Left) */}
+        <motion.div 
+          className="lg:col-span-6 flex flex-col items-start space-y-6 px-4 sm:px-6 lg:px-0 lg:pr-8"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <h2 className="text-2xl sm:text-3xl lg:text-[28px] font-bold text-slate-900 tracking-tight leading-tight mb-2">
             {title}
           </h2>
@@ -426,15 +435,14 @@ function ProductFeatureCardSection({
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
               >
-                <span className="w-8 h-8 rounded-full text-emerald-600 flex items-center justify-center  mt-0.9 border border-emerald-100">
+                <span className="w-8 h-8 rounded-full text-emerald-600 flex items-center justify-center mt-0.9 border border-emerald-100">
                   <Snowflake className="w-3 h-3" />
                 </span>
                 <span>{feature}</span>
               </motion.li>
             ))}
           </ul>
-
-        </div>
+        </motion.div>
 
       </div>
     </div>

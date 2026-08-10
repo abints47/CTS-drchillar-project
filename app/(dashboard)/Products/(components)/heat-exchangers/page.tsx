@@ -316,7 +316,6 @@ function ProductFeatureGrid() {
 }
 
 
-
 function ProductFeatureCardSection({
   title = "Cooling Towers",
   description = "Our cooling towers are designed for maximum heat rejection with low noise and minimal energy consumption — making them ideal for industrial and HVAC applications. Using corrosion-resistant materials and efficient fill media, they deliver reliable performance in even the most demanding climates.",
@@ -332,10 +331,14 @@ function ProductFeatureCardSection({
     <div className="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-[1900px] mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        {/* Left Side: Full-Width Image stretching across the left column */}
+        {/* Left Side: Image with Left-to-Right Animation */}
         <div className="lg:col-span-6 w-full">
           <motion.div 
             className="w-full h-80 sm:h-105 lg:h-120 rounded-[20px] overflow-hidden shadow-md bg-gray-100 cursor-pointer"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
           >
             <img
@@ -346,9 +349,14 @@ function ProductFeatureCardSection({
           </motion.div>
         </div>
 
-        {/* Right Side: Content */}
-        <div className="lg:col-span-6 flex flex-col items-start space-y-6">
-          
+        {/* Right Side: Content with Right-to-Left Animation */}
+        <motion.div 
+          className="lg:col-span-6 flex flex-col items-start space-y-6"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <h2 className="text-2xl sm:text-3xl lg:text-[28px] font-bold text-slate-900 tracking-tight leading-tight mb-2">
             {title}
           </h2>
@@ -372,53 +380,13 @@ function ProductFeatureCardSection({
               </motion.li>
             ))}
           </ul>
-
-        </div>
+        </motion.div>
 
       </div>
     </div>
   );
 }
 
-
-
-
-
-function WhyChooseSection() {
-  return (
-    <div className="space-y-16">
-      <div className="text-center max-w-xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          Why Choose Our Solutions
-        </h2>
-        <p className="text-gray-600 text-s">Discover the innovative features and engineering excellence that deliver reliable performance, energy efficiency, and long-term value.</p>
-      </div>
-      {productData.whyChoose.map((item, idx) => (
-        <div
-          key={idx}
-          className={`flex flex-col lg:flex-row items-center gap-10 ${
-            idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-          }`}
-        >
-          <motion.div 
-            className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-md border border-gray-100 h-70 cursor-pointer"
-            whileHover={{ scale: 1.02, y: -4, transition: { duration: 0.3 } }}
-          >
-            <img 
-              src={item.image} 
-              alt={item.title} 
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-            />
-          </motion.div>
-          <div className="w-full lg:w-1/2">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-            <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 function RentalServicesSection() {
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-gray-100 dark:bg-gray-900 my-10 border-y border-gray-100 dark:border-gray-800">

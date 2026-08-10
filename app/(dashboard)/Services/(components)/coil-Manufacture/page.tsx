@@ -21,12 +21,13 @@ import {
 // ==========================================
 
 const serviceData = {
-  title: "Coil Manufacturing & Replacement",
+  titleMain: "Coil Manufacturing &",
+  titleHighlight: "Replacement",
   subtitle: "Coil Manufacturing & Replacement",
   heading: "Custom-Built High Efficiency Long Life",
   description:
     "We supply and replace copper/Aluminium coils for HVAC and industrial chiller systems. Whether it's a bespoke coil for a retrofit or a complete replacement of damaged tubes/fins, our team designs and installs tailored solutions to match your equipment and performance requirements.",
-  heroImage: "https://www.drchiller.com/ac-units-header.webp",
+  heroImage: "/images/products/coil.jpg",
   services: [
     {
       title: "Coil Replacement (AC / Chiller / Cold Room)",
@@ -139,7 +140,7 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
       <div className="absolute inset-0">
         <img
           src={serviceData.heroImage}
-          alt={serviceData.title}
+          alt={serviceData.titleMain}
           className="w-full h-full object-cover opacity-80"
         />
         <div className="absolute inset-0 bg-black/45 dark:bg-black/70" />
@@ -172,7 +173,10 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-100 dark:text-white">
-          {serviceData.title}
+          {serviceData.titleMain}{" "}<br/>
+            <span className="text-emerald-500 dark:text-emerald-400">
+              {serviceData.titleHighlight}
+            </span>
         </h1>
       </motion.div>
     </section>

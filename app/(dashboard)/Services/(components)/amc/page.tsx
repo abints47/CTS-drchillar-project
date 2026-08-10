@@ -28,7 +28,7 @@ const serviceData = {
   heading: "Hassle-Free Servicing  24/7 Support  Guaranteed Uptime",
   description:
     "Our comprehensive AMC programs cover preventive and corrective maintenance for all types of AC units, chillers and cold room systems. Stay focused on your business while we handle servicing, safety checks, and emergency response - ensuring your systems run efficiently all year round.",
-  heroImage: "https://www.drchiller.com/amc-header.webp",
+  heroImage: "/images/products/amc-1.jpg",
   services: [
     {
       title: "Annual Maintenance Contract",
@@ -162,12 +162,12 @@ const serviceData = {
 
 function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (val: boolean) => void }) {
   return (
-    <section className="relative w-full top-0 sm:h-80 lg:h-96 flex items-center justify-center overflow-hidden bg-gray-900 dark:bg-black transition-colors duration-300">
+    <section className="relative w-full top-0 sm:h-80 lg:h-65 flex items-center justify-center overflow-hidden bg-gray-900 dark:bg-black transition-colors duration-300">
       <div className="absolute inset-0">
         <img
           src={serviceData.heroImage}
           alt={serviceData.title}
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-100 object-cover opacity-80"
         />
         <div className="absolute inset-0 bg-black/45 dark:bg-black/70" />
       </div>

@@ -29,7 +29,7 @@ const serviceData = {
   description:
     "Protect your critical cooling assets with our specialized maintenance solutions for AC chillers and commercial cold rooms. From routine system tune-ups to emergency field repairs, our HVAC engineers keep your cooling systems running at peak efficiency with zero unexpected downtime.",
   heroImage:
-    "https://t4.ftcdn.net/jpg/17/68/08/43/240_F_1768084383_W9eJISHUZ9jOVpHuOl5ueAriHlx9Evi5.jpg",
+    "/images/products/maintenance.jpg",
   services: [
     {
       title: "Chiller Preventive Maintenance",
@@ -274,7 +274,7 @@ function IntroductionSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Image
-            src="https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmaintenance-replacement.5871e9ba.webp&w=1920&q=75"
+            src="/images/products/reparing.jpg"
             alt="Cold Room Maintenance"
             width={700}
             height={500}

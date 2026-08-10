@@ -23,12 +23,13 @@ import {
 // ==========================================
 
 const serviceData = {
-  title: "A/C, Chiller & Cold Room Maintenance",
+  titleMain: "A/C, Chiller & Cold",
+  titleHighlight: "Room Maintenance",
   subtitle: "AC, Chiller & Cold Room Maintenance",
   heading: "Preventive Corrective Annual Contracts",
   description:
     "We provide complete servicing, troubleshooting and refurbishment for all types of AC, chiller and cold room systems. From mechanical repairs to regular cleaning and flushing, our qualified technicians keep your equipment running efficiently and avoid costly breakdowns.",
-  heroImage: "https://www.drchiller.com/maintenance-header.webp",
+  heroImage: "/images/products/engine.jpg",
   services: [
     {
       title: "Installation of New / Used Units",
@@ -160,7 +161,7 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
       <div className="absolute inset-0">
         <img
           src={serviceData.heroImage}
-          alt={serviceData.title}
+          alt={serviceData.titleMain}
           className="w-full h-full object-cover opacity-80"
         />
         <div className="absolute inset-0 bg-black/45 dark:bg-black/70" />
@@ -193,7 +194,10 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-100 dark:text-white">
-          {serviceData.title}
+          {serviceData.titleMain}{" "}<br/>
+            <span className="text-emerald-500 dark:text-emerald-400">
+              {serviceData.titleHighlight}
+            </span>
         </h1>
       </motion.div>
     </section>

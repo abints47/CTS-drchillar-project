@@ -20,7 +20,8 @@ import {
 // ==========================================
 
 const serviceData = {
-  title: "Overhauling & Winding",
+  titleMain: "Overhauling & ",
+  titleHighlight: "Winding",
   subtitle: "Compressor Overhauling & Rewinding",
   heading: "Precision Repair Reconditioning Long Life",
   description:
@@ -164,7 +165,7 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
       <div className="absolute inset-0">
         <img
           src={serviceData.heroImage}
-          alt={serviceData.title}
+          alt={serviceData.titleMain}
           className="w-full h-full object-cover opacity-80"
         />
         <div className="absolute inset-0 bg-black/45 dark:bg-black/70" />
@@ -196,8 +197,11 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-100 dark:text-white">
-          {serviceData.title}
+         <h1 className="text-2xl sm:text-4xl pt-10 lg:text-5xl font-bold tracking-tight text-gray-100 dark:text-white">
+          {serviceData.titleMain}{" "}<br/>
+            <span className="text-emerald-500 dark:text-emerald-400">
+              {serviceData.titleHighlight}
+            </span>
         </h1>
       </motion.div>
     </section>

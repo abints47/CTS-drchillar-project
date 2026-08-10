@@ -23,13 +23,14 @@ import {
 // ==========================================
 
 const serviceData = {
-  title: "Chilled Water Pipeline & Flushing",
+  titleMain: "Chilled Water Pipeline &",
+  titleHighlight: "Flushing",
   subtitle: "Chilled Water Pipeline & Flushing Services",
   heading: "Design Installation Maintenance",
   description:
     "We specialize in MS/SS/PPR chilled water pipeline projects, including insulation, flushing and modification works. Whether you're commissioning a new system or upgrading an existing one, our team delivers reliable quality and seamless execution for commercial and industrial facilities.",
   heroImage:
-    "https://www.drchiller.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fheat-exchangers-custom-made.1c94a57f.webp&w=640&q=75",
+    "/images/products/water-chiller.jpg",
   services: [
     {
       title: "MS / SS / PPR Pipeline Works",
@@ -167,7 +168,7 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
       <div className="absolute inset-0">
         <img
           src={serviceData.heroImage}
-          alt={serviceData.title}
+          alt={serviceData.titleMain}
           className="w-full h-full object-cover opacity-80"
         />
         <div className="absolute inset-0 bg-black/45 dark:bg-black/70" />
@@ -200,7 +201,10 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-100 dark:text-white">
-          {serviceData.title}
+          {serviceData.titleMain}{" "}<br/>
+            <span className="text-emerald-500 dark:text-emerald-400">
+              {serviceData.titleHighlight}
+            </span>
         </h1>
       </motion.div>
     </section>

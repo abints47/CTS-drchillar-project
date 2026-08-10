@@ -213,7 +213,7 @@ function HeroSection() {
 
       <div className="absolute pt-35 sm:top-12 sm:right-5 z-20 flex items-center gap-3">
         {/* Dark Mode Toggle */}
-        <ThemeToggle />
+        {/*  <ThemeToggle /> */}
 
         {/* Back Button */}
         <Link

@@ -208,7 +208,7 @@ function ProductHero() {
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           <img
-            src="https://t3.ftcdn.net/jpg/20/25/85/14/240_F_2025851482_wErkxx4TU7efpeWQ4TcZPYNzrOR3buis.jpg"
+            src="/images/products/ice.jpg"
             alt="Industrial Water Chiller"
             className="w-full h-full object-cover opacity-95"
           />

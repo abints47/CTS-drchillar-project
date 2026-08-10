@@ -11,6 +11,8 @@ import {
   Snowflake,
 } from 'lucide-react'
 
+import Faq from "@/components/Faq";
+
 // Import AOS and its styles
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -145,7 +147,7 @@ export default function AboutPage() {
         aria-labelledby="about-hero-heading"
         className="relative z-10 pt-20 pb-12 sm:pt-28 sm:pb-16 lg:pt-36 lg:pb-24 border-b border-slate-200 dark:border-slate-800 bg-transparent"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             
             {/* Left Content */}
@@ -213,50 +215,76 @@ export default function AboutPage() {
       </section>
 
       {/* ================= SECTION: WHO WE ARE ================= */}
-      <section aria-label="CTS About Us" className="relative z-10 py-12 sm:py-20 lg:py-28 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            
-            {/* Image on Left */}
-            <div className="lg:col-span-6 order-2 lg:order-1 w-full" data-aos="fade-right">
-              <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-105 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
-                <Image
-                  src="/images/whoWeAre.png"
-                  alt="CTS Chiller Technical Services"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
+      <section
+          aria-label="CTS About Us"
+          className="relative z-10 py-12 sm:py-20 lg:py-28 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xs"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+              {/* Image on Left */}
+              <div className="lg:col-span-6 order-2 lg:order-1 w-full" data-aos="fade-up">
+                <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-105 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
+                  <Image
+                    src="/images/whoWeAre.png"
+                    alt="CTS Chiller Technical Services"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Content on Right */}
+              <div
+                className="lg:col-span-6 space-y-4 sm:space-y-6 order-1 lg:order-2"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div className="space-y-1.5">
+                  <p className="text-xs sm:text-sm font-semibold text-[#00B67A] uppercase tracking-wider">
+                    About Our Company
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Who We Are
+                  </h2>
+                </div>
+
+                <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+                  <p className="text-left md:text-justify">
+                    <strong className="text-[#00B67A] dark:text-white font-semibold">
+                      CTS - Chiller Technical Services L.L.C
+                    </strong>{" "}
+                    is a trusted name in the UAE, engaged in the manufacturing and trading of{" "}
+                    <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">
+                      Water Chillers
+                    </strong>
+                    ,{" "}
+                    <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">
+                      Cold Rooms
+                    </strong>
+                    ,{" "}
+                    <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">
+                      Heat Exchangers
+                    </strong>
+                    , and{" "}
+                    <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">
+                      A/C Units
+                    </strong>
+                    . We also provide a wide range of refrigeration equipment, spare parts, and accessories delivering reliable cooling solutions tailored to every need.
+                  </p>
+                  <p className="text-left md:text-justify">
+                    With a strong global sourcing network and years of technical expertise, we ensure our products are cost-effective, energy-efficient, and built to last. From chillers to cold rooms and air conditioning units, we take pride in serving industries with unmatched quality.
+                  </p>
+                </div>
               </div>
             </div>
-
-            {/* Content on Right */}
-            <div className="lg:col-span-6 space-y-4 sm:space-y-6 order-1 lg:order-2" data-aos="fade-left">
-              <div className="space-y-1 sm:space-y-2">
-                <p className="text-xs sm:text-sm font-semibold text-[#00B67A] uppercase tracking-wider">About Our Company</p>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  Who We Are
-                </h2>
-              </div>
-
-              <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
-                <p className="text-sm sm:text-base lg:text-lg text-left md:text-justify">
-                  <strong className="text-[#00B67A] dark:text-white font-semibold">CTS - Chiller Technical Services L.L.C</strong> is a trusted name in the UAE, engaged in the manufacturing and trading of <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Water Chillers</strong>, <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Cold Rooms</strong>, <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">Heat Exchangers</strong>, and <strong className="text-[#00B67A] dark:text-emerald-400 font-semibold">A/C Units</strong>. We also provide a wide range of refrigeration equipment, spare parts, and accessories delivering reliable cooling solutions tailored to every need.
-                </p>
-                <p className="text-sm sm:text-base lg:text-lg text-left md:text-justify">
-                  With a strong global sourcing network and years of technical expertise, we ensure our products are cost-effective, energy-efficient, and built to last. From chillers to cold rooms and air conditioning units, we take pride in serving industries with unmatched quality.
-                </p>
-              </div>
-            </div>
-
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* ================= SECTION: MISSION & GOALS ================= */}
       <section aria-label="CTS Mission and Goals" className="relative z-10 py-12 sm:py-20 lg:py-24 bg-transparent dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14 space-y-2" data-aos="fade-up">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -291,6 +319,8 @@ export default function AboutPage() {
 
         </div>
       </section>
+
+      <Faq/>
 
       {/* ================= CALL TO ACTION ================= */}
       <section aria-labelledby="cta-heading" className="relative z-10 py-12 sm:py-20 bg-white/10 dark:bg-slate-950/70 border-t border-slate-200 dark:border-slate-800" data-aos="fade-up">

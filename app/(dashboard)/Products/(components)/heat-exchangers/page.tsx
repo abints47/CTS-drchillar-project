@@ -219,7 +219,7 @@ function ProductHero() {
       </div>
 
       {/* Top-Right Back Button */}
-      <div className="absolute top-55 right-5 z-20 flex items-center gap-3">
+      <div className="absolute top-25 sm:top-46 right-5 z-20 flex items-center gap-3">
         <Link
           href="/Services"
           className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg"
@@ -240,8 +240,8 @@ function ProductHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-white">
-            {productData.name[0]} <br />
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-3 sm:mb-4 text-white leading-tight">
+            {productData.name[0]} <br className="hidden sm:inline" />
             <span className="text-emerald-500">{productData.name[1]}</span>
           </h1>
           <p className="text-sm sm:text-base text-gray-200 max-w-lg mx-auto mb-8 font-normal leading-relaxed">

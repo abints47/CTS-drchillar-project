@@ -1,13 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { ThemeToggle } from '@/components/ThemeToggle'
-import Image from 'next/image';
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer className="w-full border-t border-gray-200 dark:border-zinc-800 bg-[#1B2A3D] dark:bg-black text-foreground transition-colors duration-300">
-      <div className="container mx-auto px-6 py-12 lg:px-12 lg:py-16">
+      <div className="container mx-auto px-4 sm:px-6 py-10 lg:px-12 lg:py-16">
         {/* Main Columns Grid Layout */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr_1.3fr] lg:gap-10">
           
@@ -16,33 +15,34 @@ export default function Footer() {
             <Link 
               href="/" 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-block text-[#1FAA6D]">
-              <div className="flex items-center gap-2 text-xl font-bold tracking-tight">
+              className="inline-block text-[#1FAA6D] w-full"
+            >
+              <div className="flex items-center gap-2 text-lg sm:text-xl font-bold tracking-tight">
                 <Image
                   src="/logo.png"
                   alt="CTS Logo"
                   width={30}
                   height={30}
+                  className="shrink-0"
                 />
-                <span className="text-white dark:text-gray-100">Chiller Technical Services L.L.C</span>
+                <span className="text-white dark:text-gray-100 leading-snug">Chiller Technical Services L.L.C</span>
               </div>
-              <section className="pl-37 text-xl font-semibold text-white dark:text-gray-200 pt-1">
+              <div className="text-base sm:text-xl font-semibold text-white dark:text-gray-200 pt-1.5">
                 خدمات التبريد التقنية ذ.م.م
-              </section>
+              </div>
             </Link>
-            <p className="text-s pr-10 justify-center pt-3 leading-6 text-white dark:text-gray-400 max-w-sm">
+            <p className="text-sm sm:text-base leading-relaxed text-white dark:text-gray-400 max-w-sm pt-2">
               High-quality cooling and refrigeration solutions for industrial and commercial needs built for performance, reliability, and efficiency.
             </p>
           </div>
 
+          {/* Product Column */}
           <div className="space-y-3">
-            <h4 className="text-xl font-semibold text-[#1FAA6D]">Product</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-[#1FAA6D]">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#features" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
-                  Water chillers, Coolers & Heat
-                  <br />
-                  Pupms
+                <Link href="#features" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400 block">
+                  Water chillers, Coolers & Heat Pumps
                 </Link>
               </li>
               <li>
@@ -67,7 +67,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
-                  Industiral Chillers
+                  Industrial Chillers
                 </Link>
               </li>
               <li>
@@ -85,18 +85,16 @@ export default function Footer() {
 
           {/* Services Column */}
           <div className="space-y-3">
-            <h4 className="text-xl font-semibold text-[#1FAA6D]">Services</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-[#1FAA6D]">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="#documentation" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
-                  A/C Chililer & Genset Rentals
+                  A/C Chiller & Genset Rentals
                 </Link>
               </li>
               <li>
-                <Link href="#guides" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
-                  A/C Chiller & Coldroom
-                  <br />
-                  Maintenance
+                <Link href="#guides" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400 block">
+                  A/C Chiller & Coldroom Maintenance
                 </Link>
               </li>
               <li>
@@ -126,7 +124,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#changelog" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
-                  Industiral Chiller Maintenance
+                  Industrial Chiller Maintenance
                 </Link>
               </li>
             </ul>
@@ -134,47 +132,44 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className="space-y-3">
-            <h4 className="text-xl font-semibold text-[#1FAA6D]">Contact</h4>
+            <h4 className="text-lg sm:text-xl font-semibold text-[#1FAA6D]">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <span>
-                  <span className="font-bold text-balance text-white dark:text-gray-200">Email: </span>
-                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
+                <span className="block break-all">
+                  <span className="font-bold text-white dark:text-gray-200">Email: </span>
+                  <Link href="mailto:info@drchiller.com" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                     info@drchiller.com
                   </Link>
                 </span>
               </li>
               <li>
-                <span>
-                  <span className="font-bold text-balance text-white dark:text-gray-200">Phone: </span>
-                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
+                <span className="block">
+                  <span className="font-bold text-white dark:text-gray-200">Phone: </span>
+                  <Link href="tel:+97167434537" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                     +971 67434537
                   </Link>
                 </span>
               </li>
               <li>
-                <span>
-                  <span className="font-bold text-balance text-white dark:text-gray-200">Mobile: </span>
-                  <Link href="#about" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
+                <span className="block">
+                  <span className="font-bold text-white dark:text-gray-200">Mobile: </span>
+                  <Link href="tel:+97167434537" className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400">
                     +971 67434537
                   </Link>
                 </span>
               </li>
               <li>
-                <span>
-                  <span className="font-bold text-balance text-white dark:text-gray-200">
-                    Address:
-                    <Link
-                      href="https://maps.app.goo.gl/bpqPc2NjBGFzEAqD8"
-                      target="_blank"
-                      className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400"
-                    >
-                      <span className="font-medium">
-                        {' '}
-                        CTS - Chiller Technical Services L.L.C. Industrial Area # 02. Ajman, UAE.
-                      </span>
-                    </Link>
-                  </span>
+                <span className="block">
+                  <span className="font-bold text-white dark:text-gray-200">Address: </span>
+                  <Link
+                    href="https://maps.app.goo.gl/bpqPc2NjBGFzEAqD8"
+                    target="_blank"
+                    className="hover:text-emerald-400 transition-colors text-white dark:text-gray-400 inline"
+                  >
+                    <span className="font-medium">
+                      CTS - Chiller Technical Services L.L.C. Industrial Area # 02. Ajman, UAE.
+                    </span>
+                  </Link>
                 </span>
               </li>
             </ul>
@@ -184,15 +179,13 @@ export default function Footer() {
         <div className="my-8 border-t border-gray-300/60 dark:border-zinc-800" />
 
         {/* Bottom Bar Section */}
-        <div className="flex flex-col items-center justify-between gap-4 text-sm text-[#e2e6eb] dark:text-gray-400 sm:flex-row">
-          <p> <span className='text-emerald-500'> &copy; </span> {new Date().getFullYear()} CTS, Inc. All rights reserved |<span><Link href={"https://maktalseo.com/"} target="_blank" >
-           <span className="hover:text-emerald-500 transition-colors">  Website Developed By Maktal</span>
-          </Link> </span></p>
-
-          {/* Theme Toggle shifted slightly toward the left side using negative margin/spacing adjustment */}
-          {/*  <div className="flex items-center bg-[#09243d] dark:bg-zinc-900 px-3 py-0.5 rounded-3xl border border-[#1B2A3D]/40 dark:border-zinc-800 sm:-mr-12 lg:-mr-0.5">
-            <ThemeToggle />
-          </div> */}
+        <div className="flex flex-col items-center justify-between gap-4 text-xs sm:text-sm text-[#e2e6eb] dark:text-gray-400 sm:flex-row text-center sm:text-left">
+          <p>
+            <span className="text-emerald-500">&copy;</span> {new Date().getFullYear()} CTS, Inc. All rights reserved |{' '}
+            <Link href="https://maktalseo.com/" target="_blank" className="inline-block">
+              <span className="hover:text-emerald-500 transition-colors">Website Developed By Maktal</span>
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

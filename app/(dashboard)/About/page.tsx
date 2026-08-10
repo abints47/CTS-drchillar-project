@@ -77,20 +77,20 @@ export default function AboutPage() {
   const activeHeadline = rotatingHeadlines[currentHeadlineIndex]
 
   return (
-    <main className="relative min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-emerald-600 selection:text-white transition-colors duration-300 overflow-hidden">
+    <main className="relative min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-emerald-600 selection:text-white transition-colors duration-300 overflow-x-hidden w-full pt-5 sm:pt-0">
       
       {/* ================= BACKGROUND ROTATING SNOWFLAKES WITH AOS ================= */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         
         {/* Snowflake 1 - Hero Top Left (Zoom-In) */}
         <div 
           data-aos="zoom-in" 
           data-aos-duration="1000" 
           data-aos-delay="100"
-          className="absolute top-8 left-2 sm:top-12 sm:left-10"
+          className="absolute top-6 left-2 sm:top-12 sm:left-10"
         >
           <Snowflake 
-            className="w-20 h-20 sm:w-28 sm:h-28 text-[#00B67A]/20 dark:text-emerald-400/15 animate-[spin_25s_linear_infinite]" 
+            className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-58 text-[#00B67A]/15 dark:text-emerald-400/15 animate-[spin_25s_linear_infinite]" 
             aria-hidden="true" 
           />
         </div>
@@ -103,7 +103,7 @@ export default function AboutPage() {
           className="absolute top-[18%] right-2 sm:right-12"
         >
           <Snowflake 
-            className="w-20 h-20 sm:w-28 sm:h-28 text-[#00B67A]/15 dark:text-emerald-400/15 animate-[spin_35s_linear_infinite_reverse]" 
+            className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 text-[#00B67A]/15 dark:text-emerald-400/15 animate-[spin_35s_linear_infinite_reverse]" 
             aria-hidden="true" 
           />
         </div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
           className="absolute top-[60%] left-2 sm:left-16"
         >
           <Snowflake 
-            className="w-20 h-24 sm:w-28 sm:h-28 text-[#00B67A]/15 dark:text-emerald-400/15 animate-[spin_30s_linear_infinite]" 
+            className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 text-[#00B67A]/15 dark:text-emerald-400/15 animate-[spin_30s_linear_infinite]" 
             aria-hidden="true" 
           />
         </div>
@@ -129,7 +129,7 @@ export default function AboutPage() {
           className="absolute bottom-12 right-2 sm:bottom-16 sm:right-20"
         >
           <Snowflake 
-            className="w-20 h-24 sm:w-30 sm:h-28 text-[#00B67A]/15 dark:text-emerald-400/15 animate-[spin_20s_linear_infinite_reverse]" 
+            className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 text-[#00B67A]/15 dark:text-emerald-400/15 animate-[spin_20s_linear_infinite_reverse]" 
             aria-hidden="true" 
           />
         </div>
@@ -145,17 +145,17 @@ export default function AboutPage() {
       {/* ================= HERO SECTION ================= */}
       <section
         aria-labelledby="about-hero-heading"
-        className="relative z-10 pt-20 pb-12 sm:pt-28 sm:pb-16 lg:pt-36 lg:pb-24 border-b border-slate-200 dark:border-slate-800 bg-transparent"
+        className="relative z-10 pt-16 pb-10 sm:pt-24 sm:pb-16 lg:pt-32 lg:pb-24 border-b border-slate-200 dark:border-slate-800 bg-transparent w-full"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full">
             
             {/* Left Content */}
-            <div className="lg:col-span-6 space-y-6 text-left" data-aos="fade-right">
-              <div className="space-y-4">
+            <div className="lg:col-span-6 space-y-5 text-left w-full" data-aos="fade-right">
+              <div className="space-y-3 sm:space-y-4">
                 <h1
                   id="about-hero-heading"
-                  className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight min-h-[4.5em] sm:min-h-[3.5em] lg:min-h-[2.5em] flex flex-col justify-center overflow-hidden"
+                  className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight min-h-16 sm:min-h-[4.5em] lg:min-h-[2.5em] flex flex-col justify-center overflow-hidden"
                 >
                   <span
                     className={`block transition-all duration-300 transform ${
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1 w-full">
                 <Link
                   href="/Contact"
                   className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-white bg-[#00B67A] hover:bg-emerald-600 rounded-lg transition-colors shadow-xs w-full sm:w-auto text-center"
@@ -195,18 +195,20 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Image */}
+            {/* Right Image Full Fill Format */}
             <div className="lg:col-span-6 w-full" data-aos="fade-left">
-              <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-105 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
-                <Image
-                  src="/images/products/acunit.jpg"
-                  alt="CTS engineer servicing a commercial HVAC chiller unit in the UAE"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  loading="eager"
-                  priority
-                  className="object-cover"
-                />
+              <div className="w-full bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div className="relative w-full h-56 xs:h-64 sm:h-80 md:h-96 lg:h-95 ">
+                  <Image
+                    src="/images/products/acunit.jpg"
+                    alt="CTS engineer servicing a commercial HVAC chiller unit in the UAE"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    loading="eager"
+                    priority
+                    className="object-cover w-full h-full"
+                  />
+                </div>
               </div>
             </div>
 
@@ -217,31 +219,34 @@ export default function AboutPage() {
       {/* ================= SECTION: WHO WE ARE ================= */}
       <section
           aria-label="CTS About Us"
-          className="relative z-10 py-12 sm:py-20 lg:py-28 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xs"
+          className="relative z-10 py-10 sm:py-16 lg:py-24 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xs w-full"
         >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-              {/* Image on Left */}
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full">
+              
+              {/* Image Section Full Fill Format */}
               <div className="lg:col-span-6 order-2 lg:order-1 w-full" data-aos="fade-up">
-                <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-105 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
-                  <Image
-                    src="/images/whoWeAre.png"
-                    alt="CTS Chiller Technical Services"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                    priority
-                  />
+                <div className="w-full bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
+                  <div className="relative w-full h-64 xs:h-72 sm:h-80 md:h-96 lg:h-95 ">
+                    <Image
+                      src="/images/whoWeAre.png"
+                      alt="CTS Chiller Technical Services"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover w-full h-full"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
 
               {/* Content on Right */}
               <div
-                className="lg:col-span-6 space-y-4 sm:space-y-6 order-1 lg:order-2"
+                className="lg:col-span-6 space-y-4 sm:space-y-5 order-1 lg:order-2 w-full"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   <p className="text-xs sm:text-sm font-semibold text-[#00B67A] uppercase tracking-wider">
                     About Our Company
                   </p>
@@ -250,7 +255,7 @@ export default function AboutPage() {
                   </h2>
                 </div>
 
-                <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+                <div className="space-y-3.5 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                   <p className="text-left md:text-justify">
                     <strong className="text-[#00B67A] dark:text-white font-semibold">
                       CTS - Chiller Technical Services L.L.C
@@ -278,24 +283,25 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
 
       {/* ================= SECTION: MISSION & GOALS ================= */}
-      <section aria-label="CTS Mission and Goals" className="relative z-10 py-12 sm:py-20 lg:py-24 bg-transparent dark:border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section aria-label="CTS Mission and Goals" className="relative z-10 py-10 sm:py-16 lg:py-20 bg-transparent w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           
-          <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14 space-y-2" data-aos="fade-up">
+          <div className="text-center max-w-xl mx-auto mb-8 sm:mb-12 space-y-2 w-full" data-aos="fade-up">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
               Our Mission &amp; Goals
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Building long-term industrial partnerships across the UAE</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 w-full">
             
-            <div className="bg-white/80 dark:bg-slate-950/80 rounded-xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-3 sm:space-y-4" data-aos="fade-up" data-aos-delay="100">
+            <div className="bg-white/80 dark:bg-slate-950/80 rounded-xl p-5 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-3 w-full" data-aos="fade-up" data-aos-delay="100">
               <div className="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-[#00B67A] dark:text-emerald-400 flex items-center justify-center shrink-0">
                 <ShieldCheck className="w-5 h-5" aria-hidden="true" />
               </div>
@@ -305,7 +311,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white/80 dark:bg-slate-950/80 rounded-xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-3 sm:space-y-4" data-aos="fade-up" data-aos-delay="200">
+            <div className="bg-white/80 dark:bg-slate-950/80 rounded-xl p-5 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-3 w-full" data-aos="fade-up" data-aos-delay="200">
               <div className="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-[#00B67A] dark:text-emerald-400 flex items-center justify-center shrink-0">
                 <Target className="w-5 h-5" aria-hidden="true" />
               </div>
@@ -323,15 +329,15 @@ export default function AboutPage() {
       <Faq/>
 
       {/* ================= CALL TO ACTION ================= */}
-      <section aria-labelledby="cta-heading" className="relative z-10 py-12 sm:py-20 bg-white/10 dark:bg-slate-950/70 border-t border-slate-200 dark:border-slate-800" data-aos="fade-up">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <section aria-labelledby="cta-heading" className="relative z-10 py-10 sm:py-16 bg-white/10 dark:bg-slate-950/70 border-t border-slate-200 dark:border-slate-800 w-full" data-aos="fade-up">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 w-full">
           <h2 id="cta-heading" className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
             Ready to optimize your facility performance?
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
             Speak directly with our technical engineering department to discuss your chiller requirements or immediate emergency dispatch.
           </p>
-          <div>
+          <div className="w-full">
             <Link
               href="/Contact"
               className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 text-sm font-semibold text-white bg-[#00B67A] hover:bg-emerald-600 rounded-lg transition-colors shadow-xs"

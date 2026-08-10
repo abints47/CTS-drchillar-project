@@ -23,7 +23,12 @@ export default function CardGrid({ items }: CardGridProps) {
     const container = scrollContainerRef.current
     if (!container) return
 
-    const scrollAmount = 360 // Single card width + gap offset
+    // Dynamically calculate card width + gap for accurate responsive scrolling
+    const firstCard = container.querySelector(".snap-start") as HTMLElement
+    const cardWidth = firstCard ? firstCard.offsetWidth : 320
+    const gap = 24 // Corresponds to gap-6 (24px)
+    const scrollAmount = cardWidth + gap
+
     const maxScrollLeft = container.scrollWidth - container.clientWidth
 
     if (direction === "right") {
@@ -44,26 +49,26 @@ export default function CardGrid({ items }: CardGridProps) {
   }
 
   return (
-    <section className="relative container mx-auto px-4 py-8 group/carousel">
+    <section className="relative w-full container mx-auto px-4 sm:px-6 py-8 group/carousel">
       {/* Navigation Arrow Left */}
       <button
         onClick={() => scroll("left")}
         aria-label="Scroll left"
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer opacity-80 sm:opacity-0 sm:group-hover/carousel:opacity-100"
+        className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
       </button>
 
       {/* Horizontal Scrollable Container */}
       <div
         ref={scrollContainerRef}
-        className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 no-scrollbar scrollbar-none"
+        className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 no-scrollbar scrollbar-none"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {items.map((item) => (
           <div
             key={item.id}
-            className="shrink-0 w-80 sm:w-85 snap-start bg-transparent"
+            className="shrink-0 w-70 sm:w-[320px] md:w-87.5 lg:w-90 snap-start bg-transparent"
           >
             <CardImage
               title={item.title}
@@ -79,9 +84,9 @@ export default function CardGrid({ items }: CardGridProps) {
       <button
         onClick={() => scroll("right")}
         aria-label="Scroll right"
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer opacity-80 sm:opacity-0 sm:group-hover/carousel:opacity-100"
+        className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow-lg border border-slate-200/80 dark:border-slate-800 backdrop-blur-sm transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 hover:scale-110 active:scale-95 cursor-pointer opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100"
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
       </button>
     </section>
   )

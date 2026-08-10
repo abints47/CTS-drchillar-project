@@ -201,7 +201,7 @@ function ThemeToggle() {
 
 function HeroSection() {
   return (
-    <section className="relative w-full top-0 sm:h-80 lg:h-96 flex items-center justify-center overflow-hidden bg-gray-900 dark:bg-black transition-colors duration-300">
+    <section className="relative w-full top-0 sm:h-80 lg:h-65 flex items-center justify-center overflow-hidden bg-gray-900 dark:bg-black transition-colors duration-300">
       <div className="absolute inset-0">
         <img
           src={serviceData.heroImage}
@@ -232,7 +232,7 @@ function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-100 dark:text-white">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl pt-10 font-bold tracking-tight text-gray-100 dark:text-white">
           {serviceData.titleMain}{" "}
             <span className="text-emerald-500 dark:text-emerald-400">
               {serviceData.titleHighlight}

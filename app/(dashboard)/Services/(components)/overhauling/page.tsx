@@ -161,7 +161,7 @@ const serviceData = {
 
 function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (val: boolean) => void }) {
   return (
-    <section className="relative w-full top-0 sm:h-80 lg:h-96 flex items-center justify-center overflow-hidden bg-gray-900 dark:bg-black transition-colors duration-300">
+    <section className="relative w-full top-0 sm:h-80 lg:h-66 flex items-center justify-center overflow-hidden bg-gray-900 dark:bg-black transition-colors duration-300">
       <div className="absolute inset-0">
         <img
           src={serviceData.heroImage}

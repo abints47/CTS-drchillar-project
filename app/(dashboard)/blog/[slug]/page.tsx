@@ -23,14 +23,13 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-white pt-24 pb-32">
-      {/* Editorial Container for Professional Readability */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Navigation / Back Link */}
         <div className="mb-10">
           <Link 
             href="/blog" 
-            className="inline-flex items-center text-sm font-medium text-olive-800 hover:text-yellow-500 transition-colors group"
+            className="inline-flex items-center text-sm font-medium text-teal-600 hover:text-yellow-800 transition-colors group"
           >
             <span className="mr-2 transform group-hover:-translate-x-1 transition-transform">&larr;</span> 
             Back to all articles
@@ -40,7 +39,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Header Section */}
         <header className="mb-12">
           <div className="flex items-center gap-3 mb-6">
-            <span className="bg-stone-50 text-lime-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-md">
+            <span className="bg-stone-100 text-stone-700 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-md">
               {post.category}
             </span>
             <span className="text-slate-300">•</span>
@@ -58,47 +57,49 @@ export default async function BlogPostPage({ params }: PageProps) {
           </p>
         </header>
 
-
         {/* Featured Image */}
         {post.image && (
-          <div className="relative w-full h-95 sm:h-120 mb-12 rounded-xl overflow-hidden bg-slate-50 shadow-sm">
+          <div className="relative w-full h-[380px] sm:h-[480px] mb-12 rounded-xl overflow-hidden bg-slate-50 shadow-sm">
             <Image 
               src={post.image} 
               alt={post.title} 
               fill 
               priority
+              sizes="(max-width: 768px) 100vw, 768px"
               className="object-cover" 
             />
           </div>
         )}
 
-        {/* Article Content Area */}
+        {/* Article Content Area (Dynamic) */}
         <div className="prose prose-emerald max-w-none text-slate-700 leading-relaxed space-y-6 text-base sm:text-lg">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 tracking-tight">
             Overview & Importance
           </h2>
           <p>
-            In modern industrial environments, managing operational equipment efficiently is critical to maintaining a competitive edge. Ensuring that systems operate smoothly requires adherence to strict industry benchmarks, proactive evaluations, and reliable deployment procedures.
+            {post.overview}
           </p>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 tracking-tight">
             Key Strategic Takeaways
           </h2>
           <ul className="list-disc pl-6 space-y-2 marker:text-emerald-600">
-            <li>Regular inspection workflows prevent catastrophic mid-cycle failures.</li>
-            <li>Investing in routine check-ups significantly cuts down long-term overhead energy costs.</li>
-            <li>Partnering with specialized technical teams ensures seamless integration and rapid emergency response times.</li>
+            {post.takeaways?.map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
 
-          <blockquote className="border-l-2 border-emerald-600 pl-6 my-8 italic text-slate-800 font-medium">
-            &ldquo;Proactive asset management is no longer optional—it is the foundational pillar of reliable facility operations and cost optimization.&rdquo;
-          </blockquote>
+          {post.quote && (
+            <blockquote className="border-l-2 border-emerald-600 pl-6 my-8 italic text-slate-800 font-medium">
+              &ldquo;{post.quote}&rdquo;
+            </blockquote>
+          )}
 
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 pt-6 tracking-tight">
             Conclusion
           </h2>
           <p>
-            By prioritizing proper oversight and keeping up with regular maintenance routines outlined in our core guidelines, facilities can achieve optimal performance, higher reliability scores, and expanded asset lifespans.
+            {post.conclusion}
           </p>
         </div>
 

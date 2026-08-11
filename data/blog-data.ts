@@ -1,9 +1,11 @@
+import { StaticImageData } from 'next/image'
+
 export interface BlogPost {
   slug: string
   category: string
   title: string
   excerpt: string
-  image: string
+  image: string | StaticImageData
   date: string
   readTime: string
   overview: string
@@ -20,7 +22,7 @@ export const allBlogPosts: BlogPost[] = [
     excerpt:
       'Discover how routine mechanical check-ups prevent critical industrial chiller breakdowns, cut power overhead, and extend heavy equipment lifespan.',
     image: 'https://images.unsplash.com/vector-1775025870074-892399cbf787?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHRpcHxlbnwwfHwwfHx8MA%3D%3D',
-    date: 'Jan 20, 2027',
+    date: 'Jan 20, 2025',
     readTime: '4 min read',
     overview:
       'Industrial chillers are the backbone of modern facility climate control and manufacturing processes. Without consistent upkeep, mechanical wear, scaling, and refrigerant inefficiencies can silently spike your energy consumption and trigger unexpected operational halts.',
@@ -40,7 +42,7 @@ export const allBlogPosts: BlogPost[] = [
     excerpt:
       'A comprehensive guide on deploying high-capacity temporary cooling units during facility retrofits, expansions, or emergency peak loads.',
     image: 'https://images.unsplash.com/vector-1759248692212-bebd37ced013?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fGFpciUyMGNvbmRpdGlvbmluZ3xlbnwwfHwwfHx8MA%3D%3D',
-    date: 'Jan 19, 2027',
+    date: 'Jan 19, 2026',
     readTime: '5 min read',
     overview:
       'Whether you are facing sudden seasonal heatwaves, undergoing a major facility retrofit, or bridging a capacity gap during system replacements, relying entirely on permanent infrastructure can sometimes leave operations vulnerable.',
@@ -60,7 +62,7 @@ export const allBlogPosts: BlogPost[] = [
     excerpt:
       'Best practices for maintaining industrial backup power systems to secure zero-downtime operations through grid instabilities.',
     image: 'https://images.unsplash.com/vector-1765799632810-0e69642d51b3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTJ8fGRpZXNlbCUyMGZ1ZWx8ZW58MHx8MHx8fDA%3D',
-    date: 'Jan 18, 2027',
+    date: 'Jan 18, 2026',
     readTime: '6 min read',
     overview:
       'Grid power instabilities can strike at any moment, making backup diesel generators an absolute lifesaver for data centers, hospitals, and heavy industrial plants. However, a generator that hasn’t been tested or serviced can fail precisely when it is needed most.',
@@ -72,6 +74,67 @@ export const allBlogPosts: BlogPost[] = [
     quote: 'True power resilience means your operations transition seamlessly to backup power before your systems even register a flicker.',
     conclusion:
       'Strict adherence to testing schedules and clean fuel standards ensures your backup generators will perform flawlessly during critical grid failures.'
+  },
+  {
+    slug: 'dirty-ac-filter-health-risks',
+    category: 'Health',
+    title: 'How Dirty AC Filters Affect Your Health?',
+    excerpt:
+      'Immediate troubleshooting steps, emergency protocols, and how to minimize downtime when your industrial chiller fails unexpectedly.',
+    image: 'https://www.drchiller.com/_next/image?url=https%3A%2F%2Flfywcjaqhjhuljmuyqgt.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fblog-images%2Fblog_1772603171596_Dirty-AC-Filters-Affect-Your-Health.jpg&w=1920&q=75',
+    date: 'Mar 4, 2026',
+    readTime: '2 min read',
+    overview:
+      'Air conditioning filters are an essential part of your cooling system, yet they are often overlooked until performance or air quality starts to decline. However, the impact a dirty AC filter can have on your health is something worth paying attention to. A clean filter does more than trap dust—it helps keep the air in your home fresh, clean, and safe to breathe. This article will delve into why these filters get dirty, the health risks associated with neglecting them, and the benefits of regular maintenance.',
+    takeaways: [
+      'Environmental Factors: Depending on where you live, your AC filter might accumulate more debris than usual due to high pollen seasons or nearby construction work, leading to quicker saturation.',
+      'Frequent usage: The more often your AC runs, the faster the filter becomes dirty. In warm climates where AC is used regularly, filters need to be cleaned or replaced more often.',
+      'Presence of Pets: Homes with pets may experience faster filter clogging due to increased pet hair and dander circulating in the air.'
+    ],
+    quote: 'When critical systems fail, swift, methodical troubleshooting trumps panic every single time.',
+    conclusion:
+    "Professional technicians have the right tools and expertise to identify hidden issues, improve system performance, and maintain healthy indoor air quality Maintaining your AC filter may seem like a small task, but it plays an important role in keeping your indoor "
+  },
+  {
+    slug: 'temperature-humidity-pharmacaeutics-cold-rooms',
+    category: 'Cold',
+    title: 'Temperature and Humidity Control in Pharmaceutical Cold Rooms',
+    excerpt:
+      'Maintaining precise temperature and humidity levels in pharmaceutical cold rooms is essential for preserving the quality, safety, and effectiveness of temperature-sensitive medicines. As someone responsible for these critical environments, you must ensure that temperature and humidity are consistently regulated to protect drug efficacy and safety. Optimal climate regulation in pharmaceutical storage is not just a matter of avoiding the degradation of medicines, but a compliance issue that can affect your facilitys operations and reputation.',
+    image: 'https://www.drchiller.com/_next/image?url=https%3A%2F%2Flfywcjaqhjhuljmuyqgt.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fblog-images%2Fblog_1782812231641_Cold%2520storage%2520monitoring%2520in%2520clinical%2520lab.jpg&w=1920&q=75',
+    date: 'Jun 30, 2026',
+    readTime: '2 min read',
+    overview:
+      "Pharmaceutical cold rooms are climate-controlled environments critical for storing temperature-sensitive drugs, vaccines, and biologicals. These facilities require precise temperature and humidity management to preserve the integrity of the products. Effective cold chain environment optimization is essential to avoid compromising the potency and safety of pharmaceuticals. As a professional in this field, you're entrusted with the responsibility to understand the intricacies of cold room operations, from setting appropriate climate conditions to continuous monitoring for deviations Typically, pharmaceutical cold rooms must operate within specific temperature ranges, usually between 2°C and 8°C. Maintaining these conditions can prevent thermal instability, which could lead to drug degradation. Moreover, humidity management is equally crucial: excess moisture can lead to spoilage or facilitate microbial growth, while too little humidity can cause desiccation of sensitive products. An understanding of these dynamics provides you the groundwork for implementing effective climate control strategies tailored to your facilitys needs. ",
+    takeaways: [
+      'Dehumidifiers: Regularly utilize dehumidifiers to maintain a constant humidity level. These devices are essential for extracting moisture from the air, thereby preventing product damage.',
+      'Hygroscopic Materials: Incorporate materials that naturally absorb moisture into the storage area, such as silica gels or clay-based desiccants, which help to regulate humidity levels.',
+      'Sealed Storage: Use airtight containers to store pharmaceuticals sensitive to humidity fluctuations. By doing so, you can ensure that these products remain unaffected by changes in ambient humidity.'
+    ],
+    quote: 'Pharmaceutical cold rooms are subject to strict regulatory standards to ensure that medicines remain safe and effective throughout their shelf life.',
+    conclusion:
+    " Maintaining precise temperature and humidity control in pharmaceutical cold rooms is essential for preserving product quality, ensuring patient safety, and meeting regulatory requirements. By understanding and implementing effective climate regulation strategies, you can enhance the stability and safety of temperature-sensitive medicines throughout storage. "
+  },
+  {
+    slug: 'how-to-maintain-a-commercial-cold-room-efficiently',
+    category: 'Cold Room',
+    title: 'How to maintain a commercial cold room efficiently?',
+    excerpt:
+      'Maintaining a commercial cold room is essential for businesses that rely on refrigeration, including restaurants, supermarkets, and pharmaceutical facilities. A well-maintained cold room ensures product quality, minimizes energy costs, and extends the lifespan of the equipment. Neglecting cold room maintenance can lead to costly repairs, spoilage, and even regulatory penalties. Implementing effective maintenance practices is therefore critical for operational efficiency and cost control.  This guide outlines key practices for efficient cold room maintenance, including scheduling, temperature control, cleaning, equipment inspection, and energy monitoring. ',
+    image: 'https://www.drchiller.com/_next/image?url=https%3A%2F%2Flfywcjaqhjhuljmuyqgt.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fblog-images%2Fblog_1777439623045_commercial%2520cold%2520room.jpg&w=1920&q=75',
+    date: 'Jul 30, 2026',
+    readTime: '2 min read',
+    overview:
+    'Establishing a regular maintenance schedule is essential for efficient cold room operation, helping identify potential issues early, ensure safety compliance, and optimize performance. Maintenance tasks are categorised by frequency: daily checks (inspecting door seals, cleaning spills, and temperature settings), weekly checks (interior inspection for ice/debris and testing safety features), monthly maintenance (calibrating temperature control systems, inspecting electrical connections and defrost systems), and annual service (engaging professional technicians for comprehensive servicing, lubrication, and deep sanitization). Following this structured schedule reduces downtime and extends the cold room’s lifespan and efficiency.',
+    takeaways: [
+      'Daily Inspections: Regularly inspect door seals, clean spills, and check temperature settings to ensure optimal functionality.',
+      'Weekly Checks: Perform a thorough interior inspection for ice build-up or food debris and ensure that alarms and safety features are operational.',
+      'Monthly Maintenance: Calibrate temperature control systems, and inspect electrical connections and defrost systems.',
+      'Annual Service: Engage professional technicians for comprehensive servicing, including lubrication and deep sanitization.',
+    ],
+    quote: 'Automated Temperature Logs: Utilize logging systems that automatically record temperature fluctuations for compliance and analytical review.',
+    conclusion:
+    "Energy efficiency is a key factor in cold room maintenance, as refrigeration contributes significantly to operational costs. By maximizing energy efficiency, businesses can reduce expenses while minimizing their environmental impact.One primary approach to achieving energy efficiency is to invest in energy-efficient equipment and technologies, such as variable-speed compressors and LED lighting. Regular maintenance of seals and insulation helps prevent energy loss caused by leaks and temperature fluctuations."
   },
   {
     slug: 'chiller-installation-best-practices',
@@ -133,6 +196,7 @@ export const allBlogPosts: BlogPost[] = [
     conclusion:
       'Having a pre-established emergency protocol and a trusted service partner on speed dial cuts response downtime from days down to mere hours.'
   },
+  
 ]
 
 // Helper function to get featured posts (for homepage)

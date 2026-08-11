@@ -23,7 +23,7 @@ export default function BlogPage() {
       
       {/* ================= HERO ================= */}
       <section className="py-15 sm:pt-28 lg:pt-42 border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div data-aos="fade-up">
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight text-center">
               Blog & <span className='text-emerald-600'>Insights</span>
@@ -37,7 +37,7 @@ export default function BlogPage() {
 
       {/* ================= BLOG GRID ================= */}
       <section className="py-20 sm:py-28 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {allBlogPosts.map((post, index) => (

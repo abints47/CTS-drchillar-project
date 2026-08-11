@@ -136,7 +136,7 @@ export default function Navbar() {
             />
             <span
               className={`font-extrabold text-xl sm:text-2xl tracking-tight transition-colors ${
-                isTransparent ? "text-emerald-600" : "text-emerald-700 dark:text-emerald-400"
+                isTransparent ? "text-emerald-600" : "text-emerald-600 dark:text-emerald-400"
               }`}
             >
               CTS

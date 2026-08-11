@@ -26,13 +26,13 @@
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Transparent State (Over Hero) - Adjusted with darker glassmorphism tones */
+/* Transparent State (Over Hero) - Sleek Dark Slate Glassmorphism */
 .transparent {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Scrolled State (Solid / Glassmorphism White) */
@@ -61,9 +61,8 @@
   opacity: 0.85;
 }
 
-/* Updated to a darker color for transparent mode */
 .logoTransparent {
-  color: #111827;
+  color: #ffffff;
 }
 
 /* Desktop Navigation */
@@ -96,13 +95,12 @@
   transition: color 0.2s ease;
 }
 
-/* Updated transparent nav items to a darker, high-contrast tone */
 .navItemTransparent {
-  color: #1f2937;
+  color: #60A5FA;
 }
 
 .navItemTransparent:hover {
-  color: #047857;
+  color: #ffffff;
 }
 
 .navText {
@@ -110,11 +108,11 @@
   z-index: 2;
 }
 
-/* Emerald Pill Highlights & Active Route */
+/* Professional Blue Pill Highlights & Active Route */
 .activePill {
   position: absolute;
   inset: 0;
-  background: #047857; /* Deeper Emerald 700 for a darker, bolder active look */
+  background: #2563EB;
   border-radius: 9999px;
   z-index: 1;
 }
@@ -127,7 +125,7 @@
 .hoverPill {
   position: absolute;
   inset: 0;
-  background: rgba(5, 150, 105, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   border-radius: 9999px;
   z-index: 1;
 }
@@ -135,7 +133,7 @@
 .hoverPillTransparent {
   position: absolute;
   inset: 0;
-  background: rgba(5, 150, 105, 0.12);
+  background: rgba(59, 130, 246, 0.20);
   border-radius: 9999px;
   z-index: 1;
 }
@@ -169,8 +167,8 @@
 }
 
 .dropdownItem:hover {
-  background: #f0fdf4;
-  color: #059669;
+  background: #EFF6FF;
+  color: #2563EB;
   padding-left: 18px;
 }
 
@@ -196,10 +194,15 @@
 }
 
 .btnTransparent {
-  background: rgba(255, 255, 255, 0.6);
-  color: #111827;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.2s ease;
+}
+
+.btnTransparent:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Mobile Overlay & Drawer */
@@ -214,13 +217,13 @@
 .navMobile {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   bottom: 0;
   width: 85%;
   max-width: 380px;
   background: #ffffff;
   z-index: 999;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   padding: 24px;
@@ -271,7 +274,7 @@
 }
 
 .mobileItemRow:hover {
-  background: #f0fdf4;
+  background: #EFF6FF;
 }
 
 .mobileNavItem {
@@ -283,9 +286,8 @@
   text-decoration: none;
 }
 
-/* Darker, high-contrast active state for mobile route identification */
 .activeMobile {
-  color: #047857 !important;
+  color: #2563EB !important;
   font-weight: 700;
 }
 
@@ -302,7 +304,7 @@
   gap: 4px;
   padding-left: 16px;
   padding-bottom: 8px;
-  border-left: 2px solid #e5e7eb;
+  border-left: 2px solid #DBEAFE;
   margin-left: 16px;
   margin-top: 4px;
 }
@@ -318,12 +320,12 @@
 }
 
 .mobileSubItem:hover {
-  color: #047857;
-  background: #f0fdf4;
+  color: #2563EB;
+  background: #EFF6FF;
 }
 
 .activeSubMobile {
-  color: #047857 !important;
+  color: #2563EB !important;
   font-weight: 700;
-  background: #ecfdf5;
+  background: #DBEAFE;
 }

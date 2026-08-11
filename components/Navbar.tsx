@@ -104,7 +104,7 @@ export default function Navbar() {
       ],
     },
     { href: "/Contact", label: "Contact Us" },
-    { href: "https://wa.me/97167434537", label: <Phone size={16} />, isExternal: true },
+    { href: "https://wa.me/97167434537", label: <Phone size={18} />, isExternal: true },
   ];
 
   const isTransparent = hasHero && !isScrolledPastHero;
@@ -118,8 +118,8 @@ export default function Navbar() {
       <div
         className={`w-full transition-all duration-300 border-b ${
           isTransparent
-            ? "bg-transparent border-white/10 text-white"
-            : "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-gray-200/80 dark:border-gray-800 text-gray-900 dark:text-white shadow-sm"
+            ? "bg-stone-950/10 backdrop-blur-md border-stone-500/20 text-emerald-500"
+            : "bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-slate-200/80 dark:border-slate-800/80 text-slate-800 dark:text-slate-100 shadow-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
@@ -129,14 +129,14 @@ export default function Navbar() {
             <Image
               src={logo}
               alt="CTS Brand Logo"
-              width={36}
-              height={36}
+              width={38}
+              height={38}
               className="rounded-lg object-contain transition-transform group-hover:scale-105"
               priority
             />
             <span
-              className={`font-bold text-xl tracking-tight transition-colors ${
-                isTransparent ? "text-white" : "text-gray-900 dark:text-white"
+              className={`font-extrabold text-xl sm:text-2xl tracking-tight transition-colors ${
+                isTransparent ? "text-emerald-600" : "text-emerald-700 dark:text-emerald-400"
               }`}
             >
               CTS
@@ -159,7 +159,7 @@ export default function Navbar() {
               return (
                 <div
                   key={link.href}
-                  className="relative py-2"
+                  className="relative py-1.5 flex items-center"
                   onMouseEnter={() => {
                     setHoveredPath(link.href);
                     if (hasSubmenu) setActiveDropdown(link.href);
@@ -171,32 +171,32 @@ export default function Navbar() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`relative z-10 px-3 py-2 rounded-full text-sm font-medium transition-colors flex items-center justify-center ${
+                      className={`relative z-10 px-3.5 py-2 rounded-full text-base font-semibold transition-colors flex items-center justify-center ${
                         isTransparent
-                          ? "text-white hover:bg-white/15"
-                          : "text-gray-700 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                          ? "text-emerald-400 hover:bg-emerald-500/20"
+                          : "text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200 hover:bg-emerald-50 dark:hover:bg-slate-900"
                       }`}
                       aria-label="Contact via WhatsApp"
                     >
-                      <span>{link.label}</span>
+                      <span className="flex items-center">{link.label}</span>
                     </a>
                   ) : (
                     <Link
                       href={link.href}
                       scroll={true}
-                      className={`relative z-10 px-3.5 py-2 rounded-full text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                      className={`relative z-10 px-3.5 py-2 rounded-full text-base font-semibold transition-colors flex items-center gap-1.5 ${
                         isActive
-                          ? "text-emerald-600 dark:text-emerald-400 font-semibold"
+                          ? "text-emerald-600 dark:text-emerald-400 font-bold"
                           : isTransparent
-                          ? "text-white/90 hover:text-white"
-                          : "text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                          ? "text-slate-200 hover:text-emerald-300"
+                          : "text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                       }`}
                     >
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1.5 leading-none">
                         {link.label}
                         {hasSubmenu && (
                           <ChevronDown
-                            size={14}
+                            size={25}
                             className={`opacity-75 transition-transform duration-200 ${
                               activeDropdown === link.href ? "rotate-180" : ""
                             }`}
@@ -204,23 +204,21 @@ export default function Navbar() {
                         )}
                       </span>
 
-                      {/* Active Indicator Pill */}
                       {isActive && (
                         <motion.div
                           layoutId="activeTab"
-                          className="absolute inset-0 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-full -z-10 border border-emerald-500/20"
+                          className="absolute inset-0 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-full -z-10 border border-emerald-500/30"
                           transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         />
                       )}
 
-                      {/* Hover Pill */}
                       {isHovered && !isActive && (
                         <motion.div
                           layoutId="hoverTab"
                           className={`absolute inset-0 rounded-full -z-10 ${
                             isTransparent
-                              ? "bg-white/15"
-                              : "bg-gray-100 dark:bg-gray-800"
+                              ? "bg-emerald-500/20"
+                              : "bg-slate-100 dark:bg-slate-900"
                           }`}
                           transition={{ type: "spring", stiffness: 400, damping: 35 }}
                         />
@@ -228,25 +226,24 @@ export default function Navbar() {
                     </Link>
                   )}
 
-                  {/* Desktop Dropdown Menu with Increased Width (w-80 or w-96) */}
                   {hasSubmenu && activeDropdown === link.href && (
-                    <div className="absolute top-full left-0 pt-2 w-80 sm:w-96 z-50">
+                    <div className="absolute top-full left-0 pt-2 w-80 sm:w-88 z-50">
                       <motion.div
-                        initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                        initial={{ opacity: 0, y: 6, scale: 0.96 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                        transition={{ duration: 0.18, ease: "easeOut" }}
-                        className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 p-2 overflow-hidden"
+                        exit={{ opacity: 0, y: 6, scale: 0.96 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 p-2 overflow-hidden"
                       >
                         {link.submenu?.map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
                             scroll={true}
-                            className={`block px-4 py-3 rounded-xl text-xs sm:text-sm font-medium transition-colors ${
+                            className={`block px-3.5 py-2.5 rounded-xl text-s font-medium transition-colors ${
                               pathname === sub.href
-                                ? "bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 font-semibold"
-                                : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/60 hover:text-emerald-600 dark:hover:text-emerald-400"
+                                ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 font-semibold"
+                                : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400"
                             }`}
                           >
                             {sub.label}
@@ -266,8 +263,8 @@ export default function Navbar() {
             aria-label="Toggle navigation menu"
             className={`lg:hidden p-2 rounded-xl transition-colors ${
               isTransparent
-                ? "text-white hover:bg-white/10"
-                : "text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                ? "text-emerald-400 hover:bg-emerald-500/20"
+                : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
             }`}
             onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
@@ -286,24 +283,36 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
 
             {/* Slide-out Panel */}
             <motion.nav
-              initial={{ x: "100%" }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 280 }}
-              className="fixed top-0 right-0 bottom-0 w-full max-w-xs bg-white dark:bg-gray-900 z-50 shadow-2xl flex flex-col lg:hidden border-l border-gray-100 dark:border-gray-800 overflow-y-auto"
+              className="fixed top-0 left-0 bottom-0 w-full max-w-xs bg-white dark:bg-slate-950 z-50 shadow-2xl flex flex-col lg:hidden border-r border-slate-200 dark:border-slate-800 overflow-y-auto"
             >
               {/* Drawer Header */}
-              <div className="p-5 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
-                <span className="font-bold text-gray-900 dark:text-white text-lg">Navigation</span>
+              <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div className="flex items-center space-x-2.5">
+                  <Image 
+                    src={logo} 
+                    alt="Brand Logo"
+                    width={32}
+                    height={32} 
+                    className="w-8 h-8 object-contain" 
+                  />
+                  <span className="font-bold text-slate-900 dark:text-slate-100 text-lg">
+                    CTS
+                  </span>
+                </div>
+
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className="p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
                   aria-label="Close menu"
                 >
                   <X size={20} />
@@ -311,7 +320,7 @@ export default function Navbar() {
               </div>
 
               {/* Drawer Links */}
-              <div className="p-4 space-y-1 flex-1">
+              <div className="p-3 space-y-1 flex-1">
                 {navLinks.map((link) => {
                   const hasSubmenu = Boolean(link.submenu);
                   const isSubmenuOpen = openMobileSubmenus[link.href];
@@ -325,7 +334,7 @@ export default function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="flex-1 py-3 px-3 text-base font-medium text-gray-800 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 flex items-center gap-2"
+                            className="flex-1 py-3 px-3 text-base font-semibold text-slate-800 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 flex items-center gap-2.5"
                           >
                             <span>WhatsApp Us</span>
                             {link.label}
@@ -337,10 +346,10 @@ export default function Navbar() {
                             onClick={() => {
                               if (!hasSubmenu) setMobileMenuOpen(false);
                             }}
-                            className={`flex-1 py-3 px-3 text-base font-medium transition-colors ${
+                            className={`flex-1 py-3 px-3 text-base font-semibold transition-colors ${
                               pathname === link.href
-                                ? "text-emerald-600 dark:text-emerald-400 font-semibold"
-                                : "text-gray-800 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400"
+                                ? "text-emerald-600 dark:text-emerald-400 font-bold"
+                                : "text-slate-800 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400"
                             }`}
                           >
                             {link.label}
@@ -352,7 +361,7 @@ export default function Navbar() {
                             type="button"
                             aria-label={`Toggle submenu for ${link.label}`}
                             onClick={() => toggleMobileSubmenu(link.href)}
-                            className="p-3 text-gray-500 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400"
+                            className="p-3 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400"
                           >
                             <ChevronDown
                               size={18}
@@ -364,7 +373,6 @@ export default function Navbar() {
                         )}
                       </div>
 
-                      {/* Mobile Submenu Expansion */}
                       {hasSubmenu && (
                         <AnimatePresence>
                           {isSubmenuOpen && (
@@ -372,8 +380,8 @@ export default function Navbar() {
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.25, ease: "easeInOut" }}
-                              className="overflow-hidden pl-4 pr-2 py-1 bg-gray-50 dark:bg-gray-800/50 rounded-xl my-1"
+                              transition={{ duration: 0.2, ease: "easeInOut" }}
+                              className="overflow-hidden pl-3 pr-1 py-1 bg-slate-50 dark:bg-slate-900/50 rounded-xl my-1"
                             >
                               {link.submenu?.map((sub) => (
                                 <Link
@@ -381,10 +389,10 @@ export default function Navbar() {
                                   href={sub.href}
                                   scroll={true}
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className={`block py-2.5 px-3 text-xs sm:text-sm rounded-lg font-medium transition-colors ${
+                                  className={`block py-2.5 px-3 text-sm rounded-lg font-medium transition-colors ${
                                     pathname === sub.href
                                       ? "text-emerald-600 dark:text-emerald-400 font-semibold"
-                                      : "text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+                                      : "text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400"
                                   }`}
                                 >
                                   {sub.label}

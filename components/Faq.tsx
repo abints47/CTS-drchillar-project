@@ -48,13 +48,13 @@ export default function AccordionCard() {
   }, [])
 
   return (
-    <div className="w-full max-w-xl mx-auto py-6 sm:py-10 px-4 sm:px-6 lg:px-8">
+    <div className="w-full max-w-4xl mx-auto py-6 sm:py-30 px-4 sm:px-6 lg:px-28">
       {/* Frameless Header with AOS */}
       <div className="mb-6 space-y-2 text-left" data-aos="fade-up">
-        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-800 dark:text-slate-100">
+        <h2 className="text-xl sm:text-4xl text-center font-extrabold tracking-tight text-slate-800 dark:text-slate-100">
           Frequently Asked Questions
         </h2>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+        <p className="text-xs text-center sm:text-sm text-slate-500 dark:text-slate-400">
           Find quick answers to common queries regarding CTS chiller, rental, and maintenance services.
         </p>
       </div>
@@ -62,7 +62,7 @@ export default function AccordionCard() {
       {/* Borderless Accordion */}
       <Accordion
         defaultValue={["plans"]}
-        className="w-full space-y-3"
+        className="w-full space-y-3 " 
       >
         {items.map((item, index) => (
           <div

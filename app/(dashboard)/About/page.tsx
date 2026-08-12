@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   ArrowRight,
   Phone,
+  Zap,
   Target,
   Snowflake,
 } from 'lucide-react'
@@ -74,7 +75,7 @@ export default function AboutPage() {
   const activeHeadline = rotatingHeadlines[currentHeadlineIndex]
 
   return (
-    <main className="relative min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-emerald-600 selection:text-white transition-colors duration-300 overflow-x-hidden w-full pt-15 sm:pt-15">
+    <main className="relative min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-emerald-600 selection:text-white transition-colors duration-300 overflow-x-hidden w-full pt-15 sm:pt-15 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar:none">
       
       {/* Background Snowflakes */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -97,6 +98,8 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+
+    
       {/* Hero Section */}
       <section aria-labelledby="about-hero-heading" className="relative z-10  py-16 sm:py-24 border-b border-slate-200 dark:border-slate-800 bg-transparent w-full">
         <div className="max-w-352 mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -107,7 +110,7 @@ export default function AboutPage() {
                 <h1 id="about-hero-heading" className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-snug min-h-[3.5em] flex flex-col justify-center overflow-hidden">
                   <span className={`block transition-all duration-300 transform ${isAnimating ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3'}`}>
                     {activeHeadline.prefix}{' '}
-                    <span className="text-[#00B67A] dark:text-emerald-400 font-bold">
+                    <span className="text-emerald-600 dark:text-emerald-600 font-bold">
                       {activeHeadline.highlight}
                     </span>{' '}
                     {activeHeadline.suffix}
@@ -149,6 +152,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
 
       {/* Who We Are Section */}
       <section aria-label="CTS About Us" className="relative z-10 py-16 lg:py-24 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xs w-full">

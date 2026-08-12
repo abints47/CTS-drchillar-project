@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { Phone, Mail, MapPin, Clock, ArrowUpRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -17,6 +17,25 @@ export default function ContactPage() {
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
 
+  // Rotating Headings Logic
+  const headings = [
+    {
+      prefix: "Let's Discuss ",
+      highlight: "Cooling Requirements."
+    },
+    {
+      prefix: "Let's Talk ",
+      highlight: "Cooling Solution?"
+    },
+    {
+      prefix: "Get in Touch ",
+      highlight: "With Us."
+    }
+  ]
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(true)
+
   useEffect(() => {
     AOS.init({
       once: true,
@@ -24,6 +43,18 @@ export default function ContactPage() {
       duration: 800,
     })
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(false) // Trigger fade out
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % headings.length)
+        setIsAnimating(true) // Trigger fade in
+      }, 300) // Match fade transition time
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [headings.length])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -39,45 +70,51 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden w-full pt-16 sm:pt-20 lg:pt-21">
+    <main className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
       
-      {/* Top Banner Section */}
-      <div className="w-full bg-[#00793c] dark:bg-slate-900/90 border-b border-slate-800 text-slate-300 py-6   px-4 sm:px-6 lg:px-8 text-xs sm:text-sm font-light">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <div className="flex items-center justify-center sm:justify-start gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="text-slate-200 font-medium">24/7 Emergency Chiller Dispatch Active Across UAE</span>
+      {/* Full Screen Width Hero Banner with Solid Overlay */}
+      <div className="relative w-full overflow-hidden shadow-xl bg-slate-950" data-aos="fade-up">
+        {/* Background Skyline Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-65 transform scale-125 sm:scale-150 transition-transform duration-1000"
+          style={{ 
+            backgroundImage: `url('/images/products/ice.jpg')`, 
+          }}
+        />
+
+        {/* Subtle Dark Overlay for contrast */}
+        <div className="absolute inset-0 bg-emerald-950/20 backdrop-blur-[1px]" />
+
+        {/* Content Container */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 text-center space-y-6">
+
+          {/* Auto-Rotating Headings */}
+          <h1 className={`text-3xl sm:text-5xl lg:text-6xl pt-6 sm:pt-10 font-semibold tracking-tight text-white leading-[1.15] transition-all duration-300 transform ${isAnimating ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-3 scale-[0.98]'}`}>
+            {headings[currentIndex].prefix}<br className="hidden sm:inline" />
+            <span className="text-emerald-500 font-bold">
+              {headings[currentIndex].highlight}
+            </span>
+          </h1>
+
+          {/* Decorative Line Element */}
+          <div className="flex items-center justify-center gap-2 py-1">
+            <span className="h-0.5 w-16 bg-emerald-500/60 rounded-full" />
           </div>
-          <div className="flex items-center gap-6 text-slate-400">
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span className='text-slate-200'>Certified HVAC Engineers</span>
-            </div>
-            <div className="hidden md:flex items-center gap-1.5">
-              <Zap className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span className='text-slate-200'>Rapid Response Guarantee</span>
-            </div>
-          </div>
+
+          {/* Subtitle */}
+          <p className="text-sm sm:text-base lg:text-lg text-slate-300/90 font-light leading-relaxed max-w-2xl sm:max-w-3xl mx-auto">
+            Whether you need an expert, a custom industrial water chiller quotation, emergency 24/7 technical dispatch, or a long-term maintenance contract, leave your info and we will be in touch shortly.
+          </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:pb-20 space-y-12 sm:space-y-16 lg:space-y-20 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:pb-20 space-y-10 sm:space-y-16 lg:space-y-20 w-full">
         
-        {/* Editorial Header Section */}
-        <div className="max-w-3xl space-y-3 sm:space-y-4 p-4 sm:p-6 lg:p-10 w-full" data-aos="fade-up">
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1] wrap-break-words">
-            Let's Discuss Your <span className="text-[#019249] dark:text-emerald-400">Cooling Requirements.</span>
-          </h1>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl">
-            Whether you need a custom industrial water chiller quotation, emergency 24/7 technical dispatch, or a long-term maintenance contract, our engineers are ready to help.
-          </p>
-        </div>
-
         {/* Core Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start w-full">
           
           {/* Left Column: Direct Contact & Info Cards (5 Cols) */}
-          <div className="lg:col-span-5 space-y-8 w-full" data-aos="fade-right">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6 w-full" data-aos="fade-right">
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 w-full">
               
@@ -133,7 +170,7 @@ export default function ContactPage() {
           {/* Right Column: Clean, Minimalist Form (7 Cols) */}
           <div className="lg:col-span-7 space-y-8 w-full" data-aos="fade-left">
             
-            <div className="p-5 sm:p-8 lg:p-10 rounded-3xl bg-slate-50/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm shadow-xs w-full">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-3xl bg-slate-50/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm shadow-sm w-full">
               
               <div className="mb-6 sm:mb-8 space-y-2">
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Send a Technical Inquiry</h2>
@@ -245,14 +282,11 @@ export default function ContactPage() {
                   {status === 'submitting' ? 'Transmitting...' : 'Submit Inquiry'}
                 </button>
               </form>
-
             </div>
-
           </div>
-
         </div>
-
-        {/* Embedded Location Map Section (Full Width) */}
+      
+        {/* Location Map Section */}
         <div className="p-4 sm:p-6 rounded-3xl bg-slate-50/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 space-y-4 w-full" data-aos="fade-up">
           <div className="px-2 pt-2 flex items-center justify-between">
             <div>
@@ -260,7 +294,7 @@ export default function ContactPage() {
               <p className="text-xs text-slate-500 dark:text-slate-400">Chiller Technical Services LLC, UAE</p>
             </div>
           </div>
-          <div className="relative w-full h-80 sm:h-96 lg:h-112.5 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+          <div className="relative w-full h-80 sm:h-100 lg:h-112.5 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
             <iframe
               title="CTS Chiller Technical Services Location Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1118.2493709701982!2d55.47357896963272!3d25.381967810247925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f58667d25286b%3A0x950fd127e21e0a5f!2sChiller%20Technical%20Services%20LLC!5e1!3m2!1sen!2sin!4v1784872178480!5m2!1sen!2sin"

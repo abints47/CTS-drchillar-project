@@ -21,6 +21,7 @@ export default function Navbar() {
     "/",
     "/Products",
     "/Services",
+    "/Contact",
     "/Products/water-chillers",
     "/Products/heat-exchangers",
     "/Products/cold-rooms",
@@ -170,7 +171,7 @@ export default function Navbar() {
                       className={`relative z-10 px-3.5 py-2 rounded-full text-sm font-medium transition-colors flex items-center justify-center ${
                         isTransparent 
                           ? "text-white bg-emerald-600/80 hover:bg-emerald-600/60 border border-emerald-400/30" 
-                          : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
+                          : "text-emerald-600 bg-green-300 hover:bg-slate-100 dark:hover:bg-slate-900"
                       }`}
                       aria-label="Contact via WhatsApp"
                     >

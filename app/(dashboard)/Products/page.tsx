@@ -118,16 +118,7 @@ export default function ProductsPage() {
             <p className="text-gray-200 dark:text-gray-300 text-sm sm:text-base max-w-lg font-normal">
               Explore our comprehensive catalog of commercial and industrial climate control infrastructure solutions.
             </p>
-
-            <div className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2">
-              <Link
-                href="/"
-                aria-label="Back to home page"
-                className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-sm backdrop-blur-sm border border-white/20 transition-all shadow-sm"
-              >
-                Back
-              </Link>
-            </div>
+            
           </div>
         </section>
 

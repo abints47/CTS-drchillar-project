@@ -115,17 +115,6 @@ export default function ServicesPage() {
             <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
           </div>
 
-          {/* Top Right Back Button */}
-          <div className="absolute top-17 right-4 sm:top-65 sm:right-6 z-20">
-            <Link
-              href="/"
-              aria-label="Back to home page"
-              className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-md border border-white/20 text-white font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-lg"
-            >
-              Back
-            </Link>
-          </div>
-
           <div 
             data-aos="zoom-in" 
             data-aos-duration="600"

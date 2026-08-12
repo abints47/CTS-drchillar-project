@@ -118,8 +118,8 @@ export default function Navbar() {
       <div
         className={`w-full transition-all duration-300 border-b ${
           isTransparent
-            ? "bg-stone-950/10 backdrop-blur-md border-stone-500/20 text-emerald-500"
-            : "bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-slate-200/80 dark:border-slate-800/80 text-slate-800 dark:text-slate-100 shadow-sm"
+            ? "bg-stone-950/20 backdrop-blur-md border-emerald-500/10 text-emerald-100"
+            : "bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 shadow-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
@@ -134,11 +134,7 @@ export default function Navbar() {
               className="rounded-lg object-contain transition-transform group-hover:scale-105"
               priority
             />
-            <span
-              className={`font-extrabold text-xl sm:text-2xl tracking-tight transition-colors ${
-                isTransparent ? "text-emerald-600" : "text-emerald-600 dark:text-emerald-400"
-              }`}
-            >
+            <span className={`font-extrabold text-xl sm:text-2xl tracking-tight ${isTransparent ? "text-white" : "text-slate-900 dark:text-white"}`}>
               CTS
             </span>
           </Link>
@@ -171,10 +167,10 @@ export default function Navbar() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`relative z-10 px-3.5 py-2 rounded-full text-base font-semibold transition-colors flex items-center justify-center ${
-                        isTransparent
-                          ? "text-emerald-400 hover:bg-emerald-500/20"
-                          : "text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200 hover:bg-emerald-50 dark:hover:bg-slate-900"
+                      className={`relative z-10 px-3.5 py-2 rounded-full text-sm font-medium transition-colors flex items-center justify-center ${
+                        isTransparent 
+                          ? "text-white bg-emerald-600/40 hover:bg-emerald-600/60 border border-emerald-400/30" 
+                          : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
                       }`}
                       aria-label="Contact via WhatsApp"
                     >
@@ -184,22 +180,22 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       scroll={true}
-                      className={`relative z-10 px-3.5 py-2 rounded-full text-base font-semibold transition-colors flex items-center gap-1.5 ${
+                      className={`relative z-10 px-3.5 py-2 rounded-full text-sm font-medium transition-colors flex items-center gap-1.5 ${
                         isActive
-                          ? "text-emerald-600 dark:text-emerald-400 font-bold"
+                          ? isTransparent ? "text-white font-semibold" : "text-slate-900 dark:text-white font-semibold"
                           : isTransparent
-                          ? "text-slate-200 hover:text-emerald-300"
-                          : "text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                          ? "text-emerald-100/80 hover:text-white"
+                          : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                       }`}
                     >
                       <span className="flex items-center gap-1.5 leading-none">
                         {link.label}
                         {hasSubmenu && (
                           <ChevronDown
-                            size={25}
-                            className={`opacity-75 transition-transform duration-200 ${
-                              activeDropdown === link.href ? "rotate-180" : ""
-                            }`}
+                            size={16}
+                            className={`transition-transform duration-200 ${
+                              isTransparent ? "text-emerald-100/70" : "text-slate-400 dark:text-slate-500"
+                            } ${activeDropdown === link.href ? "rotate-180" : ""}`}
                           />
                         )}
                       </span>
@@ -207,7 +203,11 @@ export default function Navbar() {
                       {isActive && (
                         <motion.div
                           layoutId="activeTab"
-                          className="absolute inset-0 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-full -z-10 border border-emerald-500/30"
+                          className={`absolute inset-0 rounded-full -z-10 shadow-sm ${
+                            isTransparent 
+                              ? "bg-emerald-600/50 border border-emerald-400/30" 
+                              : "bg-slate-100 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60"
+                          }`}
                           transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         />
                       )}
@@ -216,9 +216,7 @@ export default function Navbar() {
                         <motion.div
                           layoutId="hoverTab"
                           className={`absolute inset-0 rounded-full -z-10 ${
-                            isTransparent
-                              ? "bg-emerald-500/20"
-                              : "bg-slate-100 dark:bg-slate-900"
+                            isTransparent ? "bg-white/10" : "bg-slate-100 dark:bg-slate-900"
                           }`}
                           transition={{ type: "spring", stiffness: 400, damping: 35 }}
                         />
@@ -240,10 +238,10 @@ export default function Navbar() {
                             key={sub.href}
                             href={sub.href}
                             scroll={true}
-                            className={`block px-3.5 py-2.5 rounded-xl text-s font-medium transition-colors ${
+                            className={`block px-3.5 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                               pathname === sub.href
-                                ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 font-semibold"
-                                : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400"
+                                ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-semibold"
+                                : "text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white"
                             }`}
                           >
                             {sub.label}
@@ -263,8 +261,8 @@ export default function Navbar() {
             aria-label="Toggle navigation menu"
             className={`lg:hidden p-2 rounded-xl transition-colors ${
               isTransparent
-                ? "text-emerald-400 hover:bg-emerald-500/20"
-                : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+                ? "text-white bg-white/10 hover:bg-white/20"
+                : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
             }`}
             onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
@@ -305,14 +303,14 @@ export default function Navbar() {
                     height={32} 
                     className="w-8 h-8 object-contain" 
                   />
-                  <span className="font-bold text-slate-900 dark:text-slate-100 text-lg">
+                  <span className="font-bold text-slate-900 dark:text-white text-lg">
                     CTS
                   </span>
                 </div>
 
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
+                  className="p-2 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
                   aria-label="Close menu"
                 >
                   <X size={20} />
@@ -334,7 +332,7 @@ export default function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="flex-1 py-3 px-3 text-base font-semibold text-slate-800 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 flex items-center gap-2.5"
+                            className="flex-1 py-3 px-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-slate-900 flex items-center gap-2.5"
                           >
                             <span>WhatsApp Us</span>
                             {link.label}
@@ -346,10 +344,10 @@ export default function Navbar() {
                             onClick={() => {
                               if (!hasSubmenu) setMobileMenuOpen(false);
                             }}
-                            className={`flex-1 py-3 px-3 text-base font-semibold transition-colors ${
+                            className={`flex-1 py-3 px-3 text-sm font-medium transition-colors rounded-xl ${
                               pathname === link.href
-                                ? "text-emerald-600 dark:text-emerald-400 font-bold"
-                                : "text-slate-800 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400"
+                                ? "bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white font-semibold"
+                                : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                             }`}
                           >
                             {link.label}
@@ -361,12 +359,12 @@ export default function Navbar() {
                             type="button"
                             aria-label={`Toggle submenu for ${link.label}`}
                             onClick={() => toggleMobileSubmenu(link.href)}
-                            className="p-3 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+                            className="p-3 text-slate-400 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-200"
                           >
                             <ChevronDown
-                              size={18}
+                              size={16}
                               className={`transition-transform duration-300 ${
-                                isSubmenuOpen ? "rotate-180 text-emerald-600 dark:text-emerald-400" : ""
+                                isSubmenuOpen ? "rotate-180 text-slate-700 dark:text-slate-200" : ""
                               }`}
                             />
                           </button>
@@ -381,7 +379,7 @@ export default function Navbar() {
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.2, ease: "easeInOut" }}
-                              className="overflow-hidden pl-3 pr-1 py-1 bg-slate-50 dark:bg-slate-900/50 rounded-xl my-1"
+                              className="overflow-hidden pl-3 pr-1 py-1 bg-slate-50 dark:bg-slate-900/50 rounded-xl my-1 border border-slate-200 dark:border-slate-800"
                             >
                               {link.submenu?.map((sub) => (
                                 <Link
@@ -391,8 +389,8 @@ export default function Navbar() {
                                   onClick={() => setMobileMenuOpen(false)}
                                   className={`block py-2.5 px-3 text-sm rounded-lg font-medium transition-colors ${
                                     pathname === sub.href
-                                      ? "text-emerald-600 dark:text-emerald-400 font-semibold"
-                                      : "text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+                                      ? "bg-slate-200/70 dark:bg-slate-800 text-slate-900 dark:text-white font-semibold"
+                                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                                   }`}
                                 >
                                   {sub.label}

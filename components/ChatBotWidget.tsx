@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, X, MessageCircle, Users } from "lucide-react";
+import { Phone, X, MessageCircle } from "lucide-react";
 
 export default function ChatBotWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,18 +39,11 @@ export default function ChatBotWidget() {
       external: true,
     },
     {
-      id: "contact",
-      label: "Contact Us",
-      icon: Users,
-      href: "tel:+97167434537",
-      external: true,
-    },
-    {
       id: "call",
       label: "Call",
       icon: Phone,
       href: "tel:+97167434537",
-      external: false,
+      external: true,
     },
   ];
 

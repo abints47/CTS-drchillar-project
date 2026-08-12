@@ -26,18 +26,18 @@
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Transparent State (Over Hero) - Sleek Dark Slate Glassmorphism */
+/* Transparent State (Over Hero) - Sleek Dark Emerald Glassmorphism */
 .transparent {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
 }
 
 /* Scrolled State (Solid / Glassmorphism White) */
 .scrolled {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(229, 231, 235, 0.8);
@@ -96,7 +96,7 @@
 }
 
 .navItemTransparent {
-  color: #60A5FA;
+  color: #34D399; /* Emerald 400 */
 }
 
 .navItemTransparent:hover {
@@ -108,11 +108,11 @@
   z-index: 2;
 }
 
-/* Professional Blue Pill Highlights & Active Route */
+/* Professional Emerald Pill Highlights & Active Route */
 .activePill {
   position: absolute;
   inset: 0;
-  background: #2563EB;
+  background: #059669; /* Emerald 600 */
   border-radius: 9999px;
   z-index: 1;
 }
@@ -125,7 +125,7 @@
 .hoverPill {
   position: absolute;
   inset: 0;
-  background: rgba(37, 99, 235, 0.08);
+  background: rgba(5, 150, 105, 0.08);
   border-radius: 9999px;
   z-index: 1;
 }
@@ -133,7 +133,7 @@
 .hoverPillTransparent {
   position: absolute;
   inset: 0;
-  background: rgba(59, 130, 246, 0.20);
+  background: rgba(52, 211, 153, 0.15);
   border-radius: 9999px;
   z-index: 1;
 }
@@ -148,7 +148,7 @@
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f3f4f6;
+  border: 1px solid rgba(16, 185, 129, 0.15);
   padding: 8px;
   z-index: 100;
   display: flex;
@@ -167,8 +167,8 @@
 }
 
 .dropdownItem:hover {
-  background: #EFF6FF;
-  color: #2563EB;
+  background: #ECFDF5; /* Emerald 50 */
+  color: #059669; /* Emerald 600 */
   padding-left: 18px;
 }
 
@@ -274,7 +274,7 @@
 }
 
 .mobileItemRow:hover {
-  background: #EFF6FF;
+  background: #ECFDF5;
 }
 
 .mobileNavItem {
@@ -287,7 +287,7 @@
 }
 
 .activeMobile {
-  color: #2563EB !important;
+  color: #059669 !important;
   font-weight: 700;
 }
 
@@ -304,7 +304,7 @@
   gap: 4px;
   padding-left: 16px;
   padding-bottom: 8px;
-  border-left: 2px solid #DBEAFE;
+  border-left: 2px solid #A7F3D0; /* Emerald 200 */
   margin-left: 16px;
   margin-top: 4px;
 }
@@ -320,12 +320,12 @@
 }
 
 .mobileSubItem:hover {
-  color: #2563EB;
-  background: #EFF6FF;
+  color: #059669;
+  background: #ECFDF5;
 }
 
 .activeSubMobile {
-  color: #2563EB !important;
+  color: #059669 !important;
   font-weight: 700;
-  background: #DBEAFE;
+  background: #D1FAE5; /* Emerald 100 */
 }

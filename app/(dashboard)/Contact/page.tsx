@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { Phone, Mail, MapPin, Clock, ArrowUpRight, CheckCircle2 } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, ArrowUpRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -39,13 +39,34 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 transition-colors duration-300 overflow-x-hidden w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20 w-full">
+    <main className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden w-full pt-16 sm:pt-20 lg:pt-21">
+      
+      {/* Top Banner Section */}
+      <div className="w-full bg-[#00793c] dark:bg-slate-900/90 border-b border-slate-800 text-slate-300 py-6   px-4 sm:px-6 lg:px-8 text-xs sm:text-sm font-light">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div className="flex items-center justify-center sm:justify-start gap-2">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="text-slate-200 font-medium">24/7 Emergency Chiller Dispatch Active Across UAE</span>
+          </div>
+          <div className="flex items-center gap-6 text-slate-400">
+            <div className="flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span className='text-slate-200'>Certified HVAC Engineers</span>
+            </div>
+            <div className="hidden md:flex items-center gap-1.5">
+              <Zap className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span className='text-slate-200'>Rapid Response Guarantee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:pb-20 space-y-12 sm:space-y-16 lg:space-y-20 w-full">
         
         {/* Editorial Header Section */}
         <div className="max-w-3xl space-y-3 sm:space-y-4 p-4 sm:p-6 lg:p-10 w-full" data-aos="fade-up">
           <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1] wrap-break-words">
-            Let's Discuss Your <span className="text-emerald-600 dark:text-emerald-400">Cooling Requirements.</span>
+            Let's Discuss Your <span className="text-[#019249] dark:text-emerald-400">Cooling Requirements.</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl">
             Whether you need a custom industrial water chiller quotation, emergency 24/7 technical dispatch, or a long-term maintenance contract, our engineers are ready to help.
@@ -235,7 +256,7 @@ export default function ContactPage() {
         <div className="p-4 sm:p-6 rounded-3xl bg-slate-50/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 space-y-4 w-full" data-aos="fade-up">
           <div className="px-2 pt-2 flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Facility Location</h3>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Our Location</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400">Chiller Technical Services LLC, UAE</p>
             </div>
           </div>

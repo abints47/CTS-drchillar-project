@@ -136,7 +136,7 @@ export default function ServicesPage() {
             {/* Intro Header Section */}
             <header data-aos="fade-up" data-aos-duration="500" className="max-w-2xl mx-auto text-center space-y-3 px-2">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#183153] dark:text-white tracking-tight">
-                Provided Services
+                Our Services
               </h2>
               <p className="text-[#6b7280] dark:text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed font-light">
                 Explore our full range of high-quality cooling and HVAC solutions engineered for performance, reliability, and long-term efficiency.

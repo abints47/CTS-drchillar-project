@@ -48,7 +48,14 @@ export default function ChatBotWidget() {
   ];
 
   return (
-    <div ref={widgetRef} className="fixed bottom-6 right-6 z-50 font-sans">
+    <div 
+      ref={widgetRef} 
+      className="fixed z-50 font-sans bottom-4 right-4 sm:bottom-6 sm:right-6"
+      style={{
+        paddingBottom: "env(safe-area-inset-bottom)",
+        paddingRight: "env(safe-area-inset-right)",
+      }}
+    >
       {/* Buttons Container */}
       <div className="relative flex flex-col items-end mb-3">
         <AnimatePresence>
@@ -63,7 +70,7 @@ export default function ChatBotWidget() {
                 staggerChildren: 0.12,
                 delayChildren: 0.08,
               }}
-              className="flex flex-col gap-3 mb-4"
+              className="flex flex-col gap-2.5 sm:gap-3 mb-3 sm:mb-4"
             >
               {contactOptions.map((option) => {
                 const IconComponent = option.icon;
@@ -83,9 +90,9 @@ export default function ChatBotWidget() {
                       mass: 0.4,
                       opacity: { duration: 0.3 },
                     }}
-                    whileHover={{ scale: 1.1, boxShadow: "0 10px 25px rgba(0, 184, 92, 0.3)" }}
-                    whileTap={{ scale: 0.9 }}
-                    className="flex items-center gap-3 px-5 py-3 bg-[#00b85c] text-white rounded-full font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:bg-[#00a850] transition-all cursor-pointer whitespace-nowrap"
+                    whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 184, 92, 0.3)" }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-3 px-4 py-2.5 sm:px-5 sm:py-3 bg-[#00b85c] text-white rounded-full font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:bg-[#00a850] transition-all cursor-pointer whitespace-nowrap"
                   >
                     <IconComponent className="w-5 h-5" />
                     <span>{option.label}</span>
@@ -106,7 +113,7 @@ export default function ChatBotWidget() {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 15, scale: 0.9 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="absolute right-20 bg-white text-zinc-800 text-xs font-semibold px-3.5 py-2 rounded-xl shadow-xl border border-zinc-100 pointer-events-none whitespace-nowrap"
+              className="absolute right-16 sm:right-20 bg-white text-zinc-800 text-xs font-semibold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-xl border border-zinc-100 pointer-events-none whitespace-nowrap hidden sm:block"
             >
               Need Help?
             </motion.div>
@@ -117,11 +124,11 @@ export default function ChatBotWidget() {
           onClick={() => setIsOpen(!isOpen)}
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
-          whileHover={{ scale: 1.12, boxShadow: "0 20px 40px rgba(0, 184, 92, 0.35)" }}
-          whileTap={{ scale: 0.92 }}
+          whileHover={{ scale: 1.1, boxShadow: "0 20px 40px rgba(0, 184, 92, 0.35)" }}
+          whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 400, damping: 30 }}
           aria-label="Toggle contact options"
-          className="relative flex items-center justify-center w-16 h-16 bg-[#00b85c] text-white rounded-full shadow-2xl focus:outline-none focus:ring-4 focus:ring-emerald-500/30 transition-all duration-300 hover:bg-[#00a850]"
+          className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-[#00b85c] text-white rounded-full shadow-2xl focus:outline-none focus:ring-4 focus:ring-emerald-500/35 transition-all duration-300 hover:bg-[#00a850] cursor-pointer"
         >
           {/* Subtle pulse animation */}
           {!isOpen && (
@@ -137,7 +144,7 @@ export default function ChatBotWidget() {
                 exit={{ rotate: 90, opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <X className="w-7 h-7" />
+                <X className="w-6 h-6 sm:w-7 sm:h-7" />
               </motion.div>
             ) : (
               <motion.div
@@ -147,7 +154,7 @@ export default function ChatBotWidget() {
                 exit={{ rotate: -90, opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <Phone className="w-7 h-7" />
+                <Phone className="w-6 h-6 sm:w-7 sm:h-7" />
               </motion.div>
             )}
           </AnimatePresence>

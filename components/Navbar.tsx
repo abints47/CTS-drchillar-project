@@ -118,7 +118,7 @@ export default function Navbar() {
       <div
         className={`w-full transition-all duration-300 border-b ${
           isTransparent
-            ? "bg-stone-950/20 backdrop-blur-md border-emerald-500/10 text-emerald-100"
+            ? "bg-stone-950/10 backdrop-blur-xs border-emerald-500/10 text-emerald-100"
             : "bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 shadow-sm"
         }`}
       >
@@ -169,7 +169,7 @@ export default function Navbar() {
                       rel="noopener noreferrer"
                       className={`relative z-10 px-3.5 py-2 rounded-full text-sm font-medium transition-colors flex items-center justify-center ${
                         isTransparent 
-                          ? "text-white bg-emerald-600/40 hover:bg-emerald-600/60 border border-emerald-400/30" 
+                          ? "text-white bg-emerald-600/80 hover:bg-emerald-600/60 border border-emerald-400/30" 
                           : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
                       }`}
                       aria-label="Contact via WhatsApp"
@@ -184,7 +184,7 @@ export default function Navbar() {
                         isActive
                           ? isTransparent ? "text-white font-semibold" : "text-slate-900 dark:text-white font-semibold"
                           : isTransparent
-                          ? "text-emerald-100/80 hover:text-white"
+                          ? "text-[#00bb5d] hover:text-white"
                           : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                       }`}
                     >

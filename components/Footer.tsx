@@ -27,7 +27,7 @@ export default function Footer() {
                 />
                 <span className="text-white dark:text-gray-100 leading-snug">Chiller Technical Services L.L.C</span>
               </div>
-              <div className="text-base sm:text-xl font-semibold text-white dark:text-gray-200 pt-1.5">
+              <div className="text-base sm:text-xl font-semibold text-white dark:text-gray-200 pt-1.5 pl-39">
                 خدمات التبريد التقنية ذ.م.م
               </div>
             </Link>
@@ -181,11 +181,12 @@ export default function Footer() {
         {/* Bottom Bar Section */}
         <div className="flex flex-col items-center justify-between gap-4 text-xs sm:text-sm text-[#e2e6eb] dark:text-gray-400 sm:flex-row text-center sm:text-left">
           <p>
-            <span className="text-emerald-500">&copy;</span> {new Date().getFullYear()} CTS, Inc. All rights reserved |{' '}
-            <Link href="https://maktalseo.com/" target="_blank" className="inline-block">
-              <span className="hover:text-emerald-500 transition-colors">Website Developed By Maktal</span>
-            </Link>
+            <span className="text-emerald-500">&copy;</span> {new Date().getFullYear()} CTS, Inc. All rights reserved {' '}
+            
           </p>
+            <Link href="https://maktalseo.com/" target="_blank" className="inline-block">
+              <span className="hover:text-emerald-500 transition-colors">Made with <span>💚</span> by MakTal</span>
+            </Link>
         </div>
       </div>
     </footer>

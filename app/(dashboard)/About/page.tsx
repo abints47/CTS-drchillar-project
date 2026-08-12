@@ -159,7 +159,7 @@ export default function AboutPage() {
               <div className="w-full bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xs">
                 <div className="relative w-full h-64 xs:h-72 sm:h-80 md:h-96">
                   <Image
-                    src="/images/whoWeAre.png"
+                    src="https://images.unsplash.com/photo-1615625745497-0edd438803ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGxlcnN8ZW58MHx8MHx8fDA%3D"
                     alt="CTS Chiller Technical Services"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -180,16 +180,37 @@ export default function AboutPage() {
                 </h2>
               </div>
 
-              <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base text-justify">
+              <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base ">
                 <p>
                   <strong className="text-[#00B67A] dark:text-white font-medium">
                     CTS - Chiller Technical Services L.L.C
                   </strong>{" "}
                   is a trusted name in the UAE, engaged in the manufacturing and trading of{" "}
-                  <strong className="text-[#00B67A] dark:text-emerald-400 font-medium">Water Chillers</strong>,{" "}
-                  <strong className="text-[#00B67A] dark:text-emerald-400 font-medium">Cold Rooms</strong>,{" "}
-                  <strong className="text-[#00B67A] dark:text-emerald-400 font-medium">Heat Exchangers</strong>, and{" "}
-                  <strong className="text-[#00B67A] dark:text-emerald-400 font-medium">A/C Units</strong>. We also provide a wide range of refrigeration equipment, spare parts, and accessories delivering reliable cooling solutions tailored to every need.
+                 <Link 
+                    href="/Products/water-chillers" 
+                    className="text-[#00B67A] dark:text-emerald-400 font-medium hover:underline"
+                  >
+                    Water Chillers
+                  </Link>,{" "}
+                  <Link 
+                    href="/Products/cold-rooms" 
+                    className="text-[#00B67A] dark:text-emerald-400 font-medium hover:underline"
+                  >
+                    Cold Rooms
+                  </Link>,{" "}
+                  <Link 
+                    href="/Products/heat-exchangers" 
+                    className="text-[#00B67A] dark:text-emerald-400 font-medium hover:underline"
+                  >
+                    Heat Exchangers
+                  </Link>, and{" "}
+                  <Link 
+                    href="/Products/ac-units" 
+                    className="text-[#00B67A] dark:text-emerald-400 font-medium hover:underline"
+                  >
+                    A/C Units
+                  </Link>. 
+                  We also provide a wide range of refrigeration equipment, spare parts, and accessories delivering reliable cooling solutions tailored to every need.
                 </p>
                 <p>
                   With a strong global sourcing network and years of technical expertise, we ensure our products are cost-effective, energy-efficient, and built to last. From chillers to cold rooms and air conditioning units, we take pride in serving industries with unmatched quality.

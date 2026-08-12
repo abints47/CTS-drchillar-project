@@ -167,7 +167,7 @@ function HeroSection() {
       >
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
           {serviceData.titleMain}{" "}
-          <span className="block sm:inline text-emerald-400 mt-1 sm:mt-0">
+          <span className="block sm:inline text-emerald-500 mt-1 sm:mt-0">
             {serviceData.titleHighlight}
           </span>
         </h1>

@@ -19,7 +19,7 @@ export default function BlogPage() {
   }, [])
 
   return (
-    <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 w-full overflow-x-hidden">
+    <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 w-full overflow-x-hidden scrollbar-none">
       
       {/* ================= HERO ================= */}
       <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20 border-b border-slate-200 dark:border-slate-800">

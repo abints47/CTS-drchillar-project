@@ -11,7 +11,7 @@ interface SlideItem {
   src: string
   alt: string
   title: string
-  highlightWord?: string // Optional explicit word to highlight
+  highlightWord?: string
   description: string
 }
 
@@ -24,7 +24,7 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'start' },
-    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+    [Autoplay({ delay: 3500, stopOnInteraction: false })]
   )
 
   const slidesNodes = useRef<HTMLElement[]>([])
@@ -78,10 +78,6 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
     emblaApi.on('select', onSelect)
   }, [emblaApi, setSlidesNodes, applyOpacity, onSelect])
 
-  /**
-   * Helper to highlight specific key words within the title text.
-   * Highlights `highlightWord` if provided, otherwise highlights the final word.
-   */
   const renderTitle = (title: string, highlightWord?: string) => {
     if (highlightWord && title.includes(highlightWord)) {
       const parts = title.split(highlightWord)
@@ -131,7 +127,17 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
                     key={`animated-content-${selectedIndex}`}
                     className={styles.slide__content}
                   >
-                    {/* 1. EYEBROW / HERO BRAND HEADER */}
+                    {/* 1. MAIN HEADING */}
+                    <h1 className={styles.slide__title}>
+                      {renderTitle(slide.title, slide.highlightWord)}
+                    </h1>
+
+                    {/* 2. SUPPORTING PARAGRAPH */}
+                    <p className={styles.slide__description}>
+                      {slide.description}
+                    </p>
+
+                    {/* 3. HERO BRAND HEADER (Positioned at bottom, perfectly centered) */}
                     <div className={styles.hero__header}>
                       <Image
                         src="/logo.png"
@@ -148,16 +154,6 @@ export default function ParallaxCarousel({ slides }: CarouselProps) {
                         <p className={styles.hero__tagline}>SKILL TO CHILL</p>
                       </div>
                     </div>
-
-                    {/* 2. MAIN HEADING WITH ACCENT HIGHLIGHT */}
-                    <h1 className={styles.slide__title}>
-                      {renderTitle(slide.title, slide.highlightWord)}
-                    </h1>
-
-                    {/* 3. SUPPORTING PARAGRAPH */}
-                    <p className={styles.slide__description}>
-                      {slide.description}
-                    </p>
                   </div>
                 )}
               </div>

@@ -39,48 +39,87 @@
 .slide__overlay {
   position: absolute;
   inset: 0;
-  /* Soft gradient adjusted to cover wider text block cleanly */
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.55) 55%,
-    rgba(0, 0, 0, 0.2) 100%
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.75) 100%
   );
   pointer-events: none;
 }
 
 /* =========================================
-   ENTERPRISE LEFT-ALIGNED HERO TEXT CONTAINER
+   CENTERED CONTENT CONTAINER
    ========================================= */
 .slide__content {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  left: clamp(1.5rem, 6vw, 6rem);
-  width: min(92%, 56rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92%, 64rem);
   color: #ffffff;
   z-index: 10;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 1.25rem;
+  align-items: center;
+  text-align: center;
+  gap: 1.75rem;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 1. HERO BRAND / EYEBROW HEADER */
+/* 1. MAIN HEADING */
+.slide__title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: white;
+  width: 100%;
+  text-align: center;
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@media (min-width: 640px) {
+  .slide__title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+}
+
+.title__accent {
+  color: #00b85c;
+  font-weight: 700;
+}
+
+/* 2. SUPPORTING PARAGRAPH */
+.slide__description {
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0;
+  line-height: 1.65;
+  width: 100%;
+  max-width: 48rem;
+  color: white;
+  text-align: center;
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+/* 3. HERO BRAND / FOOTER HEADER (Centered block with left-aligned internal text) */
 .hero__header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  margin-top: 0.5rem;
+  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
 }
 
 .hero__logo {
@@ -97,66 +136,22 @@
 }
 
 .hero__brandName {
-  font-size: clamp(1.2rem, 1vw, 0.85rem);
+  font-size: clamp(1rem, 0.95vw, 0.85rem);
   font-weight: 550;
-  letter-spacing: 0.05em; /* Reduced letter-spacing slightly for natural text casing */
-  text-transform: none;  /* Kept in natural casing */
+  letter-spacing: 0.05em;
+  text-transform: none;
   color: azure;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.2rem 0;
   line-height: 1.2;
 }
 
 .hero__tagline {
-  font-size: clamp(0.91rem, 0.9vw, 0.75rem);
+  font-size: clamp(0.8rem, 0.85vw, 0.7rem);
   font-weight: 750;
   color: #00b85c;
   margin: 0;
   letter-spacing: 0.1em;
-  text-transform: uppercase; /* Tagline remains uppercase */
-}
-
-
-/* 2. MAIN LIGHTER & WIDER HEADING */
-.slide__title {
-  font-size: 2.25rem; /* text-4xl */
-  line-height: 2.5rem;
-  font-weight: 700; /* font-bold */
-  letter-spacing: -0.025em; /* tracking-tight */
-  margin-bottom: 1rem; /* mb-4 */
-  color: white; /* text-white */
-  margin-top: 0;
-  width: 100%;
-  text-align: left;
-  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-  opacity: 0;
-}
-
-@media (min-width: 640px) {
-  .slide__title {
-    font-size: 4rem; /* sm:text-5xl */
-    line-height: 1;
-  }
-}
-
-.title__accent {
-  color: #00b85c;
-  font-weight: 700; /* font-bold */
-}
-
-/* 3. WIDER & LIGHTER SUPPORTING PARAGRAPH */
-.slide__description {
-  font-size: clamp(1rem, 1.35vw, 1.25rem);
-  font-weight: 400; /* Reduced from 400 to light weight */
-  letter-spacing: 0.01em;
-  margin: 0;
-  opacity: 0.9;
-  line-height: 1.65;
-  width: 100%;
-  max-width: 46rem; /* Increased max-width (around 730px) to match wider heading */
-  color: white;
-  text-align: left;
-  animation: slideInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-  opacity: 0;
+  text-transform: uppercase;
 }
 
 /* VERTICAL ANIMATION KEYFRAME */
@@ -168,5 +163,15 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* =========================================
+   MOBILE VIEW HEIGHT ADJUSTMENT (70% height)
+   ========================================= */
+@media (max-width: 768px) {
+  .embla {
+    height: 70vh;
+    height: 70dvh;
   }
 }

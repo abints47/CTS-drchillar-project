@@ -1,3 +1,5 @@
+'use client';
+import { useState, useEffect } from 'react'
 import ParallaxCarousel from '@/components/ParallaxCarousel'
 import CardGrid from "@/components/Card"
 import { PRODUCTS, SERVICES } from "@/data/content"
@@ -67,6 +69,20 @@ const IMAGES = [
 ]
 
 export default function HomePage() {
+  const [currentMobileImage, setCurrentMobileImage] = useState(0);
+  const mobileImages = [
+    { src: '/images/asethetic-ac.webp', alt: 'Our Team' },
+    { src: '/images/Amc.webp', alt: 'Work in Action' }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMobileImage((prev) => (prev + 1) % mobileImages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="overflow-x-hidden w-full">
       {/* Full screen carousel hero */}
@@ -95,25 +111,46 @@ export default function HomePage() {
             data-aos="fade-right"
             data-aos-duration="1000"
           >
-            {/* Back Image */}
-            <div className="group/img1 relative h-64 w-60 sm:h-80 sm:w-72 overflow-hidden rounded-xl border-2 border-white opacity-100 shadow-lg transition-all duration-500 ease-out sm:rotate-3 hover:z-20 hover:scale-105 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl dark:border-gray-900">
+            {/* Mobile View Image Slider (Visible only on mobile) */}
+            <div className="block sm:hidden relative h-64 w-full max-w-65 mx-auto overflow-hidden rounded-xl border-2 border-white shadow-lg">
+              {mobileImages.map((img, index) => (
+                <div
+                  key={img.src}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    index === currentMobileImage ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="100vw"
+                    className="rounded-xl object-cover"
+                    priority={index === 0}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Back Image (Hidden on mobile, visible on sm and above) */}
+            <div className="hidden sm:block group/img1 relative h-80 w-72 overflow-hidden rounded-xl border-2 border-white shadow-lg transition-all duration-500 ease-out sm:rotate-3 hover:z-20 hover:scale-105 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl dark:border-gray-900">
               <Image
                 src="/images/asethetic-ac.webp"
                 alt="Our Team"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 300px"
                 className="rounded-xl object-cover transition-transform duration-500 group-hover/img1:scale-110"
                 priority
               />
             </div>
 
-            {/* Front Image */}
-            <div className="group/img2 absolute top-20 left-6 sm:top-20 sm:left-20 lg:left-40 h-56 w-52 sm:h-72 sm:w-64 overflow-hidden rounded-xl border-2 border-white opacity-100 shadow-lg transition-all duration-500 delay-200 ease-out sm:rotate-12 hover:z-20 hover:scale-105 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl dark:border-gray-900">
+            {/* Front Image (Hidden on mobile, visible on sm and above) */}
+            <div className="hidden sm:block group/img2 absolute top-20 left-20 lg:left-40 h-72 w-64 overflow-hidden rounded-xl border-2 border-white shadow-lg transition-all duration-500 delay-200 ease-out sm:rotate-12 hover:z-20 hover:scale-105 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl dark:border-gray-900">
               <Image
                 src="/images/Amc.webp"
                 alt="Work in Action"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 260px"
                 className="rounded-xl object-cover transition-transform duration-500 group-hover/img2:scale-110"
               />
             </div>
@@ -121,7 +158,7 @@ export default function HomePage() {
 
           {/* Right Content Side */}
           <div 
-            className="relative text-center lg:text-left mt-8 lg:mt-0"
+            className="relative text-center lg:text-left mt-4 lg:mt-0"
             data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-delay="200"
@@ -216,10 +253,10 @@ export default function HomePage() {
       <section id="about" className="relative overflow-hidden w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         {/* Side Decorative Animated Snowflakes Positioned on Full-Width Section Edges */}
         <div className="pointer-events-none absolute top-1/4 left-4 sm:left-8 lg:left-12 z-0 hidden sm:block animate-bounce" style={{ animationDuration: '3.5s' }} aria-hidden="true">
-          <Snowflake size={110} className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin" style={{ animationDuration: '8s' }} />
+          <Snowflake size={160} className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin" style={{ animationDuration: '8s' }} />
         </div>
         <div className="pointer-events-none absolute bottom-1/3 right-4 sm:right-8 lg:right-12 z-0 hidden sm:block animate-bounce" style={{ animationDuration: '3s' }} aria-hidden="true">
-          <Snowflake size={120} className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin" style={{ animationDuration: '9s', animationDirection: 'reverse' }} />
+          <Snowflake size={150} className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin" style={{ animationDuration: '9s', animationDirection: 'reverse' }} />
         </div>
 
         {/* Inner Content Container */}
@@ -360,13 +397,13 @@ export default function HomePage() {
       <section className="relative overflow-hidden w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
         {/* 3 New Decorative Snowflakes for Rent Section */}
         <div className="pointer-events-none absolute top-25 left-12 z-0 hidden sm:block animate-bounce" style={{ animationDuration: '4s' }} aria-hidden="true">
-          <Snowflake size={110} className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin" style={{ animationDuration: '12s' }} />
+          <Snowflake size={150} className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin" style={{ animationDuration: '12s' }} />
         </div>
-        <div className="pointer-events-none absolute top-150 right-8 z-0 hidden sm:block animate-bounce" style={{ animationDuration: '3.2s' }} aria-hidden="true">
-          <Snowflake size={100} className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin" style={{ animationDuration: '10s', animationDirection: 'reverse' }} />
+        <div className="pointer-events-none absolute top-130 right-8 z-0 hidden sm:block animate-bounce" style={{ animationDuration: '3.2s' }} aria-hidden="true">
+          <Snowflake size={150} className="select-none text-emerald-500/10 dark:text-emerald-400/10 animate-spin" style={{ animationDuration: '10s', animationDirection: 'reverse' }} />
         </div>
         <div className="max-w-7xl mx-auto relative z-15">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center pt-10 sm:pt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center pt-6 sm:pt-10">
             
             {/* Left Column: Text Part */}
             <div className="lg:col-span-6 space-y-4 sm:space-y-6 text-center lg:text-left">
@@ -374,7 +411,7 @@ export default function HomePage() {
                 Rent A/C Units, <span className='text-emerald-600'>Chillers <br className="hidden sm:inline"/>&amp; Gensets</span> 
               </h2>
 
-              <div className="space-y-3 sm:space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed text-left font-normal">
+              <div className="space-y-3 sm:space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed text-center lg:text-left font-normal">
                 <p>
                   Whether you need to cool down a large space, maintain process temperatures, or provide uninterrupted power to a site, we offer reliable rental solutions for A/C units, water chillers, and diesel generators.
                 </p>
@@ -415,7 +452,6 @@ export default function HomePage() {
 
       {/* Blog Section wrapped to support 3 new snowflakes */}
       <div className="relative overflow-hidden w-full">
-
         <div className="relative z-10">
           <Blog />
         </div>
@@ -506,7 +542,7 @@ export default function HomePage() {
               <Phone className="h-4 w-4 text-emerald-700 dark:text-emerald-500 transition-colors" />
               <span>Call</span>
             </Link>
-          </div>  
+          </div> 
         </div>
       </section>
     </div>

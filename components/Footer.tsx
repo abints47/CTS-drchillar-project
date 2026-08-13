@@ -149,8 +149,8 @@ export default function Footer() {
             <span className="text-emerald-500">&copy;</span> {new Date().getFullYear()} CTS, Inc. All rights reserved {' '}
             
           </p>
-            <Link href="https://maktalseo.com/" target="_blank" className="inline-block">
-              <span className="hover:text-emerald-300 transition-colors">Made with <span>💚</span> by MakTal</span>
+            <Link href="https://maktalseo.com/" target="_blank" className="inline-block">Made with <span>💚</span> by
+              <span className="hover:text-emerald-500 transition-colors"> MakTal</span>
             </Link>
         </div>
       </div>

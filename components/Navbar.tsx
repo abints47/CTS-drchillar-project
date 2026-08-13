@@ -134,7 +134,7 @@ export default function Navbar() {
               className="rounded-lg object-contain transition-transform group-hover:scale-105"
               priority
             />
-            <span className={`font-extrabold text-xl sm:text-2xl tracking-tight ${isTransparent ? "text-white" : "text-slate-900 dark:text-white"}`}>
+            <span className={`font-extrabold text-xl sm:text-2xl tracking-tight ${isTransparent ? "text-white" : "text-emerald-700 dark:text-white"}`}>
               CTS
             </span>
           </Link>
@@ -170,7 +170,7 @@ export default function Navbar() {
                       className={`relative z-10 px-3.5 py-2 rounded-full text-sm font-medium transition-colors flex items-center justify-center ${
                         isTransparent 
                           ? "text-white bg-emerald-600/80 hover:bg-emerald-600/60 border border-emerald-400/30" 
-                          : "text-emerald-600 bg-green-300 hover:bg-slate-100 dark:hover:bg-slate-900"
+                          : "text-white bg-green-500 hover:bg-slate-100 dark:hover:bg-slate-900"
                       }`}
                       aria-label="Contact via WhatsApp"
                     >
@@ -182,10 +182,10 @@ export default function Navbar() {
                       scroll={true}
                       className={`relative z-10 px-3.5 py-2 rounded-full text-sm font-medium transition-colors flex items-center gap-1.5 ${
                         isActive
-                          ? isTransparent ? "text-white font-semibold" : "text-slate-900 dark:text-white font-semibold"
+                          ? isTransparent ? "text-white font-semibold" : "text-stone-100 dark:text-white font-semibold"
                           : isTransparent
-                          ? "text-[#00bb5d] hover:text-white"
-                          : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                          ? "text-white hover:text-white"
+                          : "text-gray-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                       }`}
                     >
                       <span className="flex items-center gap-1.5 leading-none">
@@ -206,7 +206,7 @@ export default function Navbar() {
                           className={`absolute inset-0 rounded-full -z-10 shadow-sm ${
                             isTransparent 
                               ? "bg-emerald-600/50 border border-emerald-400/30" 
-                              : "bg-slate-100 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60"
+                              : "bg-green-500 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60"
                           }`}
                           transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         />
@@ -231,7 +231,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 6, scale: 0.96 }}
                         transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 p-2 overflow-hidden"
+                        className="bg-stone-100 dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 p-2 overflow-hidden"
                       >
                         {link.submenu?.map((sub) => (
                           <Link
@@ -240,8 +240,8 @@ export default function Navbar() {
                             scroll={true}
                             className={`block px-3.5 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                               pathname === sub.href
-                                ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-semibold"
-                                : "text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white"
+                                ? "bg-slate-100 dark:bg-slate-800 text-black dark:text-white font-semibold"
+                                : "text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-white"
                             }`}
                           >
                             {sub.label}

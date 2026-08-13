@@ -133,12 +133,12 @@ export default function HomePage() {
             </div>
 
             {/* Back Image (Hidden on mobile, visible on sm and above) */}
-            <div className="hidden sm:block group/img1 relative h-80 w-72 overflow-hidden rounded-xl border-2 border-white shadow-lg transition-all duration-500 ease-out sm:rotate-3 hover:z-20 hover:scale-105 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl dark:border-gray-900">
+           <div className="hidden sm:block group/img1 relative h-80 w-72 overflow-hidden rounded-xl border-2 border-white shadow-lg transition-all duration-500 ease-out sm:rotate-3 hover:z-20 hover:scale-105 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl dark:border-gray-900">
               <Image
                 src="/images/asethetic-ac.webp"
                 alt="Our Team"
                 fill
-                sizes="(max-width: 768px) 100vw, 300px"
+                sizes="(max-width: 640px) 0vw, 288px"
                 className="rounded-xl object-cover transition-transform duration-500 group-hover/img1:scale-110"
                 priority
               />
@@ -150,7 +150,7 @@ export default function HomePage() {
                 src="/images/Amc.webp"
                 alt="Work in Action"
                 fill
-                sizes="(max-width: 768px) 100vw, 260px"
+                sizes="(max-width: 640px) 0vw, 256px"
                 className="rounded-xl object-cover transition-transform duration-500 group-hover/img2:scale-110"
               />
             </div>

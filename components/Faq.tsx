@@ -50,7 +50,7 @@ export default function AccordionCard() {
   return (
     <div className="w-full max-w-4xl mx-auto py-6 sm:py-30 px-4 sm:px-6 lg:px-28">
       {/* Frameless Header with AOS */}
-      <div className="mb-6 space-y-2 text-left" data-aos="fade-up">
+      <div className="mb-20 space-y-4 text-left" data-aos="fade-up">
         <h2 className="text-xl sm:text-4xl text-center font-extrabold tracking-tight text-slate-800 dark:text-slate-100">
           Frequently Asked Questions
         </h2>

@@ -270,14 +270,14 @@ export default function AboutPage() {
       <section aria-labelledby="cta-heading" className="relative z-10 py-16 bg-white/10 dark:bg-slate-950/70 border-t border-slate-200 dark:border-slate-800 w-full" data-aos="fade-up">
         <div className="max-w-352 mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 w-full">
           <h2 id="cta-heading" className="text-2xl sm:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white">
-            Ready to optimize your facility performance?
+            Need Reliable AC Rentals ?
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mx-auto text-justify sm:text-center">
-            Speak directly with our technical engineering department to discuss your chiller requirements or immediate emergency dispatch.
+            From planned maintenance to emergency cooling, our flexible AC rental solutions help keep your facility comfortable and operational when you need it most.
           </p>
           <div className="w-full pt-1">
             <Link href="/Contact" className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 text-sm sm:text-base font-medium text-white bg-[#00B67A] hover:bg-emerald-600 rounded-md transition-colors shadow-xs">
-              Get in Touch with CTS
+              Explore AC Rentals 
               <ArrowRight className="ml-2 w-4 h-4 shrink-0" aria-hidden="true" />
             </Link>
           </div>

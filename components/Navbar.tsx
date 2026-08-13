@@ -21,7 +21,6 @@ export default function Navbar() {
     "/",
     "/Products",
     "/Services",
-    "/Contact",
     "/Products/water-chillers",
     "/Products/heat-exchangers",
     "/Products/cold-rooms",

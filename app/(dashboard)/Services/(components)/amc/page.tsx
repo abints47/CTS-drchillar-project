@@ -169,18 +169,7 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
       </div>
 
       {/* Top Action Controls */}
-      <div className="absolute top-17 right-4 sm:top-45 sm:right-6 z-20 flex items-center gap-3">
-        {/* Dark Mode Toggle Button (Uncomment if needed) */}
-        {/* <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer text-xs sm:text-sm"
-          aria-label="Toggle Dark Mode"
-        >
-          {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
-          <span>{darkMode ? "Light" : "Dark"}</span>
-        </button> */}
-
-        {/* Back Button */}
+      <div className="absolute top-47 right-4 sm:top-45 sm:right-6 z-20 flex items-center gap-3">
         <Link
           href="/Services"
           className="px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg text-xs sm:text-sm"

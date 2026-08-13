@@ -144,7 +144,7 @@ function HeroSection({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode
         <div className="absolute inset-0 bg-black/50 dark:bg-black/75" />
       </div>
 
-      <div className="absolute top-17 right-4 sm:top-65 sm:right-6 z-20 flex items-center gap-3">
+      <div className="absolute top-47 right-4 sm:top-45 sm:right-6 z-20 flex items-center gap-3">
         <Link
           href="/Services"
           className="px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg text-xs sm:text-sm"

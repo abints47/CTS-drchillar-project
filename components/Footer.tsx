@@ -150,7 +150,7 @@ export default function Footer() {
             
           </p>
             <Link href="https://maktalseo.com/" target="_blank" className="inline-block">
-              <span className="hover:text-emerald-500 transition-colors">Made with <span>💚</span> by MakTal</span>
+              <span className="hover:text-emerald-300 transition-colors">Made with <span>💚</span> by MakTal</span>
             </Link>
         </div>
       </div>

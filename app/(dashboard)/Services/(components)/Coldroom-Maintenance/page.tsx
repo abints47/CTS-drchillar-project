@@ -145,11 +145,11 @@ function HeroSection() {
       </div>
 
       {/* Top Action Buttons */}
-      <div className="absolute top-17 right-4 sm:top-65 sm:right-6 z-20 flex items-center gap-3">
+      <div className="absolute top-47 right-4 sm:top-45 sm:right-6 z-20 flex items-center gap-3">
         <Link
           href="/Services"
           className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white flex items-center justify-center gap-2 transition-all shadow-lg text-sm font-medium"
-          aria-label="Back to Services"
+          aria-label="Back"
         >
           <ArrowLeft className="w-4 h-4" />
           <span className="hidden sm:inline">Back</span>
@@ -185,7 +185,7 @@ function IntroductionSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-emerald-600 dark:text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 rounded-full">
+          <span className="inline-block text-emerald-600 dark:text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wider bg-white dark:bg-emerald-950/50 px-3 py-1 rounded-full">
             {serviceData.subtitle}
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white tracking-normal leading-snug">

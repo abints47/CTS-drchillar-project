@@ -106,19 +106,19 @@ export default function BlogPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center" data-aos="fade-up">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-3">
-              Stay Updated
+              Have a Question or Suggestion?
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mb-6 sm:mb-8 max-w-xl mx-auto">
-              Subscribe to get the latest articles, industry insights, and HVAC tips delivered to your inbox.
+              We’d love to hear from you. Send us your questions, suggestions, or feedback and our team will get back to you.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Enter your Message"
                 className="flex-1 px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded text-sm sm:text-base text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:border-[#00B67A]"
               />
               <button className="px-6 py-3 bg-[#00B67A] hover:bg-emerald-700 text-white text-sm sm:text-base font-semibold rounded transition-colors cursor-pointer">
-                Subscribe
+                Submit
               </button>
             </div>
           </div>

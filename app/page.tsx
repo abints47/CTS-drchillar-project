@@ -471,7 +471,7 @@ export default function HomePage() {
               Get In Touch
             </p>
             
-            <h2 className="text-xl sm:text-3xl lg:text-3xl font-extrabold text-slate-800 dark:text-white tracking-tight">
+            <h2 className="text-xl sm:text-3xl lg:text-3xl font-bold text-slate-800 dark:text-white tracking-tight">
               Need Cooling for Your Space?
             </h2>
             

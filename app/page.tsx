@@ -467,16 +467,16 @@ export default function HomePage() {
           
           {/* Left Side: Direct Header & Subtext */}
           <div className="max-w-2xl space-y-2 text-center md:text-left">
-            <p className="text-xs font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-500">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-emerald-700 dark:text-emerald-500">
               Get In Touch
             </p>
             
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#1A1F2B] dark:text-white tracking-tight">
-              Ready to discuss your project?
+            <h2 className="text-xl sm:text-3xl lg:text-3xl font-extrabold text-slate-800 dark:text-white tracking-tight">
+              Need Cooling for Your Space?
             </h2>
             
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
-              Contact us today for a direct technical consultation and project quote.
+              Get fast AC rental solutions with flexible rental periods and quick delivery.
             </p>
           </div>
 
@@ -491,7 +491,7 @@ export default function HomePage() {
                 justify-center
                 gap-2
                 rounded-md
-                bg-emerald-700
+                bg-emerald-600
                 px-6
                 py-3
                 text-sm
@@ -506,7 +506,7 @@ export default function HomePage() {
                 group
               "
             >
-              <span>Contact Us</span>
+              <span>Explore Rentals</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
 
@@ -540,7 +540,7 @@ export default function HomePage() {
               "
             >
               <Phone className="h-4 w-4 text-emerald-700 dark:text-emerald-500 transition-colors" />
-              <span>Call</span>
+              <span>Call Us</span>
             </Link>
           </div> 
         </div>

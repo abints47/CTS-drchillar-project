@@ -149,7 +149,7 @@ export default function BlogSection() {
         >
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-[#00B67A] hover:bg-emerald-700 rounded transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded transition-colors"
           >
             More Blogs
             <ArrowRight className="w-4 h-4" aria-hidden="true" />

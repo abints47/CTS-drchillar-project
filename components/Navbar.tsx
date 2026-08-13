@@ -134,7 +134,7 @@ export default function Navbar() {
               className="rounded-lg object-contain transition-transform group-hover:scale-105"
               priority
             />
-            <span className={`font-extrabold text-xl sm:text-2xl tracking-tight ${isTransparent ? "text-white" : "text-emerald-700 dark:text-white"}`}>
+            <span className={`font-extrabold text-xl sm:text-2xl tracking-tight ${isTransparent ? "text-white" : "text-green-600 dark:text-white"}`}>
               CTS
             </span>
           </Link>
